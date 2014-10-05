@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html ng-app="Demo">
+<head>
+	<style>
+		ul{
+			list-style: none;
+		}
+
+		li
+		{
+			border-bottom: 1px solid #bdbdbd;
+			display: block;
+			width: 200px;
+			float:none;
+			clear:both;
+			line-height:30px;
+		}
+
+		a
+		{
+			display: inline-block;
+			max-width: 150px;
+			text-overflow: ellipsis;
+		}
+
+		button
+		{
+			float:right;
+			margin-top: 5	px;
+		}
+	</style>
+</head>
+<body ng-controller="DemoController">
+	DEMO PAGE
+
+	<button ng-click="AddTemplate('test2')">Add</button>
+	<ul>
+		<li ng-repeat="template in Templates track by template.Id">
+			<a ng-href="/TemplateEditor/#/Template/{{template.Id}}" ng-bind="template.Name"></a><button ng-click="RemoveTemplate(template)">Remove</button>
+		</li>
+	</ul>
+
+	<script src="/TemplateEditor/Dependencies/Extensions.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+	<script src="/TemplateEngine/Model/Template.js"></script>
+	<script src="/TemplateEngine/Model/Resolution.js"></script>
+	<script>
+		angular
+			.module("Demo", [])
+			.controller("DemoController", function ($scope)
+			{
+				var repo = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
+				function UpdateLocalStorage()
+				{
+					localStorage.setItem("TemplateRepository", JSON.stringify(repo));
+				}
+
+				function InitializeTemplates()
+				{
+					$scope.Templates = _.map(repo.Templates, function (template)
+					{
+						return template;
+					});
+				}
+
+				InitializeTemplates();
+
+				$scope.AddTemplate = function (name)
+				{
+					var template = new Cerberus.Tool.TemplateEngine.Model.Template();
+					template.Name = name;
+					template.Id = ~~_.max($scope.Templates, function (template)
+					{
+						return template.Id;
+					}).Id + 1;
+
+					template.Resolutions.push(new Cerberus.Tool.TemplateEngine.Model.Resolution());
+
+					$scope.Templates.push(template);
+
+					repo.Templates[template.Id] = template;
+
+					UpdateLocalStorage();
+				};
+
+				$scope.RemoveTemplate = function (template)
+				{
+					delete repo.Templates[template.Id];
+					UpdateLocalStorage();
+					InitializeTemplates();
+				};
+			});
+	</script>
+	<script src="http://localhost:35729/livereload.js"></script>
+</body>
+</html>

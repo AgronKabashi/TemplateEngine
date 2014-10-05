@@ -1,0 +1,15 @@
+﻿select
+{
+	background-color: white;
+	border: 1px solid $borderColor;
+	border-radius: 4px;
+	color: $formTextColor;
+	height:  1.5rem;
+	padding: 0 0.5rem;
+	width: 100%;
+
+	&[disabled]
+	{
+		color: $disabledColor;
+	}
+}

@@ -1,0 +1,49 @@
+﻿.template > .template-control .sharer
+{
+	font-size: 0px;
+
+	> .social-media-icon
+	{
+		content: "";
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background-size: contain;
+		margin-right: 1px;
+		border-radius: 3px;
+
+		&.facebook
+		{
+			background-image: url(/Content/Images/facebook.png);
+		}
+
+		&.twitter
+		{
+			background-image: url(/Content/Images/twitter.png);
+		}
+
+		&.google-plus
+		{
+			background-image: url(/Content/Images/googleplus.png);
+		}
+	}
+
+	/*> .SocialMediaIcon::after
+	{
+		content: attr(count);
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin-left: 100%;
+		border: 1px solid #bdbdbd;
+		border-radius: 3px;
+		background-color: white;
+		position: relative;
+		top: 50%;
+		-webkit-transform: translateY(-50%) translateX(1px);
+		transform: translateY(-50%) translateX(1px);
+		font-size: 8px;
+		line-height: 18px;
+		text-align: center;
+	}*/
+}
