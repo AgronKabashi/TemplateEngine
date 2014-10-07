@@ -1,209 +1,228 @@
-﻿'use strict';
+﻿"use strict";
 
 module.exports = function (grunt)
 {
-  //load grunt modules
-  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-  require("node-neat");
-  require("node-bourbon");
+	//load grunt modules
+	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+	require("node-neat");
+	require("node-bourbon");
 
-  grunt.registerTask("debug",
+	grunt.registerTask("debug",
 	[
-	  "clean:all",
-	  "copy",
-	  "sass",
-	  "watch"
+		"clean:all",
+		"copy",
+		"sass",
+		"connect:livereload",
+		"watch"
 	]);
 
-  grunt.registerTask("release",
+	grunt.registerTask("release",
 	[
-	  "clean:all",
-	  "copy",
-	  "sass",
-	  "htmlmin",
-	  "uglify"
+		"clean:all",
+		"copy",
+		"sass",
+		"htmlmin",
+		"uglify"
 	]);
 
-  grunt.registerTask("default",
+	grunt.registerTask("default",
 	[
 		"debug"
 	]);
 
-  grunt.initConfig(
+	grunt.initConfig(
 	{
-	  config:
+		config:
 		{
-		  src: "src",
-		  dist: "dist"
-	  },
-	  watch:
+			src: "src",
+			dist: "dist"
+		},
+		connect:
 		{
-		  options:
+			options:
 			{
-			  livereload: true
+				port: 9000,
+				livereload: 35729,
+				// change this to "0.0.0.0" to access the server from outside
+				hostname: "localhost"
 			},
-		  css:
+			livereload:
 			{
-			  files: ["<%= config.src %>/**/*.css"],
-			  tasks: ["newer:copy:css"]
-			},
-		  sass:
-			{
-			  files: ["<%= config.src %>/**/*.scss"],
-			  tasks: ["sass"]
-			},
-		  images:
-			{
-			  files: ["<%= config.src %>/**/*.{png,jpg}"],
-			  tasks: ["newer:copy:images"]
-			},
-		  markup:
-			{
-			  files: ["<%= config.src %>/**/*.html"],
-			  tasks: ["newer:copy:markup"]
-			},
-		  scripts:
-			{
-			  files: ["<%= config.src %>/**/*.js"],
-			  tasks: ["newer:copy:scripts"]
+				options:
+				{
+					open: true,
+					base: ["<%= config.dist %>"]
+				}
 			}
 		},
-	  htmlmin:
+		watch:
 		{
-		  dist:
+			options:
 			{
-			  options:
+				livereload: true
+			},
+			css:
+			{
+				files: ["<%= config.src %>/**/*.css"],
+				tasks: ["newer:copy:css"]
+			},
+			sass:
+			{
+				files: ["<%= config.src %>/**/*.scss"],
+				tasks: ["sass"]
+			},
+			images:
+			{
+				files: ["<%= config.src %>/**/*.{png,jpg}"],
+				tasks: ["newer:copy:images"]
+			},
+			markup:
+			{
+				files: ["<%= config.src %>/**/*.html"],
+				tasks: ["newer:copy:markup"]
+			},
+			scripts:
+			{
+				files: ["<%= config.src %>/**/*.js"],
+				tasks: ["newer:copy:scripts"]
+			}
+		},
+		htmlmin:
+		{
+			dist:
+			{
+				options:
 				{
-				  removeComments: true,
-				  collapseWhitespace: true,
-				  conservativeCollapse: true,
-				  minifyCSS: true,
-				  caseSensitive: true
+					removeComments: true,
+					collapseWhitespace: true,
+					conservativeCollapse: true,
+					minifyCSS: true,
+					caseSensitive: true
 				},
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.dist %>",
-					  src: "**/*.html",
-					  dest: "<%= config.dist %>"
+						expand: true,
+						cwd: "<%= config.dist %>",
+						src: "**/*.html",
+						dest: "<%= config.dist %>"
 					}
 				]
 			}
 		},
-	  uglify:
+		uglify:
 		{
-		  options:
+			options:
 			{
-			  mangle:
+				mangle:
 				{
-				  except: ["jQuery", "*.min.js"]
+					except: ["jQuery", "*.min.js"]
 				}
 			},
-		  all:
+			all:
 			{
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.dist %>",
-					  src: "**/*.js",
-					  dest: "<%= config.dist %>"
+						expand: true,
+						cwd: "<%= config.dist %>",
+						src: "**/*.js",
+						dest: "<%= config.dist %>"
 					}
 				]
 			}
 		},
-	  sass:
+		sass:
 		{
-		  dist:
+			dist:
 			{
-			  options:
+				options:
 				{
-				  includePaths: require("node-neat").includePaths,
-				  outputStyle: "compressed"
+					includePaths: require("node-neat").includePaths,
+					outputStyle: "compressed"
 				},
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.src %>",
-					  src: "**/*.scss",
-					  dest: "<%= config.dist %>",
-					  ext: ".css"
+						expand: true,
+						cwd: "<%= config.src %>",
+						src: "**/*.scss",
+						dest: "<%= config.dist %>",
+						ext: ".css"
 					}
 				]
 			}
 		},
-	  copy:
+		copy:
 		{
-		  fonts:
+			fonts:
 			{
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.src %>",
-					  src: "**/*.{ttf,woff,eot}",
-					  dest: "<%= config.dist %>"
+						expand: true,
+						cwd: "<%= config.src %>",
+						src: "**/*.{ttf,woff,eot}",
+						dest: "<%= config.dist %>"
 					}
 				]
 			},
-		  css:
+			css:
 			{
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.src %>",
-					  src: "**/*.css",
-					  dest: "<%= config.dist %>"
+						expand: true,
+						cwd: "<%= config.src %>",
+						src: "**/*.css",
+						dest: "<%= config.dist %>"
 					}
 				]
 			},
-		  images:
+			images:
 			{
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.src %>",
-					  src: "**/*.{jpg,png}",
-					  dest: "<%= config.dist %>"
+						expand: true,
+						cwd: "<%= config.src %>",
+						src: "**/*.{jpg,png}",
+						dest: "<%= config.dist %>"
 					}
 				]
 			},
-		  scripts:
+			scripts:
 			{
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.src %>",
-					  src: "**/*.js",
-					  dest: "<%= config.dist %>"
+						expand: true,
+						cwd: "<%= config.src %>",
+						src: "**/*.js",
+						dest: "<%= config.dist %>"
 					}
 				]
 			},
-		  markup:
+			markup:
 			{
-			  files:
+				files:
 				[
 					{
-					  expand: true,
-					  cwd: "<%= config.src %>",
-					  src: "**/*.html",
-					  dest: "<%= config.dist %>"
+						expand: true,
+						cwd: "<%= config.src %>",
+						src: "**/*.html",
+						dest: "<%= config.dist %>"
 					}
 				]
 			}
 		},
-	  jshint:
+		jshint:
 		{
-		  all: ['<%= config.src %>/**/*.js']
+			all: ["<%= config.src %>/**/*.js"]
 		},
-	  clean:
+		clean:
 		{
-		  all: ["<%= config.dist %>/**/*"]
+			all: ["<%= config.dist %>/**/*"]
 		}
 	});
 };

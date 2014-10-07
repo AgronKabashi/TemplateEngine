@@ -65,7 +65,6 @@
 	deps:
 	[
 		"domReady",
-		"Cerberus.Extensions",
-		document.location.origin + ":35729/livereload.js"
+		"Cerberus.Extensions"
 	]
 };

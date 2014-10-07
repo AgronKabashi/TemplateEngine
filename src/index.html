@@ -2,6 +2,11 @@
 <html ng-app="Demo">
 <head>
 	<style>
+		.ng-cloak
+		{
+			display: none;
+		}
+
 		ul{
 			list-style: none;
 		}
@@ -35,7 +40,7 @@
 
 	<button ng-click="AddTemplate('test2')">Add</button>
 	<ul>
-		<li ng-repeat="template in Templates track by template.Id">
+		<li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
 			<a ng-href="/TemplateEditor/#/Template/{{template.Id}}" ng-bind="template.Name"></a><button ng-click="RemoveTemplate(template)">Remove</button>
 		</li>
 	</ul>
@@ -92,6 +97,5 @@
 				};
 			});
 	</script>
-	<script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

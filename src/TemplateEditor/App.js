@@ -1,7 +1,6 @@
 define(
 	[
 		//Global Dependencies
-		"require",
 		"angular",
 		"angular-ui-router",
 
@@ -18,7 +17,7 @@ define(
 		"./Helper/TemplateEditor.js",
 		"./Helper/CSS.js"
 	],
-	function (require, angular)
+	function (angular)
 	{
 	  return angular
 			.module("Cerberus.Tool.TemplateEditor",
