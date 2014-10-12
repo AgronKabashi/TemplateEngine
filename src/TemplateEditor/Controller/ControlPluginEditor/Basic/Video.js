@@ -14,7 +14,7 @@
 					$scope.Localization = Localization;
 					$scope.ControlData = JSON.tryParse($scope.SelectedTemplateControl.Content, new Cerberus.Tool.TemplateEngine.Model.ControlPlugin.Basic.Video());
 
-					$scope.UpdateControlContent = function ()
+					$scope.$watch("ControlData", function()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 						{
@@ -24,7 +24,7 @@
 							ShowControls: $scope.ControlData.ShowControls,
 							LoopInfinitely: $scope.ControlData.LoopInfinitely
 						});
-					};
+					}, true);
 				}
 			]);
 

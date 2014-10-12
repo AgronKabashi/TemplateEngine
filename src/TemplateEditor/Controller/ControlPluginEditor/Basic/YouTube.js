@@ -14,7 +14,7 @@
 					$scope.Localization = Localization;
 					$scope.ControlData = JSON.tryParse($scope.SelectedTemplateControl.Content, new Cerberus.Tool.TemplateEngine.Model.ControlPlugin.Basic.YouTube());
 
-					$scope.UpdateControlContent = function ()
+					$scope.$watch("ControlData", function ()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 						{
@@ -27,7 +27,7 @@
 							HideYouTubeBrand: $scope.ControlData.HideYouTubeBrand,
 							ShowVideoInfo: $scope.ControlData.ShowVideoInfo
 						});
-					};
+					}, true);
 				}
 			]);
 

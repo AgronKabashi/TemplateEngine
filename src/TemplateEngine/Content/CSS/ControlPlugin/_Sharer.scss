@@ -1,6 +1,6 @@
 ﻿.template > .template-control .sharer
 {
-	font-size: 0px;
+	font-size: 0;
 
 	> .social-media-icon
 	{
@@ -14,36 +14,17 @@
 
 		&.facebook
 		{
-			background-image: url(/Content/Images/facebook.png);
+			background-image: url(../Images/facebook.png);
 		}
 
 		&.twitter
 		{
-			background-image: url(/Content/Images/twitter.png);
+			background-image: url(../Images/twitter.png);
 		}
 
 		&.google-plus
 		{
-			background-image: url(/Content/Images/googleplus.png);
+			background-image: url(../Images/googleplus.png);
 		}
 	}
-
-	/*> .SocialMediaIcon::after
-	{
-		content: attr(count);
-		display: inline-block;
-		width: 20px;
-		height: 20px;
-		margin-left: 100%;
-		border: 1px solid #bdbdbd;
-		border-radius: 3px;
-		background-color: white;
-		position: relative;
-		top: 50%;
-		-webkit-transform: translateY(-50%) translateX(1px);
-		transform: translateY(-50%) translateX(1px);
-		font-size: 8px;
-		line-height: 18px;
-		text-align: center;
-	}*/
 }

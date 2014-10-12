@@ -14,7 +14,7 @@
 					$scope.Localization = Localization;
 					$scope.ControlData = JSON.tryParse($scope.SelectedTemplateControl.Content, new Cerberus.Tool.TemplateEngine.Model.ControlPlugin.Navigation.Link());
 
-					$scope.UpdateControlContent = function ()
+					$scope.$watch("ControlData", function ()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 							{
@@ -23,7 +23,7 @@
 								Text: $scope.ControlData.Text,
 								Target: $scope.ControlData.Target
 							});
-					};
+					}, true);
 				}
 			]);
 

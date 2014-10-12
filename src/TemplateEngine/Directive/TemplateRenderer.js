@@ -25,7 +25,7 @@ define(
 							return String.format(
 								'<div class="template" \
 									ng-controller="Cerberus.Tool.TemplateEngine"> \
-									<div ng-repeat="TemplateControl in Template.TemplateControls" \
+									<div ng-repeat="TemplateControl in Template.TemplateControls track by TemplateControl.Id" \
 										{0} \
 										{1} \
 										ng-attr-id="TC{{TemplateControl.Id}}"\

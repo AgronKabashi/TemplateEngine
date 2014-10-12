@@ -57,6 +57,11 @@
 			});
 
 			updateLocalStorage();
+
+			if (successCallback)
+			{
+				successCallback(true, { d: template });
+			}
 		};
 
 		this.RemoveTemplate = function (templateId, successCallback, errorCallback)
@@ -73,6 +78,41 @@
 					Category: "Basic",
 					ControlType: "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
 					ImageUrl: "Text.png"
+				},
+				{
+					Id: 2,
+					Name: "Video",
+					Category: "Basic",
+					ControlType: "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Video",
+					ImageUrl: "Video.png"
+				},
+				{
+					Id: 3,
+					Name: "YouTube",
+					Category: "Basic",
+					ControlType: "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.YouTube",
+					ImageUrl: "YouTube.png"
+				},
+				{
+					Id: 4,
+					Name: "Link",
+					Category: "Navigation",
+					ControlType: "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Navigation.Link",
+					ImageUrl: "Link.png"
+				},
+				{
+					Id: 5,
+					Name: "RSS",
+					Category: "SocialMedia",
+					ControlType: "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.SocialMedia.RSS",
+					ImageUrl: "RSS.png"
+				},
+				{
+					Id: 6,
+					Name: "Sharer",
+					Category: "SocialMedia",
+					ControlType: "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.SocialMedia.Sharer",
+					ImageUrl: "Sharer.png"
 				}
 			];
 		};

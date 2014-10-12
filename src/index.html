@@ -1,49 +1,48 @@
 ﻿<!DOCTYPE html>
 <html ng-app="Demo">
 <head>
-	<style>
-		.ng-cloak
-		{
-			display: none;
-		}
-
-		ul{
-			list-style: none;
-		}
-
-		li
-		{
-			border-bottom: 1px solid #bdbdbd;
-			display: block;
-			width: 200px;
-			float:none;
-			clear:both;
-			line-height:30px;
-		}
-
-		a
-		{
-			display: inline-block;
-			max-width: 150px;
-			text-overflow: ellipsis;
-		}
-
-		button
-		{
-			float:right;
-			margin-top: 5	px;
-		}
-	</style>
+	<link href="demo.css" rel="stylesheet" />
+	<link href="http://fonts.googleapis.com/css?family=Ropa+Sans|Roboto:400,300|Droid+Sans:400,700|Rouge+Script" rel="stylesheet" type="text/css">
 </head>
 <body ng-controller="DemoController">
-	DEMO PAGE
+	<section class="page-content">
+		<h1>TemplateEngine Demo</h1>
+		<div class="introduction">
+			<p>
+				Welcome! TemplateEngine is a powerful HTML5 templating framework that helps you build web applications using HTML, CSS, and Javascript!
+			</p>
+			<p>
+				This demo will help you get acquainted with the TemplateEngine Editor through hands-on experience. Simply create a template using one
+				of the presets below and go wild!
+			</p>
+			<p>
+				For ideas on how TemplateEngine can be applied in real world applications, please check out the wiki pages on <a href="https://github.com/AgronKabashi/TemplateEngine" target="_blank">GitHub</a>.
+			</p>
+		</div>
 
-	<button ng-click="AddTemplate('test2')">Add</button>
-	<ul>
-		<li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
-			<a ng-href="/TemplateEditor/#/Template/{{template.Id}}" ng-bind="template.Name"></a><button ng-click="RemoveTemplate(template)">Remove</button>
-		</li>
-	</ul>
+		<select ng-model="templatePreset" ng-options="templatePreset.Name for templatePreset in TemplatePresets">
+			<option value="">Blank Template</option>
+		</select>
+
+		<button ng-click="AddTemplate(templatePreset)">Add Template</button>
+
+		<ul class="list">
+			<li class="list-header">
+				<span>Name</span>
+				<span></span>
+			</li>
+			<li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
+				<span ng-bind="template.Name"></span>
+				<div class="button-group">
+					<a ng-href="/TemplateEditor/#/Template/{{template.Id}}">Edit</a>
+					<a href="#" ng-click="RemoveTemplate(template)">Remove</a>
+				</div>
+			</li>
+			<li ng-class="{hidden: Templates && Templates.length}">
+				<i>No Templates</i>
+			</li>
+		</ul>
+	</section>
 
 	<script src="/TemplateEditor/Dependencies/Extensions.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
@@ -53,15 +52,34 @@
 	<script>
 		angular
 			.module("Demo", [])
-			.controller("DemoController", function ($scope)
+			.service("TemplatePresetsService", function ($http)
+			{
+				var presets = [];
+
+				this.GetPresets = function ()
+				{
+					$http
+						.get("template-presets.json")
+						.then(function (response)
+						{
+							angular.extend(presets, response.data.TemplatePresets);
+						});
+
+					return presets;
+				};
+			})
+			.controller("DemoController", function ($scope, TemplatePresetsService)
 			{
 				var repo = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
-				function UpdateLocalStorage()
+
+				//$scope.TemplatePresets = TemplatePresetsService.GetPresets();
+
+				function updateLocalStorage()
 				{
 					localStorage.setItem("TemplateRepository", JSON.stringify(repo));
 				}
 
-				function InitializeTemplates()
+				function initializeTemplates()
 				{
 					$scope.Templates = _.map(repo.Templates, function (template)
 					{
@@ -69,31 +87,41 @@
 					});
 				}
 
-				InitializeTemplates();
+				initializeTemplates();
 
-				$scope.AddTemplate = function (name)
+				$scope.AddTemplate = function (templatePreset)
 				{
-					var template = new Cerberus.Tool.TemplateEngine.Model.Template();
-					template.Name = name;
+					var template;
+
+					if (templatePreset)
+					{
+						template = JSON.parse(templatePreset.JSON);
+						template.Name = templatePreset.Name;
+					}
+					else
+					{
+						template = new Cerberus.Tool.TemplateEngine.Model.Template();
+						template.Name = "Template";
+						template.Resolutions.push(new Cerberus.Tool.TemplateEngine.Model.Resolution());
+					}
+
 					template.Id = ~~_.max($scope.Templates, function (template)
 					{
 						return template.Id;
 					}).Id + 1;
 
-					template.Resolutions.push(new Cerberus.Tool.TemplateEngine.Model.Resolution());
-
 					$scope.Templates.push(template);
 
 					repo.Templates[template.Id] = template;
 
-					UpdateLocalStorage();
+					updateLocalStorage();
 				};
 
 				$scope.RemoveTemplate = function (template)
 				{
 					delete repo.Templates[template.Id];
-					UpdateLocalStorage();
-					InitializeTemplates();
+					updateLocalStorage();
+					initializeTemplates();
 				};
 			});
 	</script>

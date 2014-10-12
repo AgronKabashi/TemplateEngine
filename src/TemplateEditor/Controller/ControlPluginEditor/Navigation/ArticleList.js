@@ -39,10 +39,10 @@
 							return;
 						}
 						$scope.ControlData.FolderId = $scope.TreeViewData.FolderId;
-						$scope.UpdateControlContent();
+						//$scope.UpdateControlContent();
 					});
 
-					$scope.UpdateControlContent = function ()
+					$scope.$watch("ControlData", function ()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 						{
@@ -55,7 +55,7 @@
 							MaxArticles: $scope.ControlData.MaxArticles,
 							ListMode: $scope.ControlData.ListMode
 						});
-					};
+					}, true);
 				}
 			]);
 

@@ -1,21 +1,21 @@
 ﻿<div>
 	<label ng-bind="::Localization.TemplateControlPlugin.Link.Url"></label>
-	<input type="text" ng-change="UpdateControlContent()" ng-model="ControlData.Url" placeholder="{{::Localization.TemplateControlPlugin.Link.UrlPlaceHolder}}" />
+	<input type="text" ng-model="ControlData.Url" placeholder="{{::Localization.TemplateControlPlugin.Link.UrlPlaceHolder}}" />
 </div>
 
 <div>
 	<label ng-bind="::Localization.TemplateControlPlugin.Link.Text"></label>
-	<input type="text" ng-change="UpdateControlContent()" ng-model="ControlData.Text" placeholder="{{::Localization.TemplateControlPlugin.Navigation.TextPlaceHolder}}" />
+	<input type="text" ng-model="ControlData.Text" placeholder="{{::Localization.TemplateControlPlugin.Navigation.TextPlaceHolder}}" />
 </div>
 
 <div>
 	<label ng-bind="::Localization.TemplateControlPlugin.Link.Tooltip"></label>
-	<input type="text" ng-change="UpdateControlContent()" ng-model="ControlData.Tooltip" placeholder="{{::Localization.TemplateControlPlugin.Navigation.TooltipPlaceHolder}}" />
+	<input type="text" ng-model="ControlData.Tooltip" placeholder="{{::Localization.TemplateControlPlugin.Navigation.TooltipPlaceHolder}}" />
 </div>
 
 <div>
 	<label ng-bind="::Localization.TemplateControlPlugin.Link.Target">Target</label>
-	<select ng-change="UpdateControlContent()" ng-model="ControlData.Target" class="dropdown-list">
+	<select ng-model="ControlData.Target" class="dropdown-list">
 		<option value="_blank">New Window</option>
 		<option value="">Same Window</option>
 	</select>

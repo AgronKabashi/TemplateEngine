@@ -14,7 +14,7 @@
 					$scope.Localization = Localization;
 					$scope.ControlData = JSON.tryParse($scope.SelectedTemplateControl.Content, new Cerberus.Tool.TemplateEngine.Model.ControlPlugin.SocialMedia.Sharer());
 
-					$scope.UpdateControlData = function ()
+					$scope.$watch("ControlData", function ()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 							{
@@ -22,7 +22,7 @@
 								Twitter: $scope.ControlData.Twitter,
 								GooglePlus: $scope.ControlData.GooglePlus
 							});
-					};
+					}, true);
 				}
 			]);
 

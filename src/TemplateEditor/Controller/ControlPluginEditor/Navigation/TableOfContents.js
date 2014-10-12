@@ -28,13 +28,13 @@
 							&& item.ControlType == "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.RTF";
 					};
 
-					$scope.UpdateControlContent = function ()
+					$scope.$watch("ControlData", function ()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 						{
 							SourceTemplateControlId: ~~$scope.ControlData.SourceTemplateControlId
 						});
-					};
+					}, true);
 				}
 			]);
 

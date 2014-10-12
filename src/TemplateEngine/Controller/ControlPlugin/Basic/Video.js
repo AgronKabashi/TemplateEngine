@@ -17,7 +17,7 @@ angular
 		{
 		}
   ])
-  .directive("video",
+  .directive("csVideo",
 	[
 		"$sce",
 		function ($sce)
@@ -48,7 +48,7 @@ angular
 						{
 							element.append(String.format("<source type='video/ogg' src='{0}' />", controlData.OggSourceUrl));
 						}
-						
+
 						if (controlData.AutoPlay)
 						{
 							video.play();
@@ -65,5 +65,4 @@ angular
 				}
 			};
 		}
-	]
-});
+	]);

@@ -23,11 +23,10 @@ You can get this source code by cloning the project from github, like this:
 
 When you're done cloning, install the project dependencies with `npm`, like this:
 
-    $ cd to/your/project/directory
     $ npm install
 
 ### Step 5. Run
 
-Running Grunt will build and watch the source files for changes.
+Running Grunt will build, start a webserver and watch the source files for changes.
 
     $ grunt

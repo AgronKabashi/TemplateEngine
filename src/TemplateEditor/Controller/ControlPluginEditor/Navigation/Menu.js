@@ -20,13 +20,13 @@
 					$scope.FolderService = $injector.get("Cerberus.Module.CMS.Service.Folder");
 					$scope.Folders = $scope.FolderService.GetFolders(0);
 
-					$scope.UpdateControlContent = function ()
+					$scope.$watch("ControlData", function ()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 						{
 							FolderId: ~~$scope.ControlData.FolderId
 						});
-					};
+					}, true);
 				}
 			]);
 

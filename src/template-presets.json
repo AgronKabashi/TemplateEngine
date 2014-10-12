@@ -1,0 +1,12 @@
+﻿{
+	"TemplatePresets": [
+		{
+			"Name": "Tutorial",
+			"JSON": ""
+		},
+		{
+			"Name": "Proof of Concept: Animation",
+			"JSON": ""
+		}
+	]
+}

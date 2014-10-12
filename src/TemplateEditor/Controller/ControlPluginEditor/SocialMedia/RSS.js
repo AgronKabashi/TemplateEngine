@@ -14,7 +14,7 @@
 					$scope.Localization = Localization;
 					$scope.ControlData = JSON.tryParse($scope.SelectedTemplateControl.Content, new Cerberus.Tool.TemplateEngine.Model.ControlPlugin.SocialMedia.RSS());
 
-					$scope.UpdateControlData = function ()
+					$scope.$watch("ControlData", function ()
 					{
 						$scope.SelectedTemplateControl.Content = JSON.stringify(
 						{
@@ -25,7 +25,7 @@
 							ShowStoryDate: $scope.ControlData.ShowStoryDate,
 							MaxStories: $scope.ControlData.MaxStories
 						});
-					};
+					}, true);
 				}
 			]);
 
