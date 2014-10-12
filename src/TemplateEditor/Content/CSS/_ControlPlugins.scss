@@ -6,14 +6,15 @@
 	z-index: 9999;
 
 	> .container {
-		-webkit-transform: translateY(100%);
+		@include transform(translateY(100%));
+
 		background-color: $controlBackgroundColor;
 		border-bottom: 1px solid $borderColor;
 		padding-top: 10px;
 		transition: all 0.3s;
 
 		&.collapsed {
-	        -webkit-transform: translateY(0);
+	        @include transform(translateY(0));
 		}
 
 		.expand-collapse-section {

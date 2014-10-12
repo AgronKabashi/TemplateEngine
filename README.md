@@ -17,7 +17,7 @@ Second step is to install grunt globally if you haven't already. Grunt is a task
 You can get this source code by cloning the project from github, like this:
 
     $ cd to/your/project/directory
-    $ git clone git@github.com:AgronKabashi/TemplateEngine.git
+    $ git clone https://github.com/AgronKabashi/TemplateEngine.git
 
 ### Step 4. Install dependencies
 
