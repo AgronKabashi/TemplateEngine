@@ -99,6 +99,84 @@
 			max-width: 300px;
 		}
 
+		.text-align
+		{
+			background-color: $borderColor;
+			border: 1px solid $borderColor;
+			border-radius: 2px;
+			font-size: 0;
+			vertical-align: middle;
+			width: auto;
+
+			input[type=radio]
+			{
+				cursor: pointer;
+				height: 20px;
+				margin: 0 0 0 1px;
+				padding: 0;
+				//visibility: hidden;
+				width: 20px;
+				display: none;
+			}
+
+			span
+			{
+				display: inline-block;
+				height: 20px;
+				width: 20px;
+			
+				&::before
+				{
+					@include box-sizing(border-box);
+					@extend .icon-base;
+					content: "";
+					background-color: $controlBackgroundColor;
+					display: inline-block;
+					height: inherit;
+					padding-top: 3px;
+					text-align: center;
+					visibility: visible;
+					width: inherit;
+				}
+			}
+
+			label
+			{
+				cursor: pointer;
+				width: auto;			
+			}
+
+			label:first-child span
+			{
+				@extend .icon-align-left;
+				margin-left: 0;
+					
+				&::before
+				{
+					border-radius: 2px 0 0 2px;
+				}
+			}
+
+			input[type=radio]:checked + span::before
+			{
+				background-color: $darkControlBackgroundColor;
+			}
+
+			label:nth-child(2) span
+			{
+				@extend .icon-align-center;
+			}
+
+			label:last-child span
+			{
+				@extend .icon-align-right;
+				&::before
+				{	
+					border-radius: 0 2px 2px 0;
+				}
+			}
+		}
+
 		@for $i from 2 through 7
 		{
 			.columns-#{$i}

@@ -464,7 +464,7 @@
 								scope.$emit("AddTemplateControl",
 									{
 										ControlInfo: controlInfo,
-										VisualProperties: String.format("left:{0}px;top:{1}px;", x, y)
+										VisualProperties: String.format("left:{0}px;top:{1}px;", ~~x, ~~y)
 									});
 
 								scope.$digest();
