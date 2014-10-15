@@ -11,13 +11,13 @@
 		"lodash": "Dependencies/lodash/lodash.min",
 
 		"angular": "Dependencies/angularJS/angular.min",
-		"angular-sanitize": "Dependencies/angularjs/angular-sanitize.min",
+		"angular-sanitize": "Dependencies/angularJS/angular-sanitize.min",
 
 		"angular-ui-router": "Dependencies/angularJS/Modules/AngularUI/angular-ui-router.min",
 
 		"Cerberus.Service.HttpPost": "Dependencies/angularJS/HttpPost",
 
-		"domReady": "Dependencies/RequireJS/v2.1.11/domReady.min",
+		"domReady": "Dependencies/requireJS/v2.1.11/domReady.min",
 
 		"jquery-mousewheel": "Dependencies/jQuery/v2.1.1/Plugins/jquery.mousewheel.min",
 		"jquery-mCustomScrollbar": "Dependencies/jQuery/v2.1.1/Plugins/jquery.mCustomScrollbar.min"

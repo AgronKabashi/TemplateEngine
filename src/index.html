@@ -34,7 +34,7 @@
 			<li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
 				<span ng-bind="template.Name"></span>
 				<div class="button-group">
-					<a ng-href="/TemplateEditor/#/Template/{{template.Id}}">Edit</a>
+					<a ng-href="./TemplateEditor/#/Template/{{template.Id}}">Edit</a>
 					<a href="#" ng-click="RemoveTemplate(template)">Remove</a>
 				</div>
 			</li>
@@ -44,11 +44,11 @@
 		</ul>
 	</section>
 
-	<script src="/TemplateEditor/Dependencies/Extensions.js"></script>
+	<script src="./TemplateEditor/Dependencies/Extensions.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
-	<script src="/TemplateEngine/Model/Template.js"></script>
-	<script src="/TemplateEngine/Model/Resolution.js"></script>
+	<script src="./TemplateEngine/Model/Template.js"></script>
+	<script src="./TemplateEngine/Model/Resolution.js"></script>
 	<script>
 		angular
 			.module("Demo", [])
