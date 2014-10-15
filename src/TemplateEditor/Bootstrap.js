@@ -6,6 +6,7 @@
 		"./Routing.js",
 		
 		//Directives
+		"./Directive/Draggable-Resizable-Selectable.js",
 		"./Directive/MessageDialog.js",
 		"./Directive/ControlPluginFilter.js",
 		"./Directive/ControlPlugins.js",
