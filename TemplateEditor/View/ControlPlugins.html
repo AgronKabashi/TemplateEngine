@@ -1,16 +1,1 @@
-﻿<div class="container" ng-class="{collapsed: !IsExpanded }">
-    <ul class="control-plugins collapsed">
-        <li class="control-plugin"
-            ng-repeat="controlPlugin in ControlPlugins"
-            ng-show="controlPlugin.Category == CurrentFilter.Category || CurrentFilter.Category == null"
-            data-control-type="{{ controlPlugin.ControlType }}"
-            data-control-category="{{ controlPlugin.Category }}"
-            data-name="{{ controlPlugin.Name }}">
-            <img class="plugin-image" ng-src="Content/Images/ControlPlugins/{{controlPlugin.ImageUrl}}" />
-            <span ng-bind="::Localization.ControlPluginNames[controlPlugin.Name]"></span>
-        </li>
-    </ul>
-    <div class="expand-collapse-section">
-        <a ng-click="IsExpanded = !IsExpanded"></a>
-    </div>
-</div>
+<div class="container" ng-class="{collapsed: !IsExpanded }"> <ul class="control-plugins collapsed"> <li class="control-plugin" ng-repeat="controlPlugin in ControlPlugins" ng-show="controlPlugin.Category == CurrentFilter.Category || CurrentFilter.Category == null" data-control-type="{{ controlPlugin.ControlType }}" data-control-category="{{ controlPlugin.Category }}" data-name="{{ controlPlugin.Name }}"> <img class="plugin-image" ng-src="Content/Images/ControlPlugins/{{controlPlugin.ImageUrl}}"> <span ng-bind="::Localization.ControlPluginNames[controlPlugin.Name]"></span> </li> </ul> <div class="expand-collapse-section"> <a ng-click="IsExpanded = !IsExpanded"></a> </div> </div>

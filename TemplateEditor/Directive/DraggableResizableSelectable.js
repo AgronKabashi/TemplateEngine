@@ -1,0 +1,1 @@
+define(["../App.js"],function(a){return a.directive("csDraggableSelectableResizable",["Cerberus.Tool.TemplateEditor.Helper.TemplateEditor",function(a){return{link:function(b,c){a.EnableDraggable(b,c),a.EnableResizable(b,c),a.EnableSelectable(b,c)}}}])});
