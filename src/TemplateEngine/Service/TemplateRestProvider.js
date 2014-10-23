@@ -1,139 +1,91 @@
-﻿namespace("Cerberus.Tool.TemplateEngine.Service")
-	.TemplateRestProvider = function (HttpPostService)
+﻿define(
+	[
+		"angular",
+		"ResourceBuilder"
+	],
+	function (angular, ResourceBuilder)
 	{
-		var serviceUrl = "";
-
-		this.Configure = function (url)
+		namespace("Cerberus.Tool.TemplateEngine.Service").TemplateRestProvider = angular.extend(function ($http, $q)
 		{
-			serviceUrl = url;
-		};
+			var serviceUrl = "";
 
-		this.GetTemplateInfo = function (templateId)
-		{
-			return HttpPostService.ExecuteCommand(
+			function CleanPromise(promise)
 			{
-				Url: serviceUrl + "/GetTemplateInfo",
-				Parameters:
-				{
-					"templateId": templateId
-				},
-				DefaultValue: new Cerberus.Tool.TemplateEngine.Model.Template(),
-				MergeResultWithDefaultValue: true
-			});
-		};
+				var defer = $q.defer();
 
-		this.GetTemplate = function (templateId, documentId, documentTypeId)
-		{
-			documentId = ~~documentId;
-			documentTypeId = ~~documentTypeId;
+				promise
+					.then(function (response)
+					{
+						defer.resolve(response.data);
+					})
+					.catch(function ()
+					{
+						defer.reject();
+					});
 
-			return HttpPostService.ExecuteCommand(
+				return defer.promise;
+			};
+
+			this.Configure = function (url)
 			{
-				Url: serviceUrl + "/GetTemplate",
-				Parameters:
-				{
-					"templateId": templateId,
-					"documentId": documentId,
-					"documentTypeId": documentTypeId
-				},
-				DefaultValue: new Cerberus.Tool.TemplateEngine.Model.Template(),
-				MergeResultWithDefaultValue: true
-			});
-		};
+				serviceUrl = url;
+			};
 
-		this.GetTemplates = function ()
-		{
-			return HttpPostService.ExecuteCommand(
+			//Template
+			this.GetTemplate = function (templateId)
 			{
-				Url: serviceUrl + "/GetTemplates",
-				DefaultValue: [],
-				MergeResultWithDefaultValue: true
-			});
-		};
+				return CleanPromise($http.get(ResourceBuilder.BuildResourceUrl(serviceUrl, "template", ~~templateId)));
+			};
 
-		this.SaveTemplateInfo = function (template, successCallback, errorCallback)
-		{
-			return HttpPostService.ExecuteCommand(
+			this.RemoveTemplate = function (templateId)
 			{
-				Url: serviceUrl + "/SaveTemplateInfo",
-				Parameters:
-				{
-					"template": template
-				},
-				SuccessCallback: successCallback,
-				ErrorCallback: errorCallback
-			});
-		};
+				return CleanPromise($http.delete(ResourceBuilder.BuildResourceUrl(serviceUrl, "template", ~~templateId)));
+			};
 
-		this.SaveTemplate = function (template, successCallback, errorCallback)
-		{
-			return HttpPostService.ExecuteCommand(
+			this.SaveTemplate = function (template)
 			{
-				Url: serviceUrl + "/SaveTemplate",
-				Parameters:
-				{
-					"template": template
-				},
-				SuccessCallback: successCallback,
-				ErrorCallback: errorCallback
-			});
-		};
+				return CleanPromise($http.put(ResourceBuilder.BuildResourceUrl(serviceUrl, "template"), template));
+			};
 
-		this.SaveTemplateContent = function (template, documentId, documentTypeId, successCallback, errorCallback)
-		{
-			return HttpPostService.ExecuteCommand(
+			this.CloneTemplate = function (templateId)
 			{
-				Url: serviceUrl + "/SaveTemplateContent",
-				Parameters:
-				{
-					"template": template,
-					"documentId": documentId,
-					"documentTypeId": documentTypeId
-				},
-				SuccessCallback: successCallback,
-				ErrorCallback: errorCallback
-			});
-		};
+				return CleanPromise($http.post(ResourceBuilder.BuildResourceUrl(serviceUrl, "template", ~~templateId, "clone")));
+			};
 
-		this.RemoveTemplate = function (templateId, successCallback, errorCallback)
-		{
-			return HttpPostService.ExecuteCommand(
+			//Templates
+			this.GetTemplates = function ()
 			{
-				Url: serviceUrl + "/RemoveTemplate",
-				Parameters:
-				{
-					"templateId": templateId
-				},
-				SuccessCallback: successCallback,
-				ErrorCallback: errorCallback
-			});
-		};
+				return CleanPromise($http.get(ResourceBuilder.BuildResourceUrl(serviceUrl, "templates")));
+			};
 
-		this.GetControlPlugins = function ()
-		{
-			return HttpPostService.ExecuteCommand(
+			//TemplateInfo
+			this.GetTemplateInfo = function (templateId)
 			{
-				Url: serviceUrl + "/GetControlPlugins",
-				DefaultValue: [],
-				MergeResultWithDefaultValue: true
-			});
-		};
+				return CleanPromise($http.get(ResourceBuilder.BuildResourceUrl(serviceUrl, "templateinfo", ~~templateId)));
+			};
 
-		this.CloneTemplate = function (templateId, successCallback, errorCallback)
-		{
-			return HttpPostService.ExecuteCommand(
+			this.SaveTemplateInfo = function (template)
 			{
-				Url: serviceUrl + "/CloneTemplate",
-				Parameters:
-				{
-					"templateId": templateId
-				},
-				DefaultValue: 0,
-				MergeResultWithDefaultValue: true,
-				SuccessCallback: successCallback,
-				ErrorCallback: errorCallback
-			});
-		};
-	};
+				return CleanPromise($http.put(ResourceBuilder.BuildResourceUrl(serviceUrl, "templateinfo"), template));
+			};
 
-namespace("Cerberus.Tool.TemplateEngine.Service").TemplateRestProvider.$inject = ["Cerberus.Service.HttpService"];
+			//TemplateContent
+			this.GetDocument = function (templateId, documentId, documentTypeId)
+			{
+				return CleanPromise($http.get(ResourceBuilder.BuildResourceUrl(serviceUrl, "templatecontent", ~~templateId, ~~documentId, ~~documentTypeId)));
+			};
+
+			this.SaveDocument = function (template, documentId, documentTypeId)
+			{
+				return CleanPromise($http.put(ResourceBuilder.BuildResourceUrl(serviceUrl, "templatecontent", ~~documentId, documentTypeId), template));
+			};
+
+			this.GetControlPlugins = function ()
+			{
+				return CleanPromise($http.get(ResourceBuilder.BuildResourceUrl(serviceUrl, "controlplugins")));
+			};
+		},
+		{
+			$inject: ["$http", "$q"]
+		});
+	});

@@ -3,7 +3,7 @@
 		"../App.js",
 		"jquery-mCustomScrollbar"
 	],
-	function(templateEditorModule)
+	function (templateEditorModule)
 	{
 		templateEditorModule
 			.controller("Cerberus.Tool.TemplateEditor.Controller.ContentEditor",
@@ -17,33 +17,20 @@
 				function ($scope, $stateParams, Localization, TemplateEngineService, HistoryService, DataBagService)
 				{
 					var controlIdCounter = 0,
-						templateId = $stateParams.TemplateId || 0,
-						documentId = $stateParams.DocumentId || 0,
-						documentTypeId = $stateParams.DocumentTypeId || 0;
+						templateId = ~~$stateParams.TemplateId,
+						documentId = ~~$stateParams.DocumentId,
+						documentTypeId = ~~$stateParams.DocumentTypeId;
 
 					$scope.Localization = Localization;
 
 					DataBagService.AddData("TemplateMode", TemplateMode.EditContent);
-					DataBagService.AddData("Template", TemplateEngineService.GetTemplate(templateId, documentId, documentTypeId));
+					DataBagService.AddData("Template", TemplateEngineService.GetDocument(templateId, documentId, documentTypeId));
 
 					$scope.Save = function (successCallback)
 					{
-						TemplateEngineService.SaveTemplateContent(
-							DataBagService.GetData("Template"),
-							documentId,
-							documentTypeId,
-							function (result, response)
-							{
-								if (successCallback)
-								{
-									successCallback();
-								}
-							},
-							//Save failed
-							function (result, response)
-							{
-								alert(response.Message);
-							});
+						return TemplateEngineService.SaveDocument(DataBagService.GetData("Template"),
+								documentId,
+								documentTypeId);
 					};
 
 					$scope.Exit = function ()
@@ -54,7 +41,11 @@
 
 					$scope.SaveExit = function ()
 					{
-						this.Save(function () { $scope.Exit() });
+						this.Save()
+							.then(function ()
+							{
+								$scope.Exit()
+							});
 					};
 				}
 			]);

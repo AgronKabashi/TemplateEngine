@@ -6,7 +6,7 @@
 		"jquery-ui-resizable-fix",
 		"jquery-mCustomScrollbar"
 	],
-	function(templateEditorModule)
+	function (templateEditorModule)
 	{
 		templateEditorModule
 			.controller("Cerberus.Tool.TemplateEditor.Controller.TemplateEditor",
@@ -20,7 +20,7 @@
 				function ($scope, $stateParams, Localization, TemplateService, HistoryService, DataBagService)
 				{
 					var controlIdCounter = 0,
-						templateId = $stateParams.TemplateId || 0;
+						templateId = ~~$stateParams.TemplateId;
 
 					function GenerateControlId()
 					{
@@ -48,29 +48,25 @@
 						templateControl.Id = GenerateControlId();
 						templateControl.CreationGUID = templateControl.Id;
 
-						var template = DataBagService.GetData("Template");
-						template.TemplateControls.push(templateControl);
-						$scope.$emit("TemplateControlAdded", templateControl);
+						DataBagService.GetData("Template")
+							.then(function (template)
+							{
+								template.TemplateControls.push(templateControl);
+								$scope.$emit("TemplateControlAdded", templateControl);
+							});
 					};
 
-					$scope.Save = function (successCallback)
+					$scope.Save = function ()
 					{
-						TemplateService.SaveTemplate(DataBagService.GetData("Template"),
-							function (result, response)
-							{
-								$scope.$broadcast("ReloadTemplate", response.d);
+						var templatePromise = TemplateService.SaveTemplate(DataBagService.GetData("Template"));
 
-								if (successCallback)
-								{
-									successCallback();
-								}
-							},
-							//Save failed
-							function (result, response)
-							{
-								//	$scope.SaveStatus = "SaveError";
-								alert(response.Message);
-							});
+						templatePromise.then(function (template)
+						{
+							DataBagService.AddData("Template", templatePromise);
+							$scope.$broadcast("ReloadTemplate", template);
+						});
+
+						return templatePromise;
 					};
 
 					$scope.Exit = function ()
@@ -80,7 +76,11 @@
 
 					$scope.SaveExit = function ()
 					{
-						this.Save(function () { $scope.Exit() });
+						this.Save()
+							.then(function ()
+							{
+								$scope.Exit()
+							});
 					};
 				}
 			]);

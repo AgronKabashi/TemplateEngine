@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="Demo">
+<html>
 <head>
 	<link href="demo.css" rel="stylesheet" />
 	<link href="http://fonts.googleapis.com/css?family=Ropa+Sans|Roboto:400,300|Droid+Sans:400,700|Rouge+Script" rel="stylesheet" type="text/css">
@@ -44,86 +44,7 @@
 		</ul>
 	</section>
 
-	<script src="./TemplateEditor/Dependencies/Extensions.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
-	<script src="./TemplateEngine/Model/Template.js"></script>
-	<script src="./TemplateEngine/Model/Resolution.js"></script>
-	<script>
-		angular
-			.module("Demo", [])
-			.service("TemplatePresetsService", function ($http)
-			{
-				var presets = [];
-
-				this.GetPresets = function ()
-				{
-					$http
-						.get("template-presets.json")
-						.then(function (response)
-						{
-							angular.extend(presets, response.data.TemplatePresets);
-						});
-
-					return presets;
-				};
-			})
-			.controller("DemoController", function ($scope, TemplatePresetsService)
-			{
-				var repo = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
-
-				$scope.TemplatePresets = TemplatePresetsService.GetPresets();
-
-				function updateLocalStorage()
-				{
-					localStorage.setItem("TemplateRepository", JSON.stringify(repo));
-				}
-
-				function initializeTemplates()
-				{
-					$scope.Templates = _.map(repo.Templates, function (template)
-					{
-						return template;
-					});
-				}
-
-				initializeTemplates();
-
-				$scope.AddTemplate = function (templatePreset)
-				{
-					var template;
-
-					if (templatePreset)
-					{
-						template = angular.extend({}, templatePreset.Data);
-						template.Name = templatePreset.Name;
-					}
-					else
-					{
-						template = new Cerberus.Tool.TemplateEngine.Model.Template();
-						template.Name = "Template";
-						template.Resolutions.push(new Cerberus.Tool.TemplateEngine.Model.Resolution());
-					}
-
-					template.Id = ~~_.max($scope.Templates, function (template)
-					{
-						return template.Id;
-					}).Id + 1;
-
-					$scope.Templates.push(template);
-
-					repo.Templates[template.Id] = template;
-
-					updateLocalStorage();
-				};
-
-				$scope.RemoveTemplate = function (template)
-				{
-					delete repo.Templates[template.Id];
-					updateLocalStorage();
-					initializeTemplates();
-				};
-			});
-	</script>
+	<script src="/Dependencies/DependencyConfig.js"></script>
+	<script src="/Dependencies/requireJS/v2.1.11/require.min.js" data-main="App.js"></script>
 </body>
 </html>

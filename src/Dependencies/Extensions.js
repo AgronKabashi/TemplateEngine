@@ -19,7 +19,13 @@ String.format = function ()
 	}
 
 	return s;
-}
+};
+
+String.getPath = function (value)
+{
+	var index = value.lastIndexOf("/");
+	return value.substring(0, Math.min(value.length, index + 1));
+};
 
 function tryParseInt(value)
 {
@@ -70,40 +76,20 @@ JSON.tryParse = function (value, fallbackObject)
 /*******************************
 	Namespacing
 *******************************/
-function namespace(namespaceString) {
-    var parts = namespaceString.split('.'),
-        parent = window,
-        currentPart = '';    
-        
-    for(var i = 0, length = parts.length; i < length; i++) {
-        currentPart = parts[i];
-        parent[currentPart] = parent[currentPart] || {};
-        parent = parent[currentPart];
-    }
-    
-    return parent;
-}
-
-/*******************************
-****Get/Set Property Pattern****
-	
-	Usage:
-		SomeFunction = function() { return PropertyPattern(arguments, "PropertyId"); }
-		
-	Creates a get/set for the specified property
-	
-	Passing in a parameter to SomeFunction will set the value for that property. Calling the method without any parameters
-	will return the value for that property.
-*******************************/
-function PropertyPattern(args, propertyId)
+function namespace(namespaceString)
 {
-	if (args.length > 0)
+	var parts = namespaceString.split('.'),
+        parent = window,
+        currentPart = '';
+
+	for (var i = 0, length = parts.length; i < length; i++)
 	{
-		eval(propertyId + '=args[0]');
-		return this;
+		currentPart = parts[i];
+		parent[currentPart] = parent[currentPart] || {};
+		parent = parent[currentPart];
 	}
 
-	return eval(propertyId);
+	return parent;
 };
 
 //Utility for reading queryparameter values

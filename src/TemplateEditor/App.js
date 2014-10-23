@@ -2,6 +2,7 @@ define(
 	[
 		//Global Dependencies
 		"angular",
+		"LazyConfig",
 		"angular-ui-router",
 
 		//External Dependencies
@@ -17,12 +18,12 @@ define(
 		"./Helper/TemplateEditor.js",
 		"./Helper/CSS.js"
 	],
-	function (angular)
+	function (angular, LazyConfig)
 	{
-	  return angular
-			.module("Cerberus.Tool.TemplateEditor",
+		var moduleId = "Cerberus.Tool.TemplateEditor";
+		return angular
+			.module(moduleId,
 			[
-				"ng",
 				"ui.router",
 				"Cerberus.Tool.TemplateEngine",
 				"Cerberus.Tool.TemplateEditor.Localization",
@@ -32,27 +33,13 @@ define(
 				"Cerberus.Tool.TemplateEditor.Helper.CSS"
 			])
 			.constant("TemplateEditorPath", window.location.pathname)
+			.config(LazyConfig(moduleId))
 			.config(
 			[
-				"$controllerProvider",
-				"$compileProvider",
 				"Cerberus.Tool.TemplateEngine.Service.TemplateProvider",
-				function ($controllerProvider, $compileProvider, TemplateEngineProvider)
+				function (TemplateProvider)
 				{
-					TemplateEngineProvider.SetProvider(Cerberus.Tool.TemplateEngine.Service.TemplateLocalStorageProvider);
-
-					var app = angular.module("Cerberus.Tool.TemplateEditor");
-					app.controller = function (id, args)
-					{
-						$controllerProvider.register(id, args);
-						return app;
-					};
-
-					app.directive = function (id, args)
-					{
-						$compileProvider.directive(id, args);
-						return app;
-					};
+					TemplateProvider.SetProvider(Cerberus.Tool.TemplateEngine.Service.TemplateLocalStorageProvider);
 				}
 			])
 			.service("Cerberus.Tool.TemplateEditor.Service.PathResolver",

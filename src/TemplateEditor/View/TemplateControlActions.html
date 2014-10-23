@@ -30,7 +30,7 @@
 </div>-->
 
 <div ng-show="ShowTemplateEditorActions && HiddenControls > 0">
-	<a class="setting-button secondary-action" ng-click="ShowHiddenElements = !ShowHiddenElements;ToggleHiddenElements()">
+	<a class="setting-button secondary-action" ng-click="ToggleHiddenElements()">
 		<input type="checkbox" ng-model="ShowHiddenElements" />
 		<span ng-bind="::Localization.TemplateControlActions.ShowHiddenControls"></span>
 		<span class="icon-eye-slash"></span>
