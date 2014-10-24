@@ -2,41 +2,25 @@ define(
 	[
 		"require",
 		"angular",
+		"LazyConfig",
 		"angular-sanitize",
 
 		//Services
 		"./Service/Template.js",
 		"./Service/DataBag.js"
 	],
-	function (require, angular)
+	function (require, angular, LazyConfig)
 	{
+		var moduleId = "Cerberus.Tool.TemplateEngine";
 		return angular
-			.module("Cerberus.Tool.TemplateEngine",
+			.module(moduleId,
 				[
-					"ng",
 					"ngSanitize",
 					"Cerberus.Tool.TemplateEngine.Service.DataBag",
 					"Cerberus.Tool.TemplateEngine.Service.Template"
 				])
 			.constant("TemplateEnginePath", require.toUrl("."))
-			.config(
-				[
-					"$controllerProvider",
-					"$compileProvider",
-					function ($controllerProvider, $compileProvider)
-					{
-						var app = angular.module("Cerberus.Tool.TemplateEngine");
-						app.controller = function (id, args) {
-							$controllerProvider.register(id, args);
-							return app;
-						};
-
-						app.directive = function (id, args) {
-							$compileProvider.directive(id, args);
-							return app;
-						};
-					}
-				])
+			.config(LazyConfig(moduleId))
 			.service("Cerberus.Tool.TemplateEngine.Service.PathResolver",
 				[
 					"TemplateEnginePath",
@@ -56,14 +40,17 @@ define(
 					"Cerberus.Tool.TemplateEngine.Service.PathResolver",
 					function ($scope, TemplateEngineService, DataBagService, PathResolverService)
 					{
-						//The template is supplied from outside
-						$scope.Template = DataBagService.GetData("Template");
 						$scope.BaseControlPath = PathResolverService.Resolve("View/Base.html");
+						//The template is supplied from outside
+						DataBagService.GetData("Template")
+							.then(function (template)
+							{
+								$scope.Template = template;
+							});
 
 						$scope.$on("ReloadTemplate", function (scope, template)
 						{
 							$scope.Template = template;
-							DataBagService.AddData("Template", $scope.Template);
 						});
 					}
 				]);

@@ -21,16 +21,20 @@
 						{
 							function CalculateHiddenControlCount()
 							{
-								var templateControls = DataBagService.GetData("Template").TemplateControls;
-								$scope.HiddenControls = 0;
-								for (var i = 0; i < templateControls.length; i++)
-								{
-									var templateControl = templateControls[i];
-									if (templateControl.VisualProperties.indexOf("display:none") >= 0)
+								DataBagService.GetData("Template")
+									.then(function (template)
 									{
-										$scope.HiddenControls++;
-									}
-								}
+										var templateControls = template.TemplateControls;
+										$scope.HiddenControls = 0;
+										for (var i = 0; i < templateControls.length; i++)
+										{
+											var templateControl = templateControls[i];
+											if (templateControl.VisualProperties.indexOf("display:none") >= 0)
+											{
+												$scope.HiddenControls++;
+											}
+										}
+									});
 							}
 
 							function UpdateCurrentResolution(scope, resolutionValue)
@@ -53,6 +57,7 @@
 
 							$scope.ToggleHiddenElements = function ()
 							{
+								$scope.ShowHiddenElements = !$scope.ShowHiddenElements;
 								$scope.$emit("ShowHiddenElements", $scope.ShowHiddenElements);
 							};
 
@@ -64,73 +69,85 @@
 							{
 								//get template control ids
 								//remove them from the template
-								var template = DataBagService.GetData("Template");
-								var selectedTemplateControl;
+								DataBagService.GetData("Template")
+									.then(function (template)
+									{
+										var selectedTemplateControl;
 
-								for (var scIndex = 0; scIndex < $scope.SelectedControls.length; scIndex++)
-								{
-									selectedTemplateControl = $scope.SelectedControls[scIndex];
-									template.TemplateControls.RemoveValue("Id", selectedTemplateControl.Id);
-									TemplateEditorHelper.RemoveTemplateControlFromResolutions(template, selectedTemplateControl);
-								}
+										for (var scIndex = 0; scIndex < $scope.SelectedControls.length; scIndex++)
+										{
+											selectedTemplateControl = $scope.SelectedControls[scIndex];
+											template.TemplateControls.RemoveValue("Id", selectedTemplateControl.Id);
+											TemplateEditorHelper.RemoveTemplateControlFromResolutions(template, selectedTemplateControl);
+										}
+									});
 							};
 
 							$scope.DistributeResolutionPropertiesToAllResolutions = function ()
 							{
-								var template = DataBagService.GetData("Template");
-								var selectedTemplateControl;
-
-								for (var i = 0; i < $scope.SelectedControls.length; i++)
-								{
-									selectedTemplateControl = $scope.SelectedControls[i];
-									for (var resolutionIndex = 0; resolutionIndex < template.Resolutions.length; resolutionIndex++)
+								DataBagService.GetData("Template")
+									.then(function (template)
 									{
-										var resolution = template.Resolutions[resolutionIndex];
-										TemplateEditorHelper.SetTemplateControlVisualProperties(template, resolution, selectedTemplateControl);
-									}
-								}
+										var selectedTemplateControl;
+
+										for (var i = 0; i < $scope.SelectedControls.length; i++)
+										{
+											selectedTemplateControl = $scope.SelectedControls[i];
+											for (var resolutionIndex = 0; resolutionIndex < template.Resolutions.length; resolutionIndex++)
+											{
+												var resolution = template.Resolutions[resolutionIndex];
+												TemplateEditorHelper.SetTemplateControlVisualProperties(template, resolution, selectedTemplateControl);
+											}
+										}
+									});
 							};
 
 							$scope.DistributeResolutionPropertiesToLowerResolutions = function ()
 							{
-								var template = DataBagService.GetData("Template");
-								var currentResolution = DataBagService.GetData("CurrentResolution");
-								var selectedTemplateControl;
-
-								for (var i = 0; i < $scope.SelectedControls.length; i++)
-								{
-									selectedTemplateControl = $scope.SelectedControls[i];
-									for (var resolutionIndex = 0; resolutionIndex < template.Resolutions.length; resolutionIndex++)
+								DataBagService.GetData("Template")
+									.then(function (template)
 									{
-										var resolution = template.Resolutions[resolutionIndex];
+										var currentResolution = DataBagService.GetData("CurrentResolution");
+										var selectedTemplateControl;
 
-										if (resolution.ResolutionValue < currentResolution.ResolutionValue)
+										for (var i = 0; i < $scope.SelectedControls.length; i++)
 										{
-											TemplateEditorHelper.SetTemplateControlVisualProperties(template, resolution, selectedTemplateControl);
+											selectedTemplateControl = $scope.SelectedControls[i];
+											for (var resolutionIndex = 0; resolutionIndex < template.Resolutions.length; resolutionIndex++)
+											{
+												var resolution = template.Resolutions[resolutionIndex];
+
+												if (resolution.ResolutionValue < currentResolution.ResolutionValue)
+												{
+													TemplateEditorHelper.SetTemplateControlVisualProperties(template, resolution, selectedTemplateControl);
+												}
+											}
 										}
-									}
-								}
+									});
 							};
 
 							$scope.DistributeResolutionPropertiesToHigherResolutions = function ()
 							{
-								var template = DataBagService.GetData("Template");
-								var currentResolution = DataBagService.GetData("CurrentResolution");
-								var selectedTemplateControl;
-
-								for (var i = 0; i < $scope.SelectedControls.length; i++)
-								{
-									selectedTemplateControl = $scope.SelectedControls[i];
-									for (var resolutionIndex = 0; resolutionIndex < template.Resolutions.length; resolutionIndex++)
+								DataBagService.GetData("Template")
+									.then(function (template)
 									{
-										var resolution = template.Resolutions[resolutionIndex];
+										var currentResolution = DataBagService.GetData("CurrentResolution");
+										var selectedTemplateControl;
 
-										if (resolution.ResolutionValue > currentResolution.ResolutionValue)
+										for (var i = 0; i < $scope.SelectedControls.length; i++)
 										{
-											TemplateEditorHelper.SetTemplateControlVisualProperties(template, resolution, selectedTemplateControl);
+											selectedTemplateControl = $scope.SelectedControls[i];
+											for (var resolutionIndex = 0; resolutionIndex < template.Resolutions.length; resolutionIndex++)
+											{
+												var resolution = template.Resolutions[resolutionIndex];
+
+												if (resolution.ResolutionValue > currentResolution.ResolutionValue)
+												{
+													TemplateEditorHelper.SetTemplateControlVisualProperties(template, resolution, selectedTemplateControl);
+												}
+											}
 										}
-									}
-								}
+									});
 							};
 						}
 					]

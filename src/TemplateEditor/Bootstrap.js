@@ -6,14 +6,16 @@
 		"./Routing.js",
 		
 		//Directives
-		"./Directive/Draggable-Resizable-Selectable.js",
+		"./Directive/DraggableResizableSelectable.js",
 		"./Directive/MessageDialog.js",
 		"./Directive/ControlPluginFilter.js",
 		"./Directive/ControlPlugins.js",
 		"./Directive/TemplateResolutions.js",
 		"./Directive/TemplateControlActions.js",
 		"./Directive/TemplateControlProperties.js",
-		"./Directive/DragDropSelect.js",
+		"./Directive/TemplateControlSelection.js",
+		"./Directive/ToggleHiddenElements.js",
+		"./Directive/Droppable.js",
 		"./Directive/AutosizeTemplate.js",
 		"./Directive/ButtonDropdown.js"
 	],

@@ -2,10 +2,10 @@
 	[
 		"../App.js"
 	],
-	function (templateEditorModule)
+	function (app)
 	{
-		return templateEditorModule
-			.directive("autosizetemplate",
+		return app
+			.directive("csAutosizeTemplate",
 			[
 				"$timeout",
 				function ($timeout)
@@ -27,7 +27,7 @@
 								templateElement.parent().scrollTop(scrollTop);
 
 								//HACK!
-								//Because of CSS transitions, some elements are not fully transformed after their properties are changes so detecting the height
+								//Because of CSS transitions, some elements are not fully transformed after their properties are changed so detecting the height
 								//can be tricky. By calling the method again, only 400ms later we can assume that the transition has finished and recalculate the height
 								if (!isSecondExecution)
 								{

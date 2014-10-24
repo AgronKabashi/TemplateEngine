@@ -48,7 +48,11 @@
 						"Cerberus.Tool.TemplateEngine.Service.Template",
 						function ($scope, TemplateEngineService)
 						{
-							$scope.ControlPlugins = TemplateEngineService.GetControlPlugins();
+							TemplateEngineService.GetControlPlugins()
+								.then(function(controlPlugins)
+								{
+									$scope.ControlPlugins = controlPlugins;
+								});
 						}
 					]
 				};

@@ -152,7 +152,7 @@ templaterenderer
 	}
 }
 
-.show-hidden-elements.template > .template-control[style*="display"]
+.show-hidden-elements .template-control[style*="display"]
 {
 	display: table !important;
 	opacity: 0.3 !important;
