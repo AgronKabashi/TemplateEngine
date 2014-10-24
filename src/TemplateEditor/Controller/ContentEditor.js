@@ -9,17 +9,19 @@
 			.controller("Cerberus.Tool.TemplateEditor.Controller.ContentEditor",
 			[
 				"$scope",
+				"$location",
 				"$stateParams",
 				"Cerberus.Tool.TemplateEditor.Localization",
 				"Cerberus.Tool.TemplateEngine.Service.Template",
 				"Cerberus.Tool.TemplateEditor.Service.History",
 				"Cerberus.Tool.TemplateEngine.Service.DataBag",
-				function ($scope, $stateParams, Localization, TemplateEngineService, HistoryService, DataBagService)
+				function ($scope, $location, $stateParams, Localization, TemplateEngineService, HistoryService, DataBagService)
 				{
 					var controlIdCounter = 0,
 						templateId = ~~$stateParams.TemplateId,
 						documentId = ~~$stateParams.DocumentId,
-						documentTypeId = ~~$stateParams.DocumentTypeId;
+						documentTypeId = ~~$stateParams.DocumentTypeId,
+						location = $location;
 
 					$scope.Localization = Localization;
 
@@ -35,7 +37,7 @@
 
 					$scope.Exit = function ()
 					{
-						var exitUrl = "/";
+						var exitUrl = location.search()["ExitUrl"] || "/";
 						window.location.href = exitUrl;
 					};
 

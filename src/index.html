@@ -34,7 +34,7 @@
 			<li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
 				<span ng-bind="template.Name"></span>
 				<div class="button-group">
-					<a ng-href="./TemplateEditor/#/Template/{{template.Id}}">Edit</a>
+					<a ng-href="./TemplateEditor/#/Template/{{template.Id}}?ExitUrl=../">Edit</a>
 					<a href="#" ng-click="RemoveTemplate(template)">Remove</a>
 				</div>
 			</li>

@@ -12,15 +12,17 @@
 			.controller("Cerberus.Tool.TemplateEditor.Controller.TemplateEditor",
 			[
 				"$scope",
+				"$location",
 				"$stateParams",
 				"Cerberus.Tool.TemplateEditor.Localization",
 				"Cerberus.Tool.TemplateEngine.Service.Template",
 				"Cerberus.Tool.TemplateEditor.Service.History",
 				"Cerberus.Tool.TemplateEngine.Service.DataBag",
-				function ($scope, $stateParams, Localization, TemplateService, HistoryService, DataBagService)
+				function ($scope, $location, $stateParams, Localization, TemplateService, HistoryService, DataBagService)
 				{
 					var controlIdCounter = 0,
-						templateId = ~~$stateParams.TemplateId;
+						templateId = ~~$stateParams.TemplateId,
+						location = $location;
 
 					function GenerateControlId()
 					{
@@ -60,9 +62,10 @@
 					{
 						var templatePromise = TemplateService.SaveTemplate(DataBagService.GetData("Template"));
 
+						DataBagService.AddData("Template", templatePromise);
+
 						templatePromise.then(function (template)
 						{
-							DataBagService.AddData("Template", templatePromise);
 							$scope.$broadcast("ReloadTemplate", template);
 						});
 
@@ -71,7 +74,8 @@
 
 					$scope.Exit = function ()
 					{
-						window.location.href = "/";
+						var exitUrl = location.search()["ExitUrl"] || "/";
+						window.location.href = exitUrl;
 					};
 
 					$scope.SaveExit = function ()
