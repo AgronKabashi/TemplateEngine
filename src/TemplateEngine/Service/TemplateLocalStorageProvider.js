@@ -14,7 +14,7 @@
 
 			this.Configure = function (data) { };
 
-			repository = JSON.parse(localStorage.getItem("TemplateRepository")) || {};
+			repository = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
 
 			this.GetTemplate = function (templateId, documentId, documentTypeId)
 			{
