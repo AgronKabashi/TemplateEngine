@@ -1,12 +1,12 @@
 ﻿define(
 	[
 		"angular",
-		"/TemplateEngine/App.js"
+		"TemplateEngine/Service/Template.js"
 	],
 	function (angular)
 	{
 		angular
-			.module("Demo", ["Cerberus.Tool.TemplateEngine"])
+			.module("Demo", ["Cerberus.Tool.TemplateEngine.Service.Template"])
 			.config(
 			[
 				"Cerberus.Tool.TemplateEngine.Service.TemplateProvider",
