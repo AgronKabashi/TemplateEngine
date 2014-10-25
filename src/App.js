@@ -15,22 +15,26 @@
 					TemplateProvider.SetProvider(Cerberus.Tool.TemplateEngine.Service.TemplateLocalStorageProvider);
 				}
 			])
-			.service("TemplatePresetsService", function ($http)
-			{
-				var presets = [];
-
-				this.GetPresets = function ()
+			.service("TemplatePresetsService",
+			[
+				"$http",
+				function ($http)
 				{
-					$http
-						.get("template-presets.json")
-						.then(function (response)
-						{
-							angular.extend(presets, response.data.TemplatePresets);
-						});
+					var presets = [];
 
-					return presets;
-				};
-			})
+					this.GetPresets = function ()
+					{
+						$http
+							.get("template-presets.json")
+							.then(function (response)
+							{
+								angular.extend(presets, response.data.TemplatePresets);
+							});
+
+						return presets;
+					};
+				}
+			])
 			.controller("DemoController",
 			[
 				"$scope",
