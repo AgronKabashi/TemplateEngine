@@ -28,7 +28,7 @@
 					DataBagService.AddData("TemplateMode", TemplateMode.EditContent);
 					DataBagService.AddData("Template", TemplateEngineService.GetDocument(templateId, documentId, documentTypeId));
 
-					$scope.Save = function (successCallback)
+					$scope.Save = function ()
 					{
 						return TemplateEngineService.SaveDocument(DataBagService.GetData("Template"),
 								documentId,
