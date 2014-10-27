@@ -62,7 +62,6 @@
 						{
 							template = new Cerberus.Tool.TemplateEngine.Model.Template();
 							template.Name = "Template";
-							template.Resolutions.push(new Cerberus.Tool.TemplateEngine.Model.Resolution());
 						}
 
 						TemplateService.SaveTemplate(template)

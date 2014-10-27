@@ -1,20 +1,28 @@
 ﻿define(
 	[
-		"angular"
+		"angular",
+		"lodash"
 	],
-	function (angular)
+	function (angular, lodash)
 	{
 		namespace("Cerberus.Tool.TemplateEngine.Service").TemplateLocalStorageProvider = angular.extend(function ($q)
 		{
-			var repository;
-			function updateLocalStorage()
+			var repository = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
+
+			function UpdateLocalStorage()
 			{
 				localStorage.setItem("TemplateRepository", JSON.stringify(repository));
 			}
 
-			this.Configure = function (data) { };
+			function GenerateId()
+			{
+				return ~~lodash.max(repository.Templates, function (template)
+					{
+						return template.Id;
+					}).Id + 1;
+			}
 
-			repository = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
+			this.Configure = function (data) { };
 
 			this.GetTemplate = function (templateId, documentId, documentTypeId)
 			{
@@ -24,7 +32,7 @@
 			this.RemoveTemplate = function (templateId)
 			{
 				delete repository.Templates[templateId];
-				updateLocalStorage();
+				UpdateLocalStorage();
 
 				return $q.when(true);
 			};
@@ -36,10 +44,8 @@
 					{
 						if (template.Id <= 0)
 						{
-							template.Id = ~~_.max(repository.Templates, function (template)
-							{
-								return template.Id;
-							}).Id + 1;
+							template.Id = GenerateId();							
+							template.Resolutions.push(new Cerberus.Tool.TemplateEngine.Model.Resolution());
 						}
 
 						repository.Templates[template.Id] = template;
@@ -71,14 +77,22 @@
 							});
 						});
 
-						updateLocalStorage();
+						UpdateLocalStorage();
 
 						return template;
 					});
 			};
 
-			this.CloneTemplate = function (templateId, successCallback, errorCallback)
+			this.CloneTemplate = function (templateId)
 			{
+				var template = angular.extend({}, repository.Templates[templateId]);
+				template.Id = GenerateId();
+
+				repository.Templates[template.Id] = template;
+
+				UpdateLocalStorage();
+
+				return $q.when(template);
 			};
 
 			this.GetTemplates = function ()
@@ -98,7 +112,27 @@
 
 			this.SaveTemplateInfo = function (template)
 			{
+				return $q.when(template)
+					.then(function(template)
+					{
+						if (template.Id > 0)
+						{
+							var repoTemplate = repository.Templates[template.Id];
+							template.TemplateControls = repoTemplate.TemplateControls;
+							template.Resolutions = repoTemplate.Resolutions;
+						}
+						else
+						{
+							template.Id = GenerateId();							
+							template.Resolutions.push(new Cerberus.Tool.TemplateEngine.Model.Resolution());
+						}
+						
+						repository.Templates[template.Id] = template;
 
+						UpdateLocalStorage();
+
+						return template;
+					});
 			};
 
 			//TemplateContent
