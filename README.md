@@ -7,7 +7,7 @@ Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github
 ###Related Projects
 - __[TemplateEngine.Backend](https://github.com/AgronKabashi/TemplateEngine.Backend) -__ A complementing library that provides the model and services  needed for using and storing templates on the server side.  
 - __[SimpleCMS](https://github.com/AgronKabashi/SimpleCMS) -__ A client-based application builder with user, template and content management features utilizing TemplateEngine.  
-- __[[SimpleCMS.API]] -__ An optional backend service for SimpleCMS.   
+- __[SimpleCMS.API](https://github.com/AgronKabashi/SimpleCMS.API) -__ An optional backend service for SimpleCMS.   
 
 ## How to Get Started
 
