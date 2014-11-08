@@ -30,8 +30,9 @@ You can get this source code by cloning the project from github, like this:
 
 ### Step 4. Install dependencies
 
-When you're done cloning, install the project dependencies with `npm`, like this:
+When you're done cloning, navigate to the folder and install the project dependencies with `npm`, like this:
 
+    $ cd TemplateEngine
     $ npm install
 
 ### Step 5. Run
