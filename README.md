@@ -4,6 +4,9 @@ TemplateEngine is a powerful web component templating framework that helps you b
 
 Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github.io/TemplateEngine/)
 
+###Important Notes: 
+  - 2015-03-17 TemplateEngine is being reworked and optimized. A notable change and a major performance improvement is moving away from RequireJS for lazyloading internals.
+
 ###Related Projects
 - __[TemplateEngine.Backend](https://github.com/AgronKabashi/TemplateEngine.Backend) -__ A complementing library that provides the model and services  needed for using and storing templates on the server side.  
 - __[SimpleCMS](https://github.com/AgronKabashi/SimpleCMS) -__ A client-based application builder with user, template and content management features utilizing TemplateEngine.  
