@@ -1,19 +1,19 @@
 ﻿<div class="resolution-container">
-	<button-dropdown
+	<cs-buttondropdown
 		datasource="Template.Resolutions"
 		limit="Template.Resolutions.length"
 		on-item-click="RemoveResolution"
 		disabled="Template.Resolutions.length === 1"
 		datatextfield="ResolutionValue">
 		<span class="icon-trash-o"></span>
-	</button-dropdown>
+	</cs-buttondropdown>
 
 	<div class="resolutions">
 		<div class="resolution"
 			 ng-repeat="resolution in Template.Resolutions | orderBy: 'ResolutionValue':true"
-			 ng-class="{ 'default': resolution.ResolutionValue > MaxResolutionValue }"
-			 ng-attr-style="width: {{ resolution.ResolutionValue }}px;"
-			 ng-bind="resolution.ResolutionValue <= MaxResolutionValue ? resolution.ResolutionValue + ' px' : 'Desktop'"
+			 ng-class="::{ 'default': resolution.ResolutionValue > MaxResolutionValue }"
+			 style="width: {{ resolution.ResolutionValue }}px;"
+			 ng-bind="::resolution.ResolutionValue <= MaxResolutionValue ? resolution.ResolutionValue + ' px' : 'Desktop'"
 			 ng-click="SetDocumentWidth(resolution.ResolutionValue)"
 			 title="{{resolution.ResolutionValue <= MaxResolutionValue ? resolution.ResolutionValue + ' px' : 'Desktop'}}">
 		</div>
@@ -21,12 +21,12 @@
 </div>
 
 <div class="resolution-slider-container">
-	<button-dropdown
+	<cs-buttondropdown
 		datasource="ResolutionPresets"
 		on-command-click="AddResolution"
 		on-item-click="AddResolution"
 		datatextfield="Name">
 		+
-	</button-dropdown>
+	</cs-buttondropdown>
 	<div class="resolution-slider"></div>
 </div>

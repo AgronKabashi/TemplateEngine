@@ -1,0 +1,21 @@
+﻿cs-component.rss {
+  > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li {
+      margin: 0 0 10px 0;
+    }
+
+    > .date {
+      font-size: 10px;
+      font-style: italic;
+      color: #999;
+    }
+
+    > a {
+      display: block;
+    }
+  }
+}

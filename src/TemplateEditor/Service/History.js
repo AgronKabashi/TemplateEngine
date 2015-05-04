@@ -1,76 +1,71 @@
-﻿define(
-	[
-		"angular"
-	],
-	function (angular)
-	{
-		return angular
-			.module("Cerberus.Tool.TemplateEditor.Service.History", [])
-			.service("Cerberus.Tool.TemplateEditor.Service.History",
-			[
-				"Cerberus.Tool.TemplateEditor.Helper.TemplateEditor",
-				"Cerberus.Tool.TemplateEngine.Service.DataBag",
-				function (TemplateEditorHelper, DataBagService)
-				{
-					var history = [];
-					var historyIndex = -1;
-					var initialVisualProperties = null;
+﻿(function (angular) {
+  "use strict";
 
-					function TakeSnapshot(visualProperties)
-					{
-						initialVisualProperties = visualProperties;
-					}
+  angular
+    .module("Cerberus.TemplateEditor")
+    .service("Cerberus.TemplateEditor.Service.History", [
+      "Cerberus.TemplateEditor.Helper.TemplateEditor",
+      "Cerberus.TemplateEngine.Service.DataBag",
+      function (TemplateEditorHelper, DataBagService) {
+        //	var history = [];
+        //	var historyIndex = -1;
+        //	var initialVisualProperties = null;
 
-					function CommitSnapshot(resolution, changedVisualProperties)
-					{
-						if (!initialVisualProperties)
-						{
-							return;
-						}
+        //	function TakeSnapshot(visualProperties)
+        //	{
+        //		initialVisualProperties = visualProperties;
+        //	}
 
-						history.push(
-						{
-							Resolution: resolution,
-							Id: 0,
-							InitialVisualProperties: initialVisualProperties,
-							ChangedVisualProperties: changedVisualProperties
-						});
-					}
+        //	function CommitSnapshot(resolution, changedVisualProperties)
+        //	{
+        //		if (!initialVisualProperties)
+        //		{
+        //			return;
+        //		}
 
-					function ApplyChanges(index, propertyName)
-					{
-						var snapShot = history[index];
-						historyIndex = index;
+        //		history.push(
+        //		{
+        //			Resolution: resolution,
+        //			Id: 0,
+        //			InitialVisualProperties: initialVisualProperties,
+        //			ChangedVisualProperties: changedVisualProperties
+        //		});
+        //	}
 
-						DataBagService.GetData("Template")
-							.then(function (template)
-							{
-								TemplateEditorHelper.SetTemplateControlVisualProperties(
-									template,
-									snapShot.Resolution,
-									{
-										Id: snapShot.Id,
-										VisualPropertes: snapShot[propertyName]
-									});
-							});
-					}
+        //	function ApplyChanges(index, propertyName)
+        //	{
+        //		var snapShot = history[index];
+        //		historyIndex = index;
 
-					this.Undo = function ()
-					{
-						ApplyChanges(historyIndex - 1);
-					};
+        //		DataBagService.GetData("Template")
+        //			.then(function (template)
+        //			{
+        //				TemplateEditorHelper.SetComponentVisualProperties(
+        //					template,
+        //					snapShot.Resolution,
+        //					{
+        //						Id: snapShot.Id,
+        //						VisualPropertes: snapShot[propertyName]
+        //					});
+        //			});
+        //	}
 
-					this.Redo = function ()
-					{
-						ApplyChanges(historyIndex + 1);
-					};
+        //	this.Undo = function ()
+        //	{
+        //		ApplyChanges(historyIndex - 1);
+        //	};
 
-					this.Clear = function ()
-					{
-						history = [];
-						historyIndex = -1;
-						initialData = null;
-					};
-				}
-			]);
-	});
+        //	this.Redo = function ()
+        //	{
+        //		ApplyChanges(historyIndex + 1);
+        //	};
+
+        //	this.Clear = function ()
+        //	{
+        //		history = [];
+        //		historyIndex = -1;
+        //		initialData = null;
+        //	};
+      }
+    ]);
+})(window.angular);

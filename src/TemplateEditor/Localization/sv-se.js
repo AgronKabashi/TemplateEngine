@@ -1,192 +1,173 @@
-define(
-	[
-		"angular"
-	],
-	function (angular)
-	{
-		return angular
-			.module("Cerberus.Tool.TemplateEditor.Localization", [])
-			.factory("Cerberus.Tool.TemplateEditor.Localization", function ()
-			{
-				return {
-					Generic:
-					{
-						Back: "Tillbaka",
+//(function (angular) {
+//  "use strict";
 
-						Restore: "Återställ",
-						Save: "Spara",
-						SaveExit: "Spara och avsluta",
-						Cancel: "Avbryt",
+//  angular
+//    .module("Cerberus.TemplateEditor")
+//		.factory("Cerberus.TemplateEditor.Localization", function () {
+//		  return {
+//		    Generic: {
+//		      Back: "Tillbaka",
 
-						Yes: "Ja",
-						No: "Nej",
+//		      Restore: "Ã…terstÃ¤ll",
+//		      Save: "Spara",
+//		      SaveExit: "Spara och avsluta",
+//		      Cancel: "Avbryt",
 
-						Exit: "Avsluta",
+//		      Yes: "Ja",
+//		      No: "Nej",
 
-						EditSettings: "Redigera inställningar",
+//		      Exit: "Avsluta",
 
-						Add: "Skapa",
-						Edit: "Redigera",
-						Update: "Uppdatera",
-						Remove: "Ta bort",
+//		      EditSettings: "Redigera instÃ¤llningar",
 
-						Cancel: "Avbryt",
-						Apply: "Applicera"
-					},
+//		      Add: "Skapa",
+//		      Edit: "Redigera",
+//		      Update: "Uppdatera",
+//		      Remove: "Ta bort",
 
-					TemplateControlResolutions:
-					{
-						ReachedMaximumResolutions: "MAXRESOLUTIONS REACHED",
-						NotEnoughSpace: "NOT ENOUGH SPACE"
-					},
+//		      Apply: "Applicera"
+//		    },
 
-					TemplateControlActions:
-					{
-						RemoveSelectedTemplateControls: "Ta bort vald(a) mallkontroll(er)",
-						DistributeVisualPropertiesToAllResolutions: "Distribuera visuella egenskaper till alla upplösningar",
-						DistributeVisualPropertiesToLowerResolutions: "Distribuera visuella egenskaper till lägre upplösningar",
-						DistributeVisualPropertiesToHigherResolutions: "Distribuera visuella egenskaper till högre upplösningar",
-						DistributeVisualPropertiesToResolutions: "Distribuera visuella egenskaper till upplösning...",
-						ShowHiddenControls: "Visa dolda element"
-					},
-					TemplateControlProperties:
-					{
-						Class: "Class",
-						Visible: "Synlig",
-						Hidden: "Dold",
-						Generic: "Generiskt",
-						ZIndex: "Djup",
-						TemplateControlName: "Namn",
-						Layout: "Layout",
-						Left: "Vänster",
-						Top: "Topp",
-						Right: "Höger",
-						Bottom: "Botten",
-						Width: "Bredd",
-						Height: "Höjd",
-						MinWidth: "Minimibredd",
-						MinHeight: "Minimihöjd",
-						Center: "Center",
+//		    TemplateResolutions: {
+//		      ReachedMaximumResolutions: "MAXRESOLUTIONS REACHED",
+//		      NotEnoughSpace: "NOT ENOUGH SPACE"
+//		    },
 
-						RotateZ: "Rotate",
-						RotateZPlaceHolder: "Ange i deg, turn eller rad",
+//		    ComponentActions: {
+//		      RemoveSelectedComponents: "Ta bort vald(a) mallkontroll(er)",
+//		      DistributeVisualPropertiesToAllResolutions: "Distribuera visuella egenskaper till alla upplÃ¶sningar",
+//		      DistributeVisualPropertiesToLowerResolutions: "Distribuera visuella egenskaper till lÃ¤gre upplÃ¶sningar",
+//		      DistributeVisualPropertiesToHigherResolutions: "Distribuera visuella egenskaper till hÃ¶gre upplÃ¶sningar",
+//		      DistributeVisualPropertiesToResolutions: "Distribuera visuella egenskaper till upplÃ¶sning...",
+//		      ShowHiddenControls: "Visa dolda element"
+//		    },
+//		    ComponentProperties: {
+//		      Class: "Class",
+//		      Visible: "Synlig",
+//		      Hidden: "Dold",
+//		      Generic: "Generiskt",
+//		      ZIndex: "Renderingsordning",
+//		      ComponentName: "Namn",
+//		      Layout: "Layout",
+//		      Left: "VÃ¤nster",
+//		      Top: "Topp",
+//		      Right: "HÃ¶ger",
+//		      Bottom: "Botten",
+//		      Width: "Bredd",
+//		      Height: "HÃ¶jd",
+//		      MinWidth: "Minimibredd",
+//		      MinHeight: "MinimihÃ¶jd",
+//		      Center: "Center",
 
-						FontAndColors: "Typsnitt och färger",
-						Typeface: "Typsnitt",
-						Size: "Storlek",
-						Color: "Färg",
-						TextAlign: "Textjustering",
-						TextTransform: "Textformat",
-						NoWrap: "Radbryt ej",
-						Scrollable: "Aktivera skroll",
+//		      RotateZ: "Rotate",
+//		      RotateZPlaceHolder: "Ange i deg, turn eller rad",
 
-						Background: "Bakgrund",
-						Image: "Bildkälla",
-						ImageRepeat: "Bildrepetering",
-						ImagePosition: "Bildjustering",
+//		      FontAndColors: "Typsnitt och fÃ¤rger",
+//		      Typeface: "Typsnitt",
+//		      Size: "Storlek",
+//		      Color: "FÃ¤rg",
+//		      TextAlign: "Textjustering",
+//		      TextTransform: "Textformat",
+//		      NoWrap: "Radbryt ej",
+//		      Scrollable: "Aktivera skroll",
 
-						Border: "Ram",
-						BorderRadius: "Radie",
-						Padding: "Inre marginal",
-						Top: "Topp",
-						Right: "Höger",
-						Bottom: "Botten",
-						Left: "Vänster",
-						TopLeft: "Övre vänstra",
-						TopRight: "Övre högra",
-						BottomRight: "Nedre högra",
-						BottomLeft: "Nedre vänstra",
+//		      Background: "Bakgrund",
+//		      Image: "BildkÃ¤lla",
+//		      ImageRepeat: "Bildrepetering",
+//		      ImagePosition: "Bildjustering",
 
-						Shadows: "Skuggor",
-						BoxShadow: "Box",
-						TextShadow: "Text",
-						HorizontalOffset: "Horisontell offset",
-						VerticalOffset: "Vertikal offset",
-						InnerShadow: "Inner Shadow",
-						BlurRadius: "Suddighetsradie",
-						SpreadRadius: "Spridningsradie",
+//		      Border: "Ram",
+//		      BorderRadius: "Radie",
+//		      Padding: "Inre marginal",
+//		      TopLeft: "Ã–vre vÃ¤nstra",
+//		      TopRight: "Ã–vre hÃ¶gra",
+//		      BottomRight: "Nedre hÃ¶gra",
+//		      BottomLeft: "Nedre vÃ¤nstra",
 
-						Opacity: "Genomskinlighet",
-						OpacityPlaceHolder: "Intervall: 0.0 - 1.0",
-						ImageSource: "Bildkälla",
-						ImageSize: "Bildstorlek",
-						ImageSourcePlaceHolder: "Sökväg till bild",
+//		      Shadows: "Skuggor",
+//		      BoxShadow: "Box",
+//		      TextShadow: "Text",
+//		      HorizontalOffset: "Horisontell offset",
+//		      VerticalOffset: "Vertikal offset",
+//		      InnerShadow: "Inner Shadow",
+//		      BlurRadius: "Suddighetsradie",
+//		      SpreadRadius: "Spridningsradie",
 
-						Content: "Innehåll",
+//		      Opacity: "Genomskinlighet",
+//		      OpacityPlaceHolder: "Intervall: 0.0 - 1.0",
+//		      ImageSource: "BildkÃ¤lla",
+//		      ImageSize: "Bildstorlek",
+//		      ImageSourcePlaceHolder: "SÃ¶kvÃ¤g till bild",
 
-						BrowserDefault: "Standardvärde",
-						BorderSolid: "Heldragen",
-						BorderDashed: "Streckad",
-						BorderDotted: "Punkter",
-						BorderGroove: "Nedsänkt",
-						BorderDouble: "Dubbel heldragen",
-						BorderInset: "Infälld",
-						BorderOutset: "Utfälld",
-						Repeat: "Repetera",
-						RepeatHorizontally: "Repetera horisontellt",
-						RepeatVertically: "Repetera vertikalt",
-						DontRepeat: "Repetera ej",
+//		      Content: "InnehÃ¥ll",
 
-						Contain: "Rym område",
-						Cover: "Täck område",
+//		      BrowserDefault: "StandardvÃ¤rde",
+//		      BorderSolid: "Heldragen",
+//		      BorderDashed: "Streckad",
+//		      BorderDotted: "Punkter",
+//		      BorderGroove: "NedsÃ¤nkt",
+//		      BorderDouble: "Dubbel heldragen",
+//		      BorderInset: "InfÃ¤lld",
+//		      BorderOutset: "UtfÃ¤lld",
+//		      Repeat: "Repetera",
+//		      RepeatHorizontally: "Repetera horisontellt",
+//		      RepeatVertically: "Repetera vertikalt",
+//		      DontRepeat: "Repetera ej",
 
-						Misc: "Diverse",
-						ItemSpacing: "Objektavstånd"
-					},
+//		      Contain: "Rym omrÃ¥de",
+//		      Cover: "TÃ¤ck omrÃ¥de",
 
-					ControlPluginNames:
-					{
-						Text: "Text",
-						Link: "Länk",
-						Menu: "Meny",
-						Sharer: "Sharer",
-						TableOfContents: "Tabellinnehåll",
-						YouTube: "YouTube",
-						RTF: "Formaterad text",
-						RSS: "RSS",
-						ArticleList: "Article List",
-						Video: "Video"
-					},
+//		      Misc: "Diverse",
+//		      ItemSpacing: "ObjektavstÃ¥nd"
+//		    },
 
-					TemplateControlPlugin:
-					{
-						Link:
-						{
-							Text: "Innehåll",
-							Tooltip: "Tooltip",
-							Url: "Url",
-							Target: "Mål",
+//		    ComponentPluginNames: {
+//		      Text: "Text",
+//		      Link: "LÃ¤nk",
+//		      Menu: "Meny",
+//		      Sharer: "Sharer",
+//		      TableOfContents: "TabellinnehÃ¥ll",
+//		      YouTube: "YouTube",
+//		      RTF: "Formaterad text",
+//		      RSS: "RSS",
+//		      ArticleList: "Article List",
+//		      Video: "Video"
+//		    },
 
-							TooltipPlaceHolder: "Beskrivande text",
-							TextPlaceHolder: "Ange innehåll",
-							UrlPlaceHolder: "Länk att navigera till vid klick"
-						},
-						YouTube:
-						{
-							VideoId: "Video Id",
-							VideoIdPlaceHolder: "Video Id",
-							AutoPlay: "Spela upp automatiskt",
-							StartTime: "Starttid",
-							LoopInfinitely: "Repetera",
-							ShowControls: "Visa spelknappar",
-							DisableKeyboard: "Inaktivera tangentbordsgenvägar",
-							HideYouTubeBrand: "Dölj YouTube logga",
-							ShowInfo: "Visa videoinfo"
-						},
-						TableOfContents:
-						{
-							Source: "Source"
-						},
-						RSS:
-						{
-							Url: "Url",
-							ShowTitle: "Titel",
-							ShowDescription: "Beskrivning",
-							ShowStoryDescription: "Nyhetsbeskrivning",
-							ShowStoryDate: "Nyhetsdatum",
-							MaxStories: "Antal nyheter"
-						}
-					}
-				}
-			});
-	});
+//		    Component: {
+//		      Link: {
+//		        Text: "InnehÃ¥ll",
+//		        Tooltip: "Tooltip",
+//		        Url: "Url",
+//		        Target: "MÃ¥l",
+
+//		        TooltipPlaceHolder: "Beskrivande text",
+//		        TextPlaceHolder: "Ange innehÃ¥ll",
+//		        UrlPlaceHolder: "LÃ¤nk att navigera till vid klick"
+//		      },
+//		      YouTube: {
+//		        VideoId: "Video Id",
+//		        VideoIdPlaceHolder: "Video Id",
+//		        AutoPlay: "Spela upp automatiskt",
+//		        StartTime: "Starttid",
+//		        LoopInfinitely: "Repetera",
+//		        ShowControls: "Visa spelknappar",
+//		        DisableKeyboard: "Inaktivera tangentbordsgenvÃ¤gar",
+//		        HideYouTubeBrand: "DÃ¶lj YouTube logga",
+//		        ShowInfo: "Visa videoinfo"
+//		      },
+//		      TableOfContents: {
+//		        Source: "Source"
+//		      },
+//		      RSS: {
+//		        Url: "Url",
+//		        ShowTitle: "Titel",
+//		        ShowDescription: "Beskrivning",
+//		        ShowStoryDescription: "Nyhetsbeskrivning",
+//		        ShowStoryDate: "Nyhetsdatum",
+//		        MaxStories: "Antal nyheter"
+//		      }
+//		    }
+//		  }
+//		});
+//})(window.angular);

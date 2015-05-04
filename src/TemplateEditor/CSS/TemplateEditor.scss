@@ -1,0 +1,99 @@
+@import "Reset";
+
+@import "bourbon";
+@import "neat";
+
+@import "Palette";
+@import "Font";
+@import "Button";
+@import "Checkbox";
+@import "DropdownList";
+@import "TextBox";
+
+@import "Components";
+@import "ComponentPlugins";
+@import "TemplateResolutions";
+@import "ComponentActions";
+@import "ComponentProperties";
+@import "TreeView";
+@import "ButtonDropdown";
+
+@import "jquery-ui";
+
+html, body {
+  height: 100%;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+body {
+  background-image: url(../Images/Background.png);
+}
+
+.button-container {
+  background-color: $controlBackgroundColor;
+  bottom: 0;
+  font-family: "Droid Sans";
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+
+  .default-button,
+  .danger-button {
+    font-size: 14px;
+  }
+}
+
+.edit-design {
+  bottom:80px;
+  overflow: auto;
+  padding-bottom: 50px;
+  position: absolute;
+  top: 86px;
+  width: 100%;
+  z-index: 2;
+}
+
+cs-template {
+  background-image: url("../Images/grid.png");
+  margin: 40px 0 0 40px;
+  max-width: 1024px;
+  min-height: 400px;
+  box-shadow: 0 0 20px 1px #333;
+}
+
+.show-hidden-elements cs-component[style*="display"] {
+  display: table !important;
+  opacity: 0.3 !important;
+  outline: 10px dotted red !important;
+  background-color: #bbb !important;
+}
+
+cs-template.animatable > cs-component {
+  @include transition(all 0.2s);
+}
+
+/* EditDesign specific rules */
+.edit-design cs-template > cs-component {
+  background-color: rgba(200, 200, 200, 0.4);
+
+  &.ui-resizable-resizing,
+  &.ui-draggable-dragging {
+    @include transition(none);
+  }
+
+  &.selected {
+    z-index: 1000;
+    cursor: move;
+  }
+
+  &.ui-draggable-dragging {
+    opacity: 0.5;
+    z-index: 1000;
+  }
+}

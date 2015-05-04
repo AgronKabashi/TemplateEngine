@@ -1,0 +1,20 @@
+﻿<div>
+	<label ng-bind="::Localization.ComponentProperties.ComponentName"></label>
+	<input type="text" ng-model="SelectedComponent.FriendlyName" cs-componentproperty maxlength="30" />
+</div>
+
+<div>
+	<label ng-bind="::Localization.ComponentProperties.Class"></label>
+	<input type="text" ng-model="SelectedComponent.Class" maxlength="30" />
+</div>
+
+<div>
+	<label ng-bind="::Localization.ComponentProperties.ZIndex"></label>
+	<input type="text" ng-model="VisualProperties.zIndex" maxlength="3" />
+</div>
+
+<div>
+	<label ng-bind="::Localization.ComponentProperties.Hidden"></label>
+	<input type="checkbox" id="hide-component" class="slider" ng-model="VisualProperties.display" ng-change="ToggleComponentVisibility()" ng-true-value="'none'" ng-false-value="undefined" ng-checked="VisualProperties.display === 'none'" />
+  <label for="hide-component"></label>
+</div>

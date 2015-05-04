@@ -1,7 +1,0 @@
-﻿<div>
-	<label ng-bind="::Localization.TemplateControlPlugin.TableOfContents.Source"></label>
-	<select ng-model="ControlData.SourceTemplateControlId" class="dropdown-list"
-			ng-options="templateControl.Id as (templateControl.FriendlyName || templateControl.ControlName) for (Id,templateControl) in Template.TemplateControls | filter:FilterList">
-		<option value="">-</option>
-	</select>
-</div>

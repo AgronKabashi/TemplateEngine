@@ -1,56 +1,23 @@
-define(
-	[
-		//Global Dependencies
-		"angular",
-		"LazyConfig",
-		"angular-ui-router",
+(function (angular, define) {
+  "use strict";
 
-		//External Dependencies
-		"../TemplateEngine/App.js",
-		"../TemplateEngine/Directive/TemplateRenderer.js",
+  var scriptElements = document.getElementsByTagName('script'),
+    thisElement = scriptElements[scriptElements.length - 1],
+    scriptPath = thisElement.src.substr(0, thisElement.src.lastIndexOf('/') + 1);
 
-		//Local Depdendencies
-		"./Localization/en-us.js",
+  var app = angular
+    .module("Cerberus.TemplateEditor", ["Cerberus.TemplateEngine"])
+    .constant("TemplateEditorPath", scriptPath)
+    .service("Cerberus.TemplateEditor.Service.PathResolver", [
+		  "TemplateEditorPath",
+		  function (appPath) {
+		    this.Resolve = function (path) {
+		      return String.format("{0}/{1}", appPath, path);
+		    };
+		  }
+  ]);
 
-		"./Service/StyleSetting.js",
-		"./Service/History.js",
-
-		"./Helper/TemplateEditor.js",
-		"./Helper/CSS.js"
-	],
-	function (angular, LazyConfig)
-	{
-		var moduleId = "Cerberus.Tool.TemplateEditor";
-		return angular
-			.module(moduleId,
-			[
-				"ui.router",
-				"Cerberus.Tool.TemplateEngine",
-				"Cerberus.Tool.TemplateEditor.Localization",
-				"Cerberus.Tool.TemplateEditor.Service.StyleSetting",
-				"Cerberus.Tool.TemplateEditor.Service.History",
-				"Cerberus.Tool.TemplateEditor.Helper.TemplateEditor",
-				"Cerberus.Tool.TemplateEditor.Helper.CSS"
-			])
-			.constant("TemplateEditorPath", window.location.pathname)
-			.config(LazyConfig(moduleId))
-			.config(
-			[
-				"Cerberus.Tool.TemplateEngine.Service.TemplateProvider",
-				function (TemplateProvider)
-				{
-					TemplateProvider.SetProvider(Cerberus.Tool.TemplateEngine.Service.TemplateLocalStorageProvider);
-				}
-			])
-			.service("Cerberus.Tool.TemplateEditor.Service.PathResolver",
-			[
-				"TemplateEditorPath",
-				function (modulePath)
-				{
-				  this.Resolve = function (path)
-				  {
-				    return String.format("{0}{1}", modulePath, path);
-				  };
-				}
-			]);
-	});
+  if (define && define.amd) {
+    define([], app);
+  }
+})(window.angular, window.define);

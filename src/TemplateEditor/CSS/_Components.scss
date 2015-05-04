@@ -1,0 +1,64 @@
+﻿cs-component {
+  cursor: default;
+
+  > * {
+    pointer-events: none;
+  }
+
+  &::after {
+    @include transition(box-shadow 0.3s);
+    position: absolute;
+    content: "";
+    box-shadow: none;
+    display: block;
+  }
+
+  &:hover::before,
+  &.ui-resizable-resizing::before {
+    background-color: #eaeaea;
+    border: 1px solid rgba(213, 213, 213, 1);
+    border-bottom: none;
+    border-radius: 0 4px 0 0;
+    bottom: 100%;
+    color: black;
+    content: attr(data-friendly-name) " - " attr(data-component-name);
+    display: block;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
+    left: 0;
+    letter-spacing: normal;
+    padding: 2px;
+    position: absolute;
+    z-index: 1001;
+    text-shadow: none;
+  }
+
+  &.hidden {
+    display: table;
+    opacity: 0.1;
+  }
+
+  &.selected::after {
+    -webkit-border-radius: initial;
+    border-radius: inherit;
+    box-shadow: 0 0 1px 1px #3F607F, 0 0 10px 1px #3F607F;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+
+  &[data-friendly-name=""]:hover::before,
+  &[data-friendly-name=""].ui-resizable-resizing::before {
+    content: attr(data-component-name);
+  }
+
+  &.fixed {
+    margin-left: 40px;
+    margin-top: 220px;
+  }
+}

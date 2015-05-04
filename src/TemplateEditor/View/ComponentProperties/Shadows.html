@@ -1,0 +1,21 @@
+﻿<div>
+	<label ng-bind="::Localization.ComponentProperties.TextShadow"></label>
+	<div class="four columns">
+		<input type="text" ng-model="VisualProperties.textShadow.color" title="{{::Localization.ComponentProperties.Color}}" placeholder="{{::Localization.ComponentProperties.Color}}" />
+		<input type="text" ng-model="VisualProperties.textShadow.hShadow" title="{{::Localization.ComponentProperties.HorizontalOffset}}" placeholder="{{::Localization.ComponentProperties.HorizontalOffset}}" />
+		<input type="text" ng-model="VisualProperties.textShadow.vShadow" title="{{::Localization.ComponentProperties.VerticalOffset}}" placeholder="{{::Localization.ComponentProperties.VerticalOffset}}" />
+		<input type="text" ng-model="VisualProperties.textShadow.blurRadius" title="{{::Localization.ComponentProperties.BlurRadius}}" placeholder="{{::Localization.ComponentProperties.BlurRadius}}" />
+	</div>
+</div>
+
+<div>
+	<label ng-bind="::Localization.ComponentProperties.BoxShadow"></label>
+	<div class="five columns">
+		<input type="text" ng-model="VisualProperties.boxShadow.color" title="{{::Localization.ComponentProperties.Color}}" placeholder="{{::Localization.ComponentProperties.Color}}" />
+		<input type="text" ng-model="VisualProperties.boxShadow.hShadow" title="{{::Localization.ComponentProperties.HorizontalOffset}}" placeholder="{{::Localization.ComponentProperties.HorizontalOffset}}" />
+		<input type="text" ng-model="VisualProperties.boxShadow.vShadow" title="{{::Localization.ComponentProperties.VerticalOffset}}" placeholder="{{::Localization.ComponentProperties.VerticalOffset}}" />
+		<input type="text" ng-model="VisualProperties.boxShadow.blurRadius" title="{{::Localization.ComponentProperties.BlurRadius}}" placeholder="{{::Localization.ComponentProperties.BlurRadius}}" />
+		<input type="text" ng-model="VisualProperties.boxShadow.spreadRadius" title="{{::Localization.ComponentProperties.SpreadRadius}}" placeholder="{{::Localization.ComponentProperties.SpreadRadius}}" />
+		<input type="checkbox" ng-model="VisualProperties.boxShadow.inset" title="{{::Localization.ComponentProperties.InnerShadow}}" />
+	</div>
+</div>

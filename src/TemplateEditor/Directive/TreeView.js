@@ -1,87 +1,69 @@
-﻿define(
-	[
-		"../App.js",
+﻿(function (angular) {
+  "use strict";
 
-		"/Module/CMS/Service/Folder.js"
-	],
-	function (templateEditorModule)
-	{
-		return templateEditorModule
-			.directive("treeview",
-			[
+  angular
+    .module("Cerberus.TemplateEditor")
+		.directive("treeview", [
 				"Cerberus.Module.CMS.Service.Folder",
-				function (FolderService)
-				{
-					return {
-						restrict: "A",
-						scope:
-						{
-							ngModel: "="
-						},
-						template: 
+				function (FolderService) {
+				  return {
+				    restrict: "A",
+				    scope: {
+				      ngModel: "="
+				    },
+				    template:
 							'<li ng-repeat="folder in Folders" treeviewitem="{{folder.Id}}" ng-class="{ expanded: IsExpanded, selected: ngModel.FolderId == folder.Id }">\
 								<span ng-bind="folder.Name" ng-click="Expand(folder.Id)" />\
 							</li>',
 
-						link: function (scope, element, attributes)
-						{
-							function Populate()
-							{
-								var folderId = ~~attributes.folderid;
-								scope.Folders = FolderService.GetFolders(folderId);
+				    link: function (scope, element, attributes) {
+				      function Populate() {
+				        var folderId = ~~attributes.folderid;
+				        scope.Folders = FolderService.GetFolders(folderId);
 
-								var index = scope.ngModel.ExpandFolderList.indexOf(scope.ngModel.FolderId);
-							}
+				        var index = scope.ngModel.ExpandFolderList.indexOf(scope.ngModel.FolderId);
+				      }
 
-							var clearWatch = scope.$watch("ngModel.ExpandFolderList", function()
-							{
-								if (!scope.ngModel.ExpandFolderList)
-								{
-									return;
-								}
+				      var clearWatch = scope.$watch("ngModel.ExpandFolderList", function () {
+				        if (!scope.ngModel.ExpandFolderList) {
+				          return;
+				        }
 
-								clearWatch();
-								Populate();
-							});
-						}
-					};
+				        clearWatch();
+				        Populate();
+				      });
+				    }
+				  };
 				}
-			])
-			.directive("treeviewitem",
-			[
-				"$compile",
-				function ($compile)
-				{
-					return {
-						restrict: "A",
-						link: function (scope, element, attributes)
-						{
-							scope.Expand = function (folderId, isAutoExpanding)
-							{
-								scope.IsExpanded = !scope.IsExpanded;
+		])
+		.directive("treeviewitem", [
+			"$compile",
+			function ($compile) {
+			  return {
+			    restrict: "A",
+			    link: function (scope, element, attributes) {
+			      scope.Expand = function (folderId, isAutoExpanding) {
+			        scope.IsExpanded = !scope.IsExpanded;
 
-								if (!isAutoExpanding)
-								{
-									scope.ngModel.FolderId = folderId;
-								}
+			        if (!isAutoExpanding) {
+			          scope.ngModel.FolderId = folderId;
+			        }
 
-								if (!scope.IsCached)
-								{
-									scope.IsCached = true;
-									
-									var compile = $compile(String.format('<ul data-treeview folderid="{0}" ng-model="ngModel"></ul>', folderId));
-									element.append(compile(scope));
-								}
-							};
+			        if (!scope.IsCached) {
+			          scope.IsCached = true;
 
-							//Autoexpand
-							//TODO: Can be optimized
-							if (scope.ngModel.ExpandFolderList.indexOf(~~attributes.treeviewitem) >= 0)
-							{
-								scope.Expand(~~attributes.treeviewitem, true);
-							}
-						}
-					};
-				}
-			]);
-	});
+			          var compile = $compile(String.format('<ul data-treeview folderid="{0}" ng-model="ngModel"></ul>', folderId));
+			          element.append(compile(scope));
+			        }
+			      };
+
+			      //Autoexpand
+			      //TODO: Can be optimized
+			      if (scope.ngModel.ExpandFolderList.indexOf(~~attributes.treeviewitem) >= 0) {
+			        scope.Expand(~~attributes.treeviewitem, true);
+			      }
+			    }
+			  };
+			}
+		]);
+})(window.angular);

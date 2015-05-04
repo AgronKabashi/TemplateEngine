@@ -1,195 +1,176 @@
-define(
-	[
-		"angular"
-	],
-	function (angular)
-	{
-		return angular
-			.module("Cerberus.Tool.TemplateEditor.Localization", [])
-			.factory("Cerberus.Tool.TemplateEditor.Localization", function ()
-			{
-				return {
-					Generic:
-					{
-						Back: "Back",
+(function (angular) {
+  "use strict";
 
-						Restore: "Restore to Default",
-						Save: "Save",
-						SaveExit: "Save and Exit",
-						Cancel: "Cancel",
+  angular
+    .module("Cerberus.TemplateEditor")
+    .factory("Cerberus.TemplateEditor.Localization", function () {
+      return {
+        Generic: {
+          Back: "Back",
 
-						Yes: "Yes",
-						No: "No",
+          Restore: "Restore to Default",
+          Save: "Save",
+          SaveExit: "Save and Exit",
+          Cancel: "Cancel",
 
-						Exit: "Exit",
+          Yes: "Yes",
+          No: "No",
 
-						EditSettings: "Edit Settings",
+          Exit: "Exit",
 
-						Add: "Add",
-						Edit: "Edit",
-						Update: "Update",
-						Remove: "Remove",
+          EditSettings: "Edit Settings",
 
-						Cancel: "Cancel",
-						Apply: "Apply"
-					},
+          Add: "Add",
+          Edit: "Edit",
+          Update: "Update",
+          Remove: "Remove",
 
-					TemplateControlResolutions:
-					{
-						ReachedMaximumResolutions: "MAXRESOLUTIONS REACHED",
-						NotEnoughSpace: "NOT ENOUGH SPACE"
-					},
+          Apply: "Apply"
+        },
 
-					TemplateControlActions:
-					{
-						RemoveSelectedTemplateControls: "Remove selected template control(s)",
-						DistributeVisualPropertiesToAllResolutions: "Distribute visual properties across all resolutions",
-						DistributeVisualPropertiesToLowerResolutions: "Distribute visual properties to lower resolutions",
-						DistributeVisualPropertiesToHigherResolutions: "Distribute visual properties to higher resolutions",
-						DistributeVisualPropertiesToResolutions: "Distribute visual properties to resolution...",
-						ShowHiddenControls: "Show Hidden Elements"
-					},
-					TemplateControlProperties:
-					{
-						Class: "Class",
-						Visible: "Visible",
-						Hidden: "Hidden",
-						Generic: "Generic",
-						ZIndex: "Z-depth",
-						TemplateControlName: "Name",
-						Layout: "Layout",
-						Left: "Left",
-						Top: "Top",
-						Right: "Right",
-						Bottom: "Bottom",
-						Width: "Width",
-						Height: "Height",
-						MinWidth: "Minimum Width",
-						MinHeight: "Minimum Height",
-						Center: "Center",
+        TemplateResolutions: {
+          ReachedMaximumResolutions: "MAXRESOLUTIONS REACHED",
+          NotEnoughSpace: "NOT ENOUGH SPACE"
+        },
 
-						RotateZ: "Rotate",
-						RotateZPlaceHolder: "Specify in deg, turn or rad",
+        ComponentActions: {
+          RemoveSelectedComponents: "Remove selected component(s)",
+          DistributeVisualPropertiesToAllResolutions: "Distribute visual properties across all resolutions",
+          DistributeVisualPropertiesToLowerResolutions: "Distribute visual properties to lower resolutions",
+          DistributeVisualPropertiesToHigherResolutions: "Distribute visual properties to higher resolutions",
+          DistributeVisualPropertiesToResolutions: "Distribute visual properties to resolution...",
+          ShowHiddenControls: "Show Hidden Elements"
+        },
+        ComponentProperties: {
+          Class: "Class",
+          Visible: "Visible",
+          Hidden: "Hidden",
+          Generic: "Generic",
+          ZIndex: "Render Order",
+          ComponentName: "Name",
+          Layout: "Layout",
+          Left: "Left",
+          Top: "Top",
+          Right: "Right",
+          Bottom: "Bottom",
+          Width: "Width",
+          Height: "Height",
+          MinWidth: "Minimum Width",
+          MinHeight: "Minimum Height",
+          Center: "Center",
 
-						FontAndColors: "Font and Colors",
-						Typeface: "Typeface",
-						Size: "Size",
-						Color: "Color",
-						TextAlign: "Text Align",
-						TextTransform: "Text Transform",
-						NoWrap: "Don't wrap",
-						Scrollable: "Enable scroll",
+          RotateZ: "Rotate",
+          RotateZPlaceHolder: "Specify in deg, turn or rad",
 
-						Background: "Background",
-						Image: "Image",
-						ImageRepeat: "Image Repeat",
-						ImagePosition: "Image Position",
+          FontAndColors: "Font and Colors",
+          Typeface: "Typeface",
+          Size: "Size",
+          Color: "Color",
+          TextAlign: "Text Align",
+          TextTransform: "Text Transform",
+          NoWrap: "Don't wrap",
+          Scrollable: "Enable scroll",
 
-						Border: "Border",
-						BorderRadius: "Radius",
-						Padding: "Padding",
-						Top: "Top",
-						Right: "Right",
-						Bottom: "Bottom",
-						Left: "Left",
-						TopLeft: "TopLeft",
-						TopRight: "TopRight",
-						BottomRight: "BottomRight",
-						BottomLeft: "BottomLeft",
+          Background: "Background",
+          Image: "Image",
+          ImageRepeat: "Image Repeat",
+          ImagePosition: "Image Position",
 
-						Shadows: "Shadows",
-						BoxShadow: "Box",
-						TextShadow: "Text",
-						HorizontalOffset: "Horizontal Offset",
-						VerticalOffset: "Vertical Offset",
-						InnerShadow: "Inner Shadow",
-						BlurRadius: "Blur Radius",
-						SpreadRadius: "Spread Radius",
+          Border: "Border",
+          BorderRadius: "Radius",
+          Padding: "Padding",
+          TopLeft: "TopLeft",
+          TopRight: "TopRight",
+          BottomRight: "BottomRight",
+          BottomLeft: "BottomLeft",
 
-						Opacity: "Opacity",
-						OpacityPlaceHolder: "Range: 0.0 - 1.0",
-						ImageSource: "Image Source",
-						ImageSize: "Image Size",
-						ImageSourcePlaceHolder: "Path to image",
+          Shadows: "Shadows",
+          BoxShadow: "Box",
+          TextShadow: "Text",
+          HorizontalOffset: "Horizontal Offset",
+          VerticalOffset: "Vertical Offset",
+          InnerShadow: "Inner Shadow",
+          BlurRadius: "Blur Radius",
+          SpreadRadius: "Spread Radius",
 
-						Content: "Content",
+          Opacity: "Opacity",
+          OpacityPlaceHolder: "Range: 0.0 - 1.0",
+          ImageSource: "Image Source",
+          ImageSize: "Image Size",
+          ImageSourcePlaceHolder: "Path to image",
 
-						BrowserDefault: "Browser Default",
-						BorderSolid: "Solid",
-						BorderDashed: "Dashed",
-						BorderDotted: "Dotted",
-						BorderGroove: "Groove",
-						BorderDouble: "Double",
-						BorderInset: "Inset",
-						BorderOutset: "Outset",
-						Repeat: "Repeat",
-						RepeatHorizontally: "Repeat Horizontally",
-						RepeatVertically: "Repeat Vertically",
-						DontRepeat: "Do not Repeat",
+          Content: "Content",
 
-						Contain: "Contain",
-						Cover: "Cover",
+          BrowserDefault: "Browser Default",
+          BorderSolid: "Solid",
+          BorderDashed: "Dashed",
+          BorderDotted: "Dotted",
+          BorderGroove: "Groove",
+          BorderDouble: "Double",
+          BorderInset: "Inset",
+          BorderOutset: "Outset",
+          Repeat: "Repeat",
+          RepeatHorizontally: "Repeat Horizontally",
+          RepeatVertically: "Repeat Vertically",
+          DontRepeat: "Do not Repeat",
 
-						Misc: "Misc",
-						ItemSpacing: "Item Spacing",
-						ItemSpacingPlaceHolder: "Specify in pixels"
-					},
+          Contain: "Contain",
+          Cover: "Cover",
 
-					ControlPluginNames:
-					{
-						Text: "Text",
-						Link: "Link",
-						Menu: "Menu",
-						Sharer: "Sharer",
-						TableOfContents: "Table of Contents",
-						YouTube: "YouTube",
-						RTF: "Rich Text Format",
-						RSS: "RSS",
-						ArticleList: "Article List",
-						Video: "Video",
-						Carousel: "Carousel",
-						Album: "Album"
-					},
+          Misc: "Misc",
+          ItemSpacing: "Item Spacing",
+          ItemSpacingPlaceHolder: "Specify in pixels"
+        },
 
-					TemplateControlPlugin:
-					{
-						Link:
-						{
-							Text: "Content",
-							Tooltip: "Tooltip",
-							Url: "Url",
-							Target: "Target",
+        ComponentPluginNames: {
+          Text: "Text",
+          Link: "Link",
+          Menu: "Menu",
+          Sharer: "Sharer",
+          TableOfContents: "Table of Contents",
+          YouTube: "YouTube",
+          RTF: "Rich Text Format",
+          RSS: "RSS",
+          ArticleList: "Article List",
+          Video: "Video",
+          Carousel: "Carousel",
+          Album: "Album"
+        },
 
-							TooltipPlaceHolder: "Enter a descriptive text",
-							TextPlaceHolder: "Enter text",
-							UrlPlaceHolder: "Enter a link to navigate to"
-						},
-						YouTube:
-						{
-							VideoId: "Video Id",
-							VideoIdPlaceHolder: "Video Id",
-							AutoPlay: "Autoplay",
-							StartTime: "Start Time",
-							LoopInfinitely: "Loop",
-							ShowControls: "Show player controls",
-							DisableKeyboard: "Disable keyboard shortcuts",
-							HideYouTubeBrand: "Hide YouTube Brand",
-							ShowInfo: "Show Video Info"
-						},
-						TableOfContents:
-						{
-							Source: "Source"
-						},
-						RSS:
-						{
-							Url: "Url",
-							ShowTitle: "Title",
-							ShowDescription: "Description",
-							ShowStoryDescription: "Story Description",
-							ShowStoryDate: "Story Date",
-							MaxStories: "Max Stories"
-						}
-					}
-				}
-			});
-	});
+        Component: {
+          Link: {
+            Text: "Content",
+            Tooltip: "Tooltip",
+            Url: "Url",
+            Target: "Target",
+
+            TooltipPlaceHolder: "Enter a descriptive text",
+            TextPlaceHolder: "Enter text",
+            UrlPlaceHolder: "Enter a link to navigate to"
+          },
+          YouTube: {
+            VideoId: "Video Id",
+            VideoIdPlaceHolder: "Video Id",
+            AutoPlay: "Autoplay",
+            StartTime: "Start Time",
+            LoopInfinitely: "Loop",
+            ShowControls: "Show player controls",
+            DisableKeyboard: "Disable keyboard shortcuts",
+            HideYouTubeBrand: "Hide YouTube Brand",
+            ShowInfo: "Show Video Info"
+          },
+          TableOfContents: {
+            Source: "Source"
+          },
+          RSS: {
+            Url: "Url",
+            ShowTitle: "Title",
+            ShowDescription: "Description",
+            ShowStoryDescription: "Story Description",
+            ShowStoryDate: "Story Date",
+            MaxStories: "Max Stories"
+          }
+        }
+      }
+    });
+})(window.angular);

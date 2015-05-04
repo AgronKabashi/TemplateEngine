@@ -1,0 +1,9 @@
+﻿<div class="componentplugin-filter-container">
+	<ul>
+		<li ng-repeat="filter in Filters"
+			ng-bind="filter.Name"
+			ng-click="SetFilter(filter)"
+			ng-class="{ 'btn-primary': filter.selected, 'btn btn-default': true }">
+		</li>
+	</ul>
+</div>

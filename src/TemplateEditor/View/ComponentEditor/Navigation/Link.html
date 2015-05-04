@@ -1,0 +1,22 @@
+﻿<div>
+	<label ng-bind="::Localization.Component.Link.Url"></label>
+	<input type="text" ng-model="Content.Url" placeholder="{{::Localization.Component.Link.UrlPlaceHolder}}" />
+</div>
+
+<div>
+	<label ng-bind="::Localization.Component.Link.Text"></label>
+	<input type="text" ng-model="Content.Text" placeholder="{{::Localization.Component.Navigation.TextPlaceHolder}}" />
+</div>
+
+<div>
+	<label ng-bind="::Localization.Component.Link.Tooltip"></label>
+	<input type="text" ng-model="Content.Tooltip" placeholder="{{::Localization.Component.Navigation.TooltipPlaceHolder}}" />
+</div>
+
+<div>
+	<label ng-bind="::Localization.Component.Link.Target">Target</label>
+	<select ng-model="Content.Target" class="dropdown-list">
+		<option value="_blank">New Window</option>
+		<option value="">Same Window</option>
+	</select>
+</div>

@@ -1,0 +1,41 @@
+﻿input.slider[type="checkbox"] {
+  height: 0;
+  font-size: 0;
+  width: 0;
+  opacity: 0;
+  -moz-appearance: checkbox-container; //Firefox doesn't allow checkbox sizing so we need to change its appearance to not affect the layout
+  & + label {
+    @include transition(background-color 0.2s cubic-bezier(.55,0,.1,1));
+    -webkit-tap-highlight-color: transparent;
+    background-color: #333;
+    border-radius: 12px;
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    width: 28px;
+
+    &::after {
+      @include transition(left 0.2s cubic-bezier(.55,0,.1,1));
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px #bdbdbd;
+      content: "";
+      display: block;
+      height: 16px;
+      left: 0;
+      margin-left: -2px;
+      position: absolute;
+      top: 1px;
+      width: 16px;
+    }
+  }
+  //Move the slider to enabled position when checked
+  &:checked + label::after {
+    left: 14px;
+  }
+  //Set the fill color for enabled state
+  &:checked + label {
+    background-color: $activeColor;
+  }
+}

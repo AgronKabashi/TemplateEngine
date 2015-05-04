@@ -1,0 +1,16 @@
+﻿<div class="container" ng-class="{collapsed: !IsExpanded }">
+    <ul class="component-plugins collapsed">
+        <li class="component-plugin"
+            ng-repeat="componentPlugin in ComponentPlugins"
+            ng-show="componentPlugin.Category == CurrentFilter.Category || CurrentFilter.Category == null"
+            data-control-type="{{ ::componentPlugin.ComponentType }}"
+            data-control-category="{{ ::componentPlugin.Category }}"
+            data-name="{{ ::componentPlugin.Name }}">
+            <img class="plugin-image" ng-src="{{::ApplicationBasePath}}Images/ComponentPlugins/{{::componentPlugin.ImageUrl}}" />
+            <span ng-bind="::Localization.ComponentPluginNames[componentPlugin.Name]"></span>
+        </li>
+    </ul>
+    <div class="expand-collapse-section">
+        <a ng-click="IsExpanded = !IsExpanded"></a>
+    </div>
+</div>

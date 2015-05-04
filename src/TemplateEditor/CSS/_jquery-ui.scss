@@ -1,0 +1,37 @@
+﻿.ui-resizable-handle {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.ui-resizable-w {
+  cursor: w-resize;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 5px;
+}
+
+.ui-resizable-e {
+  cursor: e-resize;
+  height: 100%;
+  right: 0;
+  top: 0;
+  width: 5px;
+}
+
+.ui-resizable-se {
+  cursor: se-resize;
+  height: 10px;
+  right: 0;
+  width: 10px;
+  bottom: 0;
+}

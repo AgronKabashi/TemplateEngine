@@ -1,50 +1,18 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<link href="demo.css" rel="stylesheet" />
-	<link href="http://fonts.googleapis.com/css?family=Ropa+Sans|Roboto:400,300|Droid+Sans:400,700|Rouge+Script" rel="stylesheet" type="text/css">
+  <title></title>
+  <link href="demo.css" rel="stylesheet" />
+  <!--<link href="http://fonts.googleapis.com/css?family=Ropa+Sans|Roboto:400,300|Droid+Sans:400,700|Rouge+Script" rel="stylesheet" type="text/css">-->
+  <link href="TemplateEngine/CSS/TemplateEngine.css" rel="stylesheet" />
 </head>
-<body ng-controller="DemoController">
-	<section class="page-content">
-		<h1>TemplateEngine Demo</h1>
-		<div class="introduction">
-			<p>
-				Welcome! TemplateEngine is a powerful HTML5 templating framework that helps you build web applications using HTML, CSS, and Javascript!
-			</p>
-			<p>
-				This demo will help you get acquainted with the TemplateEngine Editor through hands-on experience. Simply create a template using one
-				of the presets below and go wild!
-			</p>
-			<p>
-				For ideas on how TemplateEngine can be applied in real world applications, please check out the wiki pages on <a href="https://github.com/AgronKabashi/TemplateEngine" target="_blank">GitHub</a>.
-			</p>
-		</div>
+<body>
+  <ui-view></ui-view>
 
-		<select ng-model="templatePreset" ng-options="templatePreset.Name for templatePreset in TemplatePresets">
-			<option value="">Blank Template</option>
-		</select>
-
-		<button ng-click="AddTemplate(templatePreset)">Add Template</button>
-
-		<ul class="list">
-			<li class="list-header">
-				<span>Name</span>
-				<span></span>
-			</li>
-			<li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
-				<span ng-bind="template.Name"></span>
-				<div class="button-group">
-					<a ng-href="./TemplateEditor/#/Template/{{template.Id}}?ExitUrl=../">Edit</a>
-					<a href="#" ng-click="RemoveTemplate(template)">Remove</a>
-				</div>
-			</li>
-			<li ng-class="{hidden: Templates && Templates.length}">
-				<i>No Templates</i>
-			</li>
-		</ul>
-	</section>
-
-	<script src="DependencyConfig.js"></script>
-	<script src="TemplateEditor/Dependencies/requireJS/v2.1.11/require.min.js" data-main="App.js"></script>
+  <!--<script src="//cdn.jsdelivr.net/g/lodash@3.3.0,jquery,jquery.ui,angularjs@1.3.9(angular.min.js+angular-sanitize.min.js),angular.ui-router@0.2.13"></script>-->
+  <script src="depcache.js"></script>
+  <script src="TemplateEngine/TemplateEngine.js"></script>
+  <script src="TemplateEditor/TemplateEditor.js"></script>
+  <script src="App.js"></script>
 </body>
 </html>

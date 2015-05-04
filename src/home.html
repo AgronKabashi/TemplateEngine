@@ -1,0 +1,38 @@
+﻿<section class="page-content">
+    <h1>TemplateEngine Demo</h1>
+    <div class="introduction">
+      <p>
+        Welcome! TemplateEngine is a powerful HTML5 templating framework that helps you build web applications using HTML, CSS, and Javascript!
+      </p>
+      <p>
+        This demo will help you get acquainted with the TemplateEngine Editor through hands-on experience. Simply create a template using one
+        of the presets below and go wild!
+      </p>
+      <p>
+        For ideas on how TemplateEngine can be applied in real world applications, please check out the wiki pages on <a href="https://github.com/AgronKabashi/TemplateEngine" target="_blank">GitHub</a>.
+      </p>
+    </div>
+
+    <select ng-model="templatePreset" ng-options="templatePreset.Name for templatePreset in TemplatePresets">
+      <option value="">Blank Template</option>
+    </select>
+
+    <button ng-click="AddTemplate(templatePreset)">Add Template</button>
+
+    <ul class="list">
+      <li class="list-header">
+        <span>Name</span>
+        <span></span>
+      </li>
+      <li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
+        <a ng-bind="template.Name" ui-sref="View({Id: template.Id})"></a>
+        <div class="button-group">
+          <a ui-sref="Design({Id: template.Id})">Edit</a>
+          <a ng-click="RemoveTemplate(template)">Remove</a>
+        </div>
+      </li>
+      <li class="empty-list-message" ng-class="{hidden: Templates && Templates.length}">
+        <i>No Templates</i>
+      </li>
+    </ul>
+  </section>

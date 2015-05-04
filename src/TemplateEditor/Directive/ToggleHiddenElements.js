@@ -1,31 +1,19 @@
-﻿define(
-	[
-		"../App.js"
-	],
-	function (app)
-	{
-		return app
-			.directive("csToggleHiddenElements", function ()
-			{
-				return {
-					restrict: "A",
-					scope: false,
-					link: function (scope, element, attributes)
-					{
-						var templateElement = element.find(".template");
+﻿(function (angular) {
+  "use strict";
 
-						scope.$on("ShowHiddenElements", function (scope, enable)
-						{
-							if (enable)
-							{
-								element.addClass("show-hidden-elements");
-							}
-							else
-							{
-								element.removeClass("show-hidden-elements");
-							}
-						});
-					}
-				}
-			});
-	});
+  angular
+    .module("Cerberus.TemplateEditor")
+		.directive("csTogglehiddenelements", [
+      "Cerberus.TemplateEngine.Service.Event",
+      function (EventService) {
+        return {
+          restrict: "A",
+          link: function (scope, element, attributes) {
+            EventService.Subscribe("ShowHiddenElements", function (enable) {
+              element.toggleClass("show-hidden-elements", enable);
+            });
+          }
+        }
+      }
+		]);
+})(window.angular);

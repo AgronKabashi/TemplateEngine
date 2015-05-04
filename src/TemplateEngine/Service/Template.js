@@ -1,46 +1,25 @@
-define(
-	[
-		"angular",
+(function (angular) {
+  angular
+    .module("Cerberus.TemplateEngine")
+    .provider("Cerberus.TemplateEngine.Service.Template", function () {
+      var templateProvider = Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider,
+        templateProviderParameters = null;
 
-		"../Model/TemplateMode.js",
-		"../Model/Template.js",
-		"../Model/TemplateControl.js",
-		"../Model/Resolution.js",
+      this.SetProvider = function (provider, parameters) {
+        templateProvider = provider;
+        templateProviderParameters = parameters;
+      };
 
-		"./TemplateLocalStorageProvider.js",
-		"./TemplateRestProvider.js"
-	],
-	function (angular)
-	{
-		return angular
-			.module("Cerberus.Tool.TemplateEngine.Service.Template", [])
-			.provider("Cerberus.Tool.TemplateEngine.Service.Template",
-			[
-				function ()
-				{
-					var templateProvider = null,
-						templateProviderParameters = null;
+      this.$get = [
+        "$injector",
+        function ($injector) {
+          var templateProviderInstance = $injector.instantiate(templateProvider);
+          if (templateProviderParameters) {
+            templateProviderInstance.Configure(templateProviderParameters);
+          }
 
-					this.SetProvider = function (provider, parameters)
-					{
-						templateProvider = provider;
-						templateProviderParameters = parameters;
-					};
-
-					this.$get =
-					[
-						"$injector",
-						function ($injector)
-						{
-							var templateProviderInstance = $injector.instantiate(templateProvider);
-							if (templateProviderParameters)
-							{
-								templateProviderInstance.Configure(templateProviderParameters);
-							}
-
-							return templateProviderInstance;
-						}
-					];
-				}
-			]);
-	});
+          return templateProviderInstance;
+        }
+      ];
+    });
+})(angular);

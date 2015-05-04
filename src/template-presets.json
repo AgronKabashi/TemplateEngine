@@ -1,286 +1,671 @@
 ﻿{
-	"TemplatePresets": [
-		{
-			"Name": "Proof of Concept: Animation",
-			"Data": {
-				"CreatedDateAsString": "",
-				"Id": 0,
-				"LastModifiedDateAsString": "",
-				"Name": "",
-				"VisualProperties": "",
-				"Resolutions": [
-					{
-						"Id": 9,
-						"ResolutionValue": 627,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 5, "Value": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 6, "Value": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 7, "Value": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:240px;top:177px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 10, "Value": "left:386px;top:177px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 11, "Value": "left:248px;top:120px;width:10px;height:60px;transform:rotateZ(-205deg);-webkit-transform:rotateZ(-205deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 12, "Value": "left:427px;top:131px;width:10px;height:60px;transform:rotateZ(-155deg);-webkit-transform:rotateZ(-155deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					},
-					{
-						"Id": 10,
-						"ResolutionValue": 665,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 5, "Value": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 6, "Value": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 7, "Value": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:271px;top:216px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 10, "Value": "left:417px;top:216px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 11, "Value": "left:248px;top:120px;width:10px;height:60px;transform:rotateZ(-205deg);-webkit-transform:rotateZ(-205deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 12, "Value": "left:427px;top:131px;width:10px;height:60px;transform:rotateZ(-155deg);-webkit-transform:rotateZ(-155deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					},
-					{
-						"Id": 11,
-						"ResolutionValue": 703,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 5, "Value": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 6, "Value": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 7, "Value": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:284px;top:188px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 10, "Value": "left:430px;top:188px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 11, "Value": "left:248px;top:120px;width:10px;height:60px;transform:rotateZ(-205deg);-webkit-transform:rotateZ(-205deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 12, "Value": "left:427px;top:131px;width:10px;height:60px;transform:rotateZ(-155deg);-webkit-transform:rotateZ(-155deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					},
-					{
-						"Id": 12,
-						"ResolutionValue": 737,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 5, "Value": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 6, "Value": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 7, "Value": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:284px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 10, "Value": "left:430px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 11, "Value": "left:248px;top:120px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 12, "Value": "left:427px;top:131px;width:10px;height:60px;-webkit-transform:rotateZ(-115deg);transform:rotateZ(-115deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					},
-					{
-						"Id": 13,
-						"ResolutionValue": 768,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ;-webkit-transform:rotateZ(-90deg);transform:rotateZ(-90deg)" },
-							{ "Key": 5, "Value": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 6, "Value": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 7, "Value": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:284px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 10, "Value": "left:430px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white" },
-							{ "Key": 11, "Value": "left:248px;top:120px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 12, "Value": "left:427px;top:131px;width:10px;height:60px;-webkit-transform:rotateZ(-115deg);transform:rotateZ(-115deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					},
-					{
-						"Id": 14,
-						"ResolutionValue": 794,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ;-webkit-transform:rotateZ(-90deg);transform:rotateZ(-90deg)" },
-							{ "Key": 5, "Value": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 6, "Value": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 7, "Value": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:284px;top:188px;width:26px;height:26px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%" },
-							{ "Key": 10, "Value": "left:430px;top:188px;width:26px;height:26px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%" },
-							{ "Key": 11, "Value": "left:248px;top:120px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 12, "Value": "left:427px;top:131px;width:10px;height:60px;-webkit-transform:rotateZ(-115deg);transform:rotateZ(-115deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					},
-					{
-						"Id": 15,
-						"ResolutionValue": 824,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 5, "Value": "left:168px;top:54px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 6, "Value": "left:88px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 7, "Value": "left:168px;top:374px;width:316px;height:166px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:284px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%" },
-							{ "Key": 10, "Value": "left:420px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%" },
-							{ "Key": 11, "Value": "left:248px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 12, "Value": "left:427px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					},
-					{
-						"Id": 16,
-						"ResolutionValue": 10000,
-						"TemplateControlVisualProperties": [
-							{ "Key": 3, "Value": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 4, "Value": "left:494px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 5, "Value": "left:168px;top:54px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 6, "Value": "left:88px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 7, "Value": "left:168px;top:374px;width:316px;height:166px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 8, "Value": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px" },
-							{ "Key": 9, "Value": "left:284px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%" },
-							{ "Key": 10, "Value": "left:420px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%" },
-							{ "Key": 11, "Value": "left:248px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 12, "Value": "left:427px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px " },
-							{ "Key": 13, "Value": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc" }
-						]
-					}
-				],
-				"TemplateControls": [
-					{
-						"Id": 3,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 4,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 5,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 6,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 7,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 8,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 9,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 10,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 11,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 12,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					},
-					{
-						"Id": 13,
-						"ControlType": "Cerberus.Tool.TemplateEngine.Controller.ControlPlugin.Basic.Text",
-						"Category": "Basic",
-						"FriendlyName": "",
-						"ControlName": "Text",
-						"Content": "",
-						"VisualProperties": "left:0px;top:0px;",
-						"Class": "",
-						"Content": "",
-						"CreationGUID": ""
-					}
-				]
-			}
-		}
-	]
+  "TemplatePresets": [
+    {
+      "Name": "Proof of Concept: Animation",
+      "Data": {
+        "CreatedDateAsString": "",
+        "Id": 0,
+        "LastModifiedDateAsString": "",
+        "Name": "",
+        "VisualProperties": "",
+        "Resolutions": [
+          {
+            "Id": 1,
+            "ResolutionValue": 627,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "4": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "5": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:240px;top:177px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "8": "left:386px;top:177px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "9": "left:248px;top:120px;width:10px;height:60px;transform:rotateZ(-205deg);-webkit-transform:rotateZ(-205deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "10": "left:427px;top:131px;width:10px;height:60px;transform:rotateZ(-155deg);-webkit-transform:rotateZ(-155deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          },
+          {
+            "Id": 2,
+            "ResolutionValue": 665,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "4": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "5": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:271px;top:216px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "8": "left:417px;top:216px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "9": "left:248px;top:120px;width:10px;height:60px;transform:rotateZ(-205deg);-webkit-transform:rotateZ(-205deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "10": "left:427px;top:131px;width:10px;height:60px;transform:rotateZ(-155deg);-webkit-transform:rotateZ(-155deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          },
+          {
+            "Id": 3,
+            "ResolutionValue": 703,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "4": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "5": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:284px;top:188px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "8": "left:430px;top:188px;width:26px;height:26px;border-top-left-radius:50%;border-top-right-radius:50%;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "9": "left:248px;top:120px;width:10px;height:60px;transform:rotateZ(-205deg);-webkit-transform:rotateZ(-205deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "10": "left:427px;top:131px;width:10px;height:60px;transform:rotateZ(-155deg);-webkit-transform:rotateZ(-155deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          },
+          {
+            "Id": 4,
+            "ResolutionValue": 737,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "4": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "5": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:284px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "8": "left:430px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "9": "left:248px;top:120px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "10": "left:427px;top:131px;width:10px;height:60px;-webkit-transform:rotateZ(-115deg);transform:rotateZ(-115deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          },
+          {
+            "Id": 5,
+            "ResolutionValue": 768,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ;-webkit-transform:rotateZ(-90deg);transform:rotateZ(-90deg)",
+              "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "4": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "5": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:284px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "8": "left:430px;top:188px;width:26px;height:13px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white",
+              "9": "left:248px;top:120px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "10": "left:427px;top:131px;width:10px;height:60px;-webkit-transform:rotateZ(-115deg);transform:rotateZ(-115deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          },
+          {
+            "Id": 6,
+            "ResolutionValue": 794,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ;-webkit-transform:rotateZ(-90deg);transform:rotateZ(-90deg)",
+              "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "4": "left:88px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "5": "left:168px;top:274px;width:316px;height:266px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:284px;top:188px;width:26px;height:26px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%",
+              "8": "left:430px;top:188px;width:26px;height:26px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%",
+              "9": "left:248px;top:120px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "10": "left:427px;top:131px;width:10px;height:60px;-webkit-transform:rotateZ(-115deg);transform:rotateZ(-115deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          },
+          {
+            "Id": 7,
+            "ResolutionValue": 824,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "3": "left:168px;top:54px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "4": "left:88px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "5": "left:168px;top:374px;width:316px;height:166px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:284px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%",
+              "8": "left:420px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%",
+              "9": "left:248px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "10": "left:427px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          },
+          {
+            "Id": 8,
+            "ResolutionValue": 10000,
+            "ComponentVisualProperties": {
+              "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "2": "left:494px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "3": "left:168px;top:54px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "4": "left:88px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "5": "left:168px;top:374px;width:316px;height:166px;border-bottom-right-radius:40px;border-bottom-left-radius:40px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "6": "left:364px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
+              "7": "left:284px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%",
+              "8": "left:420px;top:128px;width:45px;height:45px;border-bottom-right-radius:50%;border-bottom-left-radius:50%;background-color:white;border-top-left-radius:50%;border-top-right-radius:50%",
+              "9": "left:248px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "10": "left:427px;top:60px;width:10px;height:60px;-webkit-transform:rotateZ(-195deg);transform:rotateZ(-195deg);border-bottom-right-radius:20px;border-bottom-left-radius:20px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
+              "11": "left:0px;top:661px;width:100%;height:100px;background-color:#ccc"
+            }
+          }
+        ],
+        "Components": [
+          {
+            "Id": 1,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 2,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 3,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 4,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 5,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 6,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 7,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 8,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 9,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 10,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          },
+          {
+            "Id": 11,
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "Category": "Basic",
+            "FriendlyName": "",
+            "Name": "Text",
+            "Content": { },
+            "VisualProperties": "left:0px;top:0px;",
+            "Class": "",
+            "CreationGUID": ""
+          }
+        ]
+      }
+    },
+    {
+      "Name": "Sample Start Page",
+      "Data": {
+        "Name": "Sample Start Page",
+        "Id": 0,
+        "VisualProperties": "",
+        "CreatedDateAsString": "",
+        "LastModifiedDateAsString": "",
+        "Components": [
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 1,
+            "VisualProperties": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 2,
+            "VisualProperties": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": {
+              "Text": "TemplateEngine"
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 3,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:212px;width:955px;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 4,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:320px;width:955px;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": {
+              "Text": "EDITOR FOR TEMPLATEENGINE"
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 5,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:708px;width:435px;height:100px;font-size:36px;color:rgb(0, 156, 220);font-family:Roboto"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": {
+              "Text": "Template Editor is a drag and drop application to assist you with building rich and advanced layouts for all manor of resolutions!\r\n\r\nWith Template Editor you can easily create templates to use for documents, web articles or even adverts."
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 6,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:823px;width:435px;height:202px;font-size:16px;font-family:Roboto"
+          },
+          {
+            "Category": "SocialMedia",
+            "Class": "",
+            "Content": { },
+            "Name": "Sharer",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer",
+            "FriendlyName": "",
+            "Id": 7,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:84px;width:113px;height:10px;background-color:transparent"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": {
+              "Text": "Design and build web applications using only your web browser!"
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 8,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:290px;width:955px;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "Menu",
+            "Id": 9,
+            "VisualProperties": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);-webkit-transform:undefined;text-align:right;background-position-x:undefined;background-position-y:undefined"
+          },
+          {
+            "Category": "Basic",
+            "Class": "RightPosIEFix",
+            "Content": {
+              "Text": "VISUAL EDITING"
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 10,
+            "VisualProperties": "right:calc((100% - 955px) / 2);top:1065px;width:435px;height:34px;font-size:36px;color:rgb(0, 156, 220);text-align:left;font-family:Roboto"
+          },
+          {
+            "Category": "Basic",
+            "Class": "RightPosIEFix",
+            "Content": {
+              "Text": "Template Editor allows you to set almost all standardized CSS3 settings on any element with ease!\r\n\r\nSimply select an element, configure its visual properties in the Property Pane and see your changes in real time."
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 11,
+            "VisualProperties": "right:calc((100% - 955px) / 2);top:1125px;width:435px;height:104px;font-size:16px;font-family:Roboto"
+          },
+          {
+            "Category": "Basic",
+            "Class": "RightPosIEFix",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 12,
+            "VisualProperties": "right:calc((100% - 955px) / 2);top:708px;width:500px;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 13,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:1065px;width:500px;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%"
+          },
+          {
+            "Category": "Navigation",
+            "Class": "",
+            "Content": { "Url": "", "Tooltip": "", "Text": "CERBERUS Solutions", "Target": "_self" },
+            "Name": "Link",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
+            "FriendlyName": "",
+            "Id": 14,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;transform:undefined"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 15,
+            "VisualProperties": "left:0px;width:100%;top:1900px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": { "Text": "RESPONSIVE DESIGN" },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 16,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:1450px;width:300px;font-family:Roboto;font-size:36px;color:rgb(0, 156, 220)"
+          },
+          {
+            "Category": "Basic",
+            "Class": "RightPosIEFix",
+            "Content": { },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 17,
+            "VisualProperties": "right:calc((100% - 955px) / 2);top:1450px;width:500px;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:0%"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": {
+              "Text": "TemplateEngine comes with built in Responsive Design features, allowing you to easily and visually design and build your applications for any resolution.\r\n\r\nWith Template Editor you can start creating your layout in any resolution first and add more later on. You don't have to go Mobile-First."
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 18,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:1560px;width:435px;font-size:16px;font-family:Roboto"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": {
+              "Text": "COPYRIGHT (©) 2014 by COMPANY-NAME. All rights reserved."
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 19,
+            "VisualProperties": "left:calc((100% - 955px) / 2);width:955px;height:10px;top:1960px;font-size:11px;text-align:center"
+          },
+          {
+            "Category": "Basic",
+            "Class": "",
+            "Content": {
+              "Text": "Contact us: \r\n<a href=\"mailto:info@company.com\">E-mail</a> - \r\n<a href=\"https://twitter.com/\" target=\"_blank\">Twitter</a> - \r\n<a href=\"https://www.facebook.com/\" target=\"_blank\">Facebook</a>"
+            },
+            "Name": "RTF",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.RTF",
+            "FriendlyName": "",
+            "Id": 20,
+            "VisualProperties": "left:calc((100% - 955px) / 2);top:1927px;width:955px;height:20px;font-size:12px;text-align:center"
+          },
+          {
+            "Category": "Basic",
+            "Class": "RightPosIEFix",
+            "Content": {
+              "Text": "DRAG AND DROP"
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 21,
+            "VisualProperties": "right:calc((100% - 955px) / 2);top:1255px;width:435px;height:49px;font-size:36px;color:rgb(235, 39, 79);font-family:Roboto"
+          },
+          {
+            "Category": "Basic",
+            "Class": "RightPosIEFix",
+            "Content": {
+              "Text": "Template Editor supports click, drag and drop actions allowing you to quickly place, move and scale elements."
+            },
+            "Name": "Text",
+            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "FriendlyName": "",
+            "Id": 22,
+            "VisualProperties": "right:calc((100% - 955px) / 2);top:1320px;width:435px;height:89px;font-size:16px;font-family:Roboto"
+          }
+        ],
+        "Resolutions": [
+          {
+            "Id": 1,
+            "ResolutionValue": 460,
+            "ComponentVisualProperties": {
+              "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
+              "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
+              "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:26px;color:rgb(254, 90, 0);text-align:center;font-weight:bold;min-width:300px",
+              "4": "left:0px;top:304px;width:100%;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-size:contain;background-position-x:50%;background-position-y:50%;min-width:300px",
+              "5": "left:10px;top:708px;width:95%;height:24px;font-family:Roboto;font-size:18px;color:rgb(0, 156, 220);min-width:300px",
+              "6": "left:10px;top:733px;width:95%;height:115px;font-family:Roboto;font-size:12px;padding-right:20px;min-width:300px",
+              "7": "left:30px;top:84px;width:113px;height:10px;background-color:transparent",
+              "8": "left:0px;top:264px;width:100%;height:28px;font-family:Roboto;font-size:14px;color:rgb(105, 109, 108);text-align:center;min-width:300px",
+              "9": "top:25px;width:95%;height:19px;font-family:Roboto;font-size:16px;text-align:left;left:10px",
+              "10": "left:10px;top:861px;width:95%;height:10px;font-family:Roboto;font-size:18px;color:rgb(0, 156, 220);text-align:left;min-width:300px",
+              "11": "left:10px;top:886px;width:95%;height:75px;font-family:Roboto;font-size:12px;min-width:300px",
+              "12": "right:10px;top:750px;width:56.2%;height:272px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-size:cover;background-position-x:0%;background-position-y:0%;display:none",
+              "13": "left:56px;top:1058px;width:78.7%;height:281px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%;display:none",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;display:none",
+              "15": "left:0px;top:1220px;width:100%;height:100px;border-top-style:solid;border-top-width:5px;border-top-color:rgb(216, 216, 216);background-color:rgb(236, 236, 236);min-width:300px",
+              "16": "left:10px;top:1055px;width:95%;height:15px;font-family:Roboto;font-size:18px;color:rgb(0, 156, 220);min-width:300px",
+              "17": "right:10px;top:1293px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:50%;background-position-y:50%;display:none",
+              "18": "left:10px;top:1080px;width:95%;font-family:Roboto;font-size:12px;min-width:300px",
+              "19": "left:0px;width:100%;height:10px;top:1260px;font-size:9px;text-align:center;min-width:300px",
+              "20": "left:0px;top:1230px;width:100%;height:20px;font-size:10px;text-align:center;min-width:300px",
+              "21": "left:10px;top:980px;width:95%;height:10px;font-family:Roboto;font-size:18px;color:rgb(235, 39, 79);min-width:300px",
+              "22": "left:10px;top:1005px;width:95%;height:39px;font-family:Roboto;font-size:12px;min-width:300px"
+            }
+          },
+          {
+            "Id": 2,
+            "ResolutionValue": 640,
+            "ComponentVisualProperties": {
+              "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
+              "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
+              "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
+              "4": "left:0px;top:320px;width:100%;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%;background-size:contain",
+              "5": "left:10px;top:708px;width:90%;height:42px;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220)",
+              "6": "left:10px;top:750px;width:40%;height:271px;font-family:Roboto;font-size:14px;padding-right:20px",
+              "7": "left:30px;top:84px;width:113px;height:10px;background-color:transparent",
+              "8": "left:0px;top:290px;width:100%;height:28px;font-family:Roboto;font-size:18px;text-align:center;color:#696D6C",
+              "9": "right:30px;top:25px;width:320px;height:19px;font-family:Roboto;font-size:16px;text-align:right",
+              "10": "top:1045px;width:95%;height:34px;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220);text-align:left;left:10px",
+              "11": "left:10px;top:1082px;width:95%;height:90px;font-family:Roboto;font-size:14px;-webkit-transform:undefined;background-position-x:undefined;background-position-y:undefined",
+              "12": "right:10px;top:750px;width:56.2%;height:272px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-size:cover;background-position-x:0%;background-position-y:0%",
+              "13": "left:56px;top:1058px;width:78.7%;height:281px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%;display:none",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black",
+              "15": "left:0px;width:100%;top:1700px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
+              "16": "left:10px;top:1345px;width:60%;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220)",
+              "17": "right:10px;top:1393px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:50%;background-position-y:50%",
+              "18": "left:10px;top:1395px;width:40%;font-family:Roboto;font-size:14px",
+              "19": "left:0px;width:100%;height:10px;top:1760px;font-size:11px;text-align:center",
+              "20": "left:0px;top:1727px;width:100%;height:20px;font-size:12px;text-align:center",
+              "21": "left:10px;top:1200px;width:95%;height:33px;font-family:Roboto;font-size:26px;color:rgb(235, 39, 79);background-position-x:undefined;background-position-y:undefined",
+              "22": "left:10px;top:1239px;width:94.9%;height:56px;font-family:Roboto;font-size:14px;-webkit-transform:undefined;background-position-x:undefined;background-position-y:undefined"
+            }
+          },
+          {
+            "Id": 3,
+            "ResolutionValue": 768,
+            "ComponentVisualProperties": {
+              "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
+              "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
+              "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
+              "4": "left:0px;top:320px;width:100%;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%;background-size:contain",
+              "5": "left:30px;top:708px;width:40%;height:64px;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220);transform:undefined",
+              "6": "left:30px;top:790px;width:40%;height:202px;font-size:14px;font-family:Roboto",
+              "7": "left:30px;top:84px;width:113px;height:10px;background-color:transparent",
+              "8": "left:0px;top:290px;width:100%;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C",
+              "9": "right:30px;top:25px;width:320px;height:19px;font-family:Roboto;font-size:16px;text-align:right",
+              "10": "right:30px;top:1045px;width:40%;height:34px;font-size:26px;color:rgb(0, 156, 220);text-align:left;font-family:Roboto",
+              "11": "right:30px;top:1090px;width:40%;height:104px;font-size:14px;font-family:Roboto",
+              "12": "right:30px;top:708px;width:50%;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%",
+              "13": "left:30px;top:1045px;width:50%;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:50%;background-position-y:50%",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black",
+              "15": "left:0px;width:100%;top:1700px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
+              "16": "left:30px;width:40%;color:rgb(0, 156, 220);font-size:26px;top:1410px;font-family:Roboto",
+              "17": "right:30px;top:1410px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:50%",
+              "18": "left:30px;top:1470px;width:40%;font-size:14px;font-family:Roboto",
+              "19": "left:0px;width:100%;height:10px;top:1760px;font-size:11px;text-align:center",
+              "20": "left:0px;top:1727px;width:100%;height:20px;font-size:12px;text-align:center",
+              "21": "right:30px;top:1240px;width:40%;height:49px;font-size:26px;color:rgb(235, 39, 79);font-family:Roboto",
+              "22": "right:30px;top:1295px;width:40%;height:89px;font-size:14px;font-family:Roboto"
+            }
+          },
+          {
+            "Id": 4,
+            "ResolutionValue": 960,
+            "ComponentVisualProperties": {
+              "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
+              "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
+              "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
+              "4": "left:0px;top:320px;width:100%;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%;background-size:contain",
+              "5": "left:30px;top:708px;width:40%;height:100px;font-size:36px;color:rgb(0, 156, 220);font-family:Roboto",
+              "6": "left:30px;top:823px;width:40%;height:202px;font-size:16px;font-family:Roboto",
+              "7": "left:30px;top:84px;width:113px;height:10px;background-color:transparent",
+              "8": "left:0px;top:290px;width:100%;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C",
+              "9": "right:30px;top:25px;width:320px;height:19px;font-family:Roboto;font-size:16px;text-align:right",
+              "10": "right:30px;top:1065px;width:40%;height:34px;font-size:36px;color:rgb(0, 156, 220);text-align:left;font-family:Roboto",
+              "11": "right:30px;top:1125px;width:40%;height:104px;font-size:16px;font-family:Roboto",
+              "12": "right:30px;top:708px;width:50%;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%",
+              "13": "left:30px;top:1065px;width:50%;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black",
+              "15": "left:0px;width:100%;top:1900px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
+              "16": "left:30px;width:300px;color:rgb(0, 156, 220);font-size:36px;top:1450px;font-family:Roboto",
+              "17": "right:30px;top:1450px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:0%",
+              "18": "left:30px;top:1560px;width:40%;font-size:16px;font-family:Roboto",
+              "19": "left:0px;width:100%;height:10px;top:1960px;font-size:11px;text-align:center",
+              "20": "left:0px;top:1927px;width:100%;height:20px;font-size:12px;text-align:center",
+              "21": "right:30px;top:1295px;width:40%;height:49px;font-size:36px;color:rgb(235, 39, 79);font-family:Roboto",
+              "22": "right:30px;top:1350px;width:40%;height:89px;font-size:16px;font-family:Roboto"
+            }
+          },
+          {
+            "Id": 5,
+            "ResolutionValue": 10000,
+            "ComponentVisualProperties": {
+              "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
+              "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
+              "3": "left:calc((100% - 955px) / 2);top:212px;width:955px;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
+              "4": "left:calc((100% - 955px) / 2);top:320px;width:955px;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%",
+              "5": "left:calc((100% - 955px) / 2);top:708px;width:435px;height:100px;font-size:36px;color:rgb(0, 156, 220);font-family:Roboto",
+              "6": "left:calc((100% - 955px) / 2);top:823px;width:435px;height:202px;font-size:16px;font-family:Roboto",
+              "7": "left:calc((100% - 955px) / 2);top:84px;width:113px;height:10px;background-color:transparent",
+              "8": "left:calc((100% - 955px) / 2);top:290px;width:955px;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C",
+              "9": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);-webkit-transform:undefined;text-align:right;background-position-x:undefined;background-position-y:undefined",
+              "10": "right:calc((100% - 955px) / 2);top:1065px;width:435px;height:34px;font-size:36px;color:rgb(0, 156, 220);text-align:left;font-family:Roboto",
+              "11": "right:calc((100% - 955px) / 2);top:1125px;width:435px;height:104px;font-size:16px;font-family:Roboto",
+              "12": "right:calc((100% - 955px) / 2);top:708px;width:500px;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%",
+              "13": "left:calc((100% - 955px) / 2);top:1065px;width:500px;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%",
+              "14": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;transform:undefined",
+              "15": "left:0px;width:100%;top:1900px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
+              "16": "left:calc((100% - 955px) / 2);top:1450px;width:300px;font-family:Roboto;font-size:36px;color:rgb(0, 156, 220)",
+              "17": "right:calc((100% - 955px) / 2);top:1450px;width:500px;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:0%",
+              "18": "left:calc((100% - 955px) / 2);top:1560px;width:435px;font-size:16px;font-family:Roboto",
+              "19": "left:calc((100% - 955px) / 2);width:955px;height:10px;top:1960px;font-size:11px;text-align:center",
+              "20": "left:calc((100% - 955px) / 2);top:1927px;width:955px;height:20px;font-size:12px;text-align:center",
+              "21": "right:calc((100% - 955px) / 2);top:1255px;width:435px;height:49px;font-size:36px;color:rgb(235, 39, 79);font-family:Roboto",
+              "22": "right:calc((100% - 955px) / 2);top:1320px;width:435px;height:89px;font-size:16px;font-family:Roboto"
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

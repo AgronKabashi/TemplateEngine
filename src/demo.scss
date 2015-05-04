@@ -1,112 +1,103 @@
 ﻿@import "bourbon";
 @import "neat";
 
+@import "TemplateEditor/CSS/Reset";
+
 $mobile: new-breakpoint(max-width 767px);
 $tablet: new-breakpoint(min-width 768px);
 $desktop: new-breakpoint(min-width 1025px);
 
 html,
-body
-{
-	font-family: "Droid Sans";
-	font-size: 14px;
+body {
+  font-family: "Droid Sans";
+  font-size: 14px;
 }
 
-body
-{
-	padding: 20px;
+a {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
 }
 
-.page-content
-{
-	max-width: 650px;
+.page-content {
+  max-width: 650px;
+  padding: 20px;
 }
 
-.introduction
-{
-	margin-bottom: 3rem;
+.introduction {
+  margin-bottom: 3rem;
 }
 
-h1
-{
-	font-size: 3rem;
+h1 {
+  font-size: 3rem;
 }
 
-button
-{
-	margin-bottom: 1rem;
+button {
+  margin-bottom: 1rem;
 }
 
 .ng-cloak,
-.hidden
-{
-	display: none !important;
+.hidden {
+  display: none !important;
 }
 
-.list
-{
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	display: table;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	text-align: left;
-	
-	>
-	{
-		li
-		{
-			display: table-row;
-		
-			>
-			{
-				*
-				{
-					border-bottom: 1px solid #ddd;
-					display: table-cell;
-					min-width: 100px;
-					overflow: hidden;
-					padding: 1rem;
-					text-overflow: ellipsis;
-					vertical-align: middle;
-					white-space: nowrap;
-				}
+.list {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: table;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: left;
 
-				.button-group
-				{
-					text-align: right;
-				}
+  > {
+    li {
+      display: table-row;
 
-				:last-child
-				{
-					width: 100%;
-				}
-			}
-		}
+      > {
+        * {
+          border-bottom: 1px solid #ddd;
+          display: table-cell;
+          min-width: 100px;
+          overflow: hidden;
+          padding: 1rem;
+          text-overflow: ellipsis;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
 
-		.list-header
-		{
-			font-weight: bold;
-			
-			> span
-			{
-				border-bottom: 1px solid #ddd !important;
-			}
-		}
-		
-		li:nth-last-child(-n+2) > *
-		{
-			border-bottom: none;
-		}
-	}
+        .button-group {
+          text-align: right;
+        }
 
-	@include media($tablet)
-	{
-		> li > *
-		{
-			min-width: 200px;
-		}
-	}
+        :last-child {
+          width: 100%;
+        }
+      }
+    }
+
+    .list-header {
+      font-weight: bold;
+
+      > span {
+        border-bottom: 1px solid #ddd !important;
+      }
+    }
+
+    li:nth-last-child(-n+2) > * {
+      border-bottom: none;
+    }
+
+    .empty-list-message i {
+      display: block;
+      padding: 1rem;
+    }
+  }
+
+  @include media($tablet) {
+    > li > * {
+      min-width: 200px;
+    }
+  }
 }

@@ -1,176 +1,150 @@
-﻿define(
-	[
-		"../App.js"
-	],
-	function (templateEditorModule)
-	{
-		return templateEditorModule
-			.constant("MaxResolutionCount", 10)
-			.constant("MaxResolutionValue", 1024)
-			.constant("MaxResolutionDifference", 20)
-			.directive("templateresolutions",
-			[
-				"MaxResolutionValue",
-				"Cerberus.Tool.TemplateEditor.Helper.TemplateEditor",
-				function (MaxResolutionValue, TemplateEditorHelper)
-				{
-					return {
-						restrict: "E",
-						templateUrl: "View/TemplateResolutions.html",
+﻿(function (angular) {
+	"use strict";
 
-						link: function (scope, element, attrs)
-						{
-							var templateElement = $(".template:first-child");
-							var resolutionSlider = element.find(".resolution-slider");
-							var resolutionContainer = element.find(".resolution-container");
+	angular
+		.module("Cerberus.TemplateEditor")
+		.constant("MaxResolutionCount", 10)
+		.constant("MaxResolutionValue", 1024)
+		.constant("MaxResolutionDifference", 10)
+		.directive("csTemplateresolutions", [
+		"MaxResolutionValue",
+		"Cerberus.TemplateEngine.Service.Event",
+		"Cerberus.TemplateEditor.Service.PathResolver",
+		"Cerberus.TemplateEditor.Service.TemplateResolution",
+		"Cerberus.TemplateEditor.Helper.TemplateEditor",
+		function (MaxResolutionValue, EventService, PathResolver, TemplateResolutionService, TemplateEditorHelper) {
+			return {
+				restrict: "E",
+				scope: true,
+				templateUrl: PathResolver.Resolve("View/TemplateResolutions.html"),
 
-							scope.$on("ResolutionSelected", function (scope, value)
-							{
-								resolutionSlider
-									.slider("value", value)
-									.children()
-									.first()
-									.attr("data-value", Math.min(value, MaxResolutionValue));
-								templateElement.css("width", value + "px");
-							});
+				link: function (scope, element, attrs) {
+					var templateElement;
+					var resolutionSlider = element.find(".resolution-slider");
+					var resolutionContainer = element.find(".resolution-container");
 
-							resolutionSlider.slider(
-							{
-								step: 1,
-								value: MaxResolutionValue,
-								max: MaxResolutionValue,
-
-								slide: function (event, ui)
-								{
-									var value = ~~ui.value;
-									$(this).children().first().attr("data-Value", value);
-									templateElement.css("width", value + "px");
-
-									var resolution = TemplateEditorHelper.FindResolution(scope.Template, value);
-
-									if (scope.CurrentResolution == null || scope.CurrentResolution && resolution && resolution.ResolutionValue != scope.CurrentResolution.ResolutionValue)
-									{
-										scope.CurrentResolution = resolution;
-										scope.SetDocumentWidth(value, scope.CurrentResolution);
-										scope.$apply();
-									}
-								},
-
-								stop: function (event, ui)
-								{
-									var value = ~~ui.value;
-									$(this).children().first().attr("data-Value", value);
-									templateElement.css("width", value + "px");
-
-									scope.SliderValue = value;
-								}
-							})
+					EventService.Subscribe("ResolutionSelected", function (value) {
+						resolutionSlider
+							.slider("value", value)
 							.children()
 							.first()
-							.attr("data-value", resolutionSlider.outerWidth());
+							.attr("data-value", Math.min(value, MaxResolutionValue));
+						$("cs-template:first-child").css("width", value + "px");
+					});
+
+					resolutionSlider.slider({
+						step: 1,
+						value: MaxResolutionValue,
+						max: MaxResolutionValue,
+
+						start: function (event, ui) {
+							templateElement = $("cs-template");
+							return scope.Template != null;
 						},
 
-						controller:
-						[
-							"$scope",
-							"MaxResolutionCount",
-							"MaxResolutionValue",
-							"MaxResolutionDifference",
-							"Cerberus.Tool.TemplateEditor.Localization",
-							"Cerberus.Tool.TemplateEngine.Service.DataBag",
-							function ($scope, MaxResolutionCount, MaxResolutionValue, MaxResolutionDifference, Localization, DataBagService)
-							{
-								$scope.MaxResolutionValue = MaxResolutionValue;
-								$scope.SliderValue = MaxResolutionValue;
-								$scope.DataBagService = DataBagService;
+						slide: function (event, ui) {
+							var value = ~~ui.value;
+							$(this).children().first().attr("data-Value", value);
+							templateElement.css("width", value + "px");
 
-								DataBagService.GetData("Template")
-									.then(function(template)
-									{
-										$scope.Template = template;
-										$scope.CurrentResolution = template.Resolutions[template.Resolutions.length - 1];
-										$scope.SetDocumentWidth(template.Resolutions[template.Resolutions.length - 1].ResolutionValue);
-									});
+							var resolution = TemplateResolutionService.FindResolution(scope.Template, value);
 
-								$scope.ResolutionPresets =
-								[
-									{
-										Name: "640px - Apple iPhone 4&5",
-										Value: 640
-									},
-									{
-										Name: "768px - Apple iPad 1&2",
-										Value: 768
-									}
-								];
+							if (scope.CurrentResolution == null || scope.CurrentResolution && resolution && resolution.ResolutionValue !== scope.CurrentResolution.ResolutionValue) {
+								scope.CurrentResolution = resolution;
+								scope.SetDocumentWidth(value, scope.CurrentResolution);
+							}
+						},
 
-								$scope.$on("ReloadTemplate", function (scope, template)
-								{
-									$scope.Template = template;
-								});
+						stop: function (event, ui) {
+							var value = ~~ui.value;
+							$(this).children().first().attr("data-Value", value);
+							templateElement.css("width", value + "px");
+							templateElement = null;
+							scope.SliderValue = value;
+						}
+					})
+						.children()
+						.first()
+						.attr("data-value", resolutionSlider.outerWidth());
+				},
 
-								$scope.$on("TemplateControlUpdated", function (scope, templateControl) { TemplateEditorHelper.OnTemplateControlUpdate(scope.currentScope, templateControl); });
-								$scope.$on("TemplateControlAdded", function (scope, templateControl) { TemplateEditorHelper.OnTemplateControlUpdate(scope.currentScope, templateControl); });
+				controller: [
+					"$scope",
+					"MaxResolutionCount",
+					"MaxResolutionValue",
+					"MaxResolutionDifference",
+					"Cerberus.TemplateEditor.Service.DeviceResolution",
+					"Cerberus.TemplateEditor.Localization",
+					"Cerberus.TemplateEngine.Service.DataBag",
+					function ($scope,
+						MaxResolutionCount,
+						MaxResolutionValue,
+						MaxResolutionDifference,
+						DeviceResolutionService,
+						Localization,
+						DataBagService) {
+						function OnComponentUpdate(component) {
+							//Find resolution using current slider value: $scope.SliderValue
+							var resolution = TemplateResolutionService.FindResolution($scope.Template, $scope.SliderValue);
 
-								$scope.AddResolution = function (resolutionPreset)
-								{
-									var template = $scope.Template,
-										resolution = new Cerberus.Tool.TemplateEngine.Model.Resolution(),
-										resolutionValue = Math.min(resolutionPreset != null ? resolutionPreset.Value : $scope.SliderValue, MaxResolutionValue),
-										currentResolution = TemplateEditorHelper.FindResolution(template, resolutionValue);
+							//Find component using component.Id
+							//and update the values in the mediaquery for this component
+							TemplateEditorHelper.SetComponentVisualProperties($scope.Template, resolution, component);
+						}
 
-									if (template.Resolutions.length >= MaxResolutionCount)
-									{
-										$scope.$emit("ShowMessage", Localization.TemplateControlResolutions.ReachedMaximumResolutions);
-										return;
-									}
+						this.InitializeScope = function () {
+							_.extend($scope, {
+								MaxResolutionValue: MaxResolutionValue,
+								SliderValue: MaxResolutionValue,
+								DataBagService: DataBagService,
+								Template: DataBagService.GetData("Template"),
+								ResolutionPresets: DeviceResolutionService.GetResolutions(),
 
-									var previousRes = TemplateEditorHelper.FindResolution(template, resolutionValue - MaxResolutionDifference);
-									var nextRes = TemplateEditorHelper.FindResolution(template, resolutionValue + MaxResolutionDifference);
-
-									if (Math.abs(resolutionValue - previousRes.ResolutionValue) <= MaxResolutionDifference ||
-										Math.abs(resolutionValue - nextRes.ResolutionValue) <= MaxResolutionDifference)
-									{
-										$scope.$emit("ShowMessage", Localization.TemplateControlResolutions.NotEnoughSpace);
-										return;
-									}
-
-									resolution.ResolutionValue = resolutionValue;
-									resolution.TemplateControlVisualProperties = JSON.parse(JSON.stringify(currentResolution.TemplateControlVisualProperties));
-
-									template.Resolutions.push(resolution);
-
-									$scope.CurrentResolution = resolution;
-
-									template.Resolutions.sort(function (a, b)
-									{
-										return a.ResolutionValue - b.ResolutionValue;
-									});
-
+								AddResolution: function (resolutionPreset) {
+									$scope.CurrentResolution = TemplateResolutionService.AddResolution($scope.Template, Math.min(resolutionPreset != null ? resolutionPreset.Value : $scope.SliderValue, MaxResolutionValue));
 									$scope.PresetsExpanded = false;
-								};
+									EventService.Notify("ResolutionSelected", $scope.CurrentResolution.ResolutionValue);
+								},
 
-								$scope.RemoveResolution = function (resolution)
-								{
-									$scope.Template.Resolutions.RemoveValue("ResolutionValue", resolution.ResolutionValue);
+								RemoveResolution: function (resolution) {
+									TemplateResolutionService.RemoveResolution($scope.Template, resolution);
 									$scope.SetDocumentWidth(resolution.ResolutionValue);
-								};
+								},
 
-								$scope.SetDocumentWidth = function (value, resolution)
-								{
+								SetDocumentWidth: function (value, resolution) {
 									$scope.SliderValue = value;
-									resolution = resolution || TemplateEditorHelper.FindResolution($scope.Template, value);
+									resolution = resolution || TemplateResolutionService.FindResolution($scope.Template, value);
 									$scope.CurrentResolution = resolution;
 
 									DataBagService.AddData("CurrentResolution", resolution);
 
-									TemplateEditorHelper.RemapTemplateControlVisualProperties($scope.Template, resolution);
+									TemplateEditorHelper.RemapComponentVisualProperties($scope.Template, resolution);
 
-									$scope.$emit("ResolutionSelected", value);
-								};
-							}
-						]
-					};
-				}
-			]);
-	});
+									EventService.Notify("ResolutionSelected", value);
+								}
+							});
+
+              if ($scope.Template) {
+                $scope.SetDocumentWidth($scope.Template.Resolutions[$scope.Template.Resolutions.length - 1].ResolutionValue);
+              }
+						}
+
+						this.InitializeEvents = function () {
+							EventService.Subscribe("InitializeTemplate", function (template) {
+								$scope.Template = template;
+								$scope.CurrentResolution = template.Resolutions[template.Resolutions.length - 1];
+								$scope.SetDocumentWidth(template.Resolutions[template.Resolutions.length - 1].ResolutionValue);
+							});
+
+							EventService.Subscribe("ComponentUpdated", OnComponentUpdate);
+							EventService.Subscribe("ComponentAdded", OnComponentUpdate);
+						};
+
+						this.InitializeScope();
+						this.InitializeEvents();
+					}
+				]
+			};
+		}
+	]);
+})(window.angular);

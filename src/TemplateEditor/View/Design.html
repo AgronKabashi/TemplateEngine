@@ -1,0 +1,19 @@
+﻿<div ng-controller="Cerberus.TemplateEditor.Controller.Design">
+  <link ng-href="{{ApplicationBasePath}}CSS/TemplateEditor.css" rel="stylesheet" />
+  <cs-componentplugins></cs-componentplugins>
+  <cs-templateresolutions></cs-templateresolutions>
+  <cs-componentactions></cs-componentactions>
+  <cs-componentproperties></cs-componentproperties>
+
+  <div class="edit-design">
+    <cs-template cs-droppable cs-componentselection cs-togglehiddenelements cs-autosizetemplate template-mode="EditDesign"></cs-template>
+  </div>
+
+  <div class="button-container">
+    <a class="default-button" ng-click="Save()" ng-bind="::Localization.Generic.Save"></a>
+    <a class="default-button" ng-click="SaveExit()" ng-bind="::Localization.Generic.SaveExit"></a>
+    <a class="danger-button" ng-click="Exit()" ng-bind="::Localization.Generic.Exit"></a>
+  </div>
+
+  <cs-messagedialog></cs-messagedialog>
+</div>
