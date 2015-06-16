@@ -1,4 +1,6 @@
-﻿(function (angular) {
+(function (angular) {
+  "use strict";
+
   namespace("Cerberus.TemplateEngine.Service")
     .TemplateRestProvider = angular.extend(function ($http, $q) {
       var serviceUrl = "";
@@ -15,7 +17,7 @@
           });
 
         return defer.promise;
-      };
+      }
 
       function BuildResourceUrl() {
         return angular.extend([], arguments).slice(0).join("/");
@@ -47,7 +49,7 @@
       };
 
       this.SaveTemplate = function (template) {
-        return template != null ? CleanPromise($http.put(BuildResourceUrl(serviceUrl, "template"), template)) : EmptyRejectedPromise();
+        return template !== undefined ? CleanPromise($http.put(BuildResourceUrl(serviceUrl, "template"), template)) : EmptyRejectedPromise();
       };
 
       this.CloneTemplate = function (templateId) {
@@ -65,7 +67,7 @@
       };
 
       this.SaveTemplateInfo = function (template) {
-        return template != null ? CleanPromise($http.put(BuildResourceUrl(serviceUrl, "templateinfo"), template)) : EmptyRejectedPromise();
+        return template !== undefined ? CleanPromise($http.put(BuildResourceUrl(serviceUrl, "templateinfo"), template)) : EmptyRejectedPromise();
       };
 
       //TemplateContent
@@ -80,8 +82,5 @@
       this.GetComponentPlugins = function () {
         return CleanPromise($http.get(BuildResourceUrl(serviceUrl, "componentplugins")));
       };
-    },
-	{
-	  $inject: ["$http", "$q"]
-	});
-})(angular);
+    }, { $inject: ["$http", "$q"] });
+})(window.angular);

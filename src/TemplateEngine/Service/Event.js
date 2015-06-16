@@ -1,4 +1,4 @@
-﻿(function (angular, _) {
+(function (angular, _) {
   "use strict";
 
   angular
@@ -40,7 +40,7 @@
             doDigest = true;
           }
 
-          console.log("Notifying: %o", eventType);
+          //console.log("Notifying: %o", eventType);
           var eventCollection = events[eventType];
 
           _.forEach(eventCollection, function (callback) {
@@ -52,7 +52,7 @@
           if (doDigest) {
             setTimeout(function () {
               isProcessingEvents = false;
-              console.log("Digest");
+              //console.log("Digest");
               $rootScope.$digest();
             });
           }

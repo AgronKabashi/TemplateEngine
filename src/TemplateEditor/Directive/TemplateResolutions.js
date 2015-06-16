@@ -39,7 +39,7 @@
 
 						start: function (event, ui) {
 							templateElement = $("cs-template");
-							return scope.Template != null;
+							return scope.Template !== undefined;
 						},
 
 						slide: function (event, ui) {
@@ -49,7 +49,7 @@
 
 							var resolution = TemplateResolutionService.FindResolution(scope.Template, value);
 
-							if (scope.CurrentResolution == null || scope.CurrentResolution && resolution && resolution.ResolutionValue !== scope.CurrentResolution.ResolutionValue) {
+							if (scope.CurrentResolution === undefined|| scope.CurrentResolution && resolution && resolution.ResolutionValue !== scope.CurrentResolution.ResolutionValue) {
 								scope.CurrentResolution = resolution;
 								scope.SetDocumentWidth(value, scope.CurrentResolution);
 							}
@@ -59,7 +59,7 @@
 							var value = ~~ui.value;
 							$(this).children().first().attr("data-Value", value);
 							templateElement.css("width", value + "px");
-							templateElement = null;
+							templateElement = undefined;
 							scope.SliderValue = value;
 						}
 					})
@@ -93,41 +93,41 @@
 						}
 
 						this.InitializeScope = function () {
-							_.extend($scope, {
-								MaxResolutionValue: MaxResolutionValue,
-								SliderValue: MaxResolutionValue,
-								DataBagService: DataBagService,
-								Template: DataBagService.GetData("Template"),
-								ResolutionPresets: DeviceResolutionService.GetResolutions(),
+						  _.extend($scope, {
+						    MaxResolutionValue: MaxResolutionValue,
+						    SliderValue: MaxResolutionValue,
+						    DataBagService: DataBagService,
+						    Template: DataBagService.GetData("Template"),
+						    ResolutionPresets: DeviceResolutionService.GetResolutions(),
 
-								AddResolution: function (resolutionPreset) {
-									$scope.CurrentResolution = TemplateResolutionService.AddResolution($scope.Template, Math.min(resolutionPreset != null ? resolutionPreset.Value : $scope.SliderValue, MaxResolutionValue));
-									$scope.PresetsExpanded = false;
-									EventService.Notify("ResolutionSelected", $scope.CurrentResolution.ResolutionValue);
-								},
+						    AddResolution: function (resolutionPreset) {
+						      $scope.CurrentResolution = TemplateResolutionService.AddResolution($scope.Template, Math.min(resolutionPreset !== undefined ? resolutionPreset.Value : $scope.SliderValue, MaxResolutionValue));
+						      $scope.PresetsExpanded = false;
+						      EventService.Notify("ResolutionSelected", $scope.CurrentResolution.ResolutionValue);
+						    },
 
-								RemoveResolution: function (resolution) {
-									TemplateResolutionService.RemoveResolution($scope.Template, resolution);
-									$scope.SetDocumentWidth(resolution.ResolutionValue);
-								},
+						    RemoveResolution: function (resolution) {
+						      TemplateResolutionService.RemoveResolution($scope.Template, resolution);
+						      $scope.SetDocumentWidth(resolution.ResolutionValue);
+						    },
 
-								SetDocumentWidth: function (value, resolution) {
-									$scope.SliderValue = value;
-									resolution = resolution || TemplateResolutionService.FindResolution($scope.Template, value);
-									$scope.CurrentResolution = resolution;
+						    SetDocumentWidth: function (value, resolution) {
+						      $scope.SliderValue = value;
+						      resolution = resolution || TemplateResolutionService.FindResolution($scope.Template, value);
+						      $scope.CurrentResolution = resolution;
 
-									DataBagService.AddData("CurrentResolution", resolution);
+						      DataBagService.AddData("CurrentResolution", resolution);
 
-									TemplateEditorHelper.RemapComponentVisualProperties($scope.Template, resolution);
+						      TemplateEditorHelper.RemapComponentVisualProperties($scope.Template, resolution);
 
-									EventService.Notify("ResolutionSelected", value);
-								}
-							});
+						      EventService.Notify("ResolutionSelected", value);
+						    }
+						  });
 
-              if ($scope.Template) {
-                $scope.SetDocumentWidth($scope.Template.Resolutions[$scope.Template.Resolutions.length - 1].ResolutionValue);
-              }
-						}
+						  if ($scope.Template) {
+						    $scope.SetDocumentWidth($scope.Template.Resolutions[$scope.Template.Resolutions.length - 1].ResolutionValue);
+						  }
+						};
 
 						this.InitializeEvents = function () {
 							EventService.Subscribe("InitializeTemplate", function (template) {

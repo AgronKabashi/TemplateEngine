@@ -51,7 +51,7 @@
 			    $scope.SaveExit = function () {
 			      this.Save()
               .then(function () {
-                $scope.Exit()
+                $scope.Exit();
               });
 			    };
 

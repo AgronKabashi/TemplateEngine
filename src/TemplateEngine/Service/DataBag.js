@@ -1,19 +1,21 @@
-﻿(function (angular) {
+(function (angular) {
+  "use strict";
+
   angular
-			.module("Cerberus.TemplateEngine")
-			.service("Cerberus.TemplateEngine.Service.DataBag", function () {
-			  var dataBag = {};
+    .module("Cerberus.TemplateEngine")
+    .service("Cerberus.TemplateEngine.Service.DataBag", function () {
+      var dataBag = {};
 
-			  this.AddData = function (id, value) {
-			    dataBag[id.toLowerCase()] = value;
-			  };
+      this.AddData = function (id, value) {
+        dataBag[id.toLowerCase()] = value;
+      };
 
-			  this.GetData = function (id) {
-			    return dataBag[id.toLowerCase()];
-			  };
+      this.GetData = function (id) {
+        return dataBag[id.toLowerCase()];
+      };
 
-			  this.RemoveData = function (id) {
-			    delete dataBag[id.toLowerCase()];
-			  };
-			});
-})(angular);
+      this.RemoveData = function (id) {
+        delete dataBag[id.toLowerCase()];
+      };
+    });
+})(window.angular);

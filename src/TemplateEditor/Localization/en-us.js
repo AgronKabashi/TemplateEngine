@@ -171,6 +171,6 @@
             MaxStories: "Max Stories"
           }
         }
-      }
+      };
     });
 })(window.angular);

@@ -64,7 +64,7 @@
                   RemoveSelectedComponents: function () {
                     var template = $scope.Template;
                     _.remove($scope.SelectedComponents, function (selectedComponent) {
-                      _.remove(template.Components, function (component) { return component.Id === selectedComponent.Id });
+                      _.remove(template.Components, function (component) { return component.Id === selectedComponent.Id; });
                       TemplateEditorHelper.RemoveComponentFromResolutions(template, selectedComponent);
 
                       return true;

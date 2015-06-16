@@ -44,7 +44,7 @@
                 }
 
                 $scope.VisualProperties = CSSHelper.FromCss($scope.SelectedComponent.VisualProperties);
-              }
+              };
 
               this.OnPropertyChanged = function () {
                 if (!$scope.SelectedComponent) {
@@ -61,7 +61,7 @@
                   EventService.Notify("ComponentVisibilityChanged", $scope.SelectedComponent, $scope.VisualProperties.display !== 'none');
                   componentVisibilityHasChanged = false;
                 }
-              }
+              };
 
               this.OnResolutionSelected = function (resolutionValue) {
                 if (!$scope.SelectedComponent) {
@@ -69,21 +69,21 @@
                 }
 
                 $scope.VisualProperties = CSSHelper.FromCss($scope.SelectedComponent.VisualProperties);
-                $scope.IsTransposedHorizontal = $scope.VisualProperties.right != undefined;
-                $scope.IsTransposedVertical = $scope.VisualProperties.bottom != undefined;
+                $scope.IsTransposedHorizontal = $scope.VisualProperties.right !== undefined;
+                $scope.IsTransposedVertical = $scope.VisualProperties.bottom !== undefined;
               };
 
               this.OnComponentSelected = function (selectedComponents) {
                 //TODO: allow editing multiple components?
-                var component = selectedComponents != null && selectedComponents.length === 1 ? selectedComponents[0] : null;
+                var component = selectedComponents !== undefined && selectedComponents.length === 1 ? selectedComponents[0] : undefined;
 
                 $scope.SelectedComponent = component;
 
                 if (component) {
                   $scope.Content = component.Content;
                   $scope.VisualProperties = CSSHelper.FromCss($scope.SelectedComponent.VisualProperties);
-                  $scope.IsTransposedHorizontal = $scope.VisualProperties.right != undefined;
-                  $scope.IsTransposedVertical = $scope.VisualProperties.bottom != undefined;
+                  $scope.IsTransposedHorizontal = $scope.VisualProperties.right !== undefined;
+                  $scope.IsTransposedVertical = $scope.VisualProperties.bottom !== undefined;
 
                   var viewPath = PathResolver.Resolve(String.format("/View/ComponentEditor/{0}/{1}.html", component.Category, component.Name));
                   var componentEditoryId = String.format("Cerberus.TemplateEditor.Controller.ComponentEditor.{0}.{1}", component.Category, component.Name);

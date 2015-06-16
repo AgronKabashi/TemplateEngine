@@ -1,5 +1,4 @@
 ﻿(function (angular, $, _) {
-  console.log("testars");
   angular
     .module("Demo", [
       "ui.router",

@@ -11,7 +11,7 @@
             insetMatchPattern = /inset/i;
 
 		    var shadowLayers = shadowData.trim().split(/,(?![^\(]*\))/);
-		    var result = null;
+		    var result;
 
 		    if (shadowLayers.length) {
 		      var shadow = shadowLayers[0];
@@ -31,7 +31,7 @@
 		      };
 
 		      for (var i = 1; i <= Math.min(arguments.length, valuesExcludingColorAndInset.length) ; i++) {
-		        result[arguments[i]] = valuesExcludingColorAndInset[i - 1] || "0"
+		        result[arguments[i]] = valuesExcludingColorAndInset[i - 1] || "0";
 		      }
 		    }
 
@@ -57,7 +57,7 @@
 		    }
 
 		    //Special processing for background-image
-		    if (result["backgroundImage"] != null) {
+		    if (result["backgroundImage"] !== undefined) {
 		      var backgroundImage = result["backgroundImage"];
 		      backgroundImage = backgroundImage.replace(/url\(/i, "");
 		      if (backgroundImage[backgroundImage.length - 1] == ')') {
@@ -68,12 +68,12 @@
 		    }
 
 		    //Special processing for box shadow
-		    if (result["boxShadow"] != null) {
+		    if (result["boxShadow"] !== undefined) {
 		      result.boxShadow = ProcessShadowData(result["boxShadow"], "hShadow", "vShadow", "blurRadius", "spreadRadius");
 		    }
 
 		    //Special processing for text shadow
-		    if (result["textShadow"] != null) {
+		    if (result["textShadow"] !== undefined) {
 		      result.textShadow = ProcessShadowData(result["textShadow"], "hShadow", "vShadow", "blurRadius");
 		    }
 
@@ -100,6 +100,8 @@
 
 		    var propertyName = "";
 		    var propertyValue = "";
+		    var color;
+
 		    for (var i in value) {
 		      //Converts camelcase properties into hyphenated properties
 		      //textAlign => text-align
@@ -112,7 +114,7 @@
 		      //TODO: Needs refactoring
 		      switch (propertyName) {
 		        case "box-shadow":
-		          var color = value[i]["color"];
+		          color = value[i]["color"];
 
 		          if (color) {
 		            propertyValue = String.format("{0} {1} {2} {3} {4} {5}",
@@ -133,7 +135,7 @@
 		          break;
 
 		        case "text-shadow":
-		          var color = value[i]["color"];
+		          color = value[i]["color"];
 
 		          if (color) {
 		            propertyValue = String.format("{0} {1} {2} {3}",

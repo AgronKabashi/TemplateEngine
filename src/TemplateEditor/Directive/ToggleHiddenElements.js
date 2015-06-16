@@ -13,7 +13,7 @@
               element.toggleClass("show-hidden-elements", enable);
             });
           }
-        }
+        };
       }
 		]);
 })(window.angular);

@@ -1,4 +1,6 @@
 (function (angular) {
+  "use strict";
+
   angular
     .module("Cerberus.TemplateEngine")
     .provider("Cerberus.TemplateEngine.Service.Template", function () {

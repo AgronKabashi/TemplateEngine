@@ -92,8 +92,8 @@
             isTransposedVertical = style.bottom.length > 0,
             horizontalUnitName = isTransposedHorizontal ? "right" : "left",
             verticalUnitName = isTransposedVertical ? "bottom" : "top",
-            widthInPercent = !isNaN(parseInt(style["width"])) && style["width"].indexOf("%") >= 0,
-            heightInPercent = !isNaN(parseInt(style["height"])) && style["height"].indexOf("%") >= 0,
+            widthInPercent = !isNaN(parseInt(style.width)) && style.width.indexOf("%") >= 0,
+            heightInPercent = !isNaN(parseInt(style.height)) && style.height.indexOf("%") >= 0,
             horizontalInPercent = !isNaN(parseInt(style[horizontalUnitName])) && style[horizontalUnitName].indexOf("%") >= 0,
             verticalInPercent = !isNaN(parseInt(style[verticalUnitName])) && style[verticalUnitName].indexOf("%") >= 0;
 
@@ -136,16 +136,16 @@
             element.css("left", String.format("{0}%", (100.0 * horizontal / templateWidth).toFixed(1)));
 
             if (isTransposedHorizontal) {
-              nativeElement.style["right"] = String.format("{0}%", (100 - (100.0 * (horizontal / templateWidth + elementWidth / templateWidth))).toFixed(1));
+              nativeElement.style.right = String.format("{0}%", (100 - (100.0 * (horizontal / templateWidth + elementWidth / templateWidth))).toFixed(1));
             }
           }
           else {
             //Pixel based positioning
-            var value = tryParseInt(nativeElement.style["left"]);
-            nativeElement.style["left"] = value + "px";
+            var value = tryParseInt(nativeElement.style.left);
+            nativeElement.style.left = value + "px";
 
             if (isTransposedHorizontal) {
-              nativeElement.style["right"] = templateWidth - value - elementWidth + "px";
+              nativeElement.style.right = templateWidth - value - elementWidth + "px";
             }
           }
 

@@ -15,11 +15,6 @@
           Twitter: String.format("http://twitter.com/intent/tweet?url={0}", url),
           GooglePlus: String.format("https://plus.google.com/share?url={0}", url)
         };
-
-        //Ensures that whenever content is updated, so is the view
-        //$scope.$watch('Component.Content', function () {
-        //  $scope.ControlData = JSON.tryParse($scope.Component.Content, defaultContent);
-        //});
       }
     ]);
 })(angular);

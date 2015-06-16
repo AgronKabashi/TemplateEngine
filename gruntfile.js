@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     connect: require("./grunt-tasks/connect"),
     copy: require("./grunt-tasks/copy"),
     htmlmin: require("./grunt-tasks/htmlmin"),
-    jshint: require("./grunt-tasks/jshint"),
+    eslint: require("./grunt-tasks/eslint"),
     uglify: require("./grunt-tasks/uglify"),
     replace: require("./grunt-tasks/replace"),
     sass: require("./grunt-tasks/sass"),

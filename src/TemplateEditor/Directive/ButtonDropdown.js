@@ -28,7 +28,7 @@
               $scope.ItemClick = function (item) {
                 $scope.onItemClick(item);
                 $scope.Expanded = false;
-              }
+              };
             }
           ]
         };

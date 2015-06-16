@@ -42,7 +42,7 @@
         this.RemoveResolution = function (template, resolution) {
           var resolutionValue = resolution.ResolutionValue;
           _.remove(template.Resolutions, function (resolution) {
-            return resolution.ResolutionValue === resolutionValue
+            return resolution.ResolutionValue === resolutionValue;
           });
         };
 

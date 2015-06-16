@@ -46,4 +46,4 @@ function namespace(namespaceString) {
   }
 
   return parent;
-};
+}
