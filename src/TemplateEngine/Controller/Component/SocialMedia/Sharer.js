@@ -1,12 +1,12 @@
-﻿(function (angular) {
+(function (angular) {
+  "use strict";
+
   angular
     .module("Cerberus.TemplateEngine")
     .controller("Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer", [
       "$scope",
-      "$http",
-      function ($scope, $http) {
-        var defaultContent = new Cerberus.TemplateEngine.Model.Component.SocialMedia.Sharer();
-        var url = document.location.href;
+      function ($scope) {
+        var url = window.location.href;
 
         $scope.Content = $scope.Component.Content;
 
@@ -17,4 +17,4 @@
         };
       }
     ]);
-})(angular);
+})(window.angular);

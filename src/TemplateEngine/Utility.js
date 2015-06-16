@@ -1,49 +1,53 @@
-﻿/******************************************
-String manipulations
-******************************************/
-String.format = function () {
-  var args = arguments;
-  var str = args[0];
-  return str.replace(/{(\d+)}/g, function (match, number) {
-    number = ~~number + 1;
-    return typeof args[number] != 'undefined' ? args[number] : match;
-  });
-};
+(function () {
+  "use strict";
 
-function tryParseInt(value) {
-  var result = parseInt(value);
-  return isNaN(result) ? 0 : result;
-}
+  /******************************************
+  String manipulations
+  ******************************************/
+  String.format = function () {
+    var args = arguments;
+    var str = args[0];
+    return str.replace(/{(\d+)}/g, function (match, number) {
+      number = ~~number + 1;
+      return typeof args[number] !== "undefined" ? args[number] : match;
+    });
+  };
 
-/******************************************
-JSON
-******************************************/
-JSON.tryParse = function (value, fallbackObject) {
-  var result;
+  window.tryParseInt = function (value) {
+    var result = parseInt(value);
+    return isNaN(result) ? 0 : result;
+  };
 
-  try {
-    result = this.parse(value);
-  }
-  catch (e) {
-    result = fallbackObject;
-  }
+  /******************************************
+  JSON
+  ******************************************/
+  JSON.tryParse = function (value, fallbackObject) {
+    var result;
 
-  return result;
-};
+    try {
+      result = this.parse(value);
+    }
+    catch (e) {
+      result = fallbackObject;
+    }
 
-/*******************************
-  Namespacing
-*******************************/
-function namespace(namespaceString) {
-  var parts = namespaceString.split('.'),
-        parent = window,
-        currentPart = '';
+    return result;
+  };
 
-  for (var i = 0, length = parts.length; i < length; i++) {
-    currentPart = parts[i];
-    parent[currentPart] = parent[currentPart] || {};
-    parent = parent[currentPart];
-  }
+  /*******************************
+    Namespacing
+  *******************************/
+  window.namespace = function (namespaceString) {
+    var parts = namespaceString.split("."),
+      parent = window,
+      currentPart = "";
 
-  return parent;
-}
+    for (var i = 0, length = parts.length; i < length; i++) {
+      currentPart = parts[i];
+      parent[currentPart] = parent[currentPart] || {};
+      parent = parent[currentPart];
+    }
+
+    return parent;
+  };
+})();

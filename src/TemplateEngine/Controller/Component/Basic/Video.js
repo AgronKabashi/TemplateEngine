@@ -1,4 +1,4 @@
-﻿(function (angular) {
+(function (angular) {
   "use strict";
 
   angular
@@ -10,9 +10,7 @@
         return {
           restrict: "A",
           link: function (scope, element, attributes) {
-            var video = element.get(0);
-
-            var defaultContent = new Cerberus.TemplateEngine.Model.Component.Basic.Video();
+            //var video = element.get(0);
             //scope.$parent.$watch("Component.Content", function () {
             //  var controlData = JSON.tryParse(scope.$parent.Component.Content, defaultContent);
             //

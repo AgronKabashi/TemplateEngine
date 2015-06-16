@@ -1,12 +1,13 @@
-﻿(function (angular) {
+(function (angular) {
+  "use strict";
+
   angular
     .module("Cerberus.TemplateEngine")
     .directive("csComponent", [
-      "$controller",
-      function ($controller) {
+      function () {
         return {
           restrict: "E",
-          link: function (scope, element, attributes) {
+          link: function (scope, element) {
             var component = scope.Component;
 
             element.attr({

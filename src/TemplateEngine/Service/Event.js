@@ -44,7 +44,9 @@
           var eventCollection = events[eventType];
 
           _.forEach(eventCollection, function (callback) {
-            callback && callback(data, source);
+            if (callback) {
+              callback(data, source);
+            }
           });
 
           //console.log("NotifyEnd");

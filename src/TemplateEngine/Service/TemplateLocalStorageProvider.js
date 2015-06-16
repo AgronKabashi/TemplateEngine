@@ -1,4 +1,8 @@
-﻿(function (angular) {
+/*eslint no-unused-vars:0*/
+/*eslint no-shadow:0*/
+(function (angular, _, localStorage) {
+  "use strict";
+
   namespace("Cerberus.TemplateEngine.Service")
     .TemplateLocalStorageProvider = angular.extend(function ($q) {
       var repository;
@@ -7,7 +11,7 @@
         localStorage.setItem("TemplateRepository", JSON.stringify(repository));
       }
 
-      this.Configure = function (data) { };
+      this.Configure = function () { };
 
       repository = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
 
@@ -38,11 +42,23 @@
             }
 
             var components = template.Components,
-                resolutions = template.Resolutions,
-                newResolutions = _.filter(resolutions, function (resolution) { return resolution.Id === 0; }),
-                highestComponentId = ~~Math.max(0, _.max(components, function (component) { return component.Id; }).Id),
-                highestResolutionId = ~~Math.max(0, _.max(newResolutions, function (resolution) { return resolution.Id; }).Id),
-                newComponents = _.filter(components, function (component) { return component.Id < 0; });
+                resolutions = template.Resolutions;
+
+            var newResolutions = _.filter(resolutions, function (resolution) {
+              return resolution.Id === 0;
+            });
+
+            var highestComponentId = ~~Math.max(0, _.max(components, function (component) {
+              return component.Id;
+            }).Id);
+
+            var highestResolutionId = ~~Math.max(0, _.max(newResolutions, function (resolution) {
+              return resolution.Id;
+            }).Id);
+
+            var newComponents = _.filter(components, function (component) {
+              return component.Id < 0;
+            });
 
             //Generate unique ids for resolutions
             _.forEach(newResolutions, function (resolution) {
@@ -67,8 +83,7 @@
           });
       };
 
-      this.CloneTemplate = function (templateId, successCallback, errorCallback) {
-      };
+      this.CloneTemplate = function (templateId, successCallback, errorCallback) {};
 
       this.GetTemplates = function () {
         var templates = _.map(repository.Templates, function (template) {
@@ -142,7 +157,7 @@
         ]);
       };
     },
-	{
-	  $inject: ["$q"]
-	});
-})(angular);
+    {
+      $inject: ["$q"]
+    });
+})(window.angular, window._, window.localStorage);

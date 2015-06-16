@@ -9,4 +9,4 @@
         $scope.Content = $scope.Component.Content;
       }
     ]);
-})(angular);
+})(window.angular);

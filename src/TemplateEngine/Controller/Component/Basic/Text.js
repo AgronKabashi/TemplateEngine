@@ -8,4 +8,4 @@
       function ($scope) {
       }
     ]);
-})(angular);
+})(window.angular);

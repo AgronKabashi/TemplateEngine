@@ -1,4 +1,4 @@
-﻿(function (angular, $, _) {
+(function (angular, $, _) {
   angular
     .module("Demo", [
       "ui.router",
@@ -7,28 +7,28 @@
     ])
     .config([
       "$stateProvider",
-			"$urlRouterProvider",
+      "$urlRouterProvider",
       "Cerberus.TemplateEngine.Service.TemplateProvider",
       function ($stateProvider, $urlRouterProvider, TemplateProvider) {
         TemplateProvider.SetProvider(Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider);
 
         $stateProvider
           .state("Home", {
-            url: "/home",
-            templateUrl: "home.html",
-            controller: "Demo.Controller.Home"
-          })
+          url: "/home",
+          templateUrl: "home.html",
+          controller: "Demo.Controller.Home"
+        })
           .state("Design", {
-            url: "/design/:Id",
-            templateUrl: "TemplateEditor/View/Design.html",
-            controller: "Demo.Controller.Design"
-          })
+          url: "/design/:Id",
+          templateUrl: "TemplateEditor/View/Design.html",
+          controller: "Demo.Controller.Design"
+        })
           .state("View", {
-            url: "/view/:Id",
-            templateUrl: "view.html",
-            controller: "Demo.Controller.View"
-          });
-
+          url: "/view/:Id",
+          templateUrl: "view.html",
+          controller: "Demo.Controller.View"
+        });
+  
         $urlRouterProvider.otherwise("/home");
       }
     ])
@@ -36,14 +36,14 @@
       "$http",
       function ($http) {
         var presets = [];
-
+  
         this.GetPresets = function () {
           $http
             .get("template-presets.json")
             .then(function (response) {
-              angular.extend(presets, response.data.TemplatePresets);
-            });
-
+            angular.extend(presets, response.data.TemplatePresets);
+          });
+  
           return presets;
         };
       }
@@ -56,12 +56,12 @@
         $scope.TemplatePresets = TemplatePresetsService.GetPresets();
         TemplateService.GetTemplates()
           .then(function (templates) {
-            $scope.Templates = templates;
-          });
-
+          $scope.Templates = templates;
+        });
+  
         $scope.AddTemplate = function (templatePreset) {
           var template;
-
+  
           if (templatePreset) {
             template = angular.extend({}, templatePreset.Data);
             template.Name = templatePreset.Name;
@@ -70,19 +70,19 @@
             template = new Cerberus.TemplateEngine.Model.Template();
             template.Name = "Template";
           }
-
+  
           TemplateService.SaveTemplate(template)
             .then(function (template) {
-              $scope.Templates.push(template);
-            });
+            $scope.Templates.push(template);
+          });
         };
-
+  
         $scope.RemoveTemplate = function (template) {
           var templateId = template.Id;
           TemplateService.RemoveTemplate(templateId)
             .then(function () {
-              _.remove($scope.Templates, function (template) { return template.Id === templateId; });
-            });
+            _.remove($scope.Templates, function (template) { return template.Id === templateId; });
+          });
         };
       }
     ])
@@ -96,9 +96,9 @@
         TemplateService
           .GetTemplate(templateId)
           .then(function (template) {
-            $scope.TemplateCSS = GenerateCSS(template);
-            EventService.Notify("InitializeTemplate", template);
-          });
+          $scope.TemplateCSS = GenerateCSS(template);
+          EventService.Notify("InitializeTemplate", template);
+        });
       }
     ])
     .controller("Demo.Controller.Design", [
@@ -112,9 +112,9 @@
         TemplateService
           .GetTemplate(templateId)
           .then(function (template) {
-            DataBagService.AddData("Template", template);
-            EventService.Notify("InitializeTemplate", template);
-          });
+          DataBagService.AddData("Template", template);
+          EventService.Notify("InitializeTemplate", template);
+        });
       }
     ]);
 

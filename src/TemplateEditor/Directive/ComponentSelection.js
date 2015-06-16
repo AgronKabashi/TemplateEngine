@@ -1,4 +1,4 @@
-﻿(function (angular, _) {
+(function (angular, _) {
   "use strict";
 
   function GetComponentModels(selectedElements) {
