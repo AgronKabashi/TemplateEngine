@@ -22,6 +22,7 @@
           link: function (scope, element, attributes) {
             element
               .addClass("animatable")
+              .parent()
               .click(function (event) {
                 var element = $(event.target);
                 var elementTagName = event.target.tagName.toLowerCase();

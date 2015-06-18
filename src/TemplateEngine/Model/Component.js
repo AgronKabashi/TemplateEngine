@@ -1,4 +1,5 @@
-namespace("Cerberus.TemplateEngine.Model").Component = function () {
+/*eslint strict:0*/
+namespace("Cerberus.TemplateEngine.Model.Component", function () {
   this.Id = 0;
   this.FriendlyName = "";
   this.Name = "";
@@ -11,4 +12,4 @@ namespace("Cerberus.TemplateEngine.Model").Component = function () {
   this.Class = "";
 
   this.Content = {};
-};
+});

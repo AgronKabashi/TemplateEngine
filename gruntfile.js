@@ -7,9 +7,10 @@ module.exports = function (grunt) {
   require("node-bourbon");
 
   grunt.registerTask("build", ["clean:all", "copy", "sass", "concat"]);
-  grunt.registerTask("debug", ["build", "connect:livereload", "watch"]);
-  grunt.registerTask("release", ["build", "htmlmin", "uglify"]);
-  grunt.registerTask("default", ["debug"]);
+  grunt.registerTask("release-build", ["build", "htmlmin", "uglify"]);
+  grunt.registerTask("livereload", ["connect:livereload", "watch"]);
+  grunt.registerTask("default", ["build", "livereload"]);
+  grunt.registerTask("release", ["release-build", "livereload"]);
 
   grunt.initConfig({
     config: {

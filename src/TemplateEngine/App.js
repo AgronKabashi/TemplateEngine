@@ -1,5 +1,7 @@
 (function (angular, define) {
-  var scriptElements = document.getElementsByTagName("script"),
+  "use strict";
+
+  var scriptElements = window.document.getElementsByTagName("script"),
     thisElement = scriptElements[scriptElements.length - 1],
     scriptPath = thisElement.src.substr(0, thisElement.src.lastIndexOf("/") + 1);
 

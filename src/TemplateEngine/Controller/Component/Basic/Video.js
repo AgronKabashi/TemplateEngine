@@ -5,11 +5,10 @@
     .module("Cerberus.TemplateEngine")
     .controller("Cerberus.TemplateEngine.Controller.Component.Basic.Video", [angular.noop])
     .directive("csVideo", [
-      "$sce",
-      function ($sce) {
+      function () {
         return {
           restrict: "A",
-          link: function (scope, element, attributes) {
+          link: function (/*scope, element*/) {
             //var video = element.get(0);
             //scope.$parent.$watch("Component.Content", function () {
             //  var controlData = JSON.tryParse(scope.$parent.Component.Content, defaultContent);

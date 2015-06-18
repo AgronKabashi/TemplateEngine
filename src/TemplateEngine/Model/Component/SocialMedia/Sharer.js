@@ -1,5 +1,6 @@
-namespace("Cerberus.TemplateEngine.Model.Component.SocialMedia").Sharer = function () {
+/*eslint strict:0*/
+namespace("Cerberus.TemplateEngine.Model.Component.SocialMedia.Sharer", function () {
   this.Facebook = true;
   this.Twitter = true;
   this.GooglePlus = true;
-};
+});

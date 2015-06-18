@@ -1,6 +1,7 @@
-namespace("Cerberus.TemplateEngine.Model.Component.Navigation").Link = function () {
+/*eslint strict:0*/
+namespace("Cerberus.TemplateEngine.Model.Component.Navigation.Link", function () {
   this.Url = "";
   this.Tooltip = "";
   this.Text = "";
   this.Target = "";
-};
+});

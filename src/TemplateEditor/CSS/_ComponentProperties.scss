@@ -1,4 +1,4 @@
-﻿cs-componentproperties {
+cs-componentproperties {
   background-color: $controlBackgroundColor;
   border: 1px solid $borderColor;
   bottom: 82px;
@@ -38,7 +38,7 @@
   .columns {
   }
 
-  .two > div,
+  .two > input,
   .two > select {
     @include span-columns(6);
   }

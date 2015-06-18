@@ -24,6 +24,7 @@
         }
 
         $scope.Content = $scope.Component.Content;
+        FetchRSS();
       }
     ]);
 })(window.angular);

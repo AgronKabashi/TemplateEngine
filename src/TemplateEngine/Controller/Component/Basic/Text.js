@@ -3,9 +3,5 @@
 
   angular
     .module("Cerberus.TemplateEngine")
-    .controller("Cerberus.TemplateEngine.Controller.Component.Basic.Text", [
-      "$scope",
-      function ($scope) {
-      }
-    ]);
+    .controller("Cerberus.TemplateEngine.Controller.Component.Basic.Text", function () { });
 })(window.angular);

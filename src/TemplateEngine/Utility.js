@@ -37,17 +37,18 @@
   /*******************************
     Namespacing
   *******************************/
-  window.namespace = function (namespaceString) {
+  window.namespace = function (namespaceString, data) {
     var parts = namespaceString.split("."),
       parent = window,
-      currentPart = "";
+      currentPart = "",
+      length = parts.length - 1;
 
-    for (var i = 0, length = parts.length; i < length; i++) {
+    for (var i = 0; i < length; i++) {
       currentPart = parts[i];
       parent[currentPart] = parent[currentPart] || {};
       parent = parent[currentPart];
     }
 
-    return parent;
+    parent[parts[length]] = data;
   };
 })();

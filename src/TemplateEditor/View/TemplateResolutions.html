@@ -1,4 +1,4 @@
-﻿<div class="resolution-container">
+<div class="resolution-container">
 	<cs-buttondropdown
 		datasource="Template.Resolutions"
 		limit="Template.Resolutions.length"
@@ -12,7 +12,7 @@
 		<div class="resolution"
 			 ng-repeat="resolution in Template.Resolutions | orderBy: 'ResolutionValue':true"
 			 ng-class="::{ 'default': resolution.ResolutionValue > MaxResolutionValue }"
-			 style="width: {{ resolution.ResolutionValue }}px;"
+			 style="{{ 'width: ' + resolution.ResolutionValue + 'px' }}"
 			 ng-bind="::resolution.ResolutionValue <= MaxResolutionValue ? resolution.ResolutionValue + ' px' : 'Desktop'"
 			 ng-click="SetDocumentWidth(resolution.ResolutionValue)"
 			 title="{{resolution.ResolutionValue <= MaxResolutionValue ? resolution.ResolutionValue + ' px' : 'Desktop'}}">
