@@ -3,6 +3,7 @@
 @import "bourbon";
 @import "neat";
 
+@import "Globals";
 @import "Palette";
 @import "Font";
 @import "Button";
@@ -37,11 +38,11 @@ body {
 .button-container {
   background-color: $controlBackgroundColor;
   bottom: 0;
-  font-family: "Droid Sans";
+  font-family: $font-family;
   padding: 20px;
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: $layer-3;
 
   .default-button,
   .danger-button {
@@ -81,6 +82,8 @@ cs-template.animatable > cs-component {
 /* EditDesign specific rules */
 .edit-design cs-template > cs-component {
   background-color: rgba(200, 200, 200, 0.4);
+  
+  will-change: auto;
 
   &.ui-resizable-resizing,
   &.ui-draggable-dragging {
@@ -88,12 +91,13 @@ cs-template.animatable > cs-component {
   }
 
   &.selected {
-    z-index: 1000;
     cursor: move;
+    will-change: left, top, right, bottom, opacity;
+    z-index: $layer-2;
   }
 
   &.ui-draggable-dragging {
     opacity: 0.5;
-    z-index: 1000;
+    z-index: $layer-2;
   }
 }

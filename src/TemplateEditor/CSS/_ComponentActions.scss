@@ -1,12 +1,12 @@
 ﻿cs-componentactions {
   //bottom: 80px;
-  font-family: 'Droid Sans';
+  font-family: $font-family;
   left: -2px;
   overflow: visible;
   position: fixed;
   top: 125px;
   width: 1px;
-  z-index: 3;
+  z-index: $layer-3;
 
   .primary-action,
   .secondary-action {

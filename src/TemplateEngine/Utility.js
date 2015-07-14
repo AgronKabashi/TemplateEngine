@@ -38,6 +38,10 @@
     Namespacing
   *******************************/
   window.namespace = function (namespaceString, data) {
+    if (!data) {
+      return window[namespaceString];
+    }
+
     var parts = namespaceString.split("."),
       parent = window,
       currentPart = "",

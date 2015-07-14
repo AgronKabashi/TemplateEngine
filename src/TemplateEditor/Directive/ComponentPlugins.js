@@ -21,9 +21,11 @@
                 .find(".component-plugin")
                 .draggable({
                   helper: "clone",
-                  "cursorAt": cursorAt,
-
-                  start: function () {
+                  start: function (e, ui) {
+                    $(this).draggable("option", "cursorAt", {
+                      left: 100,
+                      top: 100
+                    });
                     var componentPluginElement = $(this);
                     componentPluginElement.data("component-plugin-info", {
                       ComponentInfo: {
@@ -34,7 +36,7 @@
                       CursorAt: cursorAt
                     });
 
-                    scope.IsExpanded = false;
+                    //scope.IsExpanded = false;
                     scope.$digest();
                   }
                 });

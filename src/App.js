@@ -1,3 +1,8 @@
+/**
+ * DEMO CODE
+ * FOR DEMONSTRATION PURPOSES ONLY
+ * BEST PRACTICES ARE NOT FOLLOWED
+ */
 (function (angular, $, _) {
   angular
     .module("Demo", [

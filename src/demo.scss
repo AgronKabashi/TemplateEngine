@@ -1,16 +1,13 @@
 ﻿@import "bourbon";
 @import "neat";
 
+@import "TemplateEditor/CSS/Globals";
 @import "TemplateEditor/CSS/Reset";
-
-$mobile: new-breakpoint(max-width 767px);
-$tablet: new-breakpoint(min-width 768px);
-$desktop: new-breakpoint(min-width 1025px);
 
 html,
 body {
-  font-family: "Droid Sans";
-  font-size: 14px;
+  font-family: Tahoma;
+  font-size: 16px;
 }
 
 a {
@@ -34,6 +31,7 @@ h1 {
 
 button {
   margin-bottom: 1rem;
+  padding: 8px;
 }
 
 .ng-cloak,
@@ -51,53 +49,48 @@ button {
   width: 100%;
   text-align: left;
 
-  > {
-    li {
-      display: table-row;
-
-      > {
-        * {
-          border-bottom: 1px solid #ddd;
-          display: table-cell;
-          min-width: 100px;
-          overflow: hidden;
-          padding: 1rem;
-          text-overflow: ellipsis;
-          vertical-align: middle;
-          white-space: nowrap;
-        }
-
-        .button-group {
-          text-align: right;
-        }
-
-        :last-child {
-          width: 100%;
-        }
-      }
+  li {
+    display: table-row;
+    width: 100%;
+    
+    > a,
+    .button-group {
+      border-bottom: 1px solid #ddd;
+      display: table-cell;
+      overflow: hidden;
+      padding: 1rem;
+      white-space: nowrap;
+      vertical-align: middle;      
     }
 
-    .list-header {
-      font-weight: bold;
-
-      > span {
-        border-bottom: 1px solid #ddd !important;
-      }
+    > a {
+      min-width: 100px;
+      text-overflow: ellipsis;
     }
 
-    li:nth-last-child(-n+2) > * {
+    .button-group {
+      text-align: right;
+      width: 100%;
+    }
+    
+    &:last-child > a,
+    &:last-child .button-group {
       border-bottom: none;
     }
-
-    .empty-list-message i {
+  }
+  
+  li.empty-list-message:last-child {
+    display: table-row;
+    
+    i {
       display: block;
       padding: 1rem;
     }
   }
+}
 
-  @include media($tablet) {
-    > li > * {
-      min-width: 200px;
-    }
-  }
+select {
+  border: 1px solid #c5c5c5;
+  border-radius: 2px;
+  padding: 8px;
 }

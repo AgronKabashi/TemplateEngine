@@ -28,7 +28,8 @@
           }
 
           resolution.ResolutionValue = resolutionValue;
-          resolution.ComponentVisualProperties = JSON.parse(JSON.stringify(currentResolution.ComponentVisualProperties));
+          // Create a deep copy of the existing components' visual properties
+          resolution.ComponentVisualProperties = currentResolution.ComponentVisualProperties ? JSON.parse(JSON.stringify(currentResolution.ComponentVisualProperties)) : {};
 
           template.Resolutions.push(resolution);
 

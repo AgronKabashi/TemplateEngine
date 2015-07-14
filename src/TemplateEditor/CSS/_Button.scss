@@ -21,9 +21,10 @@
   }
 
   &[disabled] {
+    background-color: transparent;
     color: gray;
-    background-color: inherit;
     cursor: default;
+    pointer-events: none;
 
     &:hover {
       background-color: inherit;

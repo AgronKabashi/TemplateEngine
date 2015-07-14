@@ -2,14 +2,14 @@
   background-color: $controlBackgroundColor;
   border-bottom: 1px solid $borderColor;
   box-shadow: -10px 1px 30px 0 black;
-  font-family: "Droid Sans";
+  font-family: $font-family;
   display: block;
   padding: 20px 0 10px 5px;
   position: fixed;
   top: 0;
   width: 100%;
   white-space: nowrap;
-  z-index: 4;
+  z-index: $layer-1;
 
   > {
     .resolution-container {
@@ -109,6 +109,9 @@
 
     .resolution-slider-container {
       > .resolution-slider {
+        /* SUPER IMPORTANT - Ensures that percentage based offsets calculate correctly */
+        box-sizing: content-box;
+
         background-image: url(../Images/Ruler.png);
         background-repeat: no-repeat;
         background-position: left 4px;
@@ -118,9 +121,6 @@
         font-size: 0;
         height: 20px;
         margin-left: 0;
-        /* SUPER IMPORTANT - Ensures that percentage based offsets calculate correctly */
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
         vertical-align: middle;
         width: 1024px;
         position: relative;

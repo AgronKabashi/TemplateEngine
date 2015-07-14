@@ -52,7 +52,7 @@
       min-width: 10rem;
       padding: 0.25rem 0;
       position: absolute;
-      z-index: 10000;
+      z-index: $layer-4;
 
       > li {
         cursor: pointer;

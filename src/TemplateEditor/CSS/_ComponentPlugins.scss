@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 100%;
   width: 100%;
-  z-index: 9999;
+  z-index: $layer-3;
 
   > .container {
     @include transform(translateY(100%));
@@ -46,7 +46,7 @@
         }
 
         &.ui-draggable {
-          z-index: 9999;
+          z-index: $layer-3;
         }
 
         &:hover > img,
