@@ -29,11 +29,6 @@ h1 {
   font-size: 3rem;
 }
 
-button {
-  margin-bottom: 1rem;
-  padding: 8px;
-}
-
 .ng-cloak,
 .hidden {
   display: none !important;
@@ -89,8 +84,16 @@ button {
   }
 }
 
-select {
-  border: 1px solid #c5c5c5;
-  border-radius: 2px;
+.actions {
+  margin-bottom: 1rem;
+}
+
+input,
+select,
+button {
   padding: 8px;
+  height: 35px;
+  border: 1px solid #bdbdbd;
+  display: inline-block;
+  vertical-align: middle;
 }

@@ -69,12 +69,14 @@
   
           if (templatePreset) {
             template = angular.extend({}, templatePreset.Data);
-            template.Name = templatePreset.Name;
+            template.Name = $scope.newTemplateName || templatePreset.Name;
           }
           else {
             template = new Cerberus.TemplateEngine.Model.Template();
-            template.Name = "Template";
+            template.Name = $scope.newTemplateName || "Template";
           }
+          
+          $scope.newTemplateName = "";
   
           TemplateService.SaveTemplate(template)
             .then(function (template) {

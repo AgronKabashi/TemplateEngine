@@ -13,12 +13,13 @@
       </p>
     </div>
 
-    <select ng-model="templatePreset" ng-options="templatePreset.Name for templatePreset in TemplatePresets">
-      <option value="">Blank Template</option>
-    </select>
-
-    <button ng-click="AddTemplate(templatePreset)">Add Template</button>
-
+    <div class="actions">
+      <select ng-model="templatePreset" ng-options="templatePreset.Name for templatePreset in TemplatePresets">
+        <option value="">Blank Template</option>
+      </select>
+      <input type="text" placeholder="Enter a template name" ng-model="newTemplateName" />
+      <button ng-click="AddTemplate(templatePreset)">Add Template</button>
+  </div>
     <ul class="list">
        <li class="empty-list-message" ng-class="{hidden: Templates && Templates.length}">
         <i>No Templates</i>
