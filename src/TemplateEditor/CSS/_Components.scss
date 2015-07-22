@@ -5,14 +5,6 @@
     pointer-events: none;
   }
 
-  &::after {
-    @include transition(box-shadow 0.3s);
-    position: absolute;
-    content: "";
-    box-shadow: none;
-    display: block;
-  }
-
   &:hover::before,
   &.ui-resizable-resizing::before {
     background-color: #eaeaea;
@@ -39,17 +31,10 @@
     opacity: 0.1;
   }
 
-  &.selected::after {
+  &.selected {
     -webkit-border-radius: initial;
     border-radius: inherit;
-    box-shadow: 0 0 1px 1px #3F607F, 0 0 10px 1px #3F607F;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    border: 0;
-    width: 100%;
-    height: auto;
-    pointer-events: none;
+    outline: solid 1px #3F607F;
   }
 
   &[data-friendly-name=""]:hover::before,
