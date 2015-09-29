@@ -4,8 +4,8 @@
   angular
     .module("Cerberus.TemplateEditor")
     .service("Cerberus.TemplateEditor.Service.ResourceBuilder", [
-      "TemplateEditorPath",
-      function (TemplateEditorPath) {
+      "templateEditorPath",
+      function (templateEditorPath) {
         this.BuildResource = function () {
           return angular.extend([], arguments).slice(0).join("/");
         };

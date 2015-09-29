@@ -8,11 +8,11 @@
         return {
           restrict: "E",
           link: function (scope, element) {
-            var component = scope.Component;
+            var component = scope.component;
 
             element.attr({
               id: "TC" + component.Id,
-              class: component.Name.toLowerCase()
+              class: component.name.toLowerCase()
             });
           },
 
@@ -20,7 +20,7 @@
             "$scope",
             "$controller",
             function ($scope, $controller) {
-              $controller($scope.Component.ComponentType, { "$scope": $scope });
+              $controller($scope.component.componentType, { "$scope": $scope });
             }
           ]
         };

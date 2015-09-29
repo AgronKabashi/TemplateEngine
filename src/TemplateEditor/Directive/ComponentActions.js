@@ -1,14 +1,14 @@
-(function (angular) {
+(function (angular, _) {
   "use strict";
 
   angular
     .module("Cerberus.TemplateEditor")
-		.directive("csComponentactions", [
+    .directive("csComponentactions", [
       "Cerberus.TemplateEditor.Service.PathResolver",
       function (PathResolver) {
         return {
           restrict: "E",
-          templateUrl: PathResolver.Resolve("View/ComponentActions.html"),
+          templateUrl: PathResolver.resolve("view/componentActions.html"),
           scope: true,
           controller: [
             "$scope",
@@ -16,84 +16,75 @@
             "Cerberus.TemplateEditor.Localization",
             "Cerberus.TemplateEngine.Service.DataBag",
             "Cerberus.TemplateEditor.Service.TemplateResolution",
-            function ($scope, EventService, Localization, DataBagService, TemplateResolutionService) {
-              function CalculateHiddenControlCount() {
-                $scope.HasHiddenControls = false;
-
-                _.forEach($scope.Template.Components, function (component) {
-                  if (component.VisualProperties.indexOf("display:none") >= 0) {
-                    $scope.HasHiddenControls = true;
-                    return false;
-                  }
-                });
-              }
-
-              function UpdateCurrentResolution(resolutionValue) {
-                $scope.ResolutionIndex = TemplateResolutionService.FindResolutionIndex($scope.Template, resolutionValue);
-              }
-
-              this.InitializeScope = function () {
-                var templateMode = DataBagService.GetData("TemplateMode");
-
-                _.extend($scope, {
-                  Template: DataBagService.GetData("Template"),
-                  ResolutionIndex: -1,
-                  SelectedComponents: [],
-                  Localization: Localization,
-                  ShowTemplateEditorActions: templateMode === Cerberus.TemplateEngine.TemplateMode.EditDesign,
-                  ShowContentEditorActions: templateMode === Cerberus.TemplateEngine.TemplateMode.EditContent,
-                  HiddenControls: 0,
-
-                  DistributeResolutionPropertiesToAllResolutions: function () {
-                    TemplateResolutionService.DistributeResolutionPropertiesToAllResolutions($scope.Template, DataBagService.GetData("CurrentResolution"), $scope.SelectedComponents);
-                  },
-
-                  DistributeResolutionPropertiesToLowerResolutions: function () {
-                    TemplateResolutionService.DistributeResolutionPropertiesToLowerResolutions($scope.Template, DataBagService.GetData("CurrentResolution"), $scope.SelectedComponents);
-                  },
-
-                  DistributeResolutionPropertiesToHigherResolutions: function () {
-                    TemplateResolutionService.DistributeResolutionPropertiesToHigherResolutions($scope.Template, DataBagService.GetData("CurrentResolution"), $scope.SelectedComponents);
-                  },
-
-                  ToggleHiddenElements: function () {
-                    $scope.ShowHiddenElements = !$scope.ShowHiddenElements;
-                    EventService.Notify("ShowHiddenElements", $scope.ShowHiddenElements);
-                  },
-
-                  RemoveSelectedComponents: function () {
-                    var template = $scope.Template;
-                    _.remove($scope.SelectedComponents, function (selectedComponent) {
-                      _.remove(template.Components, function (component) { return component.Id === selectedComponent.Id; });
-                      TemplateEditorHelper.RemoveComponentFromResolutions(template, selectedComponent);
-
-                      return true;
-                    });
-
-                    EventService.Notify("ComponentsRemoved");
-                  }
-                });
-              };
-
-              this.InitializeEvents = function () {
-                EventService.Subscribe("InitializeTemplate", function (template) {
-                  $scope.Template = template;
-                });
-
-                EventService.Subscribe("ComponentSelected", function (components) {
-                  $scope.SelectedComponents = components;
-                });
-
-                EventService.Subscribe("ResolutionSelected", CalculateHiddenControlCount);
-                EventService.Subscribe("ResolutionSelected", UpdateCurrentResolution);
-                EventService.Subscribe("ComponentVisibilityChanged", CalculateHiddenControlCount);
-              };
-
-              this.InitializeScope();
-              this.InitializeEvents();
-            }
-          ]
+            "Cerberus.TemplateEditor.Service.Template",
+            "Cerberus.TemplateEngine.TemplateMode",
+            ComponentActionController]
         };
       }
-		]);
-})(window.angular);
+    ]);
+
+  function ComponentActionController($scope, EventService, Localization, DataBagService, TemplateResolutionService, TemplateService, TemplateModes) {
+    var templateMode = DataBagService.getData("TemplateMode");
+
+    _.extend($scope, {
+      template: DataBagService.getData("Template"),
+      resolutionIndex: -1,
+      selectedComponents: [],
+      localization: Localization,
+      showTemplateEditorActions: templateMode === TemplateModes.editDesign,
+      showContentEditorActions: templateMode === TemplateModes.editContent,
+      hiddenControls: 0,
+
+      distributeResolutionPropertiesToAllResolutions: function () {
+        TemplateResolutionService.distributeResolutionPropertiesToAllResolutions($scope.template, DataBagService.getData("CurrentResolution"), $scope.selectedComponents);
+      },
+
+      distributeResolutionPropertiesToLowerResolutions: function () {
+        TemplateResolutionService.distributeResolutionPropertiesToLowerResolutions($scope.template, DataBagService.getData("CurrentResolution"), $scope.selectedComponents);
+      },
+
+      distributeResolutionPropertiesToHigherResolutions: function () {
+        TemplateResolutionService.distributeResolutionPropertiesToHigherResolutions($scope.template, DataBagService.getData("CurrentResolution"), $scope.selectedComponents);
+      },
+
+      toggleHiddenElements: function () {
+        $scope.showHiddenElements = !$scope.showHiddenElements;
+        EventService.notify("ShowHiddenElements", $scope.showHiddenElements);
+      },
+
+      removeSelectedComponents: function () {
+        TemplateService.removeComponentsFromTemplate($scope.template, $scope.selectedComponents);
+        $scope.selectedComponents = [];
+
+        EventService.notify("ComponentsRemoved");
+      }
+    });
+
+    EventService.subscribe("InitializeTemplate", function (template) {
+      $scope.template = template;
+    });
+
+    EventService.subscribe("ComponentSelected", function (components) {
+      $scope.selectedComponents = components;
+    });
+
+    EventService.subscribe("ResolutionSelected", calculateHiddenControlCount);
+    EventService.subscribe("ResolutionSelected", updateCurrentResolution);
+    EventService.subscribe("ComponentVisibilityChanged", calculateHiddenControlCount);
+
+    function calculateHiddenControlCount() {
+      $scope.hasHiddenControls = false;
+
+      _.forEach($scope.template.components, function (component) {
+        if (component.visualProperties.indexOf("display:none") >= 0) {
+          $scope.hasHiddenControls = true;
+          return false;
+        }
+      });
+    }
+
+    function updateCurrentResolution(resolutionValue) {
+      $scope.resolutionIndex = TemplateResolutionService.findResolutionIndex($scope.template, resolutionValue);
+    }
+  }
+})(window.angular, window._);

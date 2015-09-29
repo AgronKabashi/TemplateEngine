@@ -1,27 +1,31 @@
 (function (angular) {
   "use strict";
 
+  var ModelFactory = angular.module("Cerberus.ModelFactory");
+
   angular
     .module("Cerberus.TemplateEngine")
-    .provider("Cerberus.TemplateEngine.Service.Template", function () {
-      var templateProvider = Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider,
+    .provider("Cerberus.TemplateEngine.Service.Template", [
+      function () {
+        var templateProvider = ModelFactory.getModelType("Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider"),
         templateProviderParameters = null;
 
-      this.SetProvider = function (provider, parameters) {
-        templateProvider = provider;
-        templateProviderParameters = parameters;
-      };
+        this.setProvider = function (provider, parameters) {
+          templateProvider = provider;
+          templateProviderParameters = parameters;
+        };
 
-      this.$get = [
-        "$injector",
-        function ($injector) {
-          var templateProviderInstance = $injector.instantiate(templateProvider);
-          if (templateProviderParameters) {
-            templateProviderInstance.Configure(templateProviderParameters);
+        this.$get = [
+          "$injector",
+          function ($injector) {
+            var templateProviderInstance = $injector.instantiate(templateProvider);
+            if (templateProviderParameters) {
+              templateProviderInstance.configure(templateProviderParameters);
+            }
+
+            return templateProviderInstance;
           }
-
-          return templateProviderInstance;
-        }
-      ];
-    });
-})(angular);
+        ];
+      }
+    ]);
+})(window.angular);

@@ -1,10 +1,15 @@
-/*eslint strict:0*/
-namespace("Cerberus.TemplateEngine.Model.Template", function () {
-  this.Name = "";
-  this.Id = 0;
-  this.VisualProperties = "";
-  this.CreatedDateAsString = "";
-  this.LastModifiedDateAsString = "";
-  this.Components = [];
-  this.Resolutions = [];
-});
+(function (angular) {
+  "use strict";
+
+  angular
+    .module("Cerberus.ModelFactory")
+    .registerModel("Cerberus.TemplateEngine.Model.Template", function () {
+      this.name = "";
+      this.id = 0;
+      this.visualProperties = "";
+      this.createdDateAsString = "";
+      this.lastModifiedDateAsString = "";
+      this.components = [];
+      this.resolutions = [];
+    });
+})(window.angular);

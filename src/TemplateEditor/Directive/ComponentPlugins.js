@@ -9,11 +9,11 @@
         return {
           restrict: "E",
           scope: true,
-          templateUrl: PathResolver.Resolve("View/ComponentPlugins.html"),
+          templateUrl: PathResolver.resolve("view/componentPlugins.html"),
 
           link: function (scope, element, attrs) {
             //TODO: Remove watch after single use
-            var singleWatch = scope.$watch("ComponentPlugins", function () {
+            var singleWatch = scope.$watch("componentPlugins", function () {
               singleWatch();
 
               var cursorAt = { left: 0, top: 0 };
@@ -25,12 +25,12 @@
                   start: function (e, ui) {
                     var componentPluginElement = $(this);
                     componentPluginElement.data("component-plugin-info", {
-                      ComponentInfo: {
-                        ComponentType: componentPluginElement.attr("data-control-type"),
-                        Category: componentPluginElement.attr("data-control-category"),
-                        Name: componentPluginElement.attr("data-name")
+                      componentInfo: {
+                        componentType: componentPluginElement.attr("data-control-type"),
+                        category: componentPluginElement.attr("data-control-category"),
+                        name: componentPluginElement.attr("data-name")
                       },
-                      CursorAt: cursorAt
+                      cursorAt: cursorAt
                     });
 
                     //scope.IsExpanded = false;
@@ -42,13 +42,16 @@
 
           controller: [
             "$scope",
-            "TemplateEditorPath",
+            "templateEditorPath",
+            "Cerberus.TemplateEditor.Localization",
             "Cerberus.TemplateEngine.Service.Template",
-            function ($scope, TemplateEditorPath, TemplateEngineService) {
-              TemplateEngineService.GetComponentPlugins()
+            function ($scope, templateEditorPath, Localization, TemplateEngineService) {
+              $scope.localization = Localization;
+
+              TemplateEngineService.getComponentPlugins()
                 .then(function (componentPlugins) {
-                  $scope.ComponentPlugins = componentPlugins;
-                  $scope.ApplicationBasePath = TemplateEditorPath;
+                  $scope.componentPlugins = componentPlugins;
+                  $scope.applicationBasePath = templateEditorPath;
                 });
             }
           ]

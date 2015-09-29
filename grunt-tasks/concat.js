@@ -11,14 +11,15 @@ module.exports = {
   },
   templateEngine: {
     src: [
-      "<%= config.src %>/TemplateEngine/App.js",
-      "<%= config.src %>/TemplateEngine/Utility.js",
-      "<%= config.src %>/TemplateEngine/**/*.js"
+      "<%= config.src %>/templateengine/modelFactory.js",
+      "<%= config.src %>/templateengine/app.js",
+      "<%= config.src %>/templateengine/utility.js",
+      "<%= config.src %>/templateengine/**/*.js"
     ],
-    dest: "<%= config.dist %>/TemplateEngine/TemplateEngine.js"
+    dest: "<%= config.dest %>/templateengine/templateengine.js"
   },
   templateEditor: {
-    src: "<%= config.src %>/TemplateEditor/**/*.js",
-    dest: "<%= config.dist %>/TemplateEditor/TemplateEditor.js"
+    src: "<%= config.src %>/templateeditor/**/*.js",
+    dest: "<%= config.dest %>/templateeditor/templateeditor.js"
   }
 };

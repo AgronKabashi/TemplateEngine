@@ -1,95 +1,93 @@
-(function (angular) {
+(function (angular, _) {
   "use strict";
 
   angular
     .module("Cerberus.TemplateEditor")
     .service("Cerberus.TemplateEditor.Service.TemplateResolution", [
-      "MaxResolutionCount",
-			"MaxResolutionValue",
-			"MaxResolutionDifference",
+      "maxResolutionCount",
+      "maxResolutionValue",
+      "maxResolutionDifference",
+      "Cerberus.ModelFactory",
       "Cerberus.TemplateEditor.Helper.TemplateEditor",
-      function (MaxResolutionCount, MaxResolutionValue, MaxResolutionDifference, TemplateEditorHelper) {
-        this.AddResolution = function (template, resolutionValue) {
-          var resolution = new Cerberus.TemplateEngine.Model.Resolution(),
-						  currentResolution = this.FindResolution(template, resolutionValue);
-
-          if (template.Resolutions.length >= MaxResolutionCount) {
-            //EventService.Notify("ShowMessage", Localization.ComponentResolutions.ReachedMaximumResolutions);
-            return;
-          }
-
-          var previousRes = this.FindResolution(template, resolutionValue - MaxResolutionDifference);
-          var nextRes = this.FindResolution(template, resolutionValue + MaxResolutionDifference);
-
-          if (Math.abs(resolutionValue - previousRes.ResolutionValue) <= MaxResolutionDifference ||
-            Math.abs(resolutionValue - nextRes.ResolutionValue) <= MaxResolutionDifference) {
-            //EventService.Notify("ShowMessage", Localization.TemplateResolutions.NotEnoughSpace);
-            return;
-          }
-
-          resolution.ResolutionValue = resolutionValue;
-          // Create a deep copy of the existing components' visual properties
-          resolution.ComponentVisualProperties = currentResolution.ComponentVisualProperties ? JSON.parse(JSON.stringify(currentResolution.ComponentVisualProperties)) : {};
-
-          template.Resolutions.push(resolution);
-
-          template.Resolutions.sort(function (a, b) {
-            return a.ResolutionValue - b.ResolutionValue;
-          });
-
-          return resolution;
-        };
-
-        this.RemoveResolution = function (template, resolution) {
-          var resolutionValue = resolution.ResolutionValue;
-          _.remove(template.Resolutions, function (resolution) {
-            return resolution.ResolutionValue === resolutionValue;
-          });
-        };
-
-        this.FindResolution = function (template, resolutionValue) {
-          var index = this.FindResolutionIndex(template, resolutionValue);
-
-          return index >= 0 ? template.Resolutions[index] : null;
-        };
-
-        this.FindResolutionIndex = function (template, resolutionValue) {
-          var result = _.findIndex(template.Resolutions, function (resolution) {
-            return resolution.ResolutionValue >= resolutionValue;
-          });
-
-          return result >= 0 ? result : -1;
-        };
-
-        this.DistributeResolutionPropertiesToAllResolutions = function (template, sourceResolution, components) {
-          _.forEach(components, function (component) {
-            _.forEach(template.Resolutions, function (resolution) {
-              TemplateEditorHelper.SetComponentVisualProperties(template, resolution, component);
-            });
-          });
-        };
-
-        this.DistributeResolutionPropertiesToLowerResolutions = function (template, sourceResolution, components) {
-          _.forEach(components, function (component) {
-            _.forEach(template.Resolutions, function (resolution) {
-
-              if (resolution.ResolutionValue < sourceResolution.ResolutionValue) {
-                TemplateEditorHelper.SetComponentVisualProperties(template, resolution, component);
-              }
-            });
-          });
-        };
-
-        this.DistributeResolutionPropertiesToHigherResolutions = function (template, sourceResolution, components) {
-          _.forEach(components, function (component) {
-            _.forEach(template.Resolutions, function (resolution) {
-
-              if (resolution.ResolutionValue > sourceResolution.ResolutionValue) {
-                TemplateEditorHelper.SetComponentVisualProperties(template, resolution, component);
-              }
-            });
-          });
-        };
-      }
+      TemplateResolutionService
     ]);
-})(window.angular);
+
+  function TemplateResolutionService(maxResolutionCount, maxResolutionValue, maxResolutionDifference, ModelFactory, TemplateEditorHelper) {
+    this.addResolution = function (template, resolutionValue) {
+      var resolution = ModelFactory.instantiateModel("Cerberus.TemplateEngine.Model.Resolution"),
+        currentResolution = this.findResolution(template, resolutionValue);
+
+      if (template.resolutions.length >= maxResolutionCount) {
+        //EventService.Notify("ShowMessage", Localization.ComponentResolutions.ReachedMaximumResolutions);
+        return;
+      }
+
+      var previousRes = this.findResolution(template, resolutionValue - maxResolutionDifference);
+      var nextRes = this.findResolution(template, resolutionValue + maxResolutionDifference);
+
+      if (Math.abs(resolutionValue - previousRes.resolutionValue) <= maxResolutionDifference ||
+        Math.abs(resolutionValue - nextRes.resolutionValue) <= maxResolutionDifference) {
+        //EventService.Notify("ShowMessage", Localization.TemplateResolutions.NotEnoughSpace);
+        return;
+      }
+
+      resolution.resolutionValue = resolutionValue;
+      // Create a deep copy of the existing components' visual properties
+      resolution.componentVisualProperties = currentResolution.componentVisualProperties ? JSON.parse(JSON.stringify(currentResolution.componentVisualProperties)) : {};
+
+      template.resolutions.push(resolution);
+
+      template.resolutions.sort(function (a, b) {
+        return a.resolutionValue - b.resolutionValue;
+      });
+
+      return resolution;
+    };
+
+    this.removeResolution = function (template, resolution) {
+      _.remove(template.resolutions, { resolutionValue: resolution.resolutionValue });
+    };
+
+    this.findResolution = function (template, resolutionValue) {
+      var index = this.findResolutionIndex(template, resolutionValue);
+
+      return template.resolutions[index];
+    };
+
+    this.findResolutionIndex = function (template, resolutionValue) {
+      return _.findIndex(template.resolutions, function (resolution) {
+        return resolution.resolutionValue >= resolutionValue;
+      });
+    };
+
+    this.distributeResolutionPropertiesToAllResolutions = function (template, sourceResolution, components) {
+      _.forEach(components, function (component) {
+        _.forEach(template.resolutions, function (resolution) {
+          TemplateEditorHelper.setComponentVisualProperties(template, resolution, component);
+        });
+      });
+    };
+
+    this.distributeResolutionPropertiesToLowerResolutions = function (template, sourceResolution, components) {
+      _.forEach(components, function (component) {
+        _.forEach(template.resolutions, function (resolution) {
+
+          if (resolution.resolutionValue < sourceResolution.resolutionValue) {
+            TemplateEditorHelper.setComponentVisualProperties(template, resolution, component);
+          }
+        });
+      });
+    };
+
+    this.distributeResolutionPropertiesToHigherResolutions = function (template, sourceResolution, components) {
+      _.forEach(components, function (component) {
+        _.forEach(template.resolutions, function (resolution) {
+
+          if (resolution.resolutionValue > sourceResolution.resolutionValue) {
+            TemplateEditorHelper.setComponentVisualProperties(template, resolution, component);
+          }
+        });
+      });
+    };
+  }
+})(window.angular, window._);

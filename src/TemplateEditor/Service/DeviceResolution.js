@@ -13,7 +13,7 @@
 			  Value: 768
 			}];
 
-      this.GetResolutions = function () {
+      this.getResolutions = function () {
         return _.clone(availableResolutions); //clone to prevent outside manipulation
       };
     });

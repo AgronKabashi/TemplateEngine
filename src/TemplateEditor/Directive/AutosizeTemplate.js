@@ -12,7 +12,7 @@
           link: function (scope, element, attributes) {
             var templateElement = element;
 
-            function UpdateTemplateHeight(component, isSecondExecution) {
+            function updateTemplateHeight(component, isSecondExecution) {
               var scrollTop = templateElement.parent().scrollTop();
               templateElement.css("height", "auto");
 
@@ -26,17 +26,17 @@
               //can be tricky. By calling the method again, only 400ms later we can assume that the transition has finished and recalculate the height
               if (!isSecondExecution) {
                 $timeout(function () {
-                  UpdateTemplateHeight(component, true);
+                  updateTemplateHeight(component, true);
                 }, 400);
               }
             }
 
-            EventService.Subscribe("ComponentUpdated", UpdateTemplateHeight);
-            //EventService.Subscribe("ComponentUpdating", UpdateTemplateHeight);
-            EventService.Subscribe("ComponentsRemoved", UpdateTemplateHeight);
-            EventService.Subscribe("ResolutionSelected", UpdateTemplateHeight);
-            EventService.Subscribe("ComponentAdded", UpdateTemplateHeight);
-            EventService.Subscribe("ComponentContentUpdated", UpdateTemplateHeight);
+            EventService.subscribeMultiple([
+              "ComponentAdded",
+              "ComponentUpdated",
+              "ComponentsRemoved",
+              "ResolutionSelected",
+              "ComponentContentUpdated"], updateTemplateHeight);
           }
         };
       }

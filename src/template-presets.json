@@ -1,18 +1,18 @@
 ﻿{
-  "TemplatePresets": [
+  "templatePresets": [
     {
-      "Name": "Proof of Concept: Animation",
-      "Data": {
+      "name": "Proof of Concept: Animation",
+      "data": {
         "CreatedDateAsString": "",
-        "Id": 0,
+        "id": 0,
         "LastModifiedDateAsString": "",
-        "Name": "",
-        "VisualProperties": "",
+        "name": "",
+        "visualProperties": "",
         "Resolutions": [
           {
-            "Id": 1,
-            "ResolutionValue": 627,
-            "ComponentVisualProperties": {
+            "id": 1,
+            "resolutionValue": 627,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
@@ -27,9 +27,9 @@
             }
           },
           {
-            "Id": 2,
-            "ResolutionValue": 665,
-            "ComponentVisualProperties": {
+            "id": 2,
+            "resolutionValue": 665,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
@@ -44,9 +44,9 @@
             }
           },
           {
-            "Id": 3,
-            "ResolutionValue": 703,
-            "ComponentVisualProperties": {
+            "id": 3,
+            "resolutionValue": 703,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
@@ -61,9 +61,9 @@
             }
           },
           {
-            "Id": 4,
-            "ResolutionValue": 737,
-            "ComponentVisualProperties": {
+            "id": 4,
+            "resolutionValue": 737,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
@@ -78,9 +78,9 @@
             }
           },
           {
-            "Id": 5,
-            "ResolutionValue": 768,
-            "ComponentVisualProperties": {
+            "id": 5,
+            "resolutionValue": 768,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ;-webkit-transform:rotateZ(-90deg);transform:rotateZ(-90deg)",
               "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
@@ -95,9 +95,9 @@
             }
           },
           {
-            "Id": 6,
-            "ResolutionValue": 794,
-            "ComponentVisualProperties": {
+            "id": 6,
+            "resolutionValue": 794,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:274px;width:70px;height:220px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ;-webkit-transform:rotateZ(-90deg);transform:rotateZ(-90deg)",
               "3": "left:168px;top:114px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
@@ -112,9 +112,9 @@
             }
           },
           {
-            "Id": 7,
-            "ResolutionValue": 824,
-            "ComponentVisualProperties": {
+            "id": 7,
+            "resolutionValue": 824,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
               "3": "left:168px;top:54px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
@@ -129,9 +129,9 @@
             }
           },
           {
-            "Id": 8,
-            "ResolutionValue": 10000,
-            "ComponentVisualProperties": {
+            "id": 8,
+            "resolutionValue": 10000,
+            "componentVisualProperties": {
               "1": "left:218px;top:551px;width:70px;height:100px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px",
               "2": "left:494px;top:374px;width:70px;height:120px;border-top-left-radius:38px;border-top-right-radius:38px;border-bottom-right-radius:38px;border-bottom-left-radius:38px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
               "3": "left:168px;top:54px;width:316px;height:150px;border-top-left-radius:300px;border-top-right-radius:300px;background-color:rgb(164, 198, 57);box-shadow:white 0px 0px 0px 10px ",
@@ -148,386 +148,386 @@
         ],
         "Components": [
           {
-            "Id": 1,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 1,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 2,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 2,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 3,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 3,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 4,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 4,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 5,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 5,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 6,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 6,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 7,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 7,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 8,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 8,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 9,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 9,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 10,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 10,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           },
           {
-            "Id": 11,
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "Category": "Basic",
-            "FriendlyName": "",
-            "Name": "Text",
-            "Content": { },
-            "VisualProperties": "left:0px;top:0px;",
-            "Class": "",
-            "CreationGUID": ""
+            "id": 11,
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "category": "basic",
+            "friendlyName": "",
+            "name": "Text",
+            "content": { },
+            "visualProperties": "left:0px;top:0px;",
+            "class": "",
+            "creationGUID": ""
           }
         ]
       }
     },
     {
-      "Name": "Sample Start Page",
+      "name": "Sample Start Page",
       "Data": {
-        "Name": "Sample Start Page",
-        "Id": 0,
-        "VisualProperties": "",
+        "name": "Sample Start Page",
+        "id": 0,
+        "visualProperties": "",
         "CreatedDateAsString": "",
         "LastModifiedDateAsString": "",
         "Components": [
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 1,
-            "VisualProperties": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%"
+            "category": "basic",
+            "class": "",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 1,
+            "visualProperties": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 2,
-            "VisualProperties": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE"
+            "category": "basic",
+            "class": "",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 2,
+            "visualProperties": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": {
-              "Text": "TemplateEngine"
+            "category": "basic",
+            "class": "",
+            "content": {
+              "text": "TemplateEngine"
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 3,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:212px;width:955px;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 3,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:212px;width:955px;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 4,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:320px;width:955px;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%"
+            "category": "basic",
+            "class": "",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 4,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:320px;width:955px;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": {
-              "Text": "EDITOR FOR TEMPLATEENGINE"
+            "category": "basic",
+            "class": "",
+            "content": {
+              "text": "EDITOR FOR TEMPLATEENGINE"
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 5,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:708px;width:435px;height:100px;font-size:36px;color:rgb(0, 156, 220);font-family:Roboto"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 5,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:708px;width:435px;height:100px;font-size:36px;color:rgb(0, 156, 220);font-family:Roboto"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": {
-              "Text": "Template Editor is a drag and drop application to assist you with building rich and advanced layouts for all manor of resolutions!\r\n\r\nWith Template Editor you can easily create templates to use for documents, web articles or even adverts."
+            "category": "basic",
+            "class": "",
+            "content": {
+              "text": "Template Editor is a drag and drop application to assist you with building rich and advanced layouts for all manor of resolutions!\r\n\r\nWith Template Editor you can easily create templates to use for documents, web articles or even adverts."
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 6,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:823px;width:435px;height:202px;font-size:16px;font-family:Roboto"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 6,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:823px;width:435px;height:202px;font-size:16px;font-family:Roboto"
           },
           {
-            "Category": "SocialMedia",
-            "Class": "",
-            "Content": { },
-            "Name": "Sharer",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer",
-            "FriendlyName": "",
-            "Id": 7,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:84px;width:113px;height:10px;background-color:transparent"
+            "category": "socialmedia",
+            "class": "",
+            "content": { },
+            "name": "Sharer",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer",
+            "friendlyName": "",
+            "id": 7,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:84px;width:113px;height:10px;background-color:transparent"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": {
-              "Text": "Design and build web applications using only your web browser!"
+            "category": "basic",
+            "class": "",
+            "content": {
+              "text": "Design and build web applications using only your web browser!"
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 8,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:290px;width:955px;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 8,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:290px;width:955px;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "Menu",
-            "Id": 9,
-            "VisualProperties": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);-webkit-transform:undefined;text-align:right;background-position-x:undefined;background-position-y:undefined"
+            "category": "basic",
+            "class": "",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "Menu",
+            "id": 9,
+            "visualProperties": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);-webkit-transform:undefined;text-align:right;background-position-x:undefined;background-position-y:undefined"
           },
           {
-            "Category": "Basic",
-            "Class": "RightPosIEFix",
-            "Content": {
-              "Text": "VISUAL EDITING"
+            "category": "basic",
+            "class": "RightPosIEFix",
+            "content": {
+              "text": "VISUAL EDITING"
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 10,
-            "VisualProperties": "right:calc((100% - 955px) / 2);top:1065px;width:435px;height:34px;font-size:36px;color:rgb(0, 156, 220);text-align:left;font-family:Roboto"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 10,
+            "visualProperties": "right:calc((100% - 955px) / 2);top:1065px;width:435px;height:34px;font-size:36px;color:rgb(0, 156, 220);text-align:left;font-family:Roboto"
           },
           {
-            "Category": "Basic",
-            "Class": "RightPosIEFix",
-            "Content": {
-              "Text": "Template Editor allows you to set almost all standardized CSS3 settings on any element with ease!\r\n\r\nSimply select an element, configure its visual properties in the Property Pane and see your changes in real time."
+            "category": "basic",
+            "class": "RightPosIEFix",
+            "content": {
+              "text": "Template Editor allows you to set almost all standardized CSS3 settings on any element with ease!\r\n\r\nSimply select an element, configure its visual properties in the Property Pane and see your changes in real time."
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 11,
-            "VisualProperties": "right:calc((100% - 955px) / 2);top:1125px;width:435px;height:104px;font-size:16px;font-family:Roboto"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 11,
+            "visualProperties": "right:calc((100% - 955px) / 2);top:1125px;width:435px;height:104px;font-size:16px;font-family:Roboto"
           },
           {
-            "Category": "Basic",
-            "Class": "RightPosIEFix",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 12,
-            "VisualProperties": "right:calc((100% - 955px) / 2);top:708px;width:500px;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%"
+            "category": "basic",
+            "class": "RightPosIEFix",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 12,
+            "visualProperties": "right:calc((100% - 955px) / 2);top:708px;width:500px;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 13,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:1065px;width:500px;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%"
+            "category": "basic",
+            "class": "",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 13,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:1065px;width:500px;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%"
           },
           {
-            "Category": "Navigation",
-            "Class": "",
-            "Content": { "Url": "", "Tooltip": "", "Text": "CERBERUS Solutions", "Target": "_self" },
-            "Name": "Link",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
-            "FriendlyName": "",
-            "Id": 14,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;transform:undefined"
+            "category": "Navigation",
+            "class": "",
+            "content": { "Url": "", "Tooltip": "", "text": "CERBERUS Solutions", "Target": "_self" },
+            "name": "Link",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
+            "friendlyName": "",
+            "id": 14,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;transform:undefined"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 15,
-            "VisualProperties": "left:0px;width:100%;top:1900px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid"
+            "category": "basic",
+            "class": "",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 15,
+            "visualProperties": "left:0px;width:100%;top:1900px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": { "Text": "RESPONSIVE DESIGN" },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 16,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:1450px;width:300px;font-family:Roboto;font-size:36px;color:rgb(0, 156, 220)"
+            "category": "basic",
+            "class": "",
+            "content": { "text": "RESPONSIVE DESIGN" },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 16,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:1450px;width:300px;font-family:Roboto;font-size:36px;color:rgb(0, 156, 220)"
           },
           {
-            "Category": "Basic",
-            "Class": "RightPosIEFix",
-            "Content": { },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 17,
-            "VisualProperties": "right:calc((100% - 955px) / 2);top:1450px;width:500px;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:0%"
+            "category": "basic",
+            "class": "RightPosIEFix",
+            "content": { },
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 17,
+            "visualProperties": "right:calc((100% - 955px) / 2);top:1450px;width:500px;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:0%"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": {
-              "Text": "TemplateEngine comes with built in Responsive Design features, allowing you to easily and visually design and build your applications for any resolution.\r\n\r\nWith Template Editor you can start creating your layout in any resolution first and add more later on. You don't have to go Mobile-First."
+            "category": "basic",
+            "class": "",
+            "content": {
+              "text": "TemplateEngine comes with built in Responsive Design features, allowing you to easily and visually design and build your applications for any resolution.\r\n\r\nWith Template Editor you can start creating your layout in any resolution first and add more later on. You don't have to go Mobile-First."
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 18,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:1560px;width:435px;font-size:16px;font-family:Roboto"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 18,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:1560px;width:435px;font-size:16px;font-family:Roboto"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": {
-              "Text": "COPYRIGHT (©) 2014 by COMPANY-NAME. All rights reserved."
+            "category": "basic",
+            "class": "",
+            "content": {
+              "text": "COPYRIGHT (©) 2014 by COMPANY-NAME. All rights reserved."
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 19,
-            "VisualProperties": "left:calc((100% - 955px) / 2);width:955px;height:10px;top:1960px;font-size:11px;text-align:center"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 19,
+            "visualProperties": "left:calc((100% - 955px) / 2);width:955px;height:10px;top:1960px;font-size:11px;text-align:center"
           },
           {
-            "Category": "Basic",
-            "Class": "",
-            "Content": {
-              "Text": "Contact us: \r\n<a href=\"mailto:info@company.com\">E-mail</a> - \r\n<a href=\"https://twitter.com/\" target=\"_blank\">Twitter</a> - \r\n<a href=\"https://www.facebook.com/\" target=\"_blank\">Facebook</a>"
+            "category": "basic",
+            "class": "",
+            "content": {
+              "text": "Contact us: \r\n<a href=\"mailto:info@company.com\">E-mail</a> - \r\n<a href=\"https://twitter.com/\" target=\"_blank\">Twitter</a> - \r\n<a href=\"https://www.facebook.com/\" target=\"_blank\">Facebook</a>"
             },
-            "Name": "RTF",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.RTF",
-            "FriendlyName": "",
-            "Id": 20,
-            "VisualProperties": "left:calc((100% - 955px) / 2);top:1927px;width:955px;height:20px;font-size:12px;text-align:center"
+            "name": "RTF",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.RTF",
+            "friendlyName": "",
+            "id": 20,
+            "visualProperties": "left:calc((100% - 955px) / 2);top:1927px;width:955px;height:20px;font-size:12px;text-align:center"
           },
           {
-            "Category": "Basic",
-            "Class": "RightPosIEFix",
-            "Content": {
-              "Text": "DRAG AND DROP"
+            "category": "basic",
+            "class": "RightPosIEFix",
+            "content": {
+              "text": "DRAG AND DROP"
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 21,
-            "VisualProperties": "right:calc((100% - 955px) / 2);top:1255px;width:435px;height:49px;font-size:36px;color:rgb(235, 39, 79);font-family:Roboto"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 21,
+            "visualProperties": "right:calc((100% - 955px) / 2);top:1255px;width:435px;height:49px;font-size:36px;color:rgb(235, 39, 79);font-family:Roboto"
           },
           {
-            "Category": "Basic",
-            "Class": "RightPosIEFix",
-            "Content": {
-              "Text": "Template Editor supports click, drag and drop actions allowing you to quickly place, move and scale elements."
+            "category": "basic",
+            "class": "RightPosIEFix",
+            "content": {
+              "text": "Template Editor supports click, drag and drop actions allowing you to quickly place, move and scale elements."
             },
-            "Name": "Text",
-            "ComponentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-            "FriendlyName": "",
-            "Id": 22,
-            "VisualProperties": "right:calc((100% - 955px) / 2);top:1320px;width:435px;height:89px;font-size:16px;font-family:Roboto"
+            "name": "Text",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+            "friendlyName": "",
+            "id": 22,
+            "visualProperties": "right:calc((100% - 955px) / 2);top:1320px;width:435px;height:89px;font-size:16px;font-family:Roboto"
           }
         ],
-        "Resolutions": [
+        "resolutions": [
           {
-            "Id": 1,
-            "ResolutionValue": 460,
-            "ComponentVisualProperties": {
+            "id": 1,
+            "resolutionValue": 460,
+            "componentVisualProperties": {
               "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
               "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
               "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:26px;color:rgb(254, 90, 0);text-align:center;font-weight:bold;min-width:300px",
@@ -553,9 +553,9 @@
             }
           },
           {
-            "Id": 2,
-            "ResolutionValue": 640,
-            "ComponentVisualProperties": {
+            "id": 2,
+            "resolutionValue": 640,
+            "componentVisualProperties": {
               "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
               "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
               "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
@@ -581,9 +581,9 @@
             }
           },
           {
-            "Id": 3,
-            "ResolutionValue": 768,
-            "ComponentVisualProperties": {
+            "id": 3,
+            "resolutionValue": 768,
+            "componentVisualProperties": {
               "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
               "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
               "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
@@ -609,9 +609,9 @@
             }
           },
           {
-            "Id": 4,
-            "ResolutionValue": 960,
-            "ComponentVisualProperties": {
+            "id": 4,
+            "resolutionValue": 960,
+            "componentVisualProperties": {
               "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
               "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
               "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
@@ -637,9 +637,9 @@
             }
           },
           {
-            "Id": 5,
-            "ResolutionValue": 10000,
-            "ComponentVisualProperties": {
+            "id": 5,
+            "resolutionValue": 10000,
+            "componentVisualProperties": {
               "1": "left:0px;top:120px;width:100%;height:576px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/bggray.png);background-position-x:0%;background-position-y:0%",
               "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
               "3": "left:calc((100% - 955px) / 2);top:212px;width:955px;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",

@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  dist: {
+  dest: {
     options: {
       removeComments: true,
       collapseWhitespace: true,
@@ -11,9 +11,9 @@ module.exports = {
     },
     files: [{
       expand: true,
-      cwd: "<%= config.dist %>",
+      cwd: "<%= config.dest %>",
       src: "**/*.html",
-      dest: "<%= config.dist %>"
+      dest: "<%= config.dest %>"
     }
     ]
   }

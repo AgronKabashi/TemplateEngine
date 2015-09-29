@@ -1,6 +1,11 @@
-/*eslint strict:0*/
-namespace("Cerberus.TemplateEngine.Model.Resolution", function (resolutionValue) {
-  this.Id = 0;
-  this.ResolutionValue = ~~resolutionValue || 10000;
-  this.ComponentVisualProperties = {};
-});
+(function (angular) {
+  "use strict";
+
+  angular
+    .module("Cerberus.ModelFactory")
+    .registerModel("Cerberus.TemplateEngine.Model.Resolution", function (resolutionValue) {
+      this.id = 0;
+      this.resolutionValue = ~~resolutionValue || 10000;
+      this.componentVisualProperties = {};
+    });
+})(window.angular);

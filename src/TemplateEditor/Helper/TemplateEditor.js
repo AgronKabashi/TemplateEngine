@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, $) {
   "use strict";
 
   angular
@@ -7,7 +7,6 @@
       "Cerberus.TemplateEngine.Service.Event",
       "Cerberus.TemplateEngine.Service.DataBag",
       function (EventService, DataBagService) {
-        var self = this;
         //properties that are not on this list will be stripped away
         //TODO: Refactor into Cerberus.TemplateEditor.Helper.CSS
         var validProperties = [
@@ -67,7 +66,7 @@
         PRESENTATION LOGIC
         ***************************************************************/
         //TODO: Remove - should be handled by Cerberus.TemplateEditor.Helper.CSS
-        function ExtractVisualProperties(style) {
+        function extractVisualProperties(style) {
           var result = [];
           var propertyName = "",
             sanitizedPropertyName = "",
@@ -86,7 +85,7 @@
           return result.join(";");
         }
 
-        function StoreDragResizeSettings(element) {
+        function storeDragResizeSettings(element) {
           var style = element.get(0).style;
           var isTransposedHorizontal = style.right.length > 0,
             isTransposedVertical = style.bottom.length > 0,
@@ -107,7 +106,7 @@
           });
         }
 
-        function SanitizeDragValues(element) {
+        function sanitizeDragValues(element) {
           var nativeElement = element.get(0);
           var template = element.parent(),
             templateWidth = template.width(),
@@ -115,13 +114,11 @@
 
           var horizontal = 0,
             vertical = 0,
-            width = 0,
-            height = 0,
             dragResizeSettings = element.data("dragResizeSettings"),
-            isTransposedVertical = dragResizeSettings.IsTransposedVertical,
-            isTransposedHorizontal = dragResizeSettings.IsTransposedHorizontal,
-            horizontalInPercent = dragResizeSettings.UnitHorizontal,
-            verticalInPercent = dragResizeSettings.UnitVertical,
+            isTransposedVertical = dragResizeSettings.isTransposedVertical,
+            isTransposedHorizontal = dragResizeSettings.isTransposedHorizontal,
+            horizontalInPercent = dragResizeSettings.unitHorizontal,
+            verticalInPercent = dragResizeSettings.unitVertical,
             elementWidth = element.outerWidth(),
             elementHeight = ~~element.outerHeight();
 
@@ -170,9 +167,7 @@
           }
         }
 
-        function SanitizeResizeValues(element) {
-          var nativeElement = element.get(0);
-
+        function sanitizeResizeValues(element) {
           var template = element.parent(),
             templateWidth = template.width(),
             templateHeight = template.height();
@@ -180,8 +175,8 @@
           var width = 0,
             height = 0,
             dragResizeSettings = element.data("dragResizeSettings"),
-            widthInPercent = dragResizeSettings.UnitWidth,
-            heightInPercent = dragResizeSettings.UnitHeight;
+            widthInPercent = dragResizeSettings.unitWidth,
+            heightInPercent = dragResizeSettings.unitHeight;
 
           //Dimensions
           if (widthInPercent) {
@@ -195,7 +190,7 @@
           }
         }
 
-        this.UpdateVisualProperties = function (eventId, element) {
+        this.updateVisualProperties = function (eventId, element) {
           var scope = element.scope();
           var nativeElement = element.get(0);
 
@@ -203,11 +198,11 @@
 
           //resizable adds position:absolute even though it's already in the applied class
           removePropertyMethod.call(nativeElement.style, "position");
-          scope.Component.VisualProperties = ExtractVisualProperties(nativeElement.style);
-          EventService.Notify(eventId, scope.Component);
+          scope.component.visualProperties = extractVisualProperties(nativeElement.style);
+          EventService.notify(eventId, scope.component);
         };
 
-        this.EnableDraggable = function (componentElement) {
+        this.enableDraggable = function (componentElement) {
           var self = this;
           var table = {};
           var selectedElements;
@@ -218,7 +213,7 @@
               snapTolerance: 10,
               start: function (e, ui) {
                 var sourceElement = $(this);
-                var selectedElements = $("cs-component.selected");
+                selectedElements = $("cs-component.selected");
                 var allowDrag = sourceElement.hasClass("selected");
 
                 sourceElement.draggable("option", "snap", e.ctrlKey);
@@ -227,10 +222,10 @@
                   selectedElements
                     .each(function () {
                       var element = $(this);
-                      StoreDragResizeSettings(element);
+                      storeDragResizeSettings(element);
 
                       table[this.id] = {
-                        StartPosition: element.position()
+                        startPosition: element.position()
                       };
                     })
                     .addClass("ui-draggable-dragging");
@@ -241,10 +236,9 @@
 
               drag: function (e, ui) {
                 var sourceElement = $(this),
-                    elementData,
-                    selectedElements = $("cs-component.selected"),
-                    offsetLeft = ui.originalPosition.left - ui.position.left,
-                    offsetTop = ui.originalPosition.top - ui.position.top;
+                  elementData,
+                  offsetLeft = ui.originalPosition.left - ui.position.left,
+                  offsetTop = ui.originalPosition.top - ui.position.top;
 
                 sourceElement.draggable("option", "snap", e.ctrlKey);
 
@@ -253,126 +247,113 @@
 
                   elementData = table[this.id];
                   element.css({
-                    left: elementData.StartPosition.left - offsetLeft,
-                    top: elementData.StartPosition.top - offsetTop
+                    left: elementData.startPosition.left - offsetLeft,
+                    top: elementData.startPosition.top - offsetTop
                   });
 
-                  SanitizeDragValues(element);
-
-                  //TODO: Update only if we're dragging a single component
-                  self.UpdateVisualProperties("ComponentUpdating", element);
+                  sanitizeDragValues(element);
                 });
+
+                self.updateVisualProperties("ComponentUpdating", sourceElement);
               },
 
               stop: function (e, ui) {
                 var sourceElement = $(this),
-                    selectedElements = $("cs-component.selected"),
-                    dragResizeSettings = sourceElement.data("dragResizeSettings"),
-                    offsetLeft = ui.originalPosition.left - ui.position.left,
-                    offsetTop = ui.originalPosition.top - ui.position.top,
-                    elementData;
+                  dragResizeSettings = sourceElement.data("dragResizeSettings"),
+                  offsetLeft = ui.originalPosition.left - ui.position.left,
+                  offsetTop = ui.originalPosition.top - ui.position.top,
+                  elementData;
 
-                selectedElements.each(function () {
-                  var element = $(this);
-                  var nativeElement = element.get(0);
+                selectedElements
+                  .each(function () {
+                    var element = $(this);
+                    var nativeElement = element.get(0);
 
-                  elementData = table[this.id];
-                  element.css({
-                    left: elementData.StartPosition.left - offsetLeft,
-                    top: elementData.StartPosition.top - offsetTop
-                  });
+                    elementData = table[this.id];
+                    element.css({
+                      left: elementData.startPosition.left - offsetLeft,
+                      top: elementData.startPosition.top - offsetTop
+                    });
 
-                  SanitizeDragValues(element);
+                    sanitizeDragValues(element);
 
-                  var removePropertyMethod = nativeElement.style.removeProperty ? nativeElement.style.removeProperty : nativeElement.style.removeAttribute;
-                  var isTransposedHorizontal = dragResizeSettings.IsTransposedHorizontal;
-                  var isTransposedVertical = dragResizeSettings.IsTransposedVertical;
+                    var removePropertyMethod = nativeElement.style.removeProperty ? nativeElement.style.removeProperty : nativeElement.style.removeAttribute;
+                    var isTransposedHorizontal = dragResizeSettings.IsTransposedHorizontal;
+                    var isTransposedVertical = dragResizeSettings.IsTransposedVertical;
 
-                  if (isTransposedHorizontal) {
-                    removePropertyMethod.call(nativeElement.style, "left");
-                  }
+                    if (isTransposedHorizontal) {
+                      removePropertyMethod.call(nativeElement.style, "left");
+                    }
 
-                  if (isTransposedVertical) {
-                    removePropertyMethod.call(nativeElement.style, "top");
-                  }
+                    if (isTransposedVertical) {
+                      removePropertyMethod.call(nativeElement.style, "top");
+                    }
 
-                  element
-                    .removeAttr("IsTransposedHorizontal")
-                    .removeAttr("IsTransposedVertical")
-                    .removeAttr("UnitWidth")
-                    .removeAttr("UnitHeight")
-                    .removeAttr("UnitHorizontal")
-                    .removeAttr("UnitVertical");
+                    element.data("dragResizeSetting", undefined);
 
-                  self.UpdateVisualProperties("ComponentUpdated", element);
-                })
-                .removeClass("ui-draggable-dragging");
+                    self.updateVisualProperties("ComponentUpdated", element);
+                  })
+                  .removeClass("ui-draggable-dragging");
               }
             });
         };
 
-        this.EnableResizable = function (element) {
+        this.enableResizable = function (element) {
           var self = this;
-          element
-            .resizable(
-            {
-              start: function () {
-                var element = $(this);
-                StoreDragResizeSettings(element);
-              },
+          element.resizable({
+            start: function () {
+              var element = $(this);
+              storeDragResizeSettings(element);
+            },
 
-              resize: function () {
-                var element = $(this);
-                SanitizeResizeValues(element);
+            resize: function () {
+              var element = $(this);
+              sanitizeResizeValues(element);
 
-                self.UpdateVisualProperties("ComponentUpdating", element);
-              },
+              self.updateVisualProperties("ComponentUpdating", element);
+            },
 
-              stop: function (event, ui) {
-                var element = $(this);
-                var nativeElement = element.get(0);
-                SanitizeResizeValues(element);
+            stop: function (event, ui) {
+              var element = $(this);
+              sanitizeResizeValues(element);
 
-                element
-                  .removeAttr("IsTransposedHorizontal")
-                  .removeAttr("IsTransposedVertical")
-                  .removeAttr("UnitWidth")
-                  .removeAttr("UnitHeight")
-                  .removeAttr("UnitHorizontal")
-                  .removeAttr("UnitVertical");
+              element.data("dragResizeSetting", undefined);
 
-                self.UpdateVisualProperties("ComponentUpdated", element);
-              }
-            });
+              self.updateVisualProperties("ComponentUpdated", element);
+            }
+          });
         };
 
         /***************************************************************
         BUSINESS LOGIC
         TODO: Refactor into separate service
         ***************************************************************/
-        this.RemapComponentVisualProperties = function (template, resolution) {
-          _.forEach(template.Components, function (component) {
-            component.VisualProperties = resolution.ComponentVisualProperties[component.Id] || "";
+        this.remapComponentVisualProperties = function (template, resolution) {
+          _.forEach(template.components, function (component) {
+            component.visualProperties = resolution.componentVisualProperties[component.id] || "";
           });
         };
 
-        this.SetComponentVisualProperties = function (template, resolution, component) {
-          if (resolution.ComponentVisualProperties[component.Id]) {
-            resolution.ComponentVisualProperties[component.Id] = component.VisualProperties;
+        this.setComponentVisualProperties = function (template, resolution, component) {
+          if (resolution.componentVisualProperties[component.id]) {
+            resolution.componentVisualProperties[component.id] = component.visualProperties;
             return;
           }
 
           //there was no visualproperties available for this specific component so we add it
-          _.forEach(template.Resolutions, function (resolution) {
-            resolution.ComponentVisualProperties[component.Id] = component.VisualProperties;
+          _.forEach(template.resolutions, function (resolution) {
+            resolution.componentVisualProperties[component.id] = component.visualProperties;
           });
         };
 
-        this.RemoveComponentFromResolutions = function (template, component) {
-          _.forEach(template.Resolutions, function (resolution) {
-            delete resolution.ComponentVisualProperties[component.Id];
+        this.removeComponentsFromTemplate = function (template, components) {
+          _.forEach(components, function (component) {
+            _.remove(template.components, { id: component.id });
+            _.forEach(template.resolutions, function (resolution) {
+              delete resolution.componentVisualProperties[component.id];
+            });
           });
         };
       }
     ]);
-})(window.angular);
+})(window.angular, window.jQuery);

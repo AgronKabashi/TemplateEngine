@@ -1,14 +1,12 @@
 ﻿input[type=text],
 input[type=password]
 {
-	background-color: white;
 	border: 1px solid $borderColor;
 	border-radius: 4px;
 	color: $formTextColor;
 	font-family: inherit;
 	height: 1.5rem;
 	padding: 6px 0.5rem;
-	width: 100%;
 }
 
 textarea

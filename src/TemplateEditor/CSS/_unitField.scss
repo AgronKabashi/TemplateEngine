@@ -1,0 +1,12 @@
+cs-unitfield {
+  @include display(flex);
+
+  input {
+   @include flex-grow(1);
+  }
+
+  select {
+    @include flex-grow(0);
+    width: 60px;
+  }
+}

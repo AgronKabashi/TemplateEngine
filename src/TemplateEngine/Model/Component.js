@@ -1,15 +1,20 @@
-/*eslint strict:0*/
-namespace("Cerberus.TemplateEngine.Model.Component", function () {
-  this.Id = 0;
-  this.FriendlyName = "";
-  this.Name = "";
+(function (angular) {
+  "use strict";
 
-  this.VisualProperties = "";
-  this.ComponentType = "";
-  this.Category = "Basic";
-  this.CreationGUID = "";
+  angular
+    .module("Cerberus.ModelFactory")
+    .registerModel("Cerberus.TemplateEngine.Model.Component", function () {
+      this.id = 0;
+      this.friendlyName = "";
+      this.name = "";
 
-  this.Class = "";
+      this.visualProperties = "";
+      this.componentType = "";
+      this.category = "basic";
+      this.creationGUID = "";
 
-  this.Content = {};
-});
+      this.class = "";
+
+      this.content = {};
+    });
+})(window.angular);

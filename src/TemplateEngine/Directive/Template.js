@@ -14,15 +14,15 @@
             "Cerberus.TemplateEngine.Service.Event",
             "Cerberus.TemplateEngine.Service.PathResolver",
             function ($scope, EventService, PathResolverService) {
-              $scope.Template = DataBagService.GetData("Template");
+              $scope.template = DataBagService.getData("Template");
 
-              $scope.GetComponentPath = function (component) {
-                return PathResolverService.Resolve(String.format("View/Component/{0}/{1}.html", component.Category, component.Name));
+              $scope.getComponentPath = function (component) {
+                return PathResolverService.resolve(String.format("view/component/{0}/{1}.html", component.category, component.name));
               };
 
               //The template is supplied from outside
-              EventService.Subscribe("InitializeTemplate", function (template) {
-                $scope.Template = template;
+              EventService.subscribe("InitializeTemplate", function (template) {
+                $scope.template = template;
               });
             }],
 
@@ -32,14 +32,14 @@
             styleAttribute = "";
 
             if (isEditMode) {
-              nameAttribute = "data-friendly-name=\"{{Component.FriendlyName}}\" data-component-name=\"{{Component.Name}}\"";
-              styleAttribute = "style=\"{{Component.VisualProperties}}\"";
+              nameAttribute = "data-friendly-name=\"{{component.friendlyName}}\" data-component-name=\"{{component.name}}\"";
+              styleAttribute = "style=\"{{component.visualProperties}}\"";
             }
 
-            return String.format("<cs-component ng-repeat=\"Component in Template.Components track by Component.Id\" \
+            return String.format("<cs-component ng-repeat=\"component in template.components track by component.Id\" \
               {0} {1} \
-              ng-class=\"Component.Class\" \
-              ng-include=\"::GetComponentPath(Component)\"></cs-component>",
+              ng-class=\"component.class\" \
+              ng-include=\"::getComponentPath(component)\"></cs-component>",
               nameAttribute,
               styleAttribute);
           }

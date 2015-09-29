@@ -26,7 +26,7 @@ module.exports = {
     tasks: ["newer:copy:demoScripts"]
   },
   templateScripts: {
-    files: ["<%= config.src %>/TemplateEditor/**/*.js", "<%= config.src %>/TemplateEngine/**/*.js"],
+    files: ["<%= config.src %>/templateeditor/**/*.js", "<%= config.src %>/templateengine/**/*.js"],
     tasks: ["newer:concat"]
   },
   data: {

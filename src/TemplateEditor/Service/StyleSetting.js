@@ -5,69 +5,70 @@
     .module("Cerberus.TemplateEditor")
     .service("Cerberus.TemplateEditor.Service.StyleSetting", [
       "Cerberus.TemplateEditor.Localization",
-      function (Localization) {
-        this.GetAvailableFontFamilies = function () {
+      function (localization) {
+        this.getAvailableFontFamilies = function () {
           return [
-            "Arial",
-            "Courier New",
-            "Impact",
-            "Lucida Console",
-            "Tahoma",
-            "Times New Roman",
-            "Verdana",
-            "Roboto",
-            "Ropa Sans",
-            "Droid Sans",
-            "Rouge Script"
+            { name: localization.componentProperties.browserDefault, value: undefined },
+            { name: "Arial", value: "Arial" },
+            { name: "Courier New", value: "Courier New" },
+            { name: "Impact", value: "Impact" },
+            { name: "Lucida Console", value: "Lucida Console" },
+            { name: "Tahoma", value: "Tahoma" },
+            { name: "Times New Roman", value: "Times New Roman" },
+            { name: "Verdana", value: "Verdana" },
+            { name: "Roboto", value: "Roboto" },
+            { name: "Ropa Sans", value: "Ropa Sans" },
+            { name: "Droid Sans", value: "Droid Sans" },
+            { name: "Rouge Script", value: "Rouge Script" }
           ];
         };
 
-        this.GetBorderStyles = function () {
+        this.getBorderStyles = function () {
           return [
-            { Name: Localization.ComponentProperties.BrowserDefault, Value: undefined },
-            { Name: Localization.ComponentProperties.BorderSolid, Value: "solid" },
-            { Name: Localization.ComponentProperties.BorderDashed, Value: "dashed" },
-            { Name: Localization.ComponentProperties.BorderDotted, Value: "dotted" },
-            { Name: Localization.ComponentProperties.BorderGroove, Value: "groove" },
-            { Name: Localization.ComponentProperties.BorderDouble, Value: "double" },
-            { Name: Localization.ComponentProperties.BorderInset, Value: "inset" },
-            { Name: Localization.ComponentProperties.BorderOutset, Value: "outset" }
+            { name: localization.componentProperties.browserDefault, value: undefined },
+            { name: localization.componentProperties.borderSolid, value: "solid" },
+            { name: localization.componentProperties.borderDashed, value: "dashed" },
+            { name: localization.componentProperties.borderDotted, value: "dotted" },
+            { name: localization.componentProperties.borderGroove, value: "groove" },
+            { name: localization.componentProperties.borderDouble, value: "double" },
+            { name: localization.componentProperties.borderInset, value: "inset" },
+            { name: localization.componentProperties.borderOutset, value: "outset" }
           ];
         };
 
-        this.GetBackgroundImageRepeatOptions = function () {
+        this.getBackgroundImageRepeatOptions = function () {
           return [
-            { Name: Localization.ComponentProperties.BrowserDefault, Value: undefined },
-            { Name: Localization.ComponentProperties.Repeat, Value: "repeat" },
-            { Name: Localization.ComponentProperties.RepeatHorizontally, Value: "repeat-x" },
-            { Name: Localization.ComponentProperties.RepeatVertically, Value: "repeat-y" },
-            { Name: Localization.ComponentProperties.DontRepeat, Value: "no-repeat" }
+            { name: localization.componentProperties.browserDefault, value: undefined },
+            { name: localization.componentProperties.repeat, value: "repeat" },
+            { name: localization.componentProperties.repeatHorizontally, value: "repeat-x" },
+            { name: localization.componentProperties.repeatVertically, value: "repeat-y" },
+            { name: localization.componentProperties.dontRepeat, value: "no-repeat" }
           ];
         };
 
-        this.GetBackgroundPositionHorizontalOptions = function () {
+        this.getBackgroundPositionHorizontalOptions = function () {
           return [
-            { Name: Localization.ComponentProperties.BrowserDefault, Value: undefined },
-            { Name: Localization.ComponentProperties.Left, Value: "0%" },
-            { Name: Localization.ComponentProperties.Center, Value: "50%" },
-            { Name: Localization.ComponentProperties.Right, Value: "100%" }
+            { name: localization.componentProperties.browserDefault, value: undefined },
+            { name: localization.componentProperties.left, value: "0%" },
+            { name: localization.componentProperties.center, value: "50%" },
+            { name: localization.componentProperties.Right, value: "100%" }
           ];
         };
 
-        this.GetBackgroundPositionVerticalOptions = function () {
+        this.getBackgroundPositionVerticalOptions = function () {
           return [
-            { Name: Localization.ComponentProperties.BrowserDefault, Value: undefined },
-            { Name: Localization.ComponentProperties.Top, Value: "0%" },
-            { Name: Localization.ComponentProperties.Center, Value: "50%" },
-            { Name: Localization.ComponentProperties.Bottom, Value: "100%" }
+            { name: localization.componentProperties.browserDefault, value: undefined },
+            { name: localization.componentProperties.top, value: "0%" },
+            { name: localization.componentProperties.center, value: "50%" },
+            { name: localization.componentProperties.bottom, value: "100%" }
           ];
         };
 
-        this.GetBackgroundSizeOptions = function () {
+        this.getBackgroundSizeOptions = function () {
           return [
-            { Name: Localization.ComponentProperties.BrowserDefault, Value: undefined },
-            { Name: Localization.ComponentProperties.Contain, Value: "contain" },
-            { Name: Localization.ComponentProperties.Cover, Value: "cover" }
+            { name: localization.componentProperties.browserDefault, value: undefined },
+            { name: localization.componentProperties.contain, value: "contain" },
+            { name: localization.componentProperties.cover, value: "cover" }
           ];
         };
       }

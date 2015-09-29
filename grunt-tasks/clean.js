@@ -1,5 +1,5 @@
 "use strict";
 
 module.exports = {
-  all: ["<%= config.dist %>/**/*"]
+  all: ["<%= config.dest %>/**/*"]
 };

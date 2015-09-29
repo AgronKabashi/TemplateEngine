@@ -15,11 +15,11 @@
                 var componentPluginInfo = ui.draggable.data("component-plugin-info");
 
                 var element = $(this);
-                var x = ui.offset.left - element.offset().left + componentPluginInfo.CursorAt.left;
-                var y = ui.offset.top - element.offset().top + componentPluginInfo.CursorAt.top;
+                var x = ui.offset.left - element.offset().left + componentPluginInfo.cursorAt.left;
+                var y = ui.offset.top - element.offset().top + componentPluginInfo.cursorAt.top;
 
-                EventService.Notify("AddComponent", angular.extend(componentPluginInfo.ComponentInfo, {
-                  VisualProperties: String.format("left:{0}px;top:{1}px;", ~~x, ~~y)
+                EventService.notify("AddComponent", angular.extend(componentPluginInfo.componentInfo, {
+                  visualProperties: String.format("left:{0}px;top:{1}px;", ~~x, ~~y)
                 }));
               }
             });

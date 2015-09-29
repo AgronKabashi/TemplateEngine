@@ -6,7 +6,7 @@ module.exports = {
       expand: true,
       cwd: "<%= config.src %>",
       src: "**/*.{ttf,woff,eot}",
-      dest: "<%= config.dist %>"
+      dest: "<%= config.dest %>"
     }]
   },
   css: {
@@ -14,7 +14,7 @@ module.exports = {
       expand: true,
       cwd: "<%= config.src %>",
       src: "**/*.css",
-      dest: "<%= config.dist %>"
+      dest: "<%= config.dest %>"
     }]
   },
   images: {
@@ -22,7 +22,7 @@ module.exports = {
       expand: true,
       cwd: "<%= config.src %>",
       src: "**/*.{jpg,png}",
-      dest: "<%= config.dist %>"
+      dest: "<%= config.dest %>"
     }]
   },
   demoScripts: {
@@ -30,7 +30,7 @@ module.exports = {
       expand: true,
       cwd: "<%= config.src %>",
       src: "*.js",
-      dest: "<%= config.dist %>"
+      dest: "<%= config.dest %>"
     }]
   },
   markup: {
@@ -38,7 +38,7 @@ module.exports = {
       expand: true,
       cwd: "<%= config.src %>",
       src: "**/*.html",
-      dest: "<%= config.dist %>"
+      dest: "<%= config.dest %>"
     }]
   },
   data: {
@@ -46,7 +46,7 @@ module.exports = {
       expand: true,
       cwd: "<%= config.src %>",
       src: "**/*.json",
-      dest: "<%= config.dist %>"
+      dest: "<%= config.dest %>"
     }]
   }
 };

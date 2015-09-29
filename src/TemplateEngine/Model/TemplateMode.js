@@ -1,6 +1,11 @@
-/*eslint strict:0*/
-namespace("Cerberus.TemplateEngine.TemplateMode", {
-  EditDesign: 0,
-  EditContent: 1,
-  View: 2
-});
+(function (angular) {
+  "use strict";
+
+  angular
+    .module("Cerberus.TemplateEngine")
+    .constant("Cerberus.TemplateEngine.TemplateMode", {
+      editDesign: 0,
+      editContent: 1,
+      view: 2
+    });
+})(window.angular);

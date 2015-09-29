@@ -1,10 +1,12 @@
 (function (angular) {
   "use strict";
 
-  namespace("Cerberus.TemplateEngine.Service.TemplateRestProvider", angular.extend(function ($http, $q) {
+  var ModelFactory = angular.module("Cerberus.ModelFactory");
+
+  function TemplateRestProvider($http, $q, ModelFactory) {
     var serviceUrl = "";
 
-    function CleanPromise(promise) {
+    function cleanPromise(promise) {
       var defer = $q.defer();
 
       promise
@@ -18,71 +20,70 @@
       return defer.promise;
     }
 
-    function BuildResourceUrl() {
+    function buildResourceUrl() {
       return angular.extend([], arguments).slice(0).join("/");
     }
 
-    function EmptyResolvedPromise() {
+    function emptyResolvedPromise() {
       var defer = $q.defer();
       defer.resolve();
       return defer.promise;
     }
 
-    function EmptyRejectedPromise() {
+    function emptyRejectedPromise() {
       var defer = $q.defer();
       defer.reject();
       return defer.promise;
     }
 
-    this.Configure = function (url) {
+    this.configure = function (url) {
       serviceUrl = url;
     };
 
     //Template
-    this.GetTemplate = function (templateId) {
-      return templateId > 0 ? CleanPromise($http.get(BuildResourceUrl(serviceUrl, "template", ~~templateId))) : EmptyResolvedPromise();
+    this.getTemplate = function (templateId) {
+      return templateId > 0 ? cleanPromise($http.get(buildResourceUrl(serviceUrl, "template", ~~templateId))) : emptyResolvedPromise();
     };
 
     this.RemoveTemplate = function (templateId) {
-      return templateId > 0 ? CleanPromise($http.delete(BuildResourceUrl(serviceUrl, "template", ~~templateId))) : EmptyRejectedPromise();
+      return templateId > 0 ? cleanPromise($http.delete(buildResourceUrl(serviceUrl, "template", ~~templateId))) : emptyRejectedPromise();
     };
 
     this.SaveTemplate = function (template) {
-      return template !== undefined ? CleanPromise($http.put(BuildResourceUrl(serviceUrl, "template"), template)) : EmptyRejectedPromise();
+      return template !== undefined ? cleanPromise($http.put(buildResourceUrl(serviceUrl, "template"), template)) : emptyRejectedPromise();
     };
 
     this.CloneTemplate = function (templateId) {
-      return templateId > 0 ? CleanPromise($http.post(BuildResourceUrl(serviceUrl, "template", ~~templateId, "clone"))) : EmptyRejectedPromise();
+      return templateId > 0 ? cleanPromise($http.post(buildResourceUrl(serviceUrl, "template", ~~templateId, "clone"))) : emptyRejectedPromise();
     };
 
     //Templates
     this.GetTemplates = function () {
-      return CleanPromise($http.get(BuildResourceUrl(serviceUrl, "templates")));
+      return cleanPromise($http.get(buildResourceUrl(serviceUrl, "templates")));
     };
 
     //TemplateInfo
     this.GetTemplateInfo = function (templateId) {
-      return templateId > 0 ? CleanPromise($http.get(BuildResourceUrl(serviceUrl, "templateinfo", ~~templateId))) : EmptyResolvedPromise();
+      return templateId > 0 ? cleanPromise($http.get(buildResourceUrl(serviceUrl, "templateinfo", ~~templateId))) : emptyResolvedPromise();
     };
 
     this.SaveTemplateInfo = function (template) {
-      return template !== undefined ? CleanPromise($http.put(BuildResourceUrl(serviceUrl, "templateinfo"), template)) : EmptyRejectedPromise();
+      return template !== undefined ? cleanPromise($http.put(buildResourceUrl(serviceUrl, "templateinfo"), template)) : emptyRejectedPromise();
     };
 
     //TemplateContent
     this.GetDocument = function (templateId, documentId, documentTypeId) {
-      return CleanPromise($http.get(BuildResourceUrl(serviceUrl, "templatecontent", ~~templateId, ~~documentId, ~~documentTypeId)));
+      return cleanPromise($http.get(buildResourceUrl(serviceUrl, "templatecontent", ~~templateId, ~~documentId, ~~documentTypeId)));
     };
 
     this.SaveDocument = function (template, documentId, documentTypeId) {
-      return CleanPromise($http.put(BuildResourceUrl(serviceUrl, "templatecontent", ~~documentId, documentTypeId), template));
+      return cleanPromise($http.put(buildResourceUrl(serviceUrl, "templatecontent", ~~documentId, documentTypeId), template));
     };
 
     this.GetComponentPlugins = function () {
-      return CleanPromise($http.get(BuildResourceUrl(serviceUrl, "componentplugins")));
+      return cleanPromise($http.get(buildResourceUrl(serviceUrl, "componentplugins")));
     };
-  },
-  {
-    $inject: ["$http", "$q"]
-  }));
+  }
+
+  ModelFactory.registerModel("Cerberus.TemplateEngine.Service.TemplateRestProvider", angular.extend(TemplateRestProvider, { $inject: ["$http", "$q"] }));
 })(window.angular);

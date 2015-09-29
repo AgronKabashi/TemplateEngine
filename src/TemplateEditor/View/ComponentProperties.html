@@ -1,49 +1,49 @@
-﻿<div class="component-properties-container" ng-show="SelectedComponent">
-	<!--Generic-->
-	<fieldset name="Generic">
-		<legend ng-bind="::Localization.ComponentProperties.Generic"></legend>
-		<div class="property-container" ng-include="::GetEditorPath('Generic')"></div>
-	</fieldset>
+﻿<div class="component-properties-container" ng-show="selectedComponent">
+  <!--Generic-->
+  <fieldset name="generic">
+    <legend ng-bind="::localization.componentProperties.generic"></legend>
+    <div class="property-container" ng-include="::getEditorPath('Generic')"></div>
+  </fieldset>
 
-	<!--Layout-->
-	<fieldset name="Layout">
-		<legend ng-bind="::Localization.ComponentProperties.Layout"></legend>
-		<div class="property-container" ng-include="::GetEditorPath('Layout')"></div>
-	</fieldset>
+  <!--layout-->
+  <fieldset name="layout">
+    <legend ng-bind="::localization.componentProperties.layout"></legend>
+    <div class="property-container" ng-include="::getEditorPath('layout')"></div>
+  </fieldset>
 
-	<!--FontAndColors-->
-	<fieldset name="FontAndColors">
-		<legend ng-bind="::Localization.ComponentProperties.FontAndColors"></legend>
-		<div class="property-container" ng-include="::GetEditorPath('FontAndColors')"></div>
-	</fieldset>
+  <!--fontAndColors-->
+  <fieldset name="fontAndColors">
+    <legend ng-bind="::localization.componentProperties.fontAndColors"></legend>
+    <div class="property-container" ng-include="::getEditorPath('fontAndColors')"></div>
+  </fieldset>
 
-	<!--Padding-->
-	<fieldset name="Padding">
-		<legend ng-bind="::Localization.ComponentProperties.Padding"></legend>
-		<div class="property-container" ng-include="::GetEditorPath('Padding')"></div>
-	</fieldset>
+  <!--padding-->
+  <fieldset name="padding">
+    <legend ng-bind="::localization.componentProperties.padding"></legend>
+    <div class="property-container" ng-include="::getEditorPath('padding')"></div>
+  </fieldset>
 
-	<!--Border-->
-	<fieldset name="Border">
-		<legend ng-bind="::Localization.ComponentProperties.Border"></legend>
-		<div class="property-container" ng-include="::GetEditorPath('Border')"></div>
-	</fieldset>
+  <!--border-->
+  <fieldset name="border">
+    <legend ng-bind="::localization.componentProperties.border"></legend>
+    <div class="property-container" ng-include="::getEditorPath('border')"></div>
+  </fieldset>
 
-	<!--Shadows-->
-	<fieldset name="Shadows">
-		<legend ng-bind="::Localization.ComponentProperties.Shadows"></legend>
-		<div class="property-container" ng-include="::GetEditorPath('Shadows')"></div>
-	</fieldset>
+  <!--shadows-->
+  <fieldset name="shadows">
+    <legend ng-bind="::localization.componentProperties.shadows"></legend>
+    <div class="property-container" ng-include="::getEditorPath('shadows')"></div>
+  </fieldset>
 
-	<!--Background-->
-	<fieldset name="Background">
-		<legend ng-bind="::Localization.ComponentProperties.Background"></legend>
-		<div class="property-container" ng-include="::GetEditorPath('Background')"></div>
-	</fieldset>
+  <!--background-->
+  <fieldset name="background">
+    <legend ng-bind="::localization.componentProperties.background"></legend>
+    <div class="property-container" ng-include="::getEditorPath('background')"></div>
+  </fieldset>
 
-	<!--Content-->
-	<fieldset name="Content" ng-if="HasEditor">
-		<legend ng-bind="::Localization.ComponentProperties.Content"></legend>
-		<div class="property-container" ng-include="EditorViewPath" ng-controller-controller="EditorController"></div>
-	</fieldset>
+  <!--Content-->
+  <fieldset name="content" ng-if="hasEditor">
+    <legend ng-bind="::localization.componentProperties.content"></legend>
+    <div class="property-container" ng-include="editorViewPath" ng-controller-controller="editorController"></div>
+  </fieldset>
 </div>

@@ -5,5 +5,5 @@ module.exports = {
     configFile: ".eslintrc",
     globals: ["window", "angular", "Cerberus", "setTimeout", "console", "namespace"]
   },
-  target: ["src/TemplateEngine/**/*.js"]
+  target: ["src/templateengine/**/*.js"]
 };

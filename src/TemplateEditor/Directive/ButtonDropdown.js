@@ -19,15 +19,15 @@
             datatextfield: "@"
           },
           templateUrl: function (element, scope) {
-            return PathResolver.Resolve(scope.onCommandClick ? "View/ButtonDropdown_CommandButton.html" : "View/ButtonDropdown.html");
+            return PathResolver.resolve(scope.onCommandClick ? "view/buttonDropdown_CommandButton.html" : "view/buttonDropdown.html");
           },
           controller: [
             "$scope",
             function ($scope) {
               $scope.limit = $scope.limit || ($scope.datasource ? $scope.datasource.length : 0);
-              $scope.ItemClick = function (item) {
+              $scope.itemClick = function (item) {
                 $scope.onItemClick(item);
-                $scope.Expanded = false;
+                $scope.expanded = false;
               };
             }
           ]

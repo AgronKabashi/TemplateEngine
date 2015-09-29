@@ -3,76 +3,76 @@
 (function (angular, _, localStorage) {
   "use strict";
 
-  namespace("Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider", angular.extend(function ($q) {
-    var repository;
+  var ModelFactory = angular.module("Cerberus.ModelFactory");
+
+  function TemplateLocalStorageProvider($q) {
+    var repository = JSON.parse(localStorage.getItem("TemplateRepository")) || { templates: {} };
 
     function updateLocalStorage() {
       localStorage.setItem("TemplateRepository", JSON.stringify(repository));
     }
 
-    this.Configure = function () { };
+    this.configure = function () { };
 
-    repository = JSON.parse(localStorage.getItem("TemplateRepository")) || { Templates: {} };
-
-    this.GetTemplate = function (templateId, documentId, documentTypeId) {
-      return $q.when(repository.Templates[templateId]);
+    this.getTemplate = function (templateId, documentId, documentTypeId) {
+      return $q.when(repository.templates[templateId]);
     };
 
-    this.RemoveTemplate = function (templateId) {
-      delete repository.Templates[templateId];
+    this.removeTemplate = function (templateId) {
+      delete repository.templates[templateId];
       updateLocalStorage();
 
       return $q.when(true);
     };
 
-    this.SaveTemplate = function (template) {
+    this.saveTemplate = function (template) {
       return $q.when(template)
         .then(function (template) {
-          if (template.Id <= 0) {
-            template.Id = ~~_.max(repository.Templates, function (template) {
-              return template.Id;
-            }).Id + 1;
+          if (template.id <= 0) {
+            template.id = ~~_.max(repository.templates, function (template) {
+              return template.id;
+            }).id + 1;
           }
 
-          repository.Templates[template.Id] = template;
+          repository.templates[template.id] = template;
 
-          if (!template.Resolutions.length) {
-            template.Resolutions.push(new Cerberus.TemplateEngine.Model.Resolution());
+          if (!template.resolutions.length) {
+            template.resolutions.push(ModelFactory.instantiateModel("Cerberus.TemplateEngine.Model.Resolution"));
           }
 
-          var components = template.Components,
-              resolutions = template.Resolutions;
+          var components = template.components,
+            resolutions = template.resolutions;
 
           var newResolutions = _.filter(resolutions, function (resolution) {
-            return resolution.Id === 0;
+            return resolution.id === 0;
           });
 
           var highestComponentId = ~~Math.max(0, _.max(components, function (component) {
-            return component.Id;
-          }).Id);
+            return component.id;
+          }).id);
 
           var highestResolutionId = ~~Math.max(0, _.max(newResolutions, function (resolution) {
-            return resolution.Id;
-          }).Id);
+            return resolution.id;
+          }).id);
 
           var newComponents = _.filter(components, function (component) {
-            return component.Id < 0;
+            return component.id < 0;
           });
 
           //Generate unique ids for resolutions
           _.forEach(newResolutions, function (resolution) {
-            resolution.Id = ++highestResolutionId;
+            resolution.id = ++highestResolutionId;
           });
 
           //Generate unique Ids for components
           _.forEach(newComponents, function (component) {
-            var oldId = component.Id;
-            component.Id = ++highestComponentId;
+            var oldId = component.id;
+            component.id = ++highestComponentId;
 
             //Sync Id across resolutions
             _.forEach(resolutions, function (resolution) {
-              resolution.ComponentVisualProperties[component.Id] = resolution.ComponentVisualProperties[oldId];
-              delete resolution.ComponentVisualProperties[oldId];
+              resolution.componentVisualProperties[component.id] = resolution.componentVisualProperties[oldId];
+              delete resolution.componentVisualProperties[oldId];
             });
           });
 
@@ -82,81 +82,80 @@
         });
     };
 
-    this.CloneTemplate = function (templateId, successCallback, errorCallback) { };
+    this.cloneTemplate = function (templateId, successCallback, errorCallback) { };
 
-    this.GetTemplates = function () {
-      var templates = _.map(repository.Templates, function (template) {
+    this.getTemplates = function () {
+      var templates = _.map(repository.templates, function (template) {
         return template;
       });
 
       return $q.when(templates);
     };
 
-    this.GetTemplateInfo = function (templateId) {
-      return this.GetTemplate(templateId);
+    this.getTemplateInfo = function (templateId) {
+      return this.getTemplate(templateId);
     };
 
-    this.SaveTemplateInfo = function (template) {
+    this.saveTemplateInfo = function (template) {
 
     };
 
     //TemplateContent
-    this.GetDocument = function (templateId, documentId, documentTypeId) {
+    this.getDocument = function (templateId, documentId, documentTypeId) {
 
     };
 
-    this.SaveDocument = function (template, documentId, documentTypeId) {
+    this.saveDocument = function (template, documentId, documentTypeId) {
 
     };
 
-    this.GetComponentPlugins = function () {
+    this.getComponentPlugins = function () {
       return $q.when([
         {
-          Id: 1,
-          Name: "Text",
-          Category: "Basic",
-          ComponentType: "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
-          ImageUrl: "Text.png"
+          id: 1,
+          name: "Text",
+          category: "Basic",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
+          imageUrl: "Text.png"
         },
         {
-          Id: 2,
-          Name: "Video",
-          Category: "Basic",
-          ComponentType: "Cerberus.TemplateEngine.Controller.Component.Basic.Video",
-          ImageUrl: "Video.png"
+          id: 2,
+          name: "Video",
+          category: "Basic",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Basic.Video",
+          imageUrl: "Video.png"
         },
         {
-          Id: 3,
-          Name: "YouTube",
-          Category: "Basic",
-          ComponentType: "Cerberus.TemplateEngine.Controller.Component.Basic.YouTube",
-          ImageUrl: "YouTube.png"
+          id: 3,
+          name: "YouTube",
+          category: "Basic",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Basic.YouTube",
+          imageUrl: "YouTube.png"
         },
         {
-          Id: 4,
-          Name: "Link",
-          Category: "Navigation",
-          ComponentType: "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
-          ImageUrl: "Link.png"
+          id: 4,
+          name: "Link",
+          category: "Navigation",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
+          imageUrl: "Link.png"
         },
         {
-          Id: 5,
-          Name: "RSS",
-          Category: "SocialMedia",
-          ComponentType: "Cerberus.TemplateEngine.Controller.Component.SocialMedia.RSS",
-          ImageUrl: "RSS.png"
+          id: 5,
+          name: "RSS",
+          category: "SocialMedia",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.SocialMedia.RSS",
+          imageUrl: "RSS.png"
         },
         {
-          Id: 6,
-          Name: "Sharer",
-          Category: "SocialMedia",
-          ComponentType: "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer",
-          ImageUrl: "Sharer.png"
+          id: 6,
+          name: "Sharer",
+          category: "SocialMedia",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer",
+          imageUrl: "Sharer.png"
         }
       ]);
     };
-  },
-  {
-    $inject: ["$q"]
-  }));
+  }
+
+  ModelFactory.registerModel("Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider", angular.extend(TemplateLocalStorageProvider, { $inject: ["$q"] }));
 })(window.angular, window._, window.localStorage);

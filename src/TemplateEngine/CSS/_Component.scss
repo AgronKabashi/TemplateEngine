@@ -1,9 +1,9 @@
-@import "Component/Link";
-@import "Component/RSS";
-@import "Component/Text";
-@import "Component/Sharer";
-@import "Component/Video";
-@import "Component/YouTube";
+@import "component/link";
+@import "component/rss";
+@import "component/text";
+@import "component/sharer";
+@import "component/video";
+@import "component/youtube";
 
 cs-component {
   @include transform-origin(top left);

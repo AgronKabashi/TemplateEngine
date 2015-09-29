@@ -4,7 +4,7 @@
     <h1>TemplateEngine Demo</h1>
     <div class="introduction">
       <p>
-        Welcome! TemplateEngine is a templating tool that helps you build web applications using web components. 
+        Welcome! TemplateEngine is a templating tool that helps you build web applications using web components.
       </p>
       <p>
         This demo will help you get acquainted with the TemplateEngine Editor through hands-on experience. Simply create a template using one
@@ -16,22 +16,22 @@
     </div>
 
     <div class="actions">
-      <select ng-model="templatePreset" ng-options="templatePreset.Name for templatePreset in TemplatePresets">
+      <select ng-model="templatePreset" ng-options="templatePreset.name for templatePreset in templatePresets">
         <option value="">Blank Template</option>
       </select>
-      <input type="text" placeholder="Enter a template name" ng-model="newTemplateName" />
-      <button ng-click="AddTemplate(templatePreset)">Add Template</button>
+      <input type="text" placeholder="[Optional] template name" ng-model="newTemplateName" />
+      <button ng-click="addTemplate(templatePreset)">Add Template</button>
   </div>
     <ul class="list">
-       <li class="empty-list-message" ng-class="{hidden: Templates && Templates.length}">
+       <li class="empty-list-message" ng-class="{hidden: templates && templates.length}">
         <i>No Templates</i>
       </li>
 
-      <li ng-repeat="template in Templates track by template.Id" class="ng-cloak" ng-cloak>
-        <a ng-bind="template.Name" ui-sref="View({Id: template.Id})"></a>
+      <li ng-repeat="template in templates track by template.id" class="ng-cloak" ng-cloak>
+        <a ng-bind="template.name" ui-sref="view({id: template.id})"></a>
         <div class="button-group">
-          <a ui-sref="Design({Id: template.Id})">Edit</a>
-          <a ng-click="RemoveTemplate(template)">Remove</a>
+          <a ui-sref="design({id: template.id})">Edit</a>
+          <a ng-click="removeTemplate(template)">Remove</a>
         </div>
     </ul>
   </section>

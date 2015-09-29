@@ -1,11 +1,11 @@
 (function (angular, _) {
   "use strict";
 
-  function GetComponentModels(selectedElements) {
+  function getComponentModels(selectedElements) {
     var result = new Array(selectedElements.length);
 
     _.forEach(selectedElements, function (element, index) {
-      result[index] = angular.element(element).scope().Component;
+      result[index] = angular.element(element).scope().component;
     });
 
     return result;
@@ -49,8 +49,8 @@
 
                   if (!isSelected) {
                     selectedElements.push(element);
-                    TemplateEditorHelper.EnableDraggable(element);
-                    TemplateEditorHelper.EnableResizable(element);
+                    TemplateEditorHelper.enableDraggable(element);
+                    TemplateEditorHelper.enableResizable(element);
                   }
                   else {
                     element
@@ -59,8 +59,8 @@
                   }
                 }
 
-                var selectedComponents = GetComponentModels(selectedElements);
-                EventService.Notify("ComponentSelected", selectedComponents);
+                var selectedComponents = getComponentModels(selectedElements);
+                EventService.notify("ComponentSelected", selectedComponents);
               });
           }
         };

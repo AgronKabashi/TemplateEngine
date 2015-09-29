@@ -15,7 +15,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     config: {
       src: "src",
-      dist: "dist"
+      dest: "dest"
     },
     clean: require("./grunt-tasks/clean"),
     concat: require("./grunt-tasks/concat"),

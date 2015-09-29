@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  dist: {
+  dest: {
     options: {
       includePaths: require("node-neat").includePaths,
       outputStyle: "compressed"
@@ -10,7 +10,7 @@ module.exports = {
       expand: true,
       cwd: "<%= config.src %>",
       src: "**/*.scss",
-      dest: "<%= config.dist %>",
+      dest: "<%= config.dest %>",
       ext: ".css"
     }
     ]

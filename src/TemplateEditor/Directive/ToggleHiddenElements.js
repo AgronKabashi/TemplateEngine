@@ -9,7 +9,7 @@
         return {
           restrict: "A",
           link: function (scope, element, attributes) {
-            EventService.Subscribe("ShowHiddenElements", function (enable) {
+            EventService.subscribe("ShowHiddenElements", function (enable) {
               element.toggleClass("show-hidden-elements", enable);
             });
           }

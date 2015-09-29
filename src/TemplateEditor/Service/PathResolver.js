@@ -4,9 +4,9 @@
   angular
     .module("Cerberus.TemplateEditor")
     .service("Cerberus.TemplateEditor.Service.PathResolver", [
-      "TemplateEditorPath",
+      "templateEditorPath",
       function (modulePath) {
-        this.Resolve = function (path) {
+        this.resolve = function (path) {
           return String.format("{0}{1}", modulePath, path);
         };
       }

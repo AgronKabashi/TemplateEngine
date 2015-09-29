@@ -5,170 +5,173 @@
     .module("Cerberus.TemplateEditor")
     .factory("Cerberus.TemplateEditor.Localization", function () {
       return {
-        Generic: {
-          Back: "Back",
+        generic: {
+          back: "Back",
 
-          Restore: "Restore to Default",
-          Save: "Save",
-          SaveExit: "Save and Exit",
-          Cancel: "Cancel",
+          restore: "Restore to Default",
+          save: "Save",
+          saveExit: "Save and Exit",
+          cancel: "Cancel",
 
-          Yes: "Yes",
-          No: "No",
+          yes: "Yes",
+          no: "No",
 
-          Exit: "Exit",
+          exit: "Exit",
 
-          EditSettings: "Edit Settings",
+          editSettings: "Edit Settings",
 
-          Add: "Add",
-          Edit: "Edit",
-          Update: "Update",
-          Remove: "Remove",
+          add: "Add",
+          edit: "Edit",
+          update: "Update",
+          remove: "Remove",
 
-          Apply: "Apply"
+          apply: "Apply"
         },
 
-        TemplateResolutions: {
-          ReachedMaximumResolutions: "MAXRESOLUTIONS REACHED",
-          NotEnoughSpace: "NOT ENOUGH SPACE"
+        remplateResolutions: {
+          reachedMaximumResolutions: "MAXRESOLUTIONS REACHED",
+          notEnoughSpace: "NOT ENOUGH SPACE"
         },
 
-        ComponentActions: {
-          RemoveSelectedComponents: "Remove selected component(s)",
-          DistributeVisualPropertiesToAllResolutions: "Distribute visual properties across all resolutions",
-          DistributeVisualPropertiesToLowerResolutions: "Distribute visual properties to lower resolutions",
-          DistributeVisualPropertiesToHigherResolutions: "Distribute visual properties to higher resolutions",
-          DistributeVisualPropertiesToResolutions: "Distribute visual properties to resolution...",
-          ShowHiddenControls: "Show Hidden Elements"
+        componentActions: {
+          removeSelectedComponents: "Remove selected component(s)",
+          distributeVisualPropertiesToAllResolutions: "Distribute visual properties across all resolutions",
+          distributeVisualPropertiesToLowerResolutions: "Distribute visual properties to lower resolutions",
+          distributeVisualPropertiesToHigherResolutions: "Distribute visual properties to higher resolutions",
+          distributeVisualPropertiesToResolutions: "Distribute visual properties to resolution...",
+          showHiddenControls: "Show Hidden Elements"
         },
-        ComponentProperties: {
-          Class: "Class",
-          Visible: "Visible",
-          Hidden: "Hidden",
-          Generic: "Generic",
-          ZIndex: "Render Order",
-          ComponentName: "Name",
-          Layout: "Layout",
-          Left: "Left",
-          Top: "Top",
-          Right: "Right",
-          Bottom: "Bottom",
-          Width: "Width",
-          Height: "Height",
-          MinWidth: "Minimum Width",
-          MinHeight: "Minimum Height",
-          Center: "Center",
+        componentProperties: {
+          class: "Class",
+          visible: "Visible",
+          hidden: "Hidden",
+          generic: "Generic",
+          zIndex: "Render Order",
+          componentName: "Name",
+          layout: "Layout",
+          left: "Left",
+          top: "Top",
+          right: "Right",
+          bottom: "Bottom",
+          width: "Width",
+          height: "Height",
+          minWidth: "Minimum Width",
+          minHeight: "Minimum Height",
+          center: "Center",
 
-          RotateZ: "Rotate",
-          RotateZPlaceHolder: "Specify in deg, turn or rad",
+          rotateZ: "Rotate",
+          rotateZPlaceHolder: "Specify in deg, turn or rad",
 
-          FontAndColors: "Font and Colors",
-          Typeface: "Typeface",
-          Size: "Size",
-          Color: "Color",
-          TextAlign: "Text Align",
-          TextTransform: "Text Transform",
-          NoWrap: "Don't wrap",
-          Scrollable: "Enable scroll",
+          fontAndColors: "Font and Colors",
+          fontface: "Fontface",
+          size: "Size",
+          color: "Color",
+          textAlign: "Text Align",
+          textTransform: "Text Transform",
+          noWrap: "Don't wrap",
+          scrollable: "Enable scroll",
 
-          Background: "Background",
-          Image: "Image",
-          ImageRepeat: "Image Repeat",
-          ImagePosition: "Image Position",
+          background: "Background",
+          image: "Image",
+          imageRepeat: "Image Repeat",
+          imagePosition: "Image Position",
 
-          Border: "Border",
-          BorderRadius: "Radius",
-          Padding: "Padding",
-          TopLeft: "TopLeft",
-          TopRight: "TopRight",
-          BottomRight: "BottomRight",
-          BottomLeft: "BottomLeft",
+          border: "Border",
+          borderRadius: "Radius",
+          padding: "Padding",
+          topLeft: "TopLeft",
+          topRight: "TopRight",
+          bottomRight: "BottomRight",
+          bottomLeft: "BottomLeft",
 
-          Shadows: "Shadows",
-          BoxShadow: "Box",
-          TextShadow: "Text",
-          HorizontalOffset: "Horizontal Offset",
-          VerticalOffset: "Vertical Offset",
-          InnerShadow: "Inner Shadow",
-          BlurRadius: "Blur Radius",
-          SpreadRadius: "Spread Radius",
+          shadows: "Shadows",
+          noxShadow: "Box",
+          textShadow: "Text",
+          horizontalOffset: "Horizontal Offset",
+          verticalOffset: "Vertical Offset",
+          innerShadow: "Inner Shadow",
+          blurRadius: "Blur Radius",
+          spreadRadius: "Spread Radius",
 
-          Opacity: "Opacity",
-          OpacityPlaceHolder: "Range: 0.0 - 1.0",
-          ImageSource: "Image Source",
-          ImageSize: "Image Size",
-          ImageSourcePlaceHolder: "Path to image",
+          opacity: "Opacity",
+          opacityPlaceHolder: "Range: 0.0 - 1.0",
+          imageSource: "Image Source",
+          imageSize: "Image Size",
+          imageSourcePlaceHolder: "Path to image",
 
-          Content: "Content",
+          content: "Content",
 
-          BrowserDefault: "Browser Default",
-          BorderSolid: "Solid",
-          BorderDashed: "Dashed",
-          BorderDotted: "Dotted",
-          BorderGroove: "Groove",
-          BorderDouble: "Double",
-          BorderInset: "Inset",
-          BorderOutset: "Outset",
-          Repeat: "Repeat",
-          RepeatHorizontally: "Repeat Horizontally",
-          RepeatVertically: "Repeat Vertically",
-          DontRepeat: "Do not Repeat",
+          browserDefault: "Browser Default",
+          borderSolid: "Solid",
+          borderDashed: "Dashed",
+          borderDotted: "Dotted",
+          borderGroove: "Groove",
+          borderDouble: "Double",
+          borderInset: "Inset",
+          borderOutset: "Outset",
+          repeat: "Repeat",
+          repeatHorizontally: "Repeat Horizontally",
+          repeatVertically: "Repeat Vertically",
+          dontRepeat: "Do not Repeat",
 
-          Contain: "Contain",
-          Cover: "Cover",
+          contain: "Contain",
+          cover: "Cover",
 
-          Misc: "Misc",
-          ItemSpacing: "Item Spacing",
-          ItemSpacingPlaceHolder: "Specify in pixels"
-        },
-
-        ComponentPluginNames: {
-          Text: "Text",
-          Link: "Link",
-          Menu: "Menu",
-          Sharer: "Sharer",
-          TableOfContents: "Table of Contents",
-          YouTube: "YouTube",
-          RTF: "Rich Text Format",
-          RSS: "RSS",
-          ArticleList: "Article List",
-          Video: "Video",
-          Carousel: "Carousel",
-          Album: "Album"
+          misc: "Misc",
+          itemSpacing: "Item Spacing",
+          itemSpacingPlaceHolder: "Specify in pixels"
         },
 
-        Component: {
-          Link: {
-            Text: "Content",
-            Tooltip: "Tooltip",
-            Url: "Url",
-            Target: "Target",
+        componentPluginNames: {
+          text: "Text",
+          link: "Link",
+          menu: "Menu",
+          sharer: "Sharer",
+          tableOfContents: "Table of Contents",
+          youTube: "YouTube",
+          rtf: "Rich Text Format",
+          rss: "RSS",
+          articleList: "Article List",
+          video: "Video",
+          carousel: "Carousel",
+          album: "Album"
+        },
 
-            TooltipPlaceHolder: "Enter a descriptive text",
-            TextPlaceHolder: "Enter text",
-            UrlPlaceHolder: "Enter a link to navigate to"
+        component: {
+          link: {
+            text: "Content",
+            tooltip: "Tooltip",
+            url: "Url",
+            target: "Target",
+
+            newWindow: "New Window",
+            sameWindow: "Same Window",
+
+            tooltipPlaceHolder: "Enter a descriptive text",
+            textPlaceHolder: "Enter text",
+            urlPlaceHolder: "Enter a link to navigate to"
           },
-          YouTube: {
-            VideoId: "Video Id",
-            VideoIdPlaceHolder: "Video Id",
-            AutoPlay: "Autoplay",
-            StartTime: "Start Time",
-            LoopInfinitely: "Loop",
-            ShowControls: "Show player controls",
-            DisableKeyboard: "Disable keyboard shortcuts",
-            HideYouTubeBrand: "Hide YouTube Brand",
-            ShowInfo: "Show Video Info"
+          youTube: {
+            videoId: "Video Id",
+            videoIdPlaceHolder: "Video Id",
+            autoPlay: "Autoplay",
+            startTime: "Start Time",
+            loopInfinitely: "Loop",
+            showControls: "Show player controls",
+            disableKeyboard: "Disable keyboard shortcuts",
+            hideYouTubeBrand: "Hide YouTube Brand",
+            showInfo: "Show Video Info"
           },
-          TableOfContents: {
-            Source: "Source"
+          tableOfContents: {
+            source: "Source"
           },
-          RSS: {
-            Url: "Url",
-            ShowTitle: "Title",
-            ShowDescription: "Description",
-            ShowStoryDescription: "Story Description",
-            ShowStoryDate: "Story Date",
-            MaxStories: "Max Stories"
+          rss: {
+            url: "Url",
+            showTitle: "Title",
+            showDescription: "Description",
+            showStoryDescription: "Story Description",
+            showStoryDate: "Story Date",
+            maxStories: "Max Stories"
           }
         }
       };

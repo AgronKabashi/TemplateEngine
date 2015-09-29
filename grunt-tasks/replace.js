@@ -12,8 +12,8 @@ module.exports = {
     files: [{
       expand: true,
       flatten: true,
-      src: ["<%= config.dist %>/TemplateEditor/App.js"],
-      dest: "<%= config.dist %>/TemplateEditor"
+      src: ["<%= config.dest %>/templateeditor/app.js"],
+      dest: "<%= config.dest %>/templateeditor"
     }
     ]
   }

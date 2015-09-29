@@ -1,47 +1,48 @@
 ﻿<div>
-	<label ng-bind="::Localization.ComponentProperties.Typeface"></label>
-	<select ng-model="VisualProperties.fontFamily" class="dropdown-list" ng-options="font for font in ::FontFamilies"></select>
+	<label ng-bind="::localization.componentProperties.fontFamily"></label>
+	<select ng-model="visualProperties.fontFamily" class="dropdown-list" ng-options="font.value as font.name for font in ::fontFamilies"></select>
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.Size"></label>
-	<input type="text" ng-model="VisualProperties.fontSize" />
+	<label ng-bind="::localization.componentProperties.size"></label>
+	<cs-unitfield model="visualProperties.fontSize"></cs-unitfield>
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.Color"></label>
-	<input type="text" ng-model="VisualProperties.color" ng-attr-placeholder="{{::Localization.ComponentProperties.Color}}" />
+	<label ng-bind="::localization.componentProperties.color"></label>
+	<input type="text" ng-model="visualProperties.color" ng-attr-placeholder="{{::localization.componentProperties.color}}" />
 </div>
 
-<!--<div>-->
-	<!--<label ng-bind="::Localization.ComponentProperties.TextTransform"></label>-->
-	<!--<div class="btn-group" ng-click="PropertyChanged()">
-		<div ng-model="VisualProperties.fontWeight" class="btn btn-xs btn-default" data-btn-checkbox data-btn-checkbox-true="'bold'" data-btn-checkbox-false="''"><span class="glyphicon glyphicon-bold"></span></div>
-		<div ng-model="VisualProperties.textDecoration" class="btn btn-xs btn-default" data-btn-checkbox data-btn-checkbox-true="'underline'" data-btn-checkbox-false="''"><span class="glyphicon glyphicon-text-width"></span></div>
-		<div ng-model="VisualProperties.fontStyle" class="btn btn-xs btn-default" data-btn-checkbox data-btn-checkbox-true="'italic'" data-btn-checkbox-false="''"><span class="glyphicon glyphicon-italic"></span></div>
-	</div>-->
-	<!--<div ng-click="PropertyChanged()" class="text-align">
-		<input type="radio" name="text-align" ng-model="VisualProperties.textAlign" ng-value="'left'" />
-		<input type="radio" name="text-align" ng-model="VisualProperties.textAlign" ng-value="'center'" />
-		<input type="radio" name="text-align" ng-model="VisualProperties.textAlign" ng-value="'right'" />
-	</div>-->
-<!--</div>-->
-
 <div>
-	<label ng-bind="::Localization.ComponentProperties.TextAlign"></label>
-	<div class="text-align">
-		<label><input type="radio" name="text-align" ng-model="VisualProperties.textAlign" ng-value="'left'" /><span></span></label>
-		<label><input type="radio" name="text-align" ng-model="VisualProperties.textAlign" ng-value="'center'" /><span></span></label>
-		<label><input type="radio" name="text-align" ng-model="VisualProperties.textAlign" ng-value="'right'" /><span></span></label>
+	<label ng-bind="::localization.componentProperties.textTransform"></label>
+	<div>
+		<input type="checkbox" name="text-transform" ng-model="visualProperties.fontWeight" ng-true-value="'bold'" />
+    <label />
+		<input type="checkbox" name="text-transform" ng-model="visualProperties.textDecoration" ng-true-value="'underline'" />
+    <label />
+		<input type="checkbox" name="text-transform" ng-model="visualProperties.fontStyle" ng-true-value="'italic'" />
+    <label />
 	</div>
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.NoWrap"></label>
-	<input type="checkbox" ng-model="VisualProperties.whiteSpace" ng-true-value="'nowrap'" ng-false-value="undefined" />
+	<label ng-bind="::localization.componentProperties.textAlign"></label>
+	<div>
+		<input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'left'" />
+    <label />
+		<input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'center'" />
+    <label />
+		<input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'right'" />
+    <label />
+	</div>
+</div>
+<!--
+<div>
+	<label ng-bind="::localization.componentProperties.NoWrap"></label>
+	<input type="checkbox" ng-model="visualProperties.whiteSpace" ng-true-value="'nowrap'" ng-false-value="undefined" />
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.Scrollable"></label>
-	<input type="checkbox" ng-model="VisualProperties.overflow" ng-true-value="'auto'" ng-false-value="undefined" />
-</div>
+	<label ng-bind="::localization.componentProperties.Scrollable"></label>
+	<input type="checkbox" ng-model="visualProperties.overflow" ng-true-value="'auto'" ng-false-value="undefined" />
+</div>-->

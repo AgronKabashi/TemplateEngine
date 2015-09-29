@@ -7,15 +7,15 @@
 
   var app = angular
     .module("Cerberus.TemplateEditor", ["Cerberus.TemplateEngine"])
-    .constant("TemplateEditorPath", scriptPath)
+    .constant("templateEditorPath", scriptPath)
     .service("Cerberus.TemplateEditor.Service.PathResolver", [
-		  "TemplateEditorPath",
-		  function (appPath) {
-		    this.Resolve = function (path) {
-		      return String.format("{0}/{1}", appPath, path);
-		    };
-		  }
-  ]);
+      "templateEditorPath",
+      function (appPath) {
+        this.resolve = function (path) {
+          return String.format("{0}/{1}", appPath, path);
+        };
+      }
+    ]);
 
   if (define && define.amd) {
     define([], app);

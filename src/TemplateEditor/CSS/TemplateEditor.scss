@@ -1,23 +1,24 @@
-@import "Reset";
+@import "reset";
 
 @import "bourbon";
 @import "neat";
 
-@import "Globals";
-@import "Palette";
-@import "Font";
-@import "Button";
-@import "Checkbox";
-@import "DropdownList";
-@import "TextBox";
+@import "globals";
+@import "palette";
+@import "font";
+@import "button";
+@import "checkbox";
+@import "dropdownList";
+@import "textbox";
 
-@import "Components";
-@import "ComponentPlugins";
-@import "TemplateResolutions";
-@import "ComponentActions";
-@import "ComponentProperties";
-@import "TreeView";
-@import "ButtonDropdown";
+@import "components";
+@import "componentPlugins";
+@import "templateResolutions";
+@import "componentActions";
+@import "componentProperties";
+@import "treeView";
+@import "buttonDropdown";
+@import "unitField";
 
 @import "jquery-ui";
 
@@ -64,7 +65,7 @@ cs-template {
   background-image: url("../Images/grid.png");
   margin: 40px 0 0 40px;
   max-width: 1024px;
-  min-height: 400px;
+  min-height: 600px;
   box-shadow: 0 0 20px 1px #333;
 }
 
@@ -82,7 +83,7 @@ cs-template.animatable > cs-component {
 /* EditDesign specific rules */
 .edit-design cs-template > cs-component {
   background-color: rgba(200, 200, 200, 0.4);
-  
+
   will-change: auto;
 
   &.ui-resizable-resizing,
@@ -93,7 +94,7 @@ cs-template.animatable > cs-component {
   &.selected {
     cursor: move;
     will-change: left, top, right, bottom, opacity;
-    z-index: $layer-2;
+    z-index: 10000 !important;
   }
 
   &.ui-draggable-dragging {

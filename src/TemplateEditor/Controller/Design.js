@@ -1,68 +1,66 @@
-(function (angular) {
+(function (angular, _) {
   "use strict";
+
+  var componentIdCounter = 0;
+
+  function generateComponentId() {
+    return --componentIdCounter;
+  }
 
   angular
     .module("Cerberus.TemplateEditor")
     .controller("Cerberus.TemplateEditor.Controller.Design", [
-			"$scope",
-      "TemplateEditorPath",
-			"Cerberus.TemplateEditor.Localization",
-			"Cerberus.TemplateEngine.Service.Template",
+      "$scope",
+      "templateEditorPath",
+      "Cerberus.TemplateEditor.Localization",
+      "Cerberus.TemplateEngine.Service.Template",
       "Cerberus.TemplateEngine.Service.Event",
-			"Cerberus.TemplateEngine.Service.DataBag",
-			function ($scope, TemplateEditorPath, Localization, TemplateService, EventService, DataBagService) {
-			  var componentIdCounter = 0;
-
-			  function GenerateComponentId() {
-			    return --componentIdCounter;
-			  }
-
-			  this.InitializeScope = function () {
-          DataBagService.AddData("TemplateMode", Cerberus.TemplateEngine.TemplateMode.EditDesign);
-
-			    $scope.Localization = Localization;
-			    $scope.ApplicationBasePath = TemplateEditorPath;
-
-			    $scope.AddComponent = function (componentInfo) {
-			      var component = angular.extend(new Cerberus.TemplateEngine.Model.Component(), componentInfo);
-			      component.Id = component.CreationGUID = GenerateComponentId();
-
-			      DataBagService.GetData("Template").Components.push(component);
-			      EventService.Notify("ComponentAdded", component);
-			    };
-
-			    $scope.$on("$destroy", function () {
-			      EventService.Clear();
-			    });
-
-			    $scope.Save = function () {
-			      return TemplateService.SaveTemplate(DataBagService.GetData("Template"))
-              .then(function (template) {
-                DataBagService.AddData("Template", template);
-                EventService.Notify("InitializeTemplate", template);
-              });
-			    };
-
-			    $scope.Exit = function () {
-			      var exitUrl = "/";
-			      window.location.href = exitUrl;
-			    };
-
-			    $scope.SaveExit = function () {
-			      this.Save()
-              .then(function () {
-                $scope.Exit();
-              });
-			    };
-
-			  };
-
-        this.InitializeEvents = function () {
-          EventService.Subscribe("AddComponent", $scope.AddComponent.bind(this));
-        };
-
-        this.InitializeScope();
-        this.InitializeEvents();
-			}
+      "Cerberus.TemplateEngine.Service.DataBag",
+      "Cerberus.TemplateEngine.TemplateMode",
+      "Cerberus.ModelFactory",
+      EditDesignController
     ]);
-})(window.angular);
+
+  function EditDesignController($scope, templateEditorPath, Localization, TemplateService, EventService, DataBagService, TemplateModes, ModelFactory) {
+    DataBagService.addData("TemplateMode", TemplateModes.editDesign);
+
+    _.assign($scope, {
+      localization: Localization,
+      applicationBasePath: templateEditorPath,
+
+      addComponent: function (componentInfo) {
+        var component = angular.extend(ModelFactory.instantiateModel("Cerberus.TemplateEngine.Model.Component"), componentInfo);
+        component.id = component.creationGUID = generateComponentId();
+
+        DataBagService.getData("Template").components.push(component);
+        EventService.notify("ComponentAdded", component);
+      },
+
+      exit: function () {
+        var exitUrl = "/";
+        window.location.href = exitUrl;
+      },
+
+      save: function () {
+        return TemplateService.saveTemplate(DataBagService.getData("Template"))
+          .then(function (template) {
+            DataBagService.addData("Template", template);
+            EventService.notify("InitializeTemplate", template);
+          });
+      },
+
+      saveExit: function () {
+        this.save()
+          .then(function () {
+            $scope.exit();
+          });
+      }
+    });
+
+    $scope.$on("$destroy", function () {
+      EventService.clear();
+    });
+
+    EventService.subscribe("AddComponent", $scope.addComponent);
+  }
+})(window.angular, window._);

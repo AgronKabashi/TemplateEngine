@@ -10,7 +10,7 @@ module.exports = {
   livereload: {
     options: {
       open: true,
-      base: ["<%= config.dist %>"]
+      base: ["<%= config.dest %>"]
     }
   }
 };

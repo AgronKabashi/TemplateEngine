@@ -32,18 +32,14 @@
   }
 
   &.selected {
-    -webkit-border-radius: initial;
+    -webkit-border-radius: initial; // Special case for webkit
     border-radius: inherit;
     outline: solid 1px #3F607F;
   }
 
+  // Fallback for components with no customized name
   &[data-friendly-name=""]:hover::before,
   &[data-friendly-name=""].ui-resizable-resizing::before {
     content: attr(data-component-name);
-  }
-
-  &.fixed {
-    margin-left: 40px;
-    margin-top: 220px;
   }
 }

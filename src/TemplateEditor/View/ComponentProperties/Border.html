@@ -1,45 +1,45 @@
 ﻿<div>
-	<label ng-bind="::Localization.ComponentProperties.Top"></label>
+	<label ng-bind="::localization.componentProperties.top"></label>
 	<div class="three columns">
-		<input type="text" ng-model="VisualProperties.borderTopWidth" ng-attr-placeholder="{{::Localization.ComponentProperties.Width}}" />
-		<input type="text" ng-model="VisualProperties.borderTopColor" ng-attr-placeholder="{{::Localization.ComponentProperties.Color}}" />
-		<select ng-model="VisualProperties.borderTopStyle" ng-options="item.Value as item.Name for item in ::BorderStyles"></select>
+		<cs-unitfield model="visualProperties.borderTopWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+		<input type="text" ng-model="visualProperties.borderTopColor" placeholder="{{::localization.componentProperties.color}}" />
+		<select ng-model="visualProperties.borderTopStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
 	</div>
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.Right"></label>
+	<label ng-bind="::localization.componentProperties.right"></label>
 	<div class="three columns">
-		<input type="text" ng-model="VisualProperties.borderRightWidth" ng-attr-placeholder="{{::Localization.ComponentProperties.Width}}" />
-		<input type="text" ng-model="VisualProperties.borderRightColor" ng-attr-placeholder="{{::Localization.ComponentProperties.Color}}" />
-		<select ng-model="VisualProperties.borderRightStyle" ng-options="item.Value as item.Name for item in ::BorderStyles"></select>
+		<cs-unitfield model="visualProperties.borderRightWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+		<input type="text" ng-model="visualProperties.borderRightColor" placeholder="{{::localization.componentProperties.color}}" />
+		<select ng-model="visualProperties.borderRightStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
 	</div>
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.Bottom"></label>
+	<label ng-bind="::localization.componentProperties.bottom"></label>
 	<div class="three columns">
-		<input type="text" ng-model="VisualProperties.borderBottomWidth" ng-attr-placeholder="{{::Localization.ComponentProperties.Width}}" />
-		<input type="text" ng-model="VisualProperties.borderBottomColor" ng-attr-placeholder="{{::Localization.ComponentProperties.Color}}" />
-		<select ng-model="VisualProperties.borderBottomStyle" ng-options="item.Value as item.Name for item in ::BorderStyles"></select>
+		<cs-unitfield model="visualProperties.borderBottomWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+		<input type="text" ng-model="visualProperties.borderBottomColor" placeholder="{{::localization.componentProperties.color}}" />
+		<select ng-model="visualProperties.borderBottomStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
 	</div>
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.Left"></label>
+	<label ng-bind="::localization.componentProperties.left"></label>
 	<div class="three columns">
-		<input type="text" ng-model="VisualProperties.borderLeftWidth" ng-attr-placeholder="{{::Localization.ComponentProperties.Width}}" />
-		<input type="text" ng-model="VisualProperties.borderLeftColor" ng-attr-placeholder="{{::Localization.ComponentProperties.Color}}" />
-		<select ng-model="VisualProperties.borderLeftStyle" ng-options="item.Value as item.Name for item in ::BorderStyles"></select>
+		<cs-unitfield model="visualProperties.borderLeftWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+		<input type="text" ng-model="visualProperties.borderLeftColor" placeholder="{{::localization.componentProperties.color}}" />
+		<select ng-model="visualProperties.borderLeftStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
 	</div>
 </div>
 
 <div>
-	<label ng-bind="::Localization.ComponentProperties.BorderRadius"></label>
+	<label ng-bind="::localization.componentProperties.borderRadius"></label>
 	<div class="four columns">
-		<input type="text" ng-model="VisualProperties.borderTopLeftRadius" ng-attr-placeholder="{{::Localization.ComponentProperties.TopLeft}}" />
-		<input type="text" ng-model="VisualProperties.borderTopRightRadius" ng-attr-placeholder="{{::Localization.ComponentProperties.TopRight}}" />
-		<input type="text" ng-model="VisualProperties.borderBottomRightRadius" ng-attr-placeholder="{{::Localization.ComponentProperties.BottomRight}}" />
-		<input type="text" ng-model="VisualProperties.borderBottomLeftRadius" ng-attr-placeholder="{{::Localization.ComponentProperties.BottomLeft}}" />
+		<cs-unitfield model="visualProperties.borderTopLeftRadius" placeholder="{{::localization.componentProperties.topLeft}}"></cs-unitfield>
+		<cs-unitfield model="visualProperties.borderTopRightRadius" placeholder="{{::localization.componentProperties.topRight}}"></cs-unitfield>
+		<cs-unitfield model="visualProperties.borderBottomRightRadius" placeholder="{{::localization.componentProperties.bottomRight}}"></cs-unitfield>
+		<cs-unitfield model="visualProperties.borderBottomLeftRadius" placeholder="{{::localization.componentProperties.bottomLeft}}"></cs-unitfield>
 	</div>
 </div>
