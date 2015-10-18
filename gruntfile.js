@@ -6,9 +6,9 @@ module.exports = function (grunt) {
   require("node-neat");
   require("node-bourbon");
 
-  grunt.registerTask("build", ["clean:all", "copy", "sass", "concat"]);
+  grunt.registerTask("build", ["clean", "copy", "sass", "concat"]);
   grunt.registerTask("release-build", ["build", "htmlmin", "uglify"]);
-  grunt.registerTask("livereload", ["connect:livereload", "watch"]);
+  grunt.registerTask("livereload", ["connect", "watch"]);
   grunt.registerTask("default", ["build", "livereload"]);
   grunt.registerTask("release", ["release-build", "livereload"]);
 
@@ -21,11 +21,11 @@ module.exports = function (grunt) {
     concat: require("./grunt-tasks/concat"),
     connect: require("./grunt-tasks/connect"),
     copy: require("./grunt-tasks/copy"),
-    htmlmin: require("./grunt-tasks/htmlmin"),
     eslint: require("./grunt-tasks/eslint"),
-    uglify: require("./grunt-tasks/uglify"),
+    htmlmin: require("./grunt-tasks/htmlmin"),
     replace: require("./grunt-tasks/replace"),
     sass: require("./grunt-tasks/sass"),
+    uglify: require("./grunt-tasks/uglify"),
     watch: require("./grunt-tasks/watch")
   });
 };

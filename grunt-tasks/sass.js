@@ -12,7 +12,6 @@ module.exports = {
       src: "**/*.scss",
       dest: "<%= config.dest %>",
       ext: ".css"
-    }
-    ]
+    }]
   }
 };

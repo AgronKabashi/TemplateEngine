@@ -15,7 +15,7 @@
   "files.trimTrailingWhitespace": true,
   "files.exclude":{
     "**/.git": true,
-    ".settings": true,
+    ".vscode": true,
     "dest": true,
     "node_modules": true
   }

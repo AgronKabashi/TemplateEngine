@@ -5,10 +5,6 @@ module.exports = {
     livereload: true,
     spawn: false
   },
-  css: {
-    files: ["<%= config.src %>/**/*.css"],
-    tasks: ["newer:copy:css"]
-  },
   sass: {
     files: ["<%= config.src %>/**/*.scss"],
     tasks: ["sass"]

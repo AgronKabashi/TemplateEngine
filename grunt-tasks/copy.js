@@ -9,19 +9,11 @@ module.exports = {
       dest: "<%= config.dest %>"
     }]
   },
-  css: {
-    files: [{
-      expand: true,
-      cwd: "<%= config.src %>",
-      src: "**/*.css",
-      dest: "<%= config.dest %>"
-    }]
-  },
   images: {
     files: [{
       expand: true,
       cwd: "<%= config.src %>",
-      src: "**/*.{jpg,png}",
+      src: "**/*.{jpg,png,svg}",
       dest: "<%= config.dest %>"
     }]
   },

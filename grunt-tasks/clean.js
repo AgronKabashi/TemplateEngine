@@ -1,5 +1,5 @@
 "use strict";
 
 module.exports = {
-  all: ["<%= config.dest %>/**/*"]
+  default: ["<%= config.dest %>/**/*"]
 };

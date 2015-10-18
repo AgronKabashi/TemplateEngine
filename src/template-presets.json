@@ -3,12 +3,12 @@
     {
       "name": "Proof of Concept: Animation",
       "data": {
-        "CreatedDateAsString": "",
+        "createdDateAsString": "",
         "id": 0,
-        "LastModifiedDateAsString": "",
+        "lastModifiedDateAsString": "",
         "name": "",
         "visualProperties": "",
-        "Resolutions": [
+        "resolutions": [
           {
             "id": 1,
             "resolutionValue": 627,
@@ -146,7 +146,7 @@
             }
           }
         ],
-        "Components": [
+        "components": [
           {
             "id": 1,
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
@@ -273,13 +273,13 @@
     },
     {
       "name": "Sample Start Page",
-      "Data": {
+      "data": {
         "name": "Sample Start Page",
         "id": 0,
         "visualProperties": "",
-        "CreatedDateAsString": "",
-        "LastModifiedDateAsString": "",
-        "Components": [
+        "createdDateAsString": "",
+        "lastModifiedDateAsString": "",
+        "components": [
           {
             "category": "basic",
             "class": "",
@@ -425,7 +425,7 @@
           {
             "category": "Navigation",
             "class": "",
-            "content": { "Url": "", "Tooltip": "", "text": "CERBERUS Solutions", "Target": "_self" },
+            "content": { "url": "", "tooltip": "", "text": "CERBERUS Solutions", "target": "_self" },
             "name": "Link",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
             "friendlyName": "",

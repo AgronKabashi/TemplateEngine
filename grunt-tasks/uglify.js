@@ -6,13 +6,12 @@ module.exports = {
       except: ["jQuery", "*.min.js"]
     }
   },
-  all: {
+  default: {
     files: [{
       expand: true,
       cwd: "<%= config.dest %>",
       src: "**/*.js",
       dest: "<%= config.dest %>"
-    }
-    ]
+    }]
   }
 };

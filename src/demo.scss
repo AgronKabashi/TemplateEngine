@@ -1,7 +1,7 @@
 ﻿@import "bourbon";
 @import "neat";
 
-@import "templateeditor/css/globals";
+@import "templateeditor/css/variables";
 @import "templateeditor/css/reset";
 
 html,
@@ -47,7 +47,7 @@ h1 {
   li {
     display: table-row;
     width: 100%;
-    
+
     > a,
     .button-group {
       border-bottom: 1px solid #ddd;
@@ -55,7 +55,7 @@ h1 {
       overflow: hidden;
       padding: 1rem;
       white-space: nowrap;
-      vertical-align: middle;      
+      vertical-align: middle;
     }
 
     > a {
@@ -67,16 +67,16 @@ h1 {
       text-align: right;
       width: 100%;
     }
-    
+
     &:last-child > a,
     &:last-child .button-group {
       border-bottom: none;
     }
   }
-  
+
   li.empty-list-message:last-child {
     display: table-row;
-    
+
     i {
       display: block;
       padding: 1rem;
