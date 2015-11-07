@@ -1,5 +1,6 @@
 ﻿cs-component {
   cursor: default;
+  outline: solid 1px transparent;
 
   > * {
     pointer-events: none;
@@ -13,7 +14,7 @@
     border-radius: 0 4px 0 0;
     bottom: 100%;
     color: black;
-    content: attr(data-friendly-name) " - " attr(data-component-name);
+    content: attr(friendly-name) " - " attr(component-name);
     display: block;
     font-family: Arial;
     font-size: 12px;
@@ -38,8 +39,8 @@
   }
 
   // Fallback for components with no customized name
-  &[data-friendly-name=""]:hover::before,
-  &[data-friendly-name=""].ui-resizable-resizing::before {
-    content: attr(data-component-name);
+  &[friendly-name=""]:hover::before,
+  &[friendly-name=""].ui-resizable-resizing::before {
+    content: attr(component-name);
   }
 }

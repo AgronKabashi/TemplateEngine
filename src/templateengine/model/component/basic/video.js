@@ -4,10 +4,11 @@
   angular
     .module("Cerberus.ModelFactory")
     .registerModel("Cerberus.TemplateEngine.Model.Component.Basic.Video", function () {
-      this.Mp4SourceUrl = "";
-      this.OggSourceUrl = "";
-      this.AutoPlay = false;
-      this.ShowControls = false;
-      this.LoopInfinitely = false;
+      this.mp4SourceUrl = "";
+      this.oggSourceUrl = "";
+      this.autoPlay = false;
+      this.showControls = false;
+      this.loopInfinitely = false;
+      this.posterUrl = "";
     });
 })(window.angular);

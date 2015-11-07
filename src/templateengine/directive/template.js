@@ -32,7 +32,7 @@
             styleAttribute = "";
 
             if (isEditMode) {
-              nameAttribute = "data-friendly-name=\"{{component.friendlyName}}\" data-component-name=\"{{component.name}}\"";
+              nameAttribute = "friendly-name=\"{{component.friendlyName}}\" component-name=\"{{component.name}}\"";
               styleAttribute = "style=\"{{component.visualProperties}}\"";
             }
 

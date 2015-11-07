@@ -4,13 +4,13 @@
   angular
     .module("Cerberus.ModelFactory")
     .registerModel("Cerberus.TemplateEngine.Model.Component.Basic.YouTube", function () {
-      this.VideoId = "";
-      this.StartTime = "";
-      this.AutoPlay = false;
-      this.ShowControls = true;
-      this.DisableKeyboard = false;
-      this.LoopInfinitely = false;
-      this.HideYouTubeBrand = false;
-      this.ShowVideoInfo = true;
+      this.videoId = "";
+      this.startTime = "";
+      this.autoPlay = false;
+      this.showControls = true;
+      this.disableKeyboard = false;
+      this.loopInfinitely = false;
+      this.hideYouTubeBrand = false;
+      this.showVideoInfo = true;
     });
 })(window.angular);

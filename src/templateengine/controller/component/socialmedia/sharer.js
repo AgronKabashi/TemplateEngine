@@ -8,8 +8,6 @@
       function ($scope) {
         var url = window.location.href;
 
-        $scope.content = $scope.component.content;
-
         $scope.socialMedia = {
           facebook: String.format("http://www.facebook.com/sharer/sharer.php?u={0}", url),
           twitter: String.format("http://twitter.com/intent/tweet?url={0}", url),

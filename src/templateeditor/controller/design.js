@@ -57,9 +57,7 @@
       }
     });
 
-    $scope.$on("$destroy", function () {
-      EventService.clear();
-    });
+    $scope.$on("$destroy", EventService.clear.bind(EventService));
 
     EventService.subscribe("AddComponent", $scope.addComponent);
   }

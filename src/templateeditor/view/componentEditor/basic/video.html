@@ -1,25 +1,25 @@
-﻿<div>
-	<label>Mp4 Source</label>
-	<input type="text" ng-model="content.mp4SourceUrl" />
+﻿<div class="columns">
+  <label ng-bind="::localization.component.video.mp4Source"></label>
+  <input type="text" ng-model="content.mp4SourceUrl" ng-model-options="modelOptions" />
 </div>
 
-<div>
-	<label>Ogg Source</label>
-	<input type="text" ng-model="content.oggSourceUrl" />
-
+<div class="columns">
+  <label ng-bind="::localization.component.video.oggSource"></label>
+  <input type="text" ng-model="content.oggSourceUrl" ng-model-options="modelOptions" />
 </div>
 
-<div>
-	<label>AutoPlay</label>
-	<input type="checkbox" ng-model="content.autoPlay" />
+<div class="columns">
+  <label ng-bind="::localization.component.video.posterUrl"></label>
+  <input type="text" ng-model="content.posterUrl" ng-model-options="modelOptions" />
 </div>
 
-<div>
-	<label>Loop</label>
-	<input type="checkbox" ng-model="content.loopInfinitely" />
-</div>
+<div class="three columns">
+  <label ng-bind="::localization.component.video.autoPlay"></label>
+  <input type="checkbox" ng-model="content.autoPlay" />
 
-<div>
-	<label>Show Controls</label>
-	<input type="checkbox" ng-model="content.showControls" />
+  <label ng-bind="::localization.component.video.loop"></label>
+  <input type="checkbox" ng-model="content.loopInfinitely" />
+
+  <label ng-bind="::localization.component.video.showControls"></label>
+  <input type="checkbox" ng-model="content.showControls" />
 </div>

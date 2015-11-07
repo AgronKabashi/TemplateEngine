@@ -1,4 +1,4 @@
-(function (angular, _) {
+(function (angular, _, $) {
   "use strict";
 
   function getComponentModels(selectedElements) {
@@ -24,7 +24,7 @@
               .addClass("animatable")
               .parent()
               .click(function (event) {
-                var element = $(event.target);
+                var element = angular.element(event.target);
                 var elementTagName = event.target.tagName.toLowerCase();
 
                 //Do not deselect components if the user is switching between resolutions
@@ -65,4 +65,4 @@
           }
         };
       }]);
-})(window.angular, window._);
+})(window.angular, window._, window.jQuery);

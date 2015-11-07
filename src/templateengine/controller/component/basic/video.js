@@ -8,35 +8,53 @@
       function () {
         return {
           restrict: "A",
-          link: function (/*scope, element*/) {
-            //var video = element.get(0);
-            //scope.$parent.$watch("Component.Content", function () {
-            //  var controlData = JSON.tryParse(scope.$parent.Component.Content, defaultContent);
-            //
-            //  video.autoplay = controlData.AutoPlay;
-            //  video.loop = controlData.LoopInfinitely;
-            //  video.controls = controlData.ShowControls;
-            //  video.preload = controlData.AutoPlay ? "auto" : "none";
-            //
-            //  element.empty();
-            //  if (controlData.Mp4SourceUrl) {
-            //    element.append(String.format("<source type='video/mp4' src='{0}' />", controlData.Mp4SourceUrl));
-            //  }
-            //
-            //  if (controlData.OggSourceUrl) {
-            //    element.append(String.format("<source type='video/ogg' src='{0}' />", controlData.OggSourceUrl));
-            //  }
-            //
-            //  if (controlData.AutoPlay) {
-            //    video.play();
-            //  }
-            //  else {
-            //    video.pause();
-            //    if (video.currentTime > 0) {
-            //      video.currentTime = 0;
-            //    }
-            //  }
-            //});
+          link: function (scope, element) {
+            var video = element.get(0);
+            var sources = video.getElementsByTagName("source");
+            var mp4Source = sources[0];
+            var oggSource = sources[1];
+
+            var watch = scope.$watch("component.content", function () {
+              var content = scope.component.content;
+              var sourceChanged = false;
+              var mp4SourceUrl = mp4Source.getAttribute("src") || undefined;
+              var oggSourceUrl = oggSource.getAttribute("src") || undefined;
+
+              video.preload = content.autoPlay ? "auto" : "metadata";
+              video.loop = content.loopInfinitely;
+              video.controls = content.showControls;
+              video.autoplay = content.autoPlay;
+
+              if (mp4SourceUrl !== content.mp4SourceUrl) {
+                if (content.mp4SourceUrl) {
+                  mp4Source.setAttribute("src", content.mp4SourceUrl);
+                }
+                else {
+                  mp4Source.removeAttribute("src");
+                }
+
+                sourceChanged = true;
+              }
+
+              if (oggSourceUrl !== content.oggSourceUrl) {
+                if (content.oggSourceUrl) {
+                  oggSource.setAttribute("src", content.oggSourceUrl);
+                }
+                else {
+                  oggSource.removeAttribute("src");
+                }
+
+                sourceChanged = true;
+              }
+
+              if (sourceChanged) {
+                video.load();
+              }
+            }, true);
+
+            scope.$on("$destroy", function () {
+              watch();
+            });
           }
         };
       }

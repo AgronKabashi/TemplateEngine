@@ -135,7 +135,7 @@
         {
           id: 4,
           name: "link",
-          category: "Navigation",
+          category: "navigation",
           componentType: "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
           imageUrl: "link.png"
         },
@@ -143,7 +143,7 @@
           id: 5,
           name: "rss",
           category: "socialMedia",
-          componentType: "Cerberus.TemplateEngine.Controller.Component.SocialMedia.RSS",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Rss",
           imageUrl: "rss.png"
         },
         {

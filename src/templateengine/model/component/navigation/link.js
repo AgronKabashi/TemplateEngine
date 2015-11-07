@@ -4,9 +4,9 @@
   angular
     .module("Cerberus.ModelFactory")
     .registerModel("Cerberus.TemplateEngine.Model.Component.Navigation.Link", function () {
-      this.Url = "";
-      this.Tooltip = "";
-      this.Text = "";
-      this.Target = "";
+      this.url = "";
+      this.tooltip = "";
+      this.text = "";
+      this.target = "";
     });
 })(window.angular);

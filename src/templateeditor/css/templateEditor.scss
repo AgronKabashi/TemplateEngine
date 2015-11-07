@@ -70,7 +70,7 @@ cs-template {
 }
 
 cs-template.animatable > cs-component {
-  @include transition(all 0.2s);
+  @include transition(all 0.4s);
 }
 
 /* EditDesign specific rules */

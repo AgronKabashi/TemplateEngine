@@ -2,9 +2,9 @@
     <ul class="component-plugins collapsed">
         <li class="component-plugin"
             ng-repeat="componentPlugin in ::componentPlugins"
-            data-control-type="{{ ::componentPlugin.componentType }}"
-            data-control-category="{{ ::componentPlugin.category }}"
-            data-name="{{ ::componentPlugin.name }}">
+            data-control-type="{{::componentPlugin.componentType}}"
+            data-control-category="{{::componentPlugin.category}}"
+            data-name="{{::componentPlugin.name}}">
             <img class="plugin-image" ng-src="{{::applicationBasePath}}images/componentPlugins/{{::componentPlugin.imageUrl}}" />
             <span ng-bind="::localization.componentPluginNames[componentPlugin.name]"></span>
         </li>

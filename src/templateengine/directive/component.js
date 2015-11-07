@@ -11,7 +11,7 @@
             var component = scope.component;
 
             element.attr({
-              id: "TC" + component.Id,
+              id: "TC" + component.id,
               class: component.name.toLowerCase()
             });
           },

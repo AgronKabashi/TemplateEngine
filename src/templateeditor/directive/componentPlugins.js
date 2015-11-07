@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, $) {
   "use strict";
 
   angular
@@ -58,4 +58,4 @@
         };
       }
     ]);
-})(window.angular);
+})(window.angular, window.jQuery);

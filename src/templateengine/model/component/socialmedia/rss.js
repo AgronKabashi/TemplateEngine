@@ -4,11 +4,11 @@
   angular
     .module("Cerberus.ModelFactory")
     .registerModel("Cerberus.TemplateEngine.Model.Component.SocialMedia.RSS", function () {
-      this.RSSFeedUrl = "";
-      this.ShowTitle = true;
-      this.ShowDescription = true;
-      this.ShowStoryDescription = true;
-      this.ShowStoryDate = true;
-      this.MaxStories = 5;
+      this.rssFeedUrl = "";
+      this.showTitle = true;
+      this.showDescription = true;
+      this.showStoryDescription = true;
+      this.showStoryDate = true;
+      this.maxStories = 5;
     });
 })(window.angular);

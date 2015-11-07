@@ -152,6 +152,13 @@
             textPlaceHolder: "Enter text",
             urlPlaceHolder: "Enter a link to navigate to"
           },
+          video: {
+            mp4Source: "MP4 Source",
+            oggSource: "Ogg Source",
+            autoPlay: "Autoplay",
+            loop: "Loop",
+            showControls: "Show Controls"
+          },
           youTube: {
             videoId: "Video Id",
             videoIdPlaceHolder: "Video Id",

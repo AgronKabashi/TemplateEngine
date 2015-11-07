@@ -1,6 +1,5 @@
 /**
- * DEMO CODE
- * FOR DEMONSTRATION PURPOSES ONLY
+ * DEMO-APP IS FOR DEMONSTRATION PURPOSES ONLY
  * BEST PRACTICES ARE NOT FOLLOWED
  */
 (function (angular, $, _) {
@@ -39,29 +38,17 @@
         $urlRouterProvider.otherwise("/demo");
       }
     ])
-   .service("TemplatePresetsService", [
-      "$http",
-      function ($http) {
-        var presets = [];
-
-        this.getPresets = function () {
-          $http
-            .get("template-presets.json")
-            .then(function (response) {
-              angular.extend(presets, response.data.templatePresets);
-            });
-
-          return presets;
-        };
-      }
-    ])
     .controller("Demo.Controller.Home", [
       "$scope",
-      "TemplatePresetsService",
+      "$http",
       "Cerberus.TemplateEngine.Service.Template",
       "Cerberus.ModelFactory",
-      function ($scope, TemplatePresetsService, TemplateService, ModelFactory) {
-        $scope.templatePresets = TemplatePresetsService.getPresets();
+      function ($scope, $http, TemplateService, ModelFactory) {
+        $http.get("template-presets.json")
+          .then(function (response) {
+            $scope.templatePresets = response.data.templatePresets;
+          });
+
         TemplateService.getTemplates()
           .then(function (templates) {
             $scope.templates = templates;
@@ -137,7 +124,7 @@
     var previousResolution;
     var generatedCSS = "";
 
-    _.forEach(template.Resolutions, function (resolution) {
+    _.forEach(template.resolutions, function (resolution) {
       if (!previousResolution) {
         generatedCSS += String.format("@media(max-width:{0}px){", resolution.resolutionValue);
       }
@@ -146,7 +133,7 @@
       }
 
       _.forIn(resolution.componentVisualProperties, function (visualProperties, componentId) {
-        generatedCSS += String.format("#TC{0} { {1} }", componentId, visualProperties);
+        generatedCSS += String.format("#TC{0}{{1}}", componentId, visualProperties);
       });
 
       generatedCSS += "}";
