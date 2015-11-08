@@ -16,10 +16,8 @@
 <div class="columns">
   <label ng-bind="::localization.componentProperties.hidden"></label>
   <input type="checkbox"
-    class="slider"
     ng-model="visualProperties.display"
     ng-change="toggleComponentVisibility()"
     ng-true-value="'none'"
-    ng-false-value="undefined"
-    ng-checked="visualProperties.display === 'none'" />
+    ng-false-value="undefined" />
 </div>

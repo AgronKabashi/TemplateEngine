@@ -98,7 +98,7 @@
       TemplateEditorHelper.setComponentVisualProperties($scope.template, resolution, component);
     }
 
-    _.extend($scope, {
+    _.assign($scope, {
       maxResolutionValue: maxResolutionValue,
       sliderValue: maxResolutionValue,
       template: DataBagService.getData("Template"),

@@ -1,5 +1,5 @@
 /**
- * DEMO-APP IS FOR DEMONSTRATION PURPOSES ONLY
+ * THIS APP IS FOR DEMONSTRATION PURPOSES ONLY
  * BEST PRACTICES ARE NOT FOLLOWED
  */
 (function (angular, $, _) {
@@ -78,7 +78,7 @@
           var templateId = template.id;
           TemplateService.removeTemplate(templateId)
             .then(function () {
-              _.remove($scope.templates, function (template) { return template.id === templateId; });
+              _.remove($scope.templates, { id: templateId });
             });
         };
       }

@@ -26,7 +26,7 @@
   function ComponentActionController($scope, EventService, Localization, DataBagService, TemplateResolutionService, TemplateService, TemplateModes) {
     var templateMode = DataBagService.getData("TemplateMode");
 
-    _.extend($scope, {
+    _.assign($scope, {
       template: DataBagService.getData("Template"),
       resolutionIndex: -1,
       selectedComponents: [],
