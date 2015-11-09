@@ -31,6 +31,7 @@
             var nameAttribute = "",
             styleAttribute = "";
 
+            // TODO: Consider using decorator
             if (isEditMode) {
               nameAttribute = "friendly-name=\"{{component.friendlyName}}\" component-name=\"{{component.name}}\"";
               styleAttribute = "style=\"{{component.visualProperties}}\"";

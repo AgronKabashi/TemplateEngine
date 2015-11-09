@@ -49,6 +49,7 @@
           zIndex: "Render Order",
           componentName: "Name",
           layout: "Layout",
+          transform: "Transform",
           left: "Left",
           top: "Top",
           right: "Right",
@@ -61,6 +62,7 @@
 
           rotateZ: "Rotate",
           rotateZPlaceHolder: "Specify in deg, turn or rad",
+          transformOrigin: "Transform Origin",
 
           fontAndColors: "Font and Colors",
           fontface: "Fontface",

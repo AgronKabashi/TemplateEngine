@@ -45,42 +45,42 @@
       return templateId > 0 ? cleanPromise($http.get(buildResourceUrl(serviceUrl, "template", ~~templateId))) : emptyResolvedPromise();
     };
 
-    this.RemoveTemplate = function (templateId) {
+    this.removeTemplate = function (templateId) {
       return templateId > 0 ? cleanPromise($http.delete(buildResourceUrl(serviceUrl, "template", ~~templateId))) : emptyRejectedPromise();
     };
 
-    this.SaveTemplate = function (template) {
+    this.saveTemplate = function (template) {
       return template !== undefined ? cleanPromise($http.put(buildResourceUrl(serviceUrl, "template"), template)) : emptyRejectedPromise();
     };
 
-    this.CloneTemplate = function (templateId) {
+    this.cloneTemplate = function (templateId) {
       return templateId > 0 ? cleanPromise($http.post(buildResourceUrl(serviceUrl, "template", ~~templateId, "clone"))) : emptyRejectedPromise();
     };
 
-    //Templates
-    this.GetTemplates = function () {
+    // Templates
+    this.getTemplates = function () {
       return cleanPromise($http.get(buildResourceUrl(serviceUrl, "templates")));
     };
 
-    //TemplateInfo
-    this.GetTemplateInfo = function (templateId) {
+    // TemplateInfo
+    this.getTemplateInfo = function (templateId) {
       return templateId > 0 ? cleanPromise($http.get(buildResourceUrl(serviceUrl, "templateinfo", ~~templateId))) : emptyResolvedPromise();
     };
 
-    this.SaveTemplateInfo = function (template) {
+    this.saveTemplateInfo = function (template) {
       return template !== undefined ? cleanPromise($http.put(buildResourceUrl(serviceUrl, "templateinfo"), template)) : emptyRejectedPromise();
     };
 
-    //TemplateContent
-    this.GetDocument = function (templateId, documentId, documentTypeId) {
+    // TemplateContent
+    this.getDocument = function (templateId, documentId, documentTypeId) {
       return cleanPromise($http.get(buildResourceUrl(serviceUrl, "templatecontent", ~~templateId, ~~documentId, ~~documentTypeId)));
     };
 
-    this.SaveDocument = function (template, documentId, documentTypeId) {
+    this.saveDocument = function (template, documentId, documentTypeId) {
       return cleanPromise($http.put(buildResourceUrl(serviceUrl, "templatecontent", ~~documentId, documentTypeId), template));
     };
 
-    this.GetComponentPlugins = function () {
+    this.getComponentPlugins = function () {
       return cleanPromise($http.get(buildResourceUrl(serviceUrl, "componentplugins")));
     };
   }

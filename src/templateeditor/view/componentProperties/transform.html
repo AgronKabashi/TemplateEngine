@@ -1,0 +1,10 @@
+<div class="columns">
+  <label ng-bind="::localization.componentProperties.rotateZ"></label>
+  <cs-unitfield model="visualProperties.transform.rotateZ" is-angular-unit="true" placeholder="{{::localization.componentProperties.rotateZPlaceHolder}}"></cs-unitfield>
+</div>
+
+<div class="two columns">
+  <label ng-bind="::localization.componentProperties.transformOrigin"></label>
+  <cs-unitfield model="visualProperties.transformOrigin.x" placeholder="{{::localization.componentProperties.left}}"></cs-unitfield>
+  <cs-unitfield model="visualProperties.transformOrigin.y" placeholder="{{::localization.componentProperties.top}}"></cs-unitfield>
+</div>

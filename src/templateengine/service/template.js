@@ -7,6 +7,7 @@
     .module("Cerberus.TemplateEngine")
     .provider("Cerberus.TemplateEngine.Service.Template", [
       function () {
+        // Default template provider
         var templateProvider = ModelFactory.getModelType("Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider"),
         templateProviderParameters = null;
 

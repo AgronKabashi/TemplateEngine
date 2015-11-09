@@ -33,26 +33,4 @@
 
     return result;
   };
-
-  /*******************************
-    Namespacing
-  *******************************/
-  window.namespace = function (namespaceString, data) {
-    if (!data) {
-      return window[namespaceString];
-    }
-
-    var parts = namespaceString.split("."),
-      parent = window,
-      currentPart = "",
-      length = parts.length - 1;
-
-    for (var i = 0; i < length; i++) {
-      currentPart = parts[i];
-      parent[currentPart] = parent[currentPart] || {};
-      parent = parent[currentPart];
-    }
-
-    parent[parts[length]] = data;
-  };
 })();

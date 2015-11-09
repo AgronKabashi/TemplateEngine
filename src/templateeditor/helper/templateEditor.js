@@ -1,4 +1,4 @@
-(function (angular, $) {
+(function (angular, $, _) {
   "use strict";
 
   angular
@@ -7,8 +7,9 @@
       "Cerberus.TemplateEngine.Service.Event",
       "Cerberus.TemplateEngine.Service.DataBag",
       function (EventService, DataBagService) {
-        //properties that are not on this list will be stripped away
-        //TODO: Refactor into Cerberus.TemplateEditor.Helper.CSS
+        // Properties that are not on this list will be stripped away
+        // TODO: Refactor into Cerberus.TemplateEditor.Helper.CSS
+        // TODO: Use hashmap instead to reduce lookup time
         var validProperties = [
           "display",
           "left",
@@ -59,6 +60,7 @@
           "text-shadow",
           "box-shadow",
           "white-space",
+          "transform-origin",
           "z-index"
         ];
 
@@ -355,4 +357,4 @@
         };
       }
     ]);
-})(window.angular, window.jQuery);
+})(window.angular, window.jQuery, window._);

@@ -3,7 +3,7 @@
 
   angular
     .module("Cerberus.TemplateEditor")
-    .service("Cerberus.TemplateEditor.Helper.CSS", CSSHelperService);
+    .service("Cerberus.TemplateEditor.Helper.CSS", ["Cerberus.ModelFactory", CSSHelperService]);
 
   var propertiesWithUnits = {
     top: true,
@@ -29,8 +29,8 @@
     borderLeftWidth: true
   };
 
-  function CSSHelperService() {
-    //Creates a JSONP object from a CSS declaration
+  function CSSHelperService(ModelFactory) {
+    // Creates a JSON object from a CSS declaration
     this.fromCss = function (css) {
       var properties = css.split(";");
       var result = {};
@@ -41,16 +41,17 @@
 
         if (propertyName && property.length > propertyName.length) {
           var propertyValue = property.substring(propertyName.length + 1).trim();
-          //converts hyphenated properties into camelcaseproperties
+          // Converts hyphenated properties into camelcaseproperties
           //  text-align => textAlign
           //  border-top-left-radius => borderTopLeftRadius
           propertyName = _.camelCase(propertyName);
 
-          result[propertyName] = isUnitProperty(propertyName) ? toUnit(propertyValue) : propertyValue;
+          result[propertyName] = !isUnitProperty(propertyName) ? propertyValue : ModelFactory.instantiateModel("Cerberus.TemplateEditor.Model.Unit", propertyValue);
         }
       });
 
-      //Special post-processing for background-image
+      // TODO: Refactor special post-processing into a more generic solution
+      // Special post-processing for background-image
       if (result.backgroundImage) {
         var backgroundImage = result["backgroundImage"];
         backgroundImage = backgroundImage.replace(/^url\(/i, "");
@@ -61,27 +62,24 @@
         result.backgroundImage = backgroundImage;
       }
 
-      //Special post-processing for box shadow
+      // Special post-processing for box shadow
       if (result.boxShadow) {
         result.boxShadow = processShadowData(result["boxShadow"], "hShadow", "vShadow", "blurRadius", "spreadRadius");
       }
 
-      //Special post-processing for text shadow
+      // Special post-processing for text shadow
       if (result.textShadow) {
         result.textShadow = processShadowData(result["textShadow"], "hShadow", "vShadow", "blurRadius");
       }
 
-      //Special post-processing for transform
+      // Special post-processing for transform
       if (result.transform) {
-        var transforms = result.transform;
-        var rotateZ = transforms.match(/rotateZ\([^\)]+\)/i);
-        if (rotateZ.length > 0) {
-          rotateZ = rotateZ[0].toLowerCase().replace("rotatez(", "").replace(")", "");
+        result.transform = processTransform(result.transform);
+      }
 
-          result.transform = {
-            rotateZ: toUnit(rotateZ)
-          };
-        }
+      // Special post-processing for transform-origin
+      if (result.transformOrigin) {
+        result.transformOrigin = processTransformOrigin(result.transformOrigin);
       }
 
       return result;
@@ -99,30 +97,28 @@
         //textAlign => text-align
         //borderTopLeftRadius => border-top-left-radius
         propertyName = i.replace(/([A-Z])/g, "-$1").toLowerCase();
-
         propertyValue = "";
 
         //Custom preprocessing
         //TODO: Needs refactoring
         switch (propertyName) {
+          case "background-image":
+            if (value[i].length > 0) {
+              propertyValue = String.format("url({0})", value[i]);
+            }
+            break;
+
           case "box-shadow":
             color = value[i]["color"];
 
             if (color) {
               propertyValue = String.format("{0} {1} {2} {3} {4} {5}",
-                color || "",
-                value[i]["hShadow"] || "0px",
-                value[i]["vShadow"] || "0px",
-                value[i]["blurRadius"] || "0px",
-                value[i]["spreadRadius"] || "0px",
+                color,
+                unitToString(value[i]["hShadow"], "0px"),
+                unitToString(value[i]["vShadow"], "0px"),
+                unitToString(value[i]["blurRadius"], "0px"),
+                unitToString(value[i]["spreadRadius"], "0px"),
                 ~~value[i]["inset"] ? "inset" : "");
-            }
-
-            break;
-
-          case "background-image":
-            if (value[i].length > 0) {
-              propertyValue = String.format("url({0})", value[i]);
             }
             break;
 
@@ -132,14 +128,24 @@
             if (color) {
               propertyValue = String.format("{0} {1} {2} {3}",
                 color,
-                value[i]["hShadow"] || "0px",
-                value[i]["vShadow"] || "0px",
-                value[i]["blurRadius"] || "0px");
+                unitToString(value[i]["hShadow"], "0px"),
+                unitToString(value[i]["vShadow"], "0px"),
+                unitToString(value[i]["blurRadius"], "0px"));
             }
             break;
 
           case "transform":
-            propertyValue = String.format("rotateZ({0})", [value[i].rotateZ.value, value[i].rotateZ.unitType].join(""));
+            propertyValue = String.format("rotateZ({0})", unitToString(value[i].rotateZ, 0));
+            break;
+
+          case "transform-origin":
+            if (value[i].x || value[i].y) {
+              propertyValue = [unitToString(value[i].x, "left"), unitToString(value[i].y, "top")].join(" ");
+              // Special case, do not save if we have default values
+              if (propertyValue === "left top") {
+                propertyValue = undefined;
+              }
+            }
             break;
 
           default:
@@ -196,24 +202,42 @@
       return result;
     }
 
+    function processTransform(transformData) {
+      var result;
+      var rotateZ = transformData.match(/rotateZ\([^\)]+\)/i);
+
+      if (rotateZ.length > 0) {
+        rotateZ = rotateZ[0].toLowerCase().replace("rotatez(", "").replace(")", "");
+
+        result = {
+          rotateZ: ModelFactory.instantiateModel("Cerberus.TemplateEditor.Model.Unit", rotateZ)
+        };
+      }
+
+      return result;
+    };
+
+    function processTransformOrigin(transformOriginData) {
+      var result = {};
+
+      var transformOrigin = transformOriginData.split(" ");
+      if (transformOrigin[0] && transformOrigin[0] !== "left") {
+        result.x = ModelFactory.instantiateModel("Cerberus.TemplateEditor.Model.Unit", transformOrigin[0]);
+      }
+
+      if (transformOrigin[1] && transformOrigin[1] !== "top") {
+        result.y = ModelFactory.instantiateModel("Cerberus.TemplateEditor.Model.Unit", transformOrigin[1])
+      }
+
+      return result;
+    }
+
     function isUnitProperty(propertyName) {
       return propertiesWithUnits[propertyName] !== undefined;
     }
 
-    function toUnit(propertyValue) {
-      var unit = {
-        value: parseInt(propertyValue),
-        unitType: undefined
-      };
-
-      if (isNaN(unit.value)) {
-        unit.value = propertyValue;
-      }
-      else {
-        unit.unitType = propertyValue.substring(unit.value.toString().length);
-      }
-
-      return unit;
+    function unitToString(unit, defaultValue) {
+      return unit && unit.value ? [unit.value, unit.unitType].join("") : defaultValue;
     }
   }
 })(window.angular, window._);
