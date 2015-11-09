@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, _) {
   "use strict";
 
   angular
@@ -44,36 +44,36 @@
           //converts hyphenated properties into camelcaseproperties
           //  text-align => textAlign
           //  border-top-left-radius => borderTopLeftRadius
-          propertyName = toCamelCase(propertyName);
+          propertyName = _.camelCase(propertyName);
 
           result[propertyName] = isUnitProperty(propertyName) ? toUnit(propertyValue) : propertyValue;
         }
       });
 
-      //Special processing for background-image
-      if (result["backgroundImage"] !== undefined) {
+      //Special post-processing for background-image
+      if (result.backgroundImage) {
         var backgroundImage = result["backgroundImage"];
         backgroundImage = backgroundImage.replace(/^url\(/i, "");
         if (backgroundImage[backgroundImage.length - 1] === ')') {
           backgroundImage.length--;
         }
 
-        result["backgroundImage"] = backgroundImage;
+        result.backgroundImage = backgroundImage;
       }
 
-      //Special processing for box shadow
-      if (result["boxShadow"] !== undefined) {
+      //Special post-processing for box shadow
+      if (result.boxShadow) {
         result.boxShadow = processShadowData(result["boxShadow"], "hShadow", "vShadow", "blurRadius", "spreadRadius");
       }
 
-      //Special processing for text shadow
-      if (result["textShadow"] !== undefined) {
+      //Special post-processing for text shadow
+      if (result.textShadow) {
         result.textShadow = processShadowData(result["textShadow"], "hShadow", "vShadow", "blurRadius");
       }
 
-      //Special processing for transform
-      if (result["transform"]) {
-        var transforms = result["transform"];
+      //Special post-processing for transform
+      if (result.transform) {
+        var transforms = result.transform;
         var rotateZ = transforms.match(/rotateZ\([^\)]+\)/i);
         if (rotateZ.length > 0) {
           rotateZ = rotateZ[0].toLowerCase().replace("rotatez(", "").replace(")", "");
@@ -196,15 +196,6 @@
       return result;
     }
 
-    function toCamelCase(value) {
-      return value
-        .toLowerCase()
-        .replace(/-([A-Z])/gi, function (v) {
-          return v[1].toUpperCase();
-        })
-        .trim();
-    }
-
     function isUnitProperty(propertyName) {
       return propertiesWithUnits[propertyName] !== undefined;
     }
@@ -225,4 +216,4 @@
       return unit;
     }
   }
-})(window.angular);
+})(window.angular, window._);
