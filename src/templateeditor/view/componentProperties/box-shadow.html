@@ -1,4 +1,12 @@
 <div class="two columns">
+  <label ng-bind="::localization.componentProperties.color"></label>
+  <input type="text" ng-model="visualProperties.boxShadow.color" />
+
+  <label>Inner Shadow</label>
+  <input type="checkbox" ng-model="visualProperties.boxShadow.inset" title="{{::localization.componentProperties.innerShadow}}" />
+</div>
+
+<div class="two columns">
   <label ng-bind="::localization.componentProperties.horizontalOffset"></label>
   <cs-unitfield model="visualProperties.boxShadow.hShadow"></cs-unitfield>
 
@@ -7,17 +15,9 @@
 </div>
 
 <div class="two columns">
-  <label ng-bind="::localization.componentProperties.color"></label>
-  <input type="text" ng-model="visualProperties.boxShadow.color" />
-
   <label ng-bind="::localization.componentProperties.blurRadius"></label>
   <cs-unitfield model="visualProperties.boxShadow.blurRadius"></cs-unitfield>
-</div>
 
-<div class="two columns">
   <label ng-bind="::localization.componentProperties.spreadRadius"></label>
   <cs-unitfield model="visualProperties.boxShadow.spreadRadius"></cs-unitfield>
-
-  <label>Inner Shadow</label>
-  <input type="checkbox" ng-model="visualProperties.boxShadow.inset" title="{{::localization.componentProperties.innerShadow}}" />
 </div>

@@ -56,6 +56,9 @@
       backgroundPositionVerticalOptions: StyleSettingService.getBackgroundPositionVerticalOptions(),
       backgroundSizeOptions: StyleSettingService.getBackgroundSizeOptions(),
       editorUrl: "",
+      modelOptions: {
+        updateOn: "blur"
+      },
       fontFamilies: StyleSettingService.getAvailableFontFamilies(),
       localization: Localization,
 

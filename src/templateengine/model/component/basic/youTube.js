@@ -12,5 +12,6 @@
       this.loopInfinitely = false;
       this.hideYouTubeBrand = false;
       this.showVideoInfo = true;
+      this.videoIdQueryParameter = "";
     });
 })(window.angular);

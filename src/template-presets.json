@@ -376,7 +376,7 @@
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "Menu",
             "id": 9,
-            "visualProperties": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);-webkit-transform:undefined;text-align:right;background-position-x:undefined;background-position-y:undefined"
+            "visualProperties": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);text-align:right;"
           },
           {
             "category": "basic",
@@ -430,7 +430,7 @@
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
             "friendlyName": "",
             "id": 14,
-            "visualProperties": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;transform:undefined"
+            "visualProperties": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:Ropa Sans;font-size:28px;color:black;"
           },
           {
             "category": "basic",
@@ -541,7 +541,7 @@
               "11": "left:10px;top:886px;width:95%;height:75px;font-family:Roboto;font-size:12px;min-width:300px",
               "12": "right:10px;top:750px;width:56.2%;height:272px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-size:cover;background-position-x:0%;background-position-y:0%;display:none",
               "13": "left:56px;top:1058px;width:78.7%;height:281px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%;display:none",
-              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;display:none",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:Ropa Sans;font-size:28px;color:black;display:none",
               "15": "left:0px;top:1220px;width:100%;height:100px;border-top-style:solid;border-top-width:5px;border-top-color:rgb(216, 216, 216);background-color:rgb(236, 236, 236);min-width:300px",
               "16": "left:10px;top:1055px;width:95%;height:15px;font-family:Roboto;font-size:18px;color:rgb(0, 156, 220);min-width:300px",
               "17": "right:10px;top:1293px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:50%;background-position-y:50%;display:none",
@@ -566,18 +566,18 @@
               "8": "left:0px;top:290px;width:100%;height:28px;font-family:Roboto;font-size:18px;text-align:center;color:#696D6C",
               "9": "right:30px;top:25px;width:320px;height:19px;font-family:Roboto;font-size:16px;text-align:right",
               "10": "top:1045px;width:95%;height:34px;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220);text-align:left;left:10px",
-              "11": "left:10px;top:1082px;width:95%;height:90px;font-family:Roboto;font-size:14px;-webkit-transform:undefined;background-position-x:undefined;background-position-y:undefined",
+              "11": "left:10px;top:1082px;width:95%;height:90px;font-family:Roboto;font-size:14px;",
               "12": "right:10px;top:750px;width:56.2%;height:272px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-size:cover;background-position-x:0%;background-position-y:0%",
               "13": "left:56px;top:1058px;width:78.7%;height:281px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%;display:none",
-              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:Ropa Sans;font-size:28px;color:black",
               "15": "left:0px;width:100%;top:1700px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
               "16": "left:10px;top:1345px;width:60%;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220)",
               "17": "right:10px;top:1393px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:50%;background-position-y:50%",
               "18": "left:10px;top:1395px;width:40%;font-family:Roboto;font-size:14px",
               "19": "left:0px;width:100%;height:10px;top:1760px;font-size:11px;text-align:center",
               "20": "left:0px;top:1727px;width:100%;height:20px;font-size:12px;text-align:center",
-              "21": "left:10px;top:1200px;width:95%;height:33px;font-family:Roboto;font-size:26px;color:rgb(235, 39, 79);background-position-x:undefined;background-position-y:undefined",
-              "22": "left:10px;top:1239px;width:94.9%;height:56px;font-family:Roboto;font-size:14px;-webkit-transform:undefined;background-position-x:undefined;background-position-y:undefined"
+              "21": "left:10px;top:1200px;width:95%;height:33px;font-family:Roboto;font-size:26px;color:rgb(235, 39, 79);",
+              "22": "left:10px;top:1239px;width:94.9%;height:56px;font-family:Roboto;font-size:14px;"
             }
           },
           {
@@ -588,7 +588,7 @@
               "2": "left:0px;top:70px;height:50px;width:100%;background-color:#63D7FE",
               "3": "left:0px;top:212px;width:100%;height:52px;font-family:Roboto;font-size:48px;color:rgb(254, 90, 0);text-align:center;font-weight:bold",
               "4": "left:0px;top:320px;width:100%;height:354px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/layeredTemplateEngine.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:50%;background-size:contain",
-              "5": "left:30px;top:708px;width:40%;height:64px;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220);transform:undefined",
+              "5": "left:30px;top:708px;width:40%;height:64px;font-family:Roboto;font-size:26px;color:rgb(0, 156, 220);",
               "6": "left:30px;top:790px;width:40%;height:202px;font-size:14px;font-family:Roboto",
               "7": "left:30px;top:84px;width:113px;height:10px;background-color:transparent",
               "8": "left:0px;top:290px;width:100%;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C",
@@ -597,7 +597,7 @@
               "11": "right:30px;top:1090px;width:40%;height:104px;font-size:14px;font-family:Roboto",
               "12": "right:30px;top:708px;width:50%;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%",
               "13": "left:30px;top:1045px;width:50%;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:50%;background-position-y:50%",
-              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:Ropa Sans;font-size:28px;color:black",
               "15": "left:0px;width:100%;top:1700px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
               "16": "left:30px;width:40%;color:rgb(0, 156, 220);font-size:26px;top:1410px;font-family:Roboto",
               "17": "right:30px;top:1410px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:50%",
@@ -625,7 +625,7 @@
               "11": "right:30px;top:1125px;width:40%;height:104px;font-size:16px;font-family:Roboto",
               "12": "right:30px;top:708px;width:50%;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%",
               "13": "left:30px;top:1065px;width:50%;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%",
-              "14": "left:30px;top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black",
+              "14": "left:30px;top:15px;width:237px;height:12px;font-family:Ropa Sans;font-size:28px;color:black",
               "15": "left:0px;width:100%;top:1900px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
               "16": "left:30px;width:300px;color:rgb(0, 156, 220);font-size:36px;top:1450px;font-family:Roboto",
               "17": "right:30px;top:1450px;width:50%;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:0%",
@@ -648,12 +648,12 @@
               "6": "left:calc((100% - 955px) / 2);top:823px;width:435px;height:202px;font-size:16px;font-family:Roboto",
               "7": "left:calc((100% - 955px) / 2);top:84px;width:113px;height:10px;background-color:transparent",
               "8": "left:calc((100% - 955px) / 2);top:290px;width:955px;height:28px;font-family:Roboto;font-size:22px;text-align:center;color:#696D6C",
-              "9": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);-webkit-transform:undefined;text-align:right;background-position-x:undefined;background-position-y:undefined",
+              "9": "right:calc((100% - 955px) / 2);top:25px;width:320px;height:24px;font-family:Roboto;font-size:16px;color:rgb(0, 156, 220);text-align:right;",
               "10": "right:calc((100% - 955px) / 2);top:1065px;width:435px;height:34px;font-size:36px;color:rgb(0, 156, 220);text-align:left;font-family:Roboto",
               "11": "right:calc((100% - 955px) / 2);top:1125px;width:435px;height:104px;font-size:16px;font-family:Roboto",
               "12": "right:calc((100% - 955px) / 2);top:708px;width:500px;height:320px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/templateenginesample1.png);background-repeat:no-repeat;background-position-x:50%;background-position-y:0%",
               "13": "left:calc((100% - 955px) / 2);top:1065px;width:500px;height:349px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/androidintemplateeditor.png);background-repeat:no-repeat;background-size:cover;background-position-x:100%",
-              "14": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:'Ropa Sans';font-size:28px;color:black;transform:undefined",
+              "14": "left:calc((100% - 955px) / 2);top:15px;width:237px;height:12px;font-family:Ropa Sans;font-size:28px;color:black;",
               "15": "left:0px;width:100%;top:1900px;height:100px;background-color:#ECECEC;border-top-width:5px;border-top-color:#D8D8D8;border-top-style:solid",
               "16": "left:calc((100% - 955px) / 2);top:1450px;width:300px;font-family:Roboto;font-size:36px;color:rgb(0, 156, 220)",
               "17": "right:calc((100% - 955px) / 2);top:1450px;width:500px;height:228px;background-image:url(http://www.cerberussolutions.se/Content/Images/test/mobile-first.png);background-repeat:no-repeat;background-size:contain;background-position-x:100%;background-position-y:0%",

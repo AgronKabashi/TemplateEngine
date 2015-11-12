@@ -56,7 +56,7 @@
         var backgroundImage = result["backgroundImage"];
         backgroundImage = backgroundImage.replace(/^url\(/i, "");
         if (backgroundImage[backgroundImage.length - 1] === ')') {
-          backgroundImage.length--;
+          backgroundImage = backgroundImage.substring(0, backgroundImage.length - 1);
         }
 
         result.backgroundImage = backgroundImage;
@@ -190,12 +190,12 @@
           .split(" ");
 
         result = {
-          color: color,
-          inset: inset
+          color: color[0],
+          inset: inset !== null && inset.length > 0
         };
 
         for (var i = 1; i <= Math.min(arguments.length, valuesExcludingColorAndInset.length); i++) {
-          result[arguments[i]] = valuesExcludingColorAndInset[i - 1] || "0";
+          result[arguments[i]] = ModelFactory.instantiateModel("Cerberus.TemplateEditor.Model.Unit", valuesExcludingColorAndInset[i - 1] || "0");
         }
       }
 

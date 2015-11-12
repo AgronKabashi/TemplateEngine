@@ -57,6 +57,7 @@
         $scope.selectedComponents = [];
 
         EventService.notify("ComponentsRemoved");
+        EventService.notify("ComponentSelected");
       }
     });
 
