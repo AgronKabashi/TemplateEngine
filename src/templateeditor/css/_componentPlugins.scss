@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 100%;
   width: 100%;
-  z-index: $layer-3;
+  z-index: $layer-4;
 
   > .container {
     @include transform(translateY(100%));
