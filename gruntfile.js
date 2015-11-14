@@ -23,6 +23,7 @@ module.exports = function (grunt) {
     copy: require("./grunt-tasks/copy"),
     eslint: require("./grunt-tasks/eslint"),
     htmlmin: require("./grunt-tasks/htmlmin"),
+    jasmine: require("./grunt-tasks/test"),
     replace: require("./grunt-tasks/replace"),
     sass: require("./grunt-tasks/sass"),
     uglify: require("./grunt-tasks/uglify"),
