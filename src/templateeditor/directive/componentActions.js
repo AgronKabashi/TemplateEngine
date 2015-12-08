@@ -5,10 +5,10 @@
     .module("Cerberus.TemplateEditor")
     .directive("csComponentactions", [
       "Cerberus.TemplateEditor.Service.PathResolver",
-      function (PathResolver) {
+      function (PathResolverService) {
         return {
           restrict: "E",
-          templateUrl: PathResolver.resolve("view/componentActions.html"),
+          templateUrl: PathResolverService.resolve("view/componentActions.html"),
           scope: true,
           controller: [
             "$scope",

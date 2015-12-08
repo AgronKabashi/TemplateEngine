@@ -26,7 +26,7 @@
           })
           .state("design", {
             url: "/design/:id",
-            templateUrl: "templateeditor/view/design.html",
+            templateUrl: "/templateeditor/view/design.html",
             controller: "Demo.Controller.Design"
           })
           .state("view", {

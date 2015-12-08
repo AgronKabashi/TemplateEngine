@@ -32,7 +32,7 @@
 
         var watch = $scope.$watch("component.content", function () {
           fetchRSS($scope.component.content.rssFeedUrl);
-        }, true);
+        });
 
         // Cleanup
         $scope.$on("$destroy", watch);

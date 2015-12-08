@@ -5,7 +5,7 @@
     .module("Cerberus.TemplateEditor")
     .directive("csButtondropdown", [
       "Cerberus.TemplateEditor.Service.PathResolver",
-      function (PathResolver) {
+      function (PathResolverService) {
         return {
           restrict: "E",
           transclude: true,
@@ -19,7 +19,7 @@
             datatextfield: "@"
           },
           templateUrl: function (element, scope) {
-            return PathResolver.resolve(scope.onCommandClick ? "view/buttonDropdown_CommandButton.html" : "view/buttonDropdown.html");
+            return PathResolverService.resolve(scope.onCommandClick ? "view/buttonDropdown_CommandButton.html" : "view/buttonDropdown.html");
           },
           controller: [
             "$scope",

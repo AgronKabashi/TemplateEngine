@@ -1,9 +1,7 @@
 (function (angular, _) {
   angular
     .module("Cerberus.TemplateEditor")
-    .service("Cerberus.TemplateEditor.Service.Template", [
-      TemplateService
-    ]);
+    .service("Cerberus.TemplateEditor.Service.Template", [TemplateService]);
 
   function TemplateService() {
     this.removeComponentsFromTemplate = function (template, components) {

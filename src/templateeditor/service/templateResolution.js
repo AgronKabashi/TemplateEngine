@@ -25,15 +25,15 @@
       var previousRes = this.findResolution(template, resolutionValue - maxResolutionDifference);
       var nextRes = this.findResolution(template, resolutionValue + maxResolutionDifference);
 
-      if (Math.abs(resolutionValue - previousRes.resolutionValue) <= maxResolutionDifference ||
-        Math.abs(resolutionValue - nextRes.resolutionValue) <= maxResolutionDifference) {
+      if (previousRes && Math.abs(resolutionValue - previousRes.resolutionValue) <= maxResolutionDifference ||
+        nextRes && Math.abs(resolutionValue - nextRes.resolutionValue) <= maxResolutionDifference) {
         //EventService.Notify("ShowMessage", Localization.TemplateResolutions.NotEnoughSpace);
         return;
       }
 
       resolution.resolutionValue = resolutionValue;
       // Create a deep copy of the existing components' visual properties
-      resolution.componentVisualProperties = currentResolution.componentVisualProperties ? JSON.parse(JSON.stringify(currentResolution.componentVisualProperties)) : {};
+      resolution.componentVisualProperties = currentResolution && currentResolution.componentVisualProperties ? JSON.parse(JSON.stringify(currentResolution.componentVisualProperties)) : {};
 
       template.resolutions.push(resolution);
 

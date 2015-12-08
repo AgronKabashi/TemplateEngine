@@ -50,11 +50,10 @@
               if (sourceChanged) {
                 video.load();
               }
-            }, true);
-
-            scope.$on("$destroy", function () {
-              watch();
             });
+
+            // Cleanup
+            scope.$on("$destroy", watch);
           }
         };
       }

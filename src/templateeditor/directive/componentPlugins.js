@@ -5,11 +5,11 @@
     .module("Cerberus.TemplateEditor")
     .directive("csComponentplugins", [
       "Cerberus.TemplateEditor.Service.PathResolver",
-      function (PathResolver) {
+      function (PathResolverService) {
         return {
           restrict: "E",
           scope: true,
-          templateUrl: PathResolver.resolve("view/componentPlugins.html"),
+          templateUrl: PathResolverService.resolve("view/componentPlugins.html"),
 
           link: function (scope, element, attrs) {
             //TODO: Remove watch after single use

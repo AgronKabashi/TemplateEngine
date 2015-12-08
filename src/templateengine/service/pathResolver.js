@@ -2,9 +2,9 @@
   "use strict";
 
   angular
-    .module("Cerberus.TemplateEditor")
-    .service("Cerberus.TemplateEditor.Service.PathResolver", [
-      "templateEditorPath",
+    .module("Cerberus.TemplateEngine")
+    .service("Cerberus.TemplateEngine.Service.PathResolver", [
+      "templateEnginePath",
       function (appPath) {
         this.resolve = function (path) {
          return appPath + path;

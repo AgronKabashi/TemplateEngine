@@ -5,11 +5,11 @@
     .module("Cerberus.TemplateEditor")
     .directive("csComponentproperties", [
       "Cerberus.TemplateEditor.Service.PathResolver",
-      function (PathResolver) {
+      function (PathResolverService) {
         return {
           restrict: "E",
           scope: true,
-          templateUrl: PathResolver.resolve("view/componentProperties.html"),
+          templateUrl: PathResolverService.resolve("view/componentProperties.html"),
 
           link: function (scope, element, attrs) {
             element
@@ -41,7 +41,7 @@
   function ComponentPropertiesController(
     $scope,
     $controller,
-    PathResolver,
+    PathResolverService,
     EventService,
     Localization,
     StyleSettingService,
@@ -63,7 +63,7 @@
       localization: Localization,
 
       getEditorPath: function (editorName) {
-        return PathResolver.resolve(String.format("view/componentProperties/{0}.html", editorName));
+        return PathResolverService.resolve(String.format("view/componentProperties/{0}.html", editorName));
       },
 
       toggleComponentVisibility: function () {
@@ -137,7 +137,7 @@
         $scope.isTransposedHorizontal = $scope.visualProperties.right !== undefined;
         $scope.isTransposedVertical = $scope.visualProperties.bottom !== undefined;
 
-        var viewPath = PathResolver.resolve(String.format("/view/componentEditor/{0}/{1}.html", component.category, component.name));
+        var viewPath = PathResolverService.resolve(String.format("view/componentEditor/{0}/{1}.html", component.category, component.name));
         var componentEditoryId = String.format("Cerberus.TemplateEditor.Controller.ComponentEditor.{0}.{1}", _.capitalize(component.category), _.capitalize(component.name));
 
         $scope.editorController = $controller(componentEditoryId, { "$scope": $scope });

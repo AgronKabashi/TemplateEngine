@@ -1,4 +1,4 @@
-﻿@mixin button($textColor, $backgroundColor, $borderColor: "transparent") {
+﻿@mixin button($textColor, $backgroundColor, $borderColor: transparent) {
   background-color: $backgroundColor;
   border: 1px solid $borderColor;
   border-radius: 3px;

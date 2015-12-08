@@ -76,6 +76,7 @@
             });
           });
 
+          repository.templates[template.id] = template;
           updateLocalStorage();
 
           return template;

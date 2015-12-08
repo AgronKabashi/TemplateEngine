@@ -335,16 +335,17 @@
           });
         };
 
-        this.setComponentVisualProperties = function (template, resolution, component) {
-          if (resolution.componentVisualProperties[component.id]) {
-            resolution.componentVisualProperties[component.id] = component.visualProperties;
-            return;
-          }
+        this.setComponentVisualProperties = function (template, resolution, component, populateIfNeeded) {
+          var hasComponent = resolution.componentVisualProperties[component.id] !== undefined;
 
-          //there was no visualproperties available for this specific component so we add it
-          _.forEach(template.resolutions, function (resolution) {
-            resolution.componentVisualProperties[component.id] = component.visualProperties;
-          });
+          resolution.componentVisualProperties[component.id] = component.visualProperties;
+
+          if (!hasComponent && populateIfNeeded) {
+            //there was no visualproperties available for this specific component so we add it
+            _.forEach(template.resolutions, function (resolution) {
+              resolution.componentVisualProperties[component.id] = component.visualProperties;
+            });
+          }
         };
 
         this.removeComponentsFromTemplate = function (template, components) {

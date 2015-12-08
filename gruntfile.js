@@ -1,32 +1,34 @@
 "use strict";
 
-module.exports = function (grunt) {
-  //load grunt modules
-  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-  require("node-neat");
-  require("node-bourbon");
+module.exports = function  (grunt) {
+  // Dependencies
+  [
+    "grunt-newer"
+  ].forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask("build", ["clean", "copy", "sass", "concat"]);
-  grunt.registerTask("release-build", ["build", "htmlmin", "uglify"]);
+  grunt.registerTask("build", ["clean", "copy", "sass", "concat", "ngtemplates"]);
   grunt.registerTask("livereload", ["connect", "watch"]);
-  grunt.registerTask("default", ["build", "livereload"]);
+  grunt.registerTask("release-build", ["build", "htmlmin", "uglify"]);
   grunt.registerTask("release", ["release-build", "livereload"]);
+  grunt.registerTask("test", ["build", "karma"]);
+  grunt.registerTask("default", ["build", "livereload"]);
 
   grunt.initConfig({
     config: {
       src: "src",
-      dest: "dest"
+      dest: "dest",
+      test: "tests"
     },
-    clean: require("./grunt-tasks/clean"),
-    concat: require("./grunt-tasks/concat"),
-    connect: require("./grunt-tasks/connect"),
-    copy: require("./grunt-tasks/copy"),
-    eslint: require("./grunt-tasks/eslint"),
-    htmlmin: require("./grunt-tasks/htmlmin"),
-    jasmine: require("./grunt-tasks/test"),
-    replace: require("./grunt-tasks/replace"),
-    sass: require("./grunt-tasks/sass"),
-    uglify: require("./grunt-tasks/uglify"),
-    watch: require("./grunt-tasks/watch")
+    clean: require("./grunt-tasks/clean")(grunt),
+    concat: require("./grunt-tasks/concat")(grunt),
+    connect: require("./grunt-tasks/connect")(grunt),
+    copy: require("./grunt-tasks/copy")(grunt),
+    eslint: require("./grunt-tasks/eslint")(grunt),
+    htmlmin: require("./grunt-tasks/htmlmin")(grunt),
+    karma: require("./grunt-tasks/karma")(grunt),
+    ngtemplates: require("./grunt-tasks/ngtemplates")(grunt),
+    sass: require("./grunt-tasks/sass")(grunt),
+    uglify: require("./grunt-tasks/uglify")(grunt),
+    watch: require("./grunt-tasks/watch")(grunt)
   });
 };

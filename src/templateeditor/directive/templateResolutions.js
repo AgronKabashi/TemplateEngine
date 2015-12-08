@@ -11,11 +11,11 @@
       "Cerberus.TemplateEngine.Service.Event",
       "Cerberus.TemplateEditor.Service.PathResolver",
       "Cerberus.TemplateEditor.Service.TemplateResolution",
-      function (maxResolutionValue, EventService, PathResolver, TemplateResolutionService) {
+      function (maxResolutionValue, EventService, PathResolverService, TemplateResolutionService) {
         return {
           restrict: "E",
           scope: true,
-          templateUrl: PathResolver.resolve("view/templateResolutions.html"),
+          templateUrl: PathResolverService.resolve("view/templateResolutions.html"),
 
           link: function (scope, element, attrs) {
             var templateElement;
@@ -95,7 +95,7 @@
 
       //Find component using component.Id
       //and update the values in the mediaquery for this component
-      TemplateEditorHelper.setComponentVisualProperties($scope.template, resolution, component);
+      TemplateEditorHelper.setComponentVisualProperties($scope.template, resolution, component, true);
     }
 
     _.assign($scope, {

@@ -1,5 +1,11 @@
 "use strict";
 
-module.exports = {
-  default: ["<%= config.dest %>/**/*"]
+module.exports = function (grunt) {
+  [
+    "grunt-contrib-clean"
+  ].forEach(grunt.loadNpmTasks);
+
+  return {
+    default: ["<%= config.dest %>/**/*"]
+  };
 };
