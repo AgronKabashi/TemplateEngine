@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 
   return {
     options: {
-      append: true,
+      append: true
     },
     // demo: {
     //   src: "<%=config.src%>/*.html",

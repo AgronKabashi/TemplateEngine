@@ -16,7 +16,7 @@ module.exports = function (grunt) {
       files: [{
         expand: true,
         cwd: "<%= config.dest %>",
-        src: "**/*.js",
+        src: ["**/*.js", "!depcache.js"],
         dest: "<%= config.dest %>"
       }]
     }

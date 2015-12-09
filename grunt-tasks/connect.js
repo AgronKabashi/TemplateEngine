@@ -7,13 +7,23 @@ module.exports = function (grunt) {
   ].forEach(grunt.loadNpmTasks);
 
   return {
-    default: {
+    debug: {
       options: {
         hostname: "localhost",
         livereload: true,
         open: true,
         port: 9000,
         base: "<%= config.dest %>"
+      }
+    },
+    release: {
+      options: {
+        hostname: "localhost",
+        livereload: false,
+        open: true,
+        port: 9001,
+        base: "<%= config.dest %>",
+        keepalive: true
       }
     }
   };

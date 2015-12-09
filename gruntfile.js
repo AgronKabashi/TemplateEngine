@@ -7,9 +7,9 @@ module.exports = function  (grunt) {
   ].forEach(grunt.loadNpmTasks);
 
   grunt.registerTask("build", ["clean", "copy", "sass", "concat", "ngtemplates"]);
-  grunt.registerTask("livereload", ["connect", "watch"]);
+  grunt.registerTask("livereload", ["connect:debug", "watch"]);
   grunt.registerTask("release-build", ["build", "htmlmin", "uglify"]);
-  grunt.registerTask("release", ["release-build", "livereload"]);
+  grunt.registerTask("release", ["release-build", "connect:release"]);
   grunt.registerTask("test", ["build", "karma"]);
   grunt.registerTask("default", ["build", "livereload"]);
 
