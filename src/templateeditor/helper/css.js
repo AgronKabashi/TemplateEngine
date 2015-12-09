@@ -53,9 +53,9 @@
       // TODO: Refactor special post-processing into a more generic solution
       // Special post-processing for background-image
       if (result.backgroundImage) {
-        var backgroundImage = result["backgroundImage"];
+        var backgroundImage = result.backgroundImage;
         backgroundImage = backgroundImage.replace(/^url\(/i, "");
-        if (backgroundImage[backgroundImage.length - 1] === ')') {
+        if (backgroundImage[backgroundImage.length - 1] === ")") {
           backgroundImage = backgroundImage.substring(0, backgroundImage.length - 1);
         }
 
@@ -64,12 +64,12 @@
 
       // Special post-processing for box shadow
       if (result.boxShadow) {
-        result.boxShadow = processShadowData(result["boxShadow"], "hShadow", "vShadow", "blurRadius", "spreadRadius");
+        result.boxShadow = processShadowData(result.boxShadow, "hShadow", "vShadow", "blurRadius", "spreadRadius");
       }
 
       // Special post-processing for text shadow
       if (result.textShadow) {
-        result.textShadow = processShadowData(result["textShadow"], "hShadow", "vShadow", "blurRadius");
+        result.textShadow = processShadowData(result.textShadow, "hShadow", "vShadow", "blurRadius");
       }
 
       // Special post-processing for transform
@@ -109,28 +109,28 @@
             break;
 
           case "box-shadow":
-            color = value[i]["color"];
+            color = value[i].color;
 
             if (color) {
               propertyValue = String.format("{0} {1} {2} {3} {4} {5}",
                 color,
-                unitToString(value[i]["hShadow"], "0px"),
-                unitToString(value[i]["vShadow"], "0px"),
-                unitToString(value[i]["blurRadius"], "0px"),
-                unitToString(value[i]["spreadRadius"], "0px"),
-                ~~value[i]["inset"] ? "inset" : "");
+                unitToString(value[i].hShadow, "0px"),
+                unitToString(value[i].vShadow, "0px"),
+                unitToString(value[i].blurRadius, "0px"),
+                unitToString(value[i].spreadRadius, "0px"),
+                ~~value[i].inset ? "inset" : "");
             }
             break;
 
           case "text-shadow":
-            color = value[i]["color"];
+            color = value[i].color;
 
             if (color) {
               propertyValue = String.format("{0} {1} {2} {3}",
                 color,
-                unitToString(value[i]["hShadow"], "0px"),
-                unitToString(value[i]["vShadow"], "0px"),
-                unitToString(value[i]["blurRadius"], "0px"));
+                unitToString(value[i].hShadow, "0px"),
+                unitToString(value[i].vShadow, "0px"),
+                unitToString(value[i].blurRadius, "0px"));
             }
             break;
 
@@ -215,7 +215,7 @@
       }
 
       return result;
-    };
+    }
 
     function processTransformOrigin(transformOriginData) {
       var result = {};
@@ -226,7 +226,7 @@
       }
 
       if (transformOrigin[1] && transformOrigin[1] !== "top") {
-        result.y = ModelFactory.instantiateModel("Cerberus.TemplateEditor.Model.Unit", transformOrigin[1])
+        result.y = ModelFactory.instantiateModel("Cerberus.TemplateEditor.Model.Unit", transformOrigin[1]);
       }
 
       return result;

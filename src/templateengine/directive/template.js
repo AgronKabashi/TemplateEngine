@@ -28,8 +28,8 @@
 
           template: function (element, attributes) {
             var isEditMode = (attributes.templateMode || "View") !== "View";
-            var nameAttribute = "",
-            styleAttribute = "";
+            var nameAttribute = "";
+            var styleAttribute = "";
 
             // TODO: Consider using decorator
             if (isEditMode) {
@@ -46,5 +46,5 @@
           }
         };
       }
-  ]);
+    ]);
 })(window.angular);

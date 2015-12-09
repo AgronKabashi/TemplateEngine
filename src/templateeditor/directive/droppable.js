@@ -8,15 +8,15 @@
       function (EventService) {
         return {
           restrict: "A",
-          link: function (scope, element, attributes) {
+          link: function (scope, element) {
             element.droppable({
               accept: ".component-plugin",
               drop: function (event, ui) {
                 var componentPluginInfo = ui.draggable.data("component-plugin-info");
 
-                var element = $(this);
-                var x = ui.offset.left - element.offset().left + componentPluginInfo.cursorAt.left;
-                var y = ui.offset.top - element.offset().top + componentPluginInfo.cursorAt.top;
+                var droppedElement = $(this);
+                var x = ui.offset.left - droppedElement.offset().left + componentPluginInfo.cursorAt.left;
+                var y = ui.offset.top - droppedElement.offset().top + componentPluginInfo.cursorAt.top;
 
                 EventService.notify("AddComponent", angular.extend(componentPluginInfo.componentInfo, {
                   visualProperties: String.format("left:{0}px;top:{1}px;", ~~x, ~~y)

@@ -11,9 +11,9 @@
           scope: true,
           templateUrl: PathResolverService.resolve("view/componentProperties.html"),
 
-          link: function (scope, element, attrs) {
+          link: function (scope, element) {
             element
-              .click(function (event, ui) {
+              .click(function (event) {
                 event.stopPropagation();
               })
             //make the properties pane resizable
@@ -110,12 +110,12 @@
       ignoreComponentUpdatedEvent = false;
 
       if (componentVisibilityHasChanged) {
-        EventService.notify("ComponentVisibilityChanged", $scope.selectedComponent, $scope.visualProperties.display !== 'none');
+        EventService.notify("ComponentVisibilityChanged", $scope.selectedComponent, $scope.visualProperties.display !== "none");
         componentVisibilityHasChanged = false;
       }
     }
 
-    function onResolutionSelected(resolutionValue) {
+    function onResolutionSelected(/*resolutionValue*/) {
       if (!$scope.selectedComponent) {
         return;
       }

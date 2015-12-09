@@ -1,4 +1,4 @@
-(function (angular, $) {
+(function (angular, $, _) {
   "use strict";
 
   angular
@@ -17,7 +17,7 @@
           scope: true,
           templateUrl: PathResolverService.resolve("view/templateResolutions.html"),
 
-          link: function (scope, element, attrs) {
+          link: function (scope, element) {
             var templateElement;
             var resolutionSlider = element.find(".resolution-slider:first");
 
@@ -36,12 +36,12 @@
                 value: maxResolutionValue,
                 max: maxResolutionValue,
 
-                start: function (event, ui) {
+                start: function () {
                   templateElement = $("cs-template");
                   return scope.template !== undefined;
                 },
 
-                slide: function (event, ui) {
+                slide: function (e, ui) {
                   var value = ~~ui.value;
                   $(this).children().first().attr("data-value", value);
                   templateElement.css("width", value);
@@ -54,7 +54,7 @@
                   }
                 },
 
-                stop: function (event, ui) {
+                stop: function (e, ui) {
                   var value = ~~ui.value;
                   $(this).children().first().attr("data-Value", value);
                   templateElement.css("width", value);
@@ -109,7 +109,9 @@
         $scope.currentResolution = TemplateResolutionService.addResolution($scope.template, Math.min(resolutionValue, maxResolutionValue));
         $scope.presetsExpanded = false;
 
-        EventService.notify("ResolutionSelected", $scope.currentResolution.resolutionValue);
+        if ($scope.currentResolution) {
+          EventService.notify("ResolutionSelected", $scope.currentResolution.resolutionValue);
+        }
       },
 
       removeResolution: function (resolution) {
@@ -146,4 +148,4 @@
       "ComponentPositionUpdated",
       "ComponentSizeUpdated"], onComponentUpdate);
   }
-})(window.angular, window.jQuery);
+})(window.angular, window.jQuery, window._);

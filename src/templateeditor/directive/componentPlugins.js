@@ -11,7 +11,7 @@
           scope: true,
           templateUrl: PathResolverService.resolve("view/componentPlugins.html"),
 
-          link: function (scope, element, attrs) {
+          link: function (scope, element) {
             //TODO: Remove watch after single use
             var singleWatch = scope.$watch("componentPlugins", function () {
               singleWatch();
@@ -22,7 +22,7 @@
                 .draggable({
                   helper: "clone",
                   cursorAt: cursorAt,
-                  start: function (e, ui) {
+                  start: function () {
                     var componentPluginElement = $(this);
                     componentPluginElement.data("component-plugin-info", {
                       componentInfo: {

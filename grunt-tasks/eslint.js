@@ -8,11 +8,20 @@ module.exports = function (grunt) {
 
   return {
     options: {
-      configFile: ".eslintrc",
-      globals: ["window", "angular", "Cerberus", "setTimeout", "console", "namespace"]
+      configFile: ".eslintrc"
     },
-    target: [
-      "src/templateengine/**/*.js"
-    ]
+    source: {
+      options: {
+        envs: [
+          "browser",
+          "jquery"
+        ],
+        globals: ["angular", "tryParseInt"]
+      },
+      src: [
+        "src/**/*.js",
+        "!src/depcache.js"
+      ]
+    }
   };
 };

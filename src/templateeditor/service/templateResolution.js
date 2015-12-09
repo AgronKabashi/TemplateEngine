@@ -19,7 +19,7 @@
 
       if (template.resolutions.length >= maxResolutionCount) {
         //EventService.Notify("ShowMessage", Localization.ComponentResolutions.ReachedMaximumResolutions);
-        return;
+        return undefined;
       }
 
       var previousRes = this.findResolution(template, resolutionValue - maxResolutionDifference);
@@ -28,7 +28,7 @@
       if (previousRes && Math.abs(resolutionValue - previousRes.resolutionValue) <= maxResolutionDifference ||
         nextRes && Math.abs(resolutionValue - nextRes.resolutionValue) <= maxResolutionDifference) {
         //EventService.Notify("ShowMessage", Localization.TemplateResolutions.NotEnoughSpace);
-        return;
+        return undefined;
       }
 
       resolution.resolutionValue = resolutionValue;

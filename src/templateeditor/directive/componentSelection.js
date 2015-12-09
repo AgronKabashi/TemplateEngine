@@ -19,12 +19,11 @@
       function (EventService, TemplateEditorHelper) {
         return {
           restrict: "A",
-          link: function (scope, element, attributes) {
+          link: function (scope, element) {
             element
               .addClass("animatable")
               .parent()
               .click(function (event) {
-                var element = angular.element(event.target);
                 var elementTagName = event.target.tagName.toLowerCase();
 
                 //Do not deselect components if the user is switching between resolutions

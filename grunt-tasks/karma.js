@@ -11,7 +11,7 @@ module.exports = function (grunt) {
       options: {
         basePath: "<%=config.dest%>",
         frameworks: ["jasmine"],
-        singleRun: false,
+        singleRun: true,
         autoWatch: true,
         browsers: ["PhantomJS"],
         reporters: ["mocha"],
@@ -22,15 +22,9 @@ module.exports = function (grunt) {
           "../node_modules/lodash/index.js",
           "templateengine/templateengine.js",
           "templateeditor/templateeditor.js",
-          "**/*.html",
 
           "../<%=config.test%>/**/*.js"
-        ],
-        ngHtml2JsPreprocessor: {
-          cacheIdFromPath: function (f) {
-            console.log(f);
-          }
-        }
+        ]
       }
     }
   };

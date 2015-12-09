@@ -9,7 +9,7 @@
       function () {
         // Default template provider
         var templateProvider = ModelFactory.getModelType("Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider"),
-        templateProviderParameters = null;
+          templateProviderParameters = null;
 
         this.setProvider = function (provider, parameters) {
           templateProvider = provider;

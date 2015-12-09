@@ -9,7 +9,7 @@
           restrict: "A",
           require: "^^csComponentproperties",
 
-          link: function (scope, element, attributes, componentPropertiesController) {
+          link: function (/*scope, element, attributes, componentPropertiesController*/) {
           }
         };
       }

@@ -3,6 +3,8 @@
  * BEST PRACTICES ARE NOT FOLLOWED
  */
 (function (angular, $, _) {
+  "use strict";
+
   angular
     .module("Demo", [
       "ui.router",
@@ -69,8 +71,8 @@
           $scope.newTemplateName = "";
 
           TemplateService.saveTemplate(template)
-            .then(function (template) {
-              $scope.templates.push(template);
+            .then(function (savedTemplate) {
+              $scope.templates.push(savedTemplate);
             });
         };
 

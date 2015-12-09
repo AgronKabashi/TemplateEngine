@@ -9,7 +9,7 @@
       function ($timeout, EventService) {
         return {
           restrict: "A",
-          link: function (scope, element, attributes) {
+          link: function (scope, element) {
             var templateElement = element;
 
             function updateTemplateHeight(component, isSecondExecution) {

@@ -7,7 +7,7 @@
       "templateEnginePath",
       function (appPath) {
         this.resolve = function (path) {
-         return appPath + path;
+          return appPath + path;
         };
       }
     ]);
