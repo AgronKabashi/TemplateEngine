@@ -24,10 +24,11 @@
               .addClass("animatable")
               .parent()
               .click(function (event) {
+                var clickedElement = angular.element(event.target);
                 var elementTagName = event.target.tagName.toLowerCase();
 
                 //Do not deselect components if the user is switching between resolutions
-                if (element.hasClass("resolution")) {
+                if (clickedElement.hasClass("resolution")) {
                   return;
                 }
 
@@ -41,18 +42,18 @@
                 }
 
                 if (elementTagName === "cs-component") {
-                  var isSelected = element.hasClass("selected");
+                  var isSelected = clickedElement.hasClass("selected");
 
                   //toggle selected class on element
-                  element.toggleClass("selected", !isSelected);
+                  clickedElement.toggleClass("selected", !isSelected);
 
                   if (!isSelected) {
-                    selectedElements.push(element);
-                    TemplateEditorHelper.enableDraggable(element);
-                    TemplateEditorHelper.enableResizable(element);
+                    selectedElements.push(clickedElement);
+                    TemplateEditorHelper.enableDraggable(clickedElement);
+                    TemplateEditorHelper.enableResizable(clickedElement);
                   }
                   else {
-                    element
+                    clickedElement
                       .resizable("destroy")
                       .draggable("destroy");
                   }

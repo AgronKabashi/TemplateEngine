@@ -10,7 +10,7 @@
 
   <div class="resolutions">
     <div class="resolution"
-      ng-repeat="resolution in template.resolutions | orderBy: 'resolutionValue':true"
+      ng-repeat="resolution in template.resolutions | orderBy: 'resolutionValue':true track by $index"
       ng-class="::{ 'default': resolution.resolutionValue > maxResolutionValue }"
       ng-attr-style="width:{{ resolution.resolutionValue }}px"
       ng-bind="::resolution.resolutionValue <= maxResolutionValue ? resolution.resolutionValue + ' px' : 'Desktop'"

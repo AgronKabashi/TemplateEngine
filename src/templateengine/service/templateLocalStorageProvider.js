@@ -51,7 +51,7 @@
             return component.id;
           }).id);
 
-          var highestResolutionId = ~~Math.max(0, _.max(newResolutions, function (resolution) {
+          var highestResolutionId = ~~Math.max(0, _.max(resolutions, function (resolution) {
             return resolution.id;
           }).id);
 

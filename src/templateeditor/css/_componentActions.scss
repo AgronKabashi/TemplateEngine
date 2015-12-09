@@ -12,7 +12,6 @@
   .secondary-action {
     @include transform(translate3d(34px, 0, 0));
     @include transition(all 0.3s);
-    display: inline-block;
     float: right;
     padding-left: 20px;
     white-space: nowrap;
