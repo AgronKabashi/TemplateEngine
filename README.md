@@ -17,8 +17,8 @@ Download and install [NodeJS](http://nodejs.org/)
 ## Build targets
     grunt build             // Pre-cleaning and compilation of js, sass and templates
     grunt release-build     // Same as build + minifcation and obfuscation
-    grunt default           // Builds and hosts a webserver with live reload
-    grunt release           // Build and hosts a webserver
+    grunt default           // Runs build target and hosts a webserver with live reload
+    grunt release           // Runs build target and hosts a webserver
     grunt eslint            // Runs linting
     grunt test              // Run unit/e2e tests
 
