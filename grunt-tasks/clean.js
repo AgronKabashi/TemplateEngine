@@ -6,6 +6,7 @@ module.exports = function (grunt) {
   ].forEach(grunt.loadNpmTasks);
 
   return {
-    default: ["<%= config.dest %>/**/*"]
+    default: ["<%= config.dest %>/**/*"],
+    temp: ["<%= config.temp %>"]
   };
 };

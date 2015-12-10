@@ -1,9 +1,14 @@
 {
   "name": "TemplateEngine",
   "version": "0.9.1",
-  "description": "",
+  "description": "Design and build web applications using only your web browser! ",
   "homepage": "http://www.cerberussolutions.se",
   "author": "Agron Kabashi",
+  "keywords": [
+    "template",
+    "web",
+    "components"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/AgronKabashi/TemplateEngine.git"
@@ -25,6 +30,8 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-eslint": "^17.0.0",
     "grunt-karma": "^0.12.1",
+    "grunt-lodash": "^0.5.0",
+    "grunt-lodash-autobuild": "^0.3.0",
     "grunt-newer": "^1.1.0",
     "grunt-sass": "^1.0.0",
     "jasmine-core": "^2.3.4",
@@ -32,20 +39,16 @@
     "karma-jasmine": "^0.3.6",
     "karma-mocha-reporter": "^1.1.2",
     "karma-phantomjs-launcher": "^0.2.1",
+    "lodash-cli": "^3.10.1",
     "node-neat": "^1.7.2",
     "phantomjs": "^1.9.18"
   },
-  "licenses": [
-    {
-      "type": "Copyright"
-    }
-  ],
+  "license": "MIT",
   "dependencies": {
-    "angular": "^1.4.7",
-    "angular-sanitize": "^1.4.7",
+    "angular": "^1.4.8",
+    "angular-sanitize": "^1.4.8",
     "angular-ui-router": "^0.2.15",
     "jquery": "^2.1.4",
-    "jquery-ui": "^1.10.5",
     "lodash": "^3.10.1"
   }
 }

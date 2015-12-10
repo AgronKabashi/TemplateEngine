@@ -27,6 +27,17 @@ module.exports = function (grunt) {
     templateEditor: {
       src: "<%= config.src %>/templateeditor/**/*.js",
       dest: "<%= config.dest %>/templateeditor/templateeditor.js"
+    },
+    libraries: {
+      src: [
+        "node_modules/jquery/dist/jquery.min.js",
+        "lib/jquery-ui.min.js",
+        "node_modules/angular/angular.min.js",
+        "node_modules/angular-sanitize/angular-sanitize.min.js",
+        "node_modules/angular-ui-router/release/angular-ui-router.min.js",
+        "<%= lodash.build.dest %>"
+      ],
+      dest: "<%=config.dest%>/depcache.js"
     }
   };
 };

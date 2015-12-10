@@ -6,9 +6,10 @@ module.exports = function  (grunt) {
     "grunt-newer"
   ].forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask("build", ["clean", "copy", "sass", "concat", "ngtemplates"]);
+  grunt.registerTask("buildLibraries", ["lodashAutobuild"]);
+  grunt.registerTask("build", ["clean", "copy", "sass", "buildLibraries", "concat", "ngtemplates"]);
   grunt.registerTask("livereload", ["connect:debug", "watch"]);
-  grunt.registerTask("release-build", ["build", "htmlmin", "uglify"]);
+  grunt.registerTask("release-build", ["build", "uglify:default"]);
   grunt.registerTask("release", ["release-build", "connect:release"]);
   grunt.registerTask("test", ["build", "karma"]);
   grunt.registerTask("default", ["build", "livereload"]);
@@ -17,6 +18,7 @@ module.exports = function  (grunt) {
     config: {
       src: "src",
       dest: "dest",
+      temp: "dest/temp",
       test: "tests"
     },
     clean: require("./grunt-tasks/clean")(grunt),
@@ -24,8 +26,9 @@ module.exports = function  (grunt) {
     connect: require("./grunt-tasks/connect")(grunt),
     copy: require("./grunt-tasks/copy")(grunt),
     eslint: require("./grunt-tasks/eslint")(grunt),
-    htmlmin: require("./grunt-tasks/htmlmin")(grunt),
     karma: require("./grunt-tasks/karma")(grunt),
+    lodash: require("./grunt-tasks/lodash")(grunt),
+    lodashAutobuild: require("./grunt-tasks/lodashAutobuild")(grunt),
     ngtemplates: require("./grunt-tasks/ngtemplates")(grunt),
     sass: require("./grunt-tasks/sass")(grunt),
     uglify: require("./grunt-tasks/uglify")(grunt),
