@@ -55,6 +55,8 @@
       backgroundPositionHorizontalOptions: StyleSettingService.getBackgroundPositionHorizontalOptions(),
       backgroundPositionVerticalOptions: StyleSettingService.getBackgroundPositionVerticalOptions(),
       backgroundSizeOptions: StyleSettingService.getBackgroundSizeOptions(),
+      shadowOptions: StyleSettingService.getShadowOptions(),
+      visibilityOptions: StyleSettingService.getVisibilityOptions(),
       editorUrl: "",
       modelOptions: {
         updateOn: "blur"

@@ -66,6 +66,14 @@ cs-componentproperties {
       float: left;
       margin-top: rem(-16);
       white-space: nowrap;
+
+      &.input-label {
+        display: inline-block;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        white-space: normal;
+      }
     }
 
     &::after {

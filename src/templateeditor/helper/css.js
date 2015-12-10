@@ -149,15 +149,7 @@
             break;
 
           default:
-            if (propertiesWithUnits[i]) {
-              propertyValue = value[i].value;
-              if (value[i].unitType) {
-                propertyValue += value[i].unitType;
-              }
-            }
-            else {
-              propertyValue = value[i];
-            }
+            propertyValue = isUnitProperty(i) ? unitToString(value[i], "") : value[i];
         }
 
         if (propertyValue && propertyValue.length > 0) {

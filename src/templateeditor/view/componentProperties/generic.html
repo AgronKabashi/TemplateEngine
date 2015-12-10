@@ -14,10 +14,6 @@
 </div>
 
 <div class="columns">
-  <label ng-bind="::localization.componentProperties.hidden"></label>
-  <input type="checkbox"
-    ng-model="visualProperties.display"
-    ng-change="toggleComponentVisibility()"
-    ng-true-value="'none'"
-    ng-false-value="undefined" />
+  <label ng-bind="::localization.componentProperties.render"></label>
+  <select ng-model="visualProperties.display" ng-change="toggleComponentVisibility()" class="dropdown-list" ng-options="visibilityOption.value as visibilityOption.name for visibilityOption in ::visibilityOptions"></select>
 </div>

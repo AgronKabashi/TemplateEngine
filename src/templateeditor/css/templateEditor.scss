@@ -8,6 +8,7 @@
   "font",
 
   "button",
+  "checkbox",
   "components",
   "componentPlugins",
   "templateResolutions",
@@ -16,6 +17,7 @@
   "treeView",
   "buttonDropdown",
   "unitField",
+  "icon",
 
   "jquery-ui";
 
@@ -26,7 +28,19 @@ html, body {
 }
 
 body {
-  background-image: url(../Images/Background.png);
+  background-image: url(../images/background.png);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .button-container {
@@ -55,7 +69,7 @@ body {
 }
 
 cs-template {
-  background-image: url("../Images/grid.png");
+  background-image: url("../images/grid.png");
   margin: 40px 0 0 40px;
   max-width: 1024px;
   min-height: 600px;

@@ -12,16 +12,42 @@
 <div class="two columns">
   <label ng-bind="::localization.componentProperties.textTransform"></label>
   <div class="column">
-    <input type="checkbox" name="text-transform" ng-model="visualProperties.fontWeight" ng-true-value="'bold'" />
-    <input type="checkbox" name="text-transform" ng-model="visualProperties.textDecoration" ng-true-value="'underline'" />
-    <input type="checkbox" name="text-transform" ng-model="visualProperties.fontStyle" ng-true-value="'italic'" />
+    <label class="input-label">
+      <input type="checkbox" name="text-transform" ng-model="visualProperties.fontWeight" ng-true-value="'bold'" />
+      <svg class="icon">
+        <use xlink:href="#icon-bold" />
+      </svg>
+    </label>
+
+    <label class="input-label">
+      <input type="checkbox" name="text-transform" ng-model="visualProperties.textDecoration" ng-true-value="'underline'" />
+      <svg class="icon"><use xlink:href="#icon-underline" /></svg>
+    </label>
+
+    <label class="input-label">
+      <input type="checkbox" name="text-transform" ng-model="visualProperties.fontStyle" ng-true-value="'italic'" />
+      <svg class="icon"><use xlink:href="#icon-italic" /></svg>
+    </label>
   </div>
 
   <label ng-bind="::localization.componentProperties.textAlign"></label>
   <div class="column">
-    <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'left'" />
-    <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'center'" />
-    <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'right'" />
+    <label class="input-label">
+      <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'left'" />
+      <svg class="icon"><use xlink:href="#icon-paragraph-left" /></svg>
+    </label>
+
+    <label class="input-label">
+      <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'center'" />
+      <svg class="icon"><use xlink:href="#icon-paragraph-center" /></svg>
+    </label>
+
+    <label class="input-label">
+      <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'right'" />
+      <svg class="icon">
+        <use xlink:href="#icon-paragraph-right" />
+      </svg>
+    </label>
   </div>
 </div>
 <!--

@@ -44,6 +44,7 @@
         componentProperties: {
           class: "Class",
           visible: "Visible",
+          render: "Render",
           hidden: "Hidden",
           generic: "Generic",
           zIndex: "Render Order",
@@ -95,6 +96,7 @@
           innerShadow: "Inner Shadow",
           blurRadius: "Blur Radius",
           spreadRadius: "Spread Radius",
+          shadowType: "Shadow Type",
 
           opacity: "Opacity",
           opacityPlaceHolder: "Range: 0.0 - 1.0",

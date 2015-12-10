@@ -6,6 +6,20 @@
     .service("Cerberus.TemplateEditor.Service.StyleSetting", [
       "Cerberus.TemplateEditor.Localization",
       function (localization) {
+        this.getVisibilityOptions = function () {
+          return [
+            { name: localization.componentProperties.browserDefault, value: undefined },
+            { name: localization.componentProperties.hidden, value: "none" }
+          ];
+        };
+
+        this.getShadowOptions = function () {
+          return [
+            { name: localization.componentProperties.browserDefault, value: false },
+            { name: localization.componentProperties.innerShadow, value: true }
+          ];
+        };
+
         this.getAvailableFontFamilies = function () {
           return [
             { name: localization.componentProperties.browserDefault, value: undefined },

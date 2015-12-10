@@ -8,22 +8,21 @@ module.exports = function (grunt) {
 
   return {
     options: {
-      append: true
+      append: true,
+      htmlmin: {
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+
+        removeComments: true,
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        minifyCSS: true,
+        caseSensitive: true
+      }
     },
-    // demo: {
-    //   src: "<%=config.src%>/*.html",
-    //   dest: "<%=config.dest%>/demo.js",
-    //   options: {
-    //     bootstrap: function (module, script) {
-    //       return "\n(function (angular){angular.module('" + module + "').run(function ($templateCache){" + script + "});\n})(window.angular);";
-    //     },
-    //     module: "Demo",
-    //     prefix: "http://<%=connect.default.options.hostname%>:<%=connect.default.options.port%>",
-    //     url: function (url) {
-    //       return url.replace(grunt.config.get("config.src"), "");
-    //     }
-    //   }
-    // },
     templateEngine: {
       src: "<%=config.src%>/templateengine/**/*.html",
       dest: "<%=concat.templateEngine.dest%>",
