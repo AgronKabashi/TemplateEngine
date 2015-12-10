@@ -6,20 +6,13 @@ Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github
 
 ## How to Get Started
 
-### Step 1. Download and install [NodeJS](http://nodejs.org/)
+Download and install [NodeJS](http://nodejs.org/)
 
-
-### Step 2. Install Grunt globally
-    $ npm install -g grunt-cli
-
-### Step 3. Clone the project and enter directory
-    $ git clone https://github.com/AgronKabashi/TemplateEngine.git && cd TemplateEngine
-
-### Step 4. Install dependencies
-    $ npm install
-
-### Step 5. Run grunt
-    $ grunt
+    $ npm install -g grunt-cli                                      // Install Grunt globally
+    $ git clone https://github.com/AgronKabashi/TemplateEngine.git  // Clone the project and enter directory
+    $ cd TemplateEngine
+    $ npm install                                                   // Install dependencies
+    $ grunt                                                         // Run the default task
 
 ## Build targets
     grunt build             // Pre-cleaning and compilation of js, sass and templates
