@@ -11,7 +11,7 @@
         var watch = $scope.$watch("component.content", function () {
           var content = $scope.component.content;
           if (!content.videoId) {
-            $scope.safeVideoUrl = "";
+            $scope.videoUrl = "about:blank";
             return;
           }
 
@@ -24,7 +24,7 @@
             ~~content.loopInfinitely,
             ~~content.hideYouTubeBrand,
             ~~content.showVideoInfo);
-        });
+        }, true);
 
         // Cleanup
         $scope.$on("$destroy", watch);

@@ -40,24 +40,26 @@
 //   }
 // }
 
-input[type=checkbox],
-input[type=radio] {
-  left: -100px;
-  position: fixed;
+.input-label > {
+  input[type=checkbox],
+  input[type=radio] {
+    left: -100px;
+    position: fixed;
 
-  &+ svg {
-    border: rem(1) solid $borderColor;
-    cursor: pointer;
-    display: inline-block;
-    height: rem(28);
-    line-height: rem(28);
-    text-align: center;
-    width: rem(28);
-    padding: rem(4);
-  }
+    &+ svg {
+      border: rem(1) solid $borderColor;
+      cursor: pointer;
+      display: inline-block;
+      height: rem(22);
+      line-height: rem(22);
+      text-align: center;
+      width: rem(22);
+      padding: rem(4);
+    }
 
-  &:checked + svg {
-    background-color: $activeColor;
-    color: white;
+    &:checked + svg {
+      background-color: $activeColor;
+      color: white;
+    }
   }
 }
