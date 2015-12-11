@@ -1,0 +1,37 @@
+﻿cs-componentactions {
+  //bottom: 80px;
+  font-family: $font-family;
+  left: -2px;
+  overflow: visible;
+  position: fixed;
+  top: 125px;
+  width: 1px;
+  z-index: $layer-3;
+
+  .primary-action,
+  .secondary-action {
+    @include transform(translate3d(34px, 0, 0));
+    @include transition(all 0.3s);
+    float: right;
+    padding-left: 20px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+
+    &:hover {
+      @include transform(translate3d(100%, 0, 0));
+      overflow: visible;
+      width: auto;
+    }
+
+    > span[class^="icon-"] {
+      margin-left: 10px;
+      vertical-align: inherit;
+    }
+  }
+
+  .secondary-action {
+    @include transform(translate3d(25px, 0, 0));
+    font-size: 0.75rem;
+    padding: 8px;
+  }
+}

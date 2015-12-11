@@ -1,46 +1,26 @@
 # TemplateEngine
 
-TemplateEngine is a powerful web component templating framework that helps you build web applications using only your browser! 
+TemplateEngine is a web component templating framework that helps you build web applications using only your browser!
 
 Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github.io/TemplateEngine/)
 
-###Important Notes: 
-  - 2015-08-29 The changes made in issue [#26](https://github.com/AgronKabashi/TemplateEngine/issues/26) will include several breaking changes. Progress can be followed in the [optimize-templateengine-#26](https://github.com/AgronKabashi/TemplateEngine/tree/optimize-templateengine-%2326) branch.
-  - 2015-03-17 TemplateEngine is being reworked and optimized. A notable change and a major performance improvement is moving away from RequireJS for lazyloading internals.
-
-###Related Projects
-- __[TemplateEngine.Backend](https://github.com/AgronKabashi/TemplateEngine.Backend) -__ A complementing library that provides the model and services  needed for using and storing templates on the server side.  
-- __[SimpleCMS](https://github.com/AgronKabashi/SimpleCMS) -__ A client-based application builder with user, template and content management features utilizing TemplateEngine.  
-- __[SimpleCMS.API](https://github.com/AgronKabashi/SimpleCMS.API) -__ An optional backend service for SimpleCMS.   
-
 ## How to Get Started
 
-### Step 1. Install [NodeJS](http://nodejs.org/)   
+Download and install [NodeJS](http://nodejs.org/)
 
-To start checking this project out you first need to have NodeJS installed, preferably the latest package. It is advisable to install it from the website instead of a package manager as the latter usually takes a while to catch up. So [download it and install it if you haven't](http://nodejs.org/).
-
-### Step 2. Install [Grunt](http://gruntjs.com/)
-
-Second step is to install grunt globally if you haven't already. Grunt is a task runner written in NodeJS, that has tons of plugins, and can be installed easily through NodeJS's package manager called `npm`:
-
-    $ npm install -g grunt-cli
- 
-### Step 3. Clone the project
-
-You can get this source code by cloning the project from github, like this:
-
-    $ cd to/your/project/directory
-    $ git clone https://github.com/AgronKabashi/TemplateEngine.git
-
-### Step 4. Install dependencies
-
-When you're done cloning, navigate to the folder and install the project dependencies with `npm`, like this:
-
+    $ npm install -g grunt-cli                                      // Install Grunt globally
+    $ git clone https://github.com/AgronKabashi/TemplateEngine.git  // Clone the project and enter directory
     $ cd TemplateEngine
-    $ npm install
+    $ npm install                                                   // Install dependencies
+    $ grunt                                                         // Run the default task
 
-### Step 5. Run
+## Build targets
+    grunt build             // Pre-cleaning and compilation of js, sass and templates
+    grunt release-build     // Same as build + minifcation and obfuscation
+    grunt default           // Runs build target and hosts a webserver with live reload
+    grunt release           // Runs build target and hosts a webserver
+    grunt eslint            // Runs linting
+    grunt test              // Run unit/e2e tests
 
-Running Grunt will build, start a webserver and watch the source files for changes.
-
-    $ grunt
+## Creating your own components
+Check the [Wiki](wiki/Creating-Custom-Plugins) for details about how to create your own components.

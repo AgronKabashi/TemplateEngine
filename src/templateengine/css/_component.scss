@@ -1,0 +1,32 @@
+@import "component/link";
+@import "component/rss";
+@import "component/text";
+@import "component/sharer";
+@import "component/video";
+@import "component/youtube";
+
+cs-component {
+  @include transform-origin(top left);
+  border-collapse: separate;
+  display: table;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+  z-index: 1;
+
+  &.hidden {
+    display: none;
+  }
+
+  /*> div:first-child {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-decoration: inherit;
+  }*/
+
+  /*&[style*="overflow"] > div:first-child {
+    overflow: auto;
+    display: block;
+  }*/
+}

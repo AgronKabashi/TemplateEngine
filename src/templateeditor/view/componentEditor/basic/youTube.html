@@ -1,0 +1,28 @@
+﻿<div class="columns">
+  <label ng-bind="::localization.component.youTube.videoId"></label>
+  <input type="text" ng-model="content.videoId" ng-model-options="modelOptions" ng-attr-placeholder="{{::localization.component.youTube.videoIdPlaceHolder}}" />
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.component.youTube.startTime"></label>
+  <input type="text" ng-model="content.startTime" ng-model-options="modelOptions" />
+</div>
+
+<div class="three columns">
+  <label ng-bind="::localization.component.youTube.autoPlay"></label>
+  <input type="checkbox" ng-model="content.autoPlay" />
+
+  <label ng-bind="::localization.component.youTube.showControls"></label>
+  <input type="checkbox" ng-model="content.showControls" />
+
+  <label ng-bind="::localization.component.youTube.disableKeyboard"></label>
+  <input type="checkbox" ng-model="content.disableKeyboard" />
+</div>
+
+<div class="three columns">
+  <label ng-bind="::localization.component.youTube.hideYouTubeBrand"></label>
+  <input type="checkbox" ng-model="content.hideYouTubeBrand" />
+
+  <label ng-bind="::localization.component.youTube.showInfo"></label>
+  <input type="checkbox" ng-model="content.showVideoInfo" />
+</div>

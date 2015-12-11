@@ -1,0 +1,67 @@
+﻿<div class="component-properties-container" ng-show="selectedComponent">
+  <!--Generic-->
+  <fieldset name="generic">
+    <legend ng-bind="::localization.componentProperties.generic"></legend>
+    <div class="properties" ng-include="::getEditorPath('generic')"></div>
+  </fieldset>
+
+  <!--layout-->
+  <fieldset name="layout">
+    <legend ng-bind="::localization.componentProperties.layout"></legend>
+    <div class="properties" ng-include="::getEditorPath('layout')"></div>
+  </fieldset>
+
+  <!--transform-->
+  <fieldset name="transform">
+    <legend ng-bind="::localization.componentProperties.transform"></legend>
+    <div class="properties" ng-include="::getEditorPath('transform')"></div>
+  </fieldset>
+
+  <!--fontAndColors-->
+  <fieldset name="fontAndColors">
+    <legend ng-bind="::localization.componentProperties.fontAndColors"></legend>
+    <div class="properties" ng-include="::getEditorPath('fontAndColors')"></div>
+  </fieldset>
+
+  <!--padding-->
+  <fieldset name="padding">
+    <legend ng-bind="::localization.componentProperties.padding"></legend>
+    <div class="properties" ng-include="::getEditorPath('padding')"></div>
+  </fieldset>
+
+  <!--border-->
+  <fieldset name="border">
+    <legend ng-bind="::localization.componentProperties.border"></legend>
+    <div class="properties" ng-include="::getEditorPath('border')"></div>
+  </fieldset>
+
+  <!--border radius-->
+  <fieldset name="borderRadius">
+    <legend ng-bind="::localization.componentProperties.borderRadius"></legend>
+    <div class="properties" ng-include="::getEditorPath('border-radius')"></div>
+  </fieldset>
+
+  <!--shadows-->
+  <fieldset name="textShadow">
+    <legend ng-bind="::localization.componentProperties.textShadow"></legend>
+    <div class="properties" ng-include="::getEditorPath('text-shadow')"></div>
+  </fieldset>
+
+  <!--shadows-->
+  <fieldset name="boxShadow">
+    <legend ng-bind="::localization.componentProperties.boxShadow"></legend>
+    <div class="properties" ng-include="::getEditorPath('box-shadow')"></div>
+  </fieldset>
+
+  <!--background-->
+  <fieldset name="background">
+    <legend ng-bind="::localization.componentProperties.background"></legend>
+    <div class="properties" ng-include="::getEditorPath('background')"></div>
+  </fieldset>
+
+  <!--Content-->
+  <fieldset name="content" ng-if="hasEditor">
+    <legend ng-bind="::localization.componentProperties.content"></legend>
+    <div class="properties" ng-include="editorViewPath" ng-controller-controller="editorController"></div>
+  </fieldset>
+</div>

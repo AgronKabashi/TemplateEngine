@@ -1,0 +1,123 @@
+cs-componentproperties {
+  background-color: $controlBackgroundColor;
+  box-shadow: -6px 0px 20px -8px #333;
+  bottom: 82px;
+  display: block;
+  font-family: $font-family;
+  position: fixed;
+  right: 0;
+  top: 87px;
+  z-index: 4;
+
+  input[type=text],
+  input[type=number],
+  select,
+  textarea {
+    border: none;
+    display: inline-block;
+    font-size: $defaultFontSize;
+    height: $inputHeight;
+    padding: 0 rem(10);
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    height: auto;
+  }
+}
+
+.component-properties-container {
+  border-radius: inherit;
+  font-size: 13px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: static;
+
+  fieldset {
+    border: none;
+    margin: 0 0 rem(16);
+    min-width: 0;
+    padding: 0;
+  }
+
+  legend {
+    background-color: #666;
+    color: white;
+    line-height: rem(30);
+    padding-left: rem(8);
+    width: 100%;
+  }
+
+  .properties {
+    padding: 0 rem(8);
+  }
+
+  .columns {
+    margin-top: rem(16);
+    padding: rem(5) 0;
+
+    label {
+      display: block;
+      width: 0;
+      float: left;
+      margin-top: rem(-16);
+      white-space: nowrap;
+
+      &.input-label {
+        display: inline-block;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        white-space: normal;
+      }
+    }
+
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+
+    > {
+      cs-unitfield,
+      input,
+      select,
+      textarea,
+      .column {
+        @include span-columns(12);
+      }
+    }
+
+    &.two > {
+      cs-unitfield,
+      input,
+      select,
+      .column {
+        @include span-columns(6);
+      }
+    }
+
+    &.three > {
+      cs-unitfield,
+      input,
+      select,
+      .column {
+        @include span-columns(4);
+      }
+    }
+
+    &.four > {
+      cs-unitfield,
+      input,
+      select,
+      .column {
+        @include span-columns(3);
+      }
+    }
+  }
+}
+

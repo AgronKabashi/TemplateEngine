@@ -1,0 +1,180 @@
+﻿cs-templateresolutions {
+  background-color: $controlBackgroundColor;
+  border-bottom: 1px solid $borderColor;
+  box-shadow: -10px 1px 30px 0 black;
+  font-family: $font-family;
+  display: block;
+  padding: 20px 0 10px 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  white-space: nowrap;
+  z-index: $layer-4;
+}
+
+.resolution-container {
+  height: 28px;
+  margin-bottom: 5px;
+
+  cs-buttondropdown {
+    button {
+      background-color: $danger;
+      color: $dangerContent;
+
+      &:hover,
+      &:focus {
+        background-color: darken($danger, 10%);
+      }
+    }
+
+    li::after {
+      content: "px";
+    }
+  }
+
+  > .resolutions {
+    position: relative;
+    width: 1024px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+
+    > .resolution {
+      border: 1px solid black;
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: bold;
+      height: 100%;
+      left: 0;
+      max-width: 100%;
+      padding-right: 4px;
+      padding-top: 2px;
+      position: absolute;
+      text-align: right;
+      top: 0;
+
+      &.default {
+        max-width: calc(100% + 50px);
+      }
+
+      &:nth-child(1) {
+        background-color: #333;
+        color: white;
+      }
+
+      &:nth-child(2) {
+        background-color: #5484ED;
+        color: white;
+      }
+
+      &:nth-child(3) {
+        background-color: #DBADFF;
+      }
+
+      &:nth-child(4) {
+        background-color: #FFB878;
+      }
+
+      &:nth-child(5) {
+        background-color: #FBD75B;
+      }
+
+      &:nth-child(6) {
+        background-color: #5484ED;
+        color: white
+      }
+
+      &:nth-child(7) {
+        background-color: #DBADFF;
+      }
+
+      &:nth-child(8) {
+        background-color: #FFB878;
+      }
+
+      &:nth-child(9) {
+        background-color: #FBD75B;
+      }
+    }
+  }
+}
+
+.resolution-slider-container {
+  > .resolution-slider {
+    /* SUPER IMPORTANT - Ensures that percentage based offsets calculate correctly */
+    box-sizing: content-box;
+
+    background-image: url(../images/ruler.png);
+    background-repeat: no-repeat;
+    background-position: left 4px;
+    border-radius: 0;
+    border: solid 1px $borderColor;
+    display: inline-block;
+    font-size: 0;
+    height: 20px;
+    margin-left: 0;
+    vertical-align: middle;
+    width: 1024px;
+    position: relative;
+
+    > .ui-slider-handle {
+      font-size: 0;
+      width: 7px;
+      background-color: #666;
+      background-image: none;
+      border: none;
+      border-radius: 0;
+      border-bottom: none;
+      outline: none;
+      margin-left: -4px;
+      height: 10px;
+      text-decoration: none;
+      margin-top: -4px;
+      cursor: w-resize;
+      position: absolute;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 14px;
+        left: 3px;
+        border-left: 1px solid #666;
+        top: 10px;
+      }
+
+      &:active::after,
+      &:hover::after {
+        content: attr(data-Value) "px";
+        font-size: 10px;
+        font-weight: bold;
+        font-family: Arial;
+        display: inline-block;
+        background-color: white;
+        border: 1px solid #bdbdbd;
+        position: absolute;
+        padding: 1px;
+        top: -24px;
+      }
+    }
+  }
+}
+
+/*EditContent specific rules*/
+.edit-content cs-templateresolutions {
+  padding-top: 15px;
+  padding-bottom: 0;
+
+  .resolutions {
+    margin-left: 30px;
+  }
+
+  button {
+    display: none;
+  }
+
+  .resolution-slider-container {
+    display: none;
+  }
+}

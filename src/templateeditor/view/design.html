@@ -1,0 +1,46 @@
+﻿<div ng-controller="Cerberus.TemplateEditor.Controller.Design">
+  <link ng-href="{{::applicationBasePath}}css/templateeditor.css" rel="stylesheet" />
+  <cs-componentplugins></cs-componentplugins>
+  <cs-templateresolutions></cs-templateresolutions>
+  <cs-componentactions></cs-componentactions>
+  <cs-componentproperties></cs-componentproperties>
+
+  <div class="edit-design">
+    <cs-template cs-droppable cs-componentselection cs-togglehiddenelements cs-autosizetemplate template-mode="editDesign"></cs-template>
+  </div>
+
+  <div class="button-container">
+    <a class="default-button" ng-click="save()" ng-bind="::localization.generic.save"></a>
+    <a class="default-button" ng-click="saveExit()" ng-bind="::localization.generic.saveExit"></a>
+    <a class="danger-button" ng-click="exit()" ng-bind="::localization.generic.exit"></a>
+  </div>
+
+  <cs-messagedialog></cs-messagedialog>
+</div>
+
+<!--TODO: Temporary solution. Move icons into a build step-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-paragraph-left" viewBox="0 0 1024 1024">
+    <path d="M0 64h1024v128h-1024zM0 256h640v128h-640zM0 640h640v128h-640zM0 448h1024v128h-1024zM0 832h1024v128h-1024z"></path>
+  </symbol>
+
+  <symbol id="icon-paragraph-center" viewBox="0 0 1024 1024">
+    <path d="M0 64h1024v128h-1024zM192 256h640v128h-640zM192 640h640v128h-640zM0 448h1024v128h-1024zM0 832h1024v128h-1024z"></path>
+  </symbol>
+
+  <symbol id="icon-paragraph-right" viewBox="0 0 1024 1024">
+    <path d="M0 64h1024v128h-1024zM384 256h640v128h-640zM384 640h640v128h-640zM0 448h1024v128h-1024zM0 832h1024v128h-1024z"></path>
+  </symbol>
+
+  <symbol id="icon-bold" viewBox="0 0 1024 1024">
+    <path d="M707.88 484.652c37.498-44.542 60.12-102.008 60.12-164.652 0-141.16-114.842-256-256-256h-320v896h384c141.158 0 256-114.842 256-256 0-92.956-49.798-174.496-124.12-219.348zM384 192h101.5c55.968 0 101.5 57.42 101.5 128s-45.532 128-101.5 128h-101.5v-256zM543 832h-159v-256h159c58.45 0 106 57.42 106 128s-47.55 128-106 128z"></path>
+  </symbol>
+
+  <symbol id="icon-underline" viewBox="0 0 1024 1024">
+    <path d="M704 64h128v416c0 159.058-143.268 288-320 288-176.73 0-320-128.942-320-288v-416h128v416c0 40.166 18.238 78.704 51.354 108.506 36.896 33.204 86.846 51.494 140.646 51.494s103.75-18.29 140.646-51.494c33.116-29.802 51.354-68.34 51.354-108.506v-416zM192 832h640v128h-640z"></path>
+  </symbol>
+
+  <symbol id="icon-italic" viewBox="0 0 1024 1024">
+    <path d="M896 64v64h-128l-320 768h128v64h-448v-64h128l320-768h-128v-64z"></path>
+  </symbol>
+</svg>

@@ -1,112 +1,99 @@
 ﻿@import "bourbon";
 @import "neat";
 
-$mobile: new-breakpoint(max-width 767px);
-$tablet: new-breakpoint(min-width 768px);
-$desktop: new-breakpoint(min-width 1025px);
+@import "templateeditor/css/variables";
+@import "templateeditor/css/reset";
 
 html,
-body
-{
-	font-family: "Droid Sans";
-	font-size: 14px;
+body {
+  font-family: Tahoma;
+  font-size: 16px;
 }
 
-body
-{
-	padding: 20px;
+a {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
 }
 
-.page-content
-{
-	max-width: 650px;
+.page-content {
+  max-width: 650px;
+  padding: 20px;
 }
 
-.introduction
-{
-	margin-bottom: 3rem;
+.introduction {
+  margin-bottom: 3rem;
 }
 
-h1
-{
-	font-size: 3rem;
-}
-
-button
-{
-	margin-bottom: 1rem;
+h1 {
+  font-size: 3rem;
 }
 
 .ng-cloak,
-.hidden
-{
-	display: none !important;
+.hidden {
+  display: none !important;
 }
 
-.list
-{
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	display: table;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	text-align: left;
-	
-	>
-	{
-		li
-		{
-			display: table-row;
-		
-			>
-			{
-				*
-				{
-					border-bottom: 1px solid #ddd;
-					display: table-cell;
-					min-width: 100px;
-					overflow: hidden;
-					padding: 1rem;
-					text-overflow: ellipsis;
-					vertical-align: middle;
-					white-space: nowrap;
-				}
+.list {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: table;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: left;
 
-				.button-group
-				{
-					text-align: right;
-				}
+  li {
+    display: table-row;
+    width: 100%;
 
-				:last-child
-				{
-					width: 100%;
-				}
-			}
-		}
+    > a,
+    .button-group {
+      border-bottom: 1px solid #ddd;
+      display: table-cell;
+      overflow: hidden;
+      padding: 1rem;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
 
-		.list-header
-		{
-			font-weight: bold;
-			
-			> span
-			{
-				border-bottom: 1px solid #ddd !important;
-			}
-		}
-		
-		li:nth-last-child(-n+2) > *
-		{
-			border-bottom: none;
-		}
-	}
+    > a {
+      min-width: 100px;
+      text-overflow: ellipsis;
+    }
 
-	@include media($tablet)
-	{
-		> li > *
-		{
-			min-width: 200px;
-		}
-	}
+    .button-group {
+      text-align: right;
+      width: 100%;
+    }
+
+    &:last-child > a,
+    &:last-child .button-group {
+      border-bottom: none;
+    }
+  }
+
+  li.empty-list-message:last-child {
+    display: table-row;
+
+    i {
+      display: block;
+      padding: 1rem;
+    }
+  }
+}
+
+.actions {
+  margin-bottom: 1rem;
+}
+
+input,
+select,
+button {
+  padding: 8px;
+  height: 35px;
+  border: 1px solid #bdbdbd;
+  display: inline-block;
+  vertical-align: middle;
 }

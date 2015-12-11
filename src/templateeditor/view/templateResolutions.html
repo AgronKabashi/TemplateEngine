@@ -1,0 +1,32 @@
+<div class="resolution-container">
+  <cs-buttondropdown
+    datasource="template.resolutions"
+    limit="template.resolutions.length - 1"
+    on-item-click="removeResolution"
+    disabled="template.resolutions.length === 1"
+    datatextfield="resolutionValue">
+    <span class="icon-trash-o"></span>
+  </cs-buttondropdown>
+
+  <div class="resolutions">
+    <div class="resolution"
+      ng-repeat="resolution in template.resolutions | orderBy: 'resolutionValue':true track by $index"
+      ng-class="::{ 'default': resolution.resolutionValue > maxResolutionValue }"
+      ng-attr-style="width:{{ resolution.resolutionValue }}px"
+      ng-bind="::resolution.resolutionValue <= maxResolutionValue ? resolution.resolutionValue + ' px' : 'Desktop'"
+      ng-click="setDocumentWidth(resolution.resolutionValue)"
+      title="{{resolution.resolutionValue <= maxResolutionValue ? resolution.resolutionValue + ' px' : 'Desktop'}}">
+    </div>
+  </div>
+</div>
+
+<div class="resolution-slider-container">
+  <cs-buttondropdown
+    datasource="resolutionPresets"
+    on-command-click="addResolution"
+    on-item-click="addResolution"
+    datatextfield="name">
+    +
+  </cs-buttondropdown>
+  <div class="resolution-slider"></div>
+</div>

@@ -1,0 +1,20 @@
+﻿<div class="two columns">
+  <label ng-bind="::localization.component.rss.url"></label>
+  <input type="text" ng-model="content.rssFeedUrl" ng-model-options="modelOptions" />
+  <label ng-bind="::localization.component.rss.maxStories"></label>
+  <input type="text" ng-model="content.maxStories" />
+</div>
+
+<div class="two columns">
+  <label ng-bind="::localization.component.rss.showTitle"></label>
+  <input type="checkbox" ng-model="content.showTitle" />
+  <label ng-bind="::localization.component.rss.showDescription"></label>
+  <input type="checkbox" ng-model="content.showDescription" />
+</div>
+
+<div class="two columns">
+  <label ng-bind="::localization.component.rss.showStoryDescription"></label>
+  <input type="checkbox" ng-model="content.showStoryDescription" />
+  <label ng-bind="::localization.component.rss.showStoryDate"></label>
+  <input type="checkbox" ng-model="content.showStoryDate" />
+</div>

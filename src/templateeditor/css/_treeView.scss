@@ -1,0 +1,50 @@
+﻿.tree-view
+{
+  height: 200px;
+  border: 1px solid #bdbdbd;
+  background-color: white;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+  .tree-view,
+  .tree-view ul
+  {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+    .tree-view ul
+    {
+      display: none;
+    }
+
+    .tree-view li
+    {
+      padding-left: 10px;
+    }
+
+      .tree-view li.Selected > span
+      {
+        background-color: #eaeaea;
+      }
+
+      .tree-view li > span
+      {
+        display:block;
+        cursor: pointer;
+        padding-left: 5px;
+      }
+
+    /*.tree-view .selected > span
+    {
+      color: white;
+      background-color: #eaeaea;
+    }*/
+
+    .tree-view > ul,
+    .tree-view li.expanded > ul
+    {
+      display: block;
+    }

@@ -1,0 +1,46 @@
+﻿cs-component {
+  cursor: default;
+  outline: solid 1px transparent;
+
+  > * {
+    pointer-events: none;
+  }
+
+  &:hover::before,
+  &.ui-resizable-resizing::before {
+    background-color: #eaeaea;
+    border: 1px solid rgba(213, 213, 213, 1);
+    border-bottom: none;
+    border-radius: 0 4px 0 0;
+    bottom: 100%;
+    color: black;
+    content: attr(friendly-name) " - " attr(component-name);
+    display: block;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: normal;
+    left: 0;
+    letter-spacing: normal;
+    padding: 2px;
+    position: absolute;
+    z-index: $layer-2;
+    text-shadow: none;
+  }
+
+  &.hidden {
+    display: table;
+    opacity: 0.1;
+  }
+
+  &.selected {
+    -webkit-border-radius: initial; // Special case for webkit
+    border-radius: inherit;
+    outline: solid 1px #3F607F;
+  }
+
+  // Fallback for components with no customized name
+  &[friendly-name=""]:hover::before,
+  &[friendly-name=""].ui-resizable-resizing::before {
+    content: attr(component-name);
+  }
+}

@@ -1,0 +1,15 @@
+<div class="two columns">
+  <label ng-bind="::localization.componentProperties.color"></label>
+  <input type="text" ng-model="visualProperties.textShadow.color" />
+
+  <label ng-bind="::localization.componentProperties.blurRadius"></label>
+  <cs-unitfield model="visualProperties.textShadow.blurRadius"></cs-unitfield>
+</div>
+
+<div class="two columns">
+  <label ng-bind="::localization.componentProperties.horizontalOffset"></label>
+  <cs-unitfield model="visualProperties.textShadow.hShadow"></cs-unitfield>
+
+  <label ng-bind="::localization.componentProperties.verticalOffset"></label>
+  <cs-unitfield model="visualProperties.textShadow.vShadow"></cs-unitfield>
+</div>

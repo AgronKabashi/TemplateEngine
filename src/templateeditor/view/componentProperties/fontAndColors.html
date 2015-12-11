@@ -1,0 +1,62 @@
+﻿<div class="three columns">
+  <label ng-bind="::localization.componentProperties.fontface"></label>
+  <select ng-model="visualProperties.fontFamily" class="dropdown-list" ng-options="font.value as font.name for font in ::fontFamilies"></select>
+
+  <label ng-bind="::localization.componentProperties.size"></label>
+  <cs-unitfield model="visualProperties.fontSize"></cs-unitfield>
+
+  <label ng-bind="::localization.componentProperties.color"></label>
+  <input type="text" ng-model="visualProperties.color" ng-attr-placeholder="{{::localization.componentProperties.color}}" />
+</div>
+
+<div class="two columns">
+  <label ng-bind="::localization.componentProperties.textTransform"></label>
+  <div class="column">
+    <label class="input-label">
+      <input type="checkbox" name="text-transform" ng-model="visualProperties.fontWeight" ng-true-value="'bold'" />
+      <svg class="icon">
+        <use xlink:href="#icon-bold" />
+      </svg>
+    </label>
+
+    <label class="input-label">
+      <input type="checkbox" name="text-transform" ng-model="visualProperties.textDecoration" ng-true-value="'underline'" />
+      <svg class="icon"><use xlink:href="#icon-underline" /></svg>
+    </label>
+
+    <label class="input-label">
+      <input type="checkbox" name="text-transform" ng-model="visualProperties.fontStyle" ng-true-value="'italic'" />
+      <svg class="icon"><use xlink:href="#icon-italic" /></svg>
+    </label>
+  </div>
+
+  <label ng-bind="::localization.componentProperties.textAlign"></label>
+  <div class="column">
+    <label class="input-label">
+      <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'left'" />
+      <svg class="icon"><use xlink:href="#icon-paragraph-left" /></svg>
+    </label>
+
+    <label class="input-label">
+      <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'center'" />
+      <svg class="icon"><use xlink:href="#icon-paragraph-center" /></svg>
+    </label>
+
+    <label class="input-label">
+      <input type="radio" name="text-align" ng-model="visualProperties.textAlign" ng-value="'right'" />
+      <svg class="icon">
+        <use xlink:href="#icon-paragraph-right" />
+      </svg>
+    </label>
+  </div>
+</div>
+<!--
+<div>
+	<label ng-bind="::localization.componentProperties.NoWrap"></label>
+	<input type="checkbox" ng-model="visualProperties.whiteSpace" ng-true-value="'nowrap'" ng-false-value="undefined" />
+</div>
+
+<div>
+	<label ng-bind="::localization.componentProperties.Scrollable"></label>
+	<input type="checkbox" ng-model="visualProperties.overflow" ng-true-value="'auto'" ng-false-value="undefined" />
+</div>-->

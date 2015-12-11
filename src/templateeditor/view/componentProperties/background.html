@@ -1,0 +1,28 @@
+﻿<div class="two columns">
+  <label ng-bind="::localization.componentProperties.color"></label>
+  <input type="text" ng-model="visualProperties.backgroundColor" />
+
+  <label ng-bind="::localization.componentProperties.opacity"></label>
+  <input type="text" ng-model="visualProperties.opacity" step="0.1" min="0" max="1" placeholder="{{::localization.componentProperties.opacityPlaceHolder}}" />
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.componentProperties.imageSource"></label>
+  <input type="text" ng-model="visualProperties.backgroundImage" ng-model-options="modelOptions" placeholder="{{::localization.componentProperties.imageSourcePlaceHolder}}" />
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.componentProperties.imageRepeat"></label>
+  <select ng-model="visualProperties.backgroundRepeat" ng-options="item.value as item.name for item in ::backgroundImageRepeatOptions"></select>
+</div>
+
+<div class="two columns">
+  <label ng-bind="::localization.componentProperties.imagePosition"></label>
+  <select ng-model="visualProperties.backgroundPositionX" ng-options="item.value as item.name for item in ::backgroundPositionHorizontalOptions"></select>
+  <select ng-model="visualProperties.backgroundPositionY" ng-options="item.value as item.name for item in ::backgroundPositionVerticalOptions"></select>
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.componentProperties.imageSize"></label>
+  <select ng-model="visualProperties.backgroundSize" ng-options="item.value as item.name for item in ::backgroundSizeOptions"></select>
+</div>

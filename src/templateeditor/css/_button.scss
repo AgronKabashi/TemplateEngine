@@ -1,0 +1,58 @@
+﻿@mixin button($textColor, $backgroundColor, $borderColor: transparent) {
+  background-color: $backgroundColor;
+  border: 1px solid $borderColor;
+  border-radius: 3px;
+  color: $textColor;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: normal;
+  outline: none;
+  overflow: hidden;
+  padding: 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: #ccc;
+
+  &:hover {
+    background-color: darken($backgroundColor, 10%);
+  }
+
+  &[disabled] {
+    background-color: transparent;
+    color: gray;
+    cursor: default;
+    pointer-events: none;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  &::before {
+    @extend .icon-base;
+    vertical-align: text-bottom;
+  }
+}
+
+.confirm-button {
+  @include button(black, white, $borderColor);
+}
+
+.default-button {
+  @include button(black, white, $borderColor);
+}
+
+.danger-button {
+  @include button($dangerContent, $danger);
+}
+
+.warning-button {
+  @include button($warningContent, $warning);
+}
+
+.setting-button {
+  @include button($settingContent, $setting);
+}

@@ -1,0 +1,70 @@
+﻿cs-buttondropdown {
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+
+  > {
+    .command-button {
+      @extend .default-button;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      font-size: 0.5rem;
+      min-width: 20px;
+      min-height: 22px;
+      padding: 0.25rem 0;
+
+      & + .expand-button {
+        border-left: 1px solid $borderColor;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        min-width: 10px;
+      }
+    }
+
+    .expand-button {
+      @extend .default-button;
+      font-size: 0.5rem;
+      min-width: 30px;
+      min-height: 22px;
+      padding: 0.25rem 0;
+
+      &:focus {
+        background-color: $menuItemHightlightColor;
+
+        & + ul {
+          left: 0;
+          @include transition(none);
+        }
+      }
+    }
+
+    ul {
+      @include transition(left 1s ease-out);
+      background-color: $menuBackgroundColor;
+      border: 1px solid $borderColor;
+      border-radius: 0 4px 4px;
+      display: table;
+      height: 0;
+      left: -1000px;
+      list-style: none;
+      margin: 0;
+      min-width: 10rem;
+      padding: 0.25rem 0;
+      position: absolute;
+      z-index: $layer-4;
+
+      > li {
+        cursor: pointer;
+        display: block;
+        font-size: 1rem;
+        line-height: 2rem;
+        padding: 0 1rem;
+
+        &:hover {
+          background-color: $menuItemHightlightColor;
+        }
+      }
+    }
+  }
+}

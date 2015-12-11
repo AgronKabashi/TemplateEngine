@@ -1,0 +1,10 @@
+<input type='text' ng-model="model.value" placeholder='{{::placeholder}}' />
+<select ng-model="model.unitType">
+  <option ng-if="::!isAngularUnit" value="px" selected>px</option>
+  <option ng-if="::!isAngularUnit" value="rem">rem</option>
+  <option ng-if="::!isAngularUnit" value="%">%</option>
+  <option ng-if="::isAngularUnit" value="deg">deg</option>
+  <option ng-if="::isAngularUnit" value="rad">rad</option>
+  <option ng-if="::isAngularUnit" value="turn">turn</option>
+  <option value="">Custom</option>
+</select>

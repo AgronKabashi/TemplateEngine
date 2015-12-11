@@ -1,0 +1,6 @@
+﻿<button class="command-button" ng-click="onCommandClick()" ng-transclude></button>
+<button class="expand-button" ng-disabled="disabled"></button>
+
+<ul>
+	<li ng-repeat="item in datasource | limitTo: itemLimit track by $index" ng-bind="item[datatextfield]" ng-click="itemClick(item)"></li>
+</ul>

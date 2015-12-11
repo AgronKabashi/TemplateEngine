@@ -1,0 +1,43 @@
+﻿<div>
+  <div class="three columns">
+    <label ng-bind="::localization.componentProperties.top"></label>
+    <select ng-model="visualProperties.borderTopStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
+
+    <cs-unitfield model="visualProperties.borderTopWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+
+    <input type="text" ng-model="visualProperties.borderTopColor" placeholder="{{::localization.componentProperties.color}}" />
+  </div>
+</div>
+
+<div>
+  <div class="three columns">
+    <label ng-bind="::localization.componentProperties.right"></label>
+    <select ng-model="visualProperties.borderRightStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
+
+    <cs-unitfield model="visualProperties.borderRightWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+
+    <input type="text" ng-model="visualProperties.borderRightColor" placeholder="{{::localization.componentProperties.color}}" />
+  </div>
+</div>
+
+<div>
+  <div class="three columns">
+    <label ng-bind="::localization.componentProperties.bottom"></label>
+    <select ng-model="visualProperties.borderBottomStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
+
+    <cs-unitfield model="visualProperties.borderBottomWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+
+    <input type="text" ng-model="visualProperties.borderBottomColor" placeholder="{{::localization.componentProperties.color}}" />
+  </div>
+</div>
+
+<div>
+  <div class="three columns">
+    <label ng-bind="::localization.componentProperties.left"></label>
+    <select ng-model="visualProperties.borderLeftStyle" ng-options="item.value as item.name for item in ::borderStyles"></select>
+
+    <cs-unitfield model="visualProperties.borderLeftWidth" placeholder="{{::localization.componentProperties.width}}"></cs-unitfield>
+
+    <input type="text" ng-model="visualProperties.borderLeftColor" placeholder="{{::localization.componentProperties.color}}" />
+  </div>
+</div>

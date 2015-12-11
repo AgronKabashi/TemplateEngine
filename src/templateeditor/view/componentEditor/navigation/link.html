@@ -1,0 +1,20 @@
+﻿<div class="two columns">
+  <label ng-bind="::localization.component.link.url"></label>
+  <input type="text" ng-model="content.url" placeholder="{{::localization.component.link.urlPlaceHolder}}" />
+
+  <label ng-bind="::localization.component.link.target"></label>
+  <select ng-model="content.target">
+    <option value="_blank" ng-bind="::localization.component.link.newWindow"></option>
+    <option value="" ng-bind="::localization.component.link.sameWindow"></option>
+  </select>
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.component.link.text"></label>
+  <input type="text" ng-model="content.text" placeholder="{{::localization.component.navigation.textPlaceHolder}}" />
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.component.link.tooltip"></label>
+  <input type="text" ng-model="content.tooltip" placeholder="{{::localization.component.navigation.tooltipPlaceHolder}}" />
+</div>

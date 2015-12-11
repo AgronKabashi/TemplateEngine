@@ -1,0 +1,25 @@
+﻿<div class="columns">
+  <label ng-bind="::localization.component.video.mp4Source"></label>
+  <input type="text" ng-model="content.mp4SourceUrl" ng-model-options="modelOptions" />
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.component.video.oggSource"></label>
+  <input type="text" ng-model="content.oggSourceUrl" ng-model-options="modelOptions" />
+</div>
+
+<div class="columns">
+  <label ng-bind="::localization.component.video.posterUrl"></label>
+  <input type="text" ng-model="content.posterUrl" ng-model-options="modelOptions" />
+</div>
+
+<div class="three columns">
+  <label ng-bind="::localization.component.video.autoPlay"></label>
+  <input type="checkbox" ng-model="content.autoPlay" />
+
+  <label ng-bind="::localization.component.video.loop"></label>
+  <input type="checkbox" ng-model="content.loopInfinitely" />
+
+  <label ng-bind="::localization.component.video.showControls"></label>
+  <input type="checkbox" ng-model="content.showControls" />
+</div>

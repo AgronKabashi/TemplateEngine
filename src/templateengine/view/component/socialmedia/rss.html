@@ -1,0 +1,10 @@
+﻿<h1 ng-bind="rssFeed.title" ng-show="component.content.showTitle"></h1>
+<span ng-bind="rssFeed.description" ng-show="component.content.showDescription"></span>
+
+<ul>
+  <li ng-repeat="story in stories|limitTo:component.content.maxStories">
+    <span class="date" ng-bind="::story.publishedDate" ng-show="component.content.showStoryDate"></span>
+    <a ng-href="{{::story.link}}" ng-bind="::story.title"></a>
+    <span ng-bind="::story.contentSnippet" ng-show="component.content.showStoryDescription"></span>
+  </li>
+</ul>

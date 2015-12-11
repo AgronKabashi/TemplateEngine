@@ -1,0 +1,9 @@
+<!--<div class="video"><video cs-video></video></div>
+http://media.w3.org/2010/05/sintel/trailer.mp4
+-->
+<video cs-video poster="{{component.content.posterUrl | trustedUrl}}">
+  <!--<source ng-src="{{component.content.mp4SourceUrl | trustedUrl}}" type="video/mp4" />
+  <source ng-src="{{component.content.oggSourceUrl | trustedUrl}}" type="video/ogg" />-->
+  <source type="video/mp4" />
+  <source type="video/ogg" />
+</video>

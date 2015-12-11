@@ -1,0 +1,31 @@
+﻿<div ng-show="showTemplateEditorActions && selectedComponents.length > 0">
+  <a class="danger-button primary-action" ng-click="removeSelectedComponents()">
+    <span ng-bind="::localization.componentActions.removeSelectedComponents"></span>
+    <span class="icon-trash-o"></span>
+  </a>
+
+  <div ng-show="template.resolutions.length > 1">
+    <a class="setting-button secondary-action" ng-click="distributeResolutionPropertiesToAllResolutions()" ng-show="template.resolutions.length > 2">
+      <span ng-bind="::localization.componentActions.distributeVisualPropertiesToAllResolutions"></span>
+      <span class="icon-angle-double-right"></span>
+    </a>
+
+    <a class="setting-button secondary-action" ng-click="distributeResolutionPropertiesToHigherResolutions()" ng-show="resolutionIndex >= 0 && resolutionIndex < template.resolutions.length - 1">
+      <span ng-bind="::localization.componentActions.distributeVisualPropertiesToHigherResolutions"></span>
+      <span class="icon-angle-up"></span>
+    </a>
+
+    <a class="setting-button secondary-action" ng-click="distributeResolutionPropertiesToLowerResolutions()" ng-show="resolutionIndex > 0 && resolutionIndex < template.resolutions.length">
+      <span ng-bind="::localization.componentActions.distributeVisualPropertiesToLowerResolutions"></span>
+      <span class="icon-angle-down"></span>
+    </a>
+  </div>
+</div>
+
+<div ng-show="showTemplateEditorActions && hasHiddenControls">
+  <a class="setting-button secondary-action" ng-click="toggleHiddenElements()">
+    <input type="checkbox" ng-model="showHiddenElements" />
+    <span ng-bind="::localization.componentActions.showHiddenControls"></span>
+    <span class="icon-eye-slash"></span>
+  </a>
+</div>

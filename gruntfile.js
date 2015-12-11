@@ -1,245 +1,37 @@
-﻿"use strict";
+"use strict";
 
-module.exports = function (grunt)
-{
-	//load grunt modules
-	require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-	require("node-neat");
-	require("node-bourbon");
+module.exports = function  (grunt) {
+  // Dependencies
+  [
+    "grunt-newer"
+  ].forEach(grunt.loadNpmTasks);
 
-	grunt.registerTask("debug",
-	[
-		"clean:all",
-		"copy",
-		"sass",
-		"connect:livereload",
-		"watch"
-	]);
+  grunt.registerTask("buildLibraries", ["lodashAutobuild"]);
+  grunt.registerTask("build", ["clean", "copy", "sass", "buildLibraries", "concat", "ngtemplates", "clean:temp"]);
+  grunt.registerTask("livereload", ["connect:debug", "watch"]);
+  grunt.registerTask("release-build", ["build", "uglify:default"]);
+  grunt.registerTask("release", ["release-build", "connect:release"]);
+  grunt.registerTask("test", ["build", "karma"]);
+  grunt.registerTask("default", ["build", "livereload"]);
 
-	grunt.registerTask("release",
-	[
-		"clean:all",
-		"copy",
-		"sass",
-		"htmlmin",
-		"uglify"
-	]);
-
-	grunt.registerTask("default",
-	[
-		"debug"
-	]);
-
-	grunt.initConfig(
-	{
-		config:
-		{
-			src: "src",
-			dist: "dist"
-		},
-		connect:
-		{
-			options:
-			{
-				port: 9000,
-				livereload: 35729,
-				// change this to "0.0.0.0" to access the server from outside
-				hostname: "localhost"
-			},
-			livereload:
-			{
-				options:
-				{
-					open: true,
-					base: ["<%= config.dist %>"]
-				}
-			}
-		},
-		watch:
-		{
-			options:
-			{
-				livereload: true
-			},
-			css:
-			{
-				files: ["<%= config.src %>/**/*.css"],
-				tasks: ["newer:copy:css"]
-			},
-			sass:
-			{
-				files: ["<%= config.src %>/**/*.scss"],
-				tasks: ["sass"]
-			},
-			images:
-			{
-				files: ["<%= config.src %>/**/*.{png,jpg}"],
-				tasks: ["newer:copy:images"]
-			},
-			markup:
-			{
-				files: ["<%= config.src %>/**/*.html"],
-				tasks: ["newer:copy:markup"]
-			},
-			scripts:
-			{
-				files: ["<%= config.src %>/**/*.js"],
-				tasks: ["newer:copy:scripts"]
-			},
-			data:
-			{
-				files: ["<%= config.src %>/**/*.json"],
-				tasks: ["newer:copy:data"]
-			}
-		},
-		htmlmin:
-		{
-			dist:
-			{
-				options:
-				{
-					removeComments: true,
-					collapseWhitespace: true,
-					conservativeCollapse: true,
-					minifyCSS: true,
-					caseSensitive: true
-				},
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.dist %>",
-						src: "**/*.html",
-						dest: "<%= config.dist %>"
-					}
-				]
-			}
-		},
-		uglify:
-		{
-			options:
-			{
-				mangle:
-				{
-					except: ["jQuery", "*.min.js"]
-				}
-			},
-			all:
-			{
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.dist %>",
-						src: "**/*.js",
-						dest: "<%= config.dist %>"
-					}
-				]
-			}
-		},
-		sass:
-		{
-			dist:
-			{
-				options:
-				{
-					includePaths: require("node-neat").includePaths,
-					outputStyle: "compressed"
-				},
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.src %>",
-						src: "**/*.scss",
-						dest: "<%= config.dist %>",
-						ext: ".css"
-					}
-				]
-			}
-		},
-		copy:
-		{
-			fonts:
-			{
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.src %>",
-						src: "**/*.{ttf,woff,eot}",
-						dest: "<%= config.dist %>"
-					}
-				]
-			},
-			css:
-			{
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.src %>",
-						src: "**/*.css",
-						dest: "<%= config.dist %>"
-					}
-				]
-			},
-			images:
-			{
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.src %>",
-						src: "**/*.{jpg,png}",
-						dest: "<%= config.dist %>"
-					}
-				]
-			},
-			scripts:
-			{
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.src %>",
-						src: "**/*.js",
-						dest: "<%= config.dist %>"
-					}
-				]
-			},
-			markup:
-			{
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.src %>",
-						src: "**/*.html",
-						dest: "<%= config.dist %>"
-					}
-				]
-			},
-			data:
-			{
-				files:
-				[
-					{
-						expand: true,
-						cwd: "<%= config.src %>",
-						src: "**/*.json",
-						dest: "<%= config.dist %>"
-					}
-				]
-			}
-		},
-		jshint:
-		{
-			all: ["<%= config.src %>/**/*.js"]
-		},
-		clean:
-		{
-			all: ["<%= config.dist %>/**/*"]
-		}
-	});
+  grunt.initConfig({
+    config: {
+      src: "src",
+      dest: "dest",
+      temp: "dest/temp",
+      test: "tests"
+    },
+    clean: require("./grunt-tasks/clean")(grunt),
+    concat: require("./grunt-tasks/concat")(grunt),
+    connect: require("./grunt-tasks/connect")(grunt),
+    copy: require("./grunt-tasks/copy")(grunt),
+    eslint: require("./grunt-tasks/eslint")(grunt),
+    karma: require("./grunt-tasks/karma")(grunt),
+    lodash: require("./grunt-tasks/lodash")(grunt),
+    lodashAutobuild: require("./grunt-tasks/lodashAutobuild")(grunt),
+    ngtemplates: require("./grunt-tasks/ngtemplates")(grunt),
+    sass: require("./grunt-tasks/sass")(grunt),
+    uglify: require("./grunt-tasks/uglify")(grunt),
+    watch: require("./grunt-tasks/watch")(grunt)
+  });
 };
