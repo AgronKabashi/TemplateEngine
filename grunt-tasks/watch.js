@@ -33,7 +33,7 @@ module.exports = function (grunt) {
     },
     templateScripts: {
       files: ["<%= config.src %>/templateeditor/**/*.js", "<%= config.src %>/templateengine/**/*.js"],
-      tasks: ["concat", "ngtemplates"]
+      tasks: ["buildLibraries", "concat", "ngtemplates"]
     },
     data: {
       files: ["<%= config.src %>/**/*.json"],
