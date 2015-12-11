@@ -103,11 +103,16 @@
     ])
     .controller("Demo.Controller.Design", [
       "$scope",
+      "$state",
       "$stateParams",
       "Cerberus.TemplateEngine.Service.Template",
       "Cerberus.TemplateEngine.Service.Event",
       "Cerberus.TemplateEngine.Service.DataBag",
-      function ($scope, $stateParams, TemplateService, EventService, DataBagService) {
+      function ($scope, $state, $stateParams, TemplateService, EventService, DataBagService) {
+        EventService.subscribe("ExitTemplateEditor", function () {
+          $state.go("demo");
+        });
+
         var templateId = $stateParams.id || 0;
         TemplateService
           .getTemplate(templateId)

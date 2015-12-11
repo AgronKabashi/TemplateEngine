@@ -37,8 +37,7 @@
       },
 
       exit: function () {
-        var exitUrl = "/";
-        window.location.href = exitUrl;
+        EventService.notify("ExitTemplateEditor");
       },
 
       save: function () {
