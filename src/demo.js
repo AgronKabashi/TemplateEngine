@@ -15,9 +15,10 @@
     .config([
       "$stateProvider",
       "$urlRouterProvider",
+      "templateEditorPath",
       "Cerberus.ModelFactoryProvider",
       "Cerberus.TemplateEngine.Service.TemplateProvider",
-      function ($stateProvider, $urlRouterProvider, ModelFactoryProvider, TemplateProvider) {
+      function ($stateProvider, $urlRouterProvider, templateEditorPath, ModelFactoryProvider, TemplateProvider) {
         TemplateProvider.setProvider(ModelFactoryProvider.$get().getModelType("Cerberus.TemplateEngine.Service.TemplateLocalStorageProvider"));
 
         $stateProvider
@@ -28,7 +29,7 @@
           })
           .state("design", {
             url: "/design/:id",
-            templateUrl: "/templateeditor/view/design.html",
+            templateUrl: templateEditorPath + "view/design.html",
             controller: "Demo.Controller.Design"
           })
           .state("view", {
