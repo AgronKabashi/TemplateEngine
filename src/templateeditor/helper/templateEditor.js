@@ -98,22 +98,23 @@
         isTransposedVertical = style.bottom.length > 0,
         horizontalUnitName = isTransposedHorizontal ? "right" : "left",
         verticalUnitName = isTransposedVertical ? "bottom" : "top",
-        widthInPercent = !isNaN(parseInt(style.width)) && style.width.indexOf("%") >= 0,
-        heightInPercent = !isNaN(parseInt(style.height)) && style.height.indexOf("%") >= 0,
-        horizontalInPercent = !isNaN(parseInt(style[horizontalUnitName])) && style[horizontalUnitName].indexOf("%") >= 0,
-        verticalInPercent = !isNaN(parseInt(style[verticalUnitName])) && style[verticalUnitName].indexOf("%") >= 0;
+        isWidthInPercent = !isNaN(parseInt(style.width)) && style.width.indexOf("%") >= 0,
+        isHeightInPercent = !isNaN(parseInt(style.height)) && style.height.indexOf("%") >= 0,
+        isHorizontalInPercent = !isNaN(parseInt(style[horizontalUnitName])) && style[horizontalUnitName].indexOf("%") >= 0,
+        isVerticalInPercent = !isNaN(parseInt(style[verticalUnitName])) && style[verticalUnitName].indexOf("%") >= 0;
 
       element.data("dragResizeSettings", {
-        "IsTransposedHorizontal": isTransposedHorizontal,
-        "IsTransposedVertical": isTransposedVertical,
-        "UnitHorizontal": horizontalInPercent,
-        "UnitVertical": verticalInPercent,
-        "UnitWidth": widthInPercent,
-        "UnitHeight": heightInPercent
+        isTransposedHorizontal: isTransposedHorizontal,
+        isTransposedVertical: isTransposedVertical,
+        isHorizontalInPercent: isHorizontalInPercent,
+        isVerticalInPercent: isVerticalInPercent,
+        isWidthInPercent: isWidthInPercent,
+        isHeightInPercent: isHeightInPercent
       });
     }
 
     function sanitizeDragValues(element) {
+      // TODO: Clean up
       var nativeElement = element.get(0);
       var template = element.parent(),
         templateWidth = template.width(),
@@ -125,8 +126,8 @@
         dragResizeSettings = element.data("dragResizeSettings"),
         isTransposedVertical = dragResizeSettings.isTransposedVertical,
         isTransposedHorizontal = dragResizeSettings.isTransposedHorizontal,
-        horizontalInPercent = dragResizeSettings.unitHorizontal,
-        verticalInPercent = dragResizeSettings.unitVertical,
+        isHorizontalInPercent = dragResizeSettings.isHorizontalInPercent,
+        isVerticalInPercent = dragResizeSettings.isVerticalInPercent,
         elementWidth = element.outerWidth(),
         elementHeight = ~~element.outerHeight();
 
@@ -135,13 +136,16 @@
       //without any repercussions.
 
       //Horizontal Positioning
-      if (horizontalInPercent) {
+      if (isHorizontalInPercent) {
         //Percentage based positioning
         horizontal = tryParseInt(element.css("left"));
         element.css("left", String.format("{0}%", (100.0 * horizontal / templateWidth).toFixed(1)));
 
         if (isTransposedHorizontal) {
           nativeElement.style.right = String.format("{0}%", 100 - 100.0 * (horizontal / templateWidth + elementWidth / templateWidth)).toFixed(1);
+        }
+        else {
+          nativeElement.style.right = "";
         }
       }
       else {
@@ -152,16 +156,22 @@
         if (isTransposedHorizontal) {
           nativeElement.style.right = templateWidth - value - elementWidth + "px";
         }
+        else {
+          nativeElement.style.right = "";
+        }
       }
 
       //Vertical Positioning
-      if (verticalInPercent) {
+      if (isVerticalInPercent) {
         //Percentage based positioning
         vertical = tryParseInt(element.css("top"));
         element.css("top", String.format("{0}%", (100.0 * vertical / templateHeight).toFixed(1)));
 
         if (isTransposedVertical) {
           nativeElement.style.bottom = String.format("{0}%", 100 - 100.0 * (vertical / templateHeight + elementHeight / templateHeight)).toFixed(1);
+        }
+        else {
+          nativeElement.style.bottom = "";
         }
       }
       else {
@@ -171,6 +181,9 @@
 
         if (isTransposedVertical) {
           nativeElement.style.bottom = templateHeight - value - elementHeight + "px";
+        }
+        else {
+          nativeElement.style.bottom = "";
         }
       }
     }
@@ -183,16 +196,16 @@
       var width = 0,
         height = 0,
         dragResizeSettings = element.data("dragResizeSettings"),
-        widthInPercent = dragResizeSettings.unitWidth,
-        heightInPercent = dragResizeSettings.unitHeight;
+        isWidthInPercent = dragResizeSettings.isWidthInPercent,
+        isHeightInPercent = dragResizeSettings.isHeightInPercent;
 
       //Dimensions
-      if (widthInPercent) {
+      if (isWidthInPercent) {
         width = tryParseInt(element.css("width"));
         element.css("width", String.format("{0}%", (100.0 * width / templateWidth).toFixed(1)));
       }
 
-      if (heightInPercent) {
+      if (isHeightInPercent) {
         height = tryParseInt(element.css("height"));
         element.css("height", String.format("{0}%", (100.0 * height / templateHeight).toFixed(1)));
       }
@@ -220,11 +233,10 @@
           snap: true,
           snapTolerance: 10,
           start: function (e) {
-            var sourceElement = $(this);
-            var allowDrag = sourceElement.hasClass("selected");
+            var allowDrag = componentElement.hasClass("selected");
 
             selectedElements = $("cs-component.selected");
-            sourceElement.draggable("option", "snap", e.ctrlKey);
+            componentElement.draggable("option", "snap", e.ctrlKey);
 
             if (allowDrag) {
               selectedElements
@@ -243,12 +255,11 @@
           },
 
           drag: function (e, ui) {
-            var sourceElement = $(this),
-              elementData,
+            var elementData,
               offsetLeft = ui.originalPosition.left - ui.position.left,
               offsetTop = ui.originalPosition.top - ui.position.top;
 
-            sourceElement.draggable("option", "snap", e.ctrlKey);
+            componentElement.draggable("option", "snap", e.ctrlKey);
 
             selectedElements.each(function () {
               var element = $(this);
@@ -262,12 +273,12 @@
               sanitizeDragValues(element);
             });
 
-            self.updateVisualProperties("ComponentUpdating", sourceElement);
+            // TODO: Optimize by reducing notification frequency
+            self.updateVisualProperties("ComponentUpdating", componentElement);
           },
 
           stop: function (e, ui) {
-            var sourceElement = $(this),
-              dragResizeSettings = sourceElement.data("dragResizeSettings"),
+            var dragResizeSettings = componentElement.data("dragResizeSettings"),
               offsetLeft = ui.originalPosition.left - ui.position.left,
               offsetTop = ui.originalPosition.top - ui.position.top,
               elementData;
@@ -288,19 +299,16 @@
               var isTransposedHorizontal = dragResizeSettings.IsTransposedHorizontal;
               var isTransposedVertical = dragResizeSettings.IsTransposedVertical;
 
-              if (isTransposedHorizontal) {
-                removePropertyMethod.call(nativeElement.style, "left");
-              }
+              removePropertyMethod.call(nativeElement.style, isTransposedHorizontal ? "left" : "right");
+              removePropertyMethod.call(nativeElement.style, isTransposedVertical ? "top" : "bottom");
 
-              if (isTransposedVertical) {
-                removePropertyMethod.call(nativeElement.style, "top");
-              }
+              delete nativeElement.style.right;
 
               element.data("dragResizeSetting", undefined);
             })
-              .removeClass("ui-draggable-dragging");
+            .removeClass("ui-draggable-dragging");
 
-            self.updateVisualProperties("ComponentPositionUpdated", $(this));
+            self.updateVisualProperties("ComponentPositionUpdated", componentElement);
           }
         });
     };

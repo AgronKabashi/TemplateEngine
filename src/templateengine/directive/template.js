@@ -34,7 +34,7 @@
             // TODO: Consider using decorator
             if (isEditMode) {
               nameAttribute = "friendly-name=\"{{component.friendlyName}}\" component-name=\"{{component.name}}\"";
-              styleAttribute = "style=\"{{component.visualProperties}}\"";
+              styleAttribute = "ng-attr-style=\"{{component.visualProperties}}\"";
             }
 
             return String.format("<cs-component ng-repeat=\"component in template.components track by component.id\" \

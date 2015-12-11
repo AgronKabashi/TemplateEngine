@@ -65,7 +65,7 @@
             { name: localization.componentProperties.browserDefault, value: undefined },
             { name: localization.componentProperties.left, value: "0%" },
             { name: localization.componentProperties.center, value: "50%" },
-            { name: localization.componentProperties.Right, value: "100%" }
+            { name: localization.componentProperties.right, value: "100%" }
           ];
         };
 

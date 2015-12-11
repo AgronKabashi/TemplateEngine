@@ -10,7 +10,6 @@ module.exports = function (grunt) {
     options: {
       append: true,
       htmlmin: {
-        collapseBooleanAttributes: true,
         removeAttributeQuotes: true,
         removeEmptyAttributes: true,
         removeScriptTypeAttributes: true,

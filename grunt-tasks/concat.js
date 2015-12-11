@@ -29,6 +29,9 @@ module.exports = function (grunt) {
       dest: "<%= config.dest %>/templateeditor/templateeditor.js"
     },
     libraries: {
+      options: {
+        banner: ""
+      },
       src: [
         "node_modules/jquery/dist/jquery.min.js",
         "lib/jquery-ui.min.js",

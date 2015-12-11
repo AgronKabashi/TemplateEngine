@@ -24,7 +24,7 @@
           controller: [
             "$scope",
             function ($scope) {
-              $scope.limit = $scope.limit || ($scope.datasource ? $scope.datasource.length : 0);
+              $scope.itemLimit = $scope.limit || ($scope.datasource ? $scope.datasource.length : 0);
               $scope.itemClick = function (item) {
                 $scope.onItemClick(item);
                 $scope.expanded = false;

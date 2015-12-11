@@ -23,6 +23,10 @@ module.exports = function (grunt) {
       files: ["<%= config.src %>/**/*.html"],
       tasks: ["concat", "ngtemplates"]
     },
+    demoMarkup: {
+      files: ["<%= config.src %>/*.html"],
+      tasks: ["newer:copy:demoMarkup"]
+    },
     demoScripts: {
       files: ["<%= config.src %>/**/*.js"],
       tasks: ["newer:copy:demoScripts"]

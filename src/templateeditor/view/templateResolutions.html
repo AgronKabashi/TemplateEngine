@@ -1,7 +1,7 @@
 <div class="resolution-container">
   <cs-buttondropdown
     datasource="template.resolutions"
-    limit="template.resolutions.length"
+    limit="template.resolutions.length - 1"
     on-item-click="removeResolution"
     disabled="template.resolutions.length === 1"
     datatextfield="resolutionValue">
