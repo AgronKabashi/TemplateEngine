@@ -1,1 +1,0 @@
-define(["../App.js"],function(a){a.directive("messagedialog",function(){return{restrict:"E",template:'<div class="ng-cloak">{{ Message }}</div>',link:function(a){a.$on("ShowMessage",function(a,b){alert(b)})}}})});

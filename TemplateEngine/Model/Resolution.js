@@ -1,1 +1,0 @@
-namespace("Cerberus.Tool.TemplateEngine.Model").Resolution=function(a){this.Id=0,this.ResolutionValue=~~a||1e4,this.TemplateControlVisualProperties=[]};

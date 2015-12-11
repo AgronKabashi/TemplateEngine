@@ -1,1 +1,0 @@
-define(["../App.js"],function(a){return a.directive("csTemplateControlSelection",["$timeout",function(a){return{restrict:"A",link:function(b,c){a(function(){c.addClass("animatable").click(function(a){var c=$(a.target);c.hasClass("resolution")||($(".template-control.selected").removeClass("selected"),b.$emit("TemplateControlSelected",null),b.$digest())})},1e3)}}}])});

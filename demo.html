@@ -1,0 +1,37 @@
+﻿<link href="demo.css" rel="stylesheet" />
+
+<section class="page-content">
+  <h1>TemplateEngine Demo</h1>
+  <div class="introduction">
+    <p>
+      Welcome! TemplateEngine is a templating tool that helps you build web applications using web components.
+    </p>
+    <p>
+      This demo will help you get acquainted with the TemplateEngine Editor through hands-on experience. Simply create a template
+      using one of the presets below and go wild!
+    </p>
+    <p>
+      For ideas on how TemplateEngine can be applied in real world applications, please check out the wiki pages on <a href="https://github.com/AgronKabashi/TemplateEngine" target="_blank">GitHub</a>.
+    </p>
+  </div>
+
+  <div class="actions">
+    <select ng-model="templatePreset" ng-options="templatePreset.name for templatePreset in ::templatePresets">
+      <option value="">Blank Template</option>
+    </select>
+    <input type="text" placeholder="[Optional] template name" ng-model="newTemplateName" />
+    <button ng-click="addTemplate(templatePreset)">Add Template</button>
+  </div>
+  <ul class="list">
+    <li class="empty-list-message" ng-class="{hidden: templates && templates.length}">
+      <i>No Templates</i>
+    </li>
+
+    <li ng-repeat="template in templates track by template.id" ng-cloak>
+      <a ng-bind="::template.name" ui-sref="view({id: template.id})"></a>
+      <div class="button-group">
+        <a ui-sref="design({id: template.id})">Edit</a>
+        <a ng-click="removeTemplate(template)">Remove</a>
+      </div>
+  </ul>
+</section>

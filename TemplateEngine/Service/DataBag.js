@@ -1,1 +1,0 @@
-define(["angular"],function(a){return a.module("Cerberus.Tool.TemplateEngine.Service.DataBag",[]).service("Cerberus.Tool.TemplateEngine.Service.DataBag",function(){var a={};this.AddData=function(b,c){a[b.toLowerCase()]=c},this.GetData=function(b){return a[b.toLowerCase()]},this.RemoveData=function(b){delete a[b.toLowerCase()]}})});
