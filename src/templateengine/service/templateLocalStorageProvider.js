@@ -6,7 +6,10 @@
   var ModelFactory = angular.module("Cerberus.ModelFactory");
 
   function TemplateLocalStorageProvider($q) {
-    var repository = JSON.parse(localStorage.getItem("TemplateRepository")) || { templates: {} };
+    var repository = JSON.parse(localStorage.getItem("TemplateRepository"));
+    if (!repository || !repository.templates) {
+      repository = { templates: {} };
+    }
 
     function updateLocalStorage() {
       localStorage.setItem("TemplateRepository", JSON.stringify(repository));
