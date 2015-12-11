@@ -50,7 +50,7 @@
               if (sourceChanged) {
                 video.load();
               }
-            });
+            }, true);
 
             // Cleanup
             scope.$on("$destroy", watch);
