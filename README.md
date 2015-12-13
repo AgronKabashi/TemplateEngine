@@ -23,4 +23,4 @@ Download and install [NodeJS](http://nodejs.org/)
     grunt test              // Run unit/e2e tests
 
 ## Creating your own components
-Check the [Wiki](wiki/Creating-Custom-Plugins) for details about how to create your own components.
+Check the [Wiki](https://github.com/AgronKabashi/TemplateEngine/wiki) for details about how to create your own components.
