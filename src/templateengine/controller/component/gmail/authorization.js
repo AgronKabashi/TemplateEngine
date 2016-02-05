@@ -33,7 +33,7 @@
         })
         .catch(function (error) {
           $scope.authorizationFailed = true;
-          setErrorMessage(error)
+          setErrorMessage(error);
         });
     }
 

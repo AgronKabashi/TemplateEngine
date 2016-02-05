@@ -148,7 +148,9 @@
           $scope.editorViewPath = viewPath;
           $scope.hasEditor = true;
         }
-        catch (e) { }
+        catch (e) {
+          $scope.hasEditor = true;
+        }
       }
     }
   }

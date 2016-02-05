@@ -5,10 +5,6 @@
     .module("Cerberus.TemplateEditor")
     .controller("Cerberus.TemplateEditor.Controller.ComponentEditor.Gmail.MessageList", [
       "$scope",
-      MessageListEditorController
+      function () {}
     ]);
-
-  function MessageListEditorController($scope) {
-
-  }
 })(window.angular);

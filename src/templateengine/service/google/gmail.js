@@ -179,7 +179,6 @@
           }
 
           var header;
-          var emailInfo;
           for (i = 0; i < payload.headers.length; i++) {
             header = payload.headers[i];
 
