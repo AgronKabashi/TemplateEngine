@@ -27,7 +27,7 @@
                 var clickedElement = angular.element(event.target);
                 var elementTagName = event.target.tagName.toLowerCase();
 
-                //Do not deselect components if the user is switching between resolutions
+                // Do not deselect components if the user is switching between resolutions
                 if (clickedElement.hasClass("resolution")) {
                   return;
                 }

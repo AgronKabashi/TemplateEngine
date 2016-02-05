@@ -50,7 +50,6 @@
         z-index: $layer-3;
       }
 
-      &:hover > img,
       &.ui-draggable-dragging {
         &::before {
           content: "";
