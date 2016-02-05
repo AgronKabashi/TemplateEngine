@@ -272,6 +272,71 @@
       }
     },
     {
+      "name": "Gmail",
+      "data": {
+        "name": "Gmail",
+        "id": 0,
+        "visualProperties": "",
+        "createdDateAsString": "",
+        "lastModifiedDateAsString": "",
+        "components": [
+          {
+            "category": "gmail",
+            "class": "",
+            "content": { },
+            "name": "labelList",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.LabelList",
+            "friendlyName": "",
+            "id": 1,
+            "visualProperties": ""
+          },
+          {
+            "category": "gmail",
+            "class": "",
+            "content": { },
+            "name": "messageList",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageList",
+            "friendlyName": "",
+            "id": 2,
+            "visualProperties": ""
+          },
+          {
+            "category": "gmail",
+            "class": "",
+            "content": { },
+            "name": "messageContent",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageContent",
+            "friendlyName": "",
+            "id": 3,
+            "visualProperties": ""
+          }
+          ,
+          {
+            "category": "gmail",
+            "class": "",
+            "content": { },
+            "name": "authorization",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.Authorization",
+            "friendlyName": "",
+            "id": 4,
+            "visualProperties": ""
+          }
+        ],
+        "resolutions": [
+          {
+            "id": 0,
+            "resolutionValue": 10000,
+            "componentVisualProperties": {
+              "1": "left:0px;top:0px;width:300px;height:600px",
+              "2": "left:300px;top:0px;width:400px;height:300px",
+              "3": "left:300px;top:300px;width:400px;height:300px",
+              "4": "left:600px;top:0px;width:400px"
+            }
+          }
+        ]
+      }
+    },
+    {
       "name": "Sample Start Page",
       "data": {
         "name": "Sample Start Page",

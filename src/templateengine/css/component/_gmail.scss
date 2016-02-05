@@ -1,0 +1,169 @@
+/**
+  Components:
+    LabelList
+    MessageList
+    Message
+    Authorization
+*/
+cs-component.labellist > ul,
+cs-component.messagelist > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    cursor: pointer;
+  }
+}
+
+cs-component.labellist > ul {
+  li {
+    &:hover {
+      background-color: silver;
+    }
+  }
+
+  .selected {
+    color: #dd4b39;
+  }
+}
+
+cs-component.messagelist {
+  > ul {
+    height: inherit;
+
+    &.loading::before {
+      @include transform(translateX(-50%));
+      background-color: #f9edbe;
+      border: rem(1) solid #f0c36d;
+      border-radius: rem(2);
+      box-shadow: 0 rem(2) rem(4) rgba(0,0,0,0.2);
+      content: attr(loading);
+      padding: rem(6) rem(10);
+      position: absolute;
+      text-align: center;
+      margin: 0 auto;
+      left: 50%;
+    }
+  }
+
+  li {
+    @include display(flex);
+
+    .avatar {
+      @include flex-grow(1);
+      min-width: rem(22);
+      max-width: rem(72);
+
+      &::before {
+        background-color: beige; // TODO
+        border-radius: 50%;
+        content: "";
+        display: block;
+        margin-top: rem(16);
+        padding-top: 75%;
+        width: 75%;
+      }
+    }
+
+    .meta-info {
+      @include flex-grow(0);
+      border-top: rem(1) solid #bdbdbd;
+      padding-top: rem(16);
+      width: 87%;
+    }
+
+    &:first-child .meta-info {
+      border-top: none;
+    }
+
+  }
+
+  .from {
+    display: block;
+    font-weight: bolder;
+  }
+
+  .subject {
+    color: silver;
+    display: block;
+  }
+}
+
+cs-component.messagecontent {
+  .subject {
+    margin: 0;
+  }
+
+  .from,
+  .to,
+  .date {
+    display: block;
+  }
+}
+
+cs-component.authorization {
+  .authorizeContainer {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+
+  .authorizeDialog {
+    @include transform(translateY(-50%));
+
+    background-color: white;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2);
+    display: inline-block;
+    margin: auto;
+    padding: 1rem;
+    position: relative;
+    top: 50%;
+  }
+
+  .info {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    background-color: #df4a32;
+    border: none;
+    border-radius: rem(2);
+    box-shadow: 0 rem(3) rem(3) 0 rgba(0, 0, 0, 0.1);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    height: rem(40);
+    margin: auto;
+    padding: 0 rem(8);
+    position: relative;
+
+    &::before {
+      border-left: rem(1) solid #be3f2b;
+      content: "";
+      height: inherit;
+      left: rem(42);
+      position: absolute;
+      top: 0;
+    }
+
+    span,
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+      fill: currentColor;
+    }
+
+    span {
+      margin-left: rem(16);
+    }
+  }
+}

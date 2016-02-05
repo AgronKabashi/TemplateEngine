@@ -1,0 +1,6 @@
+<ul>{{selectedlabelName}}
+  <li ng-repeat="label in ::labels track by label.id"
+    ng-bind="::label.name"
+    ng-class="{ selected: label.id === selectedLabelId }"
+    ng-click="onClickLabel(label)"></li>
+</ul>

@@ -111,6 +111,7 @@
 
         if ($scope.currentResolution) {
           EventService.notify("ResolutionSelected", $scope.currentResolution.resolutionValue);
+          $scope.setDocumentWidth($scope.currentResolution.resolutionValue, $scope.currentResolution);
         }
       },
 

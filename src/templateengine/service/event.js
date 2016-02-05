@@ -29,7 +29,7 @@
       });
     };
 
-    this.unSubscribe = function (eventType, callback) {
+    this.unsubscribe = function (eventType, callback) {
       var eventCollection = events[eventType];
       if (!eventCollection) {
         return;
@@ -44,7 +44,7 @@
       }
     };
 
-    this.unSubscribeAll = function (eventType) {
+    this.unsubscribeAll = function (eventType) {
       delete events[eventType];
     };
 

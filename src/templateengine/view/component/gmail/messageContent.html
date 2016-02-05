@@ -1,0 +1,7 @@
+<h2 class="subject" ng-bind="message.subject"></h2>
+<span class="from" ng-bind="message.from.name"></span>
+<span class="to" ng-bind="message.to.name"></span>
+<span class="date" ng-bind="message.date"></span>
+
+
+<div ng-bind-html="message.htmlText | trustedHtml"></div>

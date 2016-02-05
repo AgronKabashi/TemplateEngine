@@ -21,3 +21,12 @@
   <label ng-bind="::localization.componentProperties.minHeight"></label>
   <cs-unitfield model="visualProperties.minHeight"></cs-unitfield>
 </div>
+
+<!--TODO: Localize-->
+<div class="columns">
+  <label>Content Overflow</label>
+  <select ng-model="visualProperties.overflow">
+    <option value="">Grow</option>
+    <option value="auto">Show scrollbars</option>
+  </select>
+</div>
