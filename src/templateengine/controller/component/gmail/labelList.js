@@ -14,9 +14,13 @@
   function LabelListController($scope, labels, EventService, GmailService) {
     refreshLabels();
 
-    $scope.selectedLabelId = labels.INBOX;
+    $scope.selectedLabel = {
+      name: "Inbox",
+      id: labels.INBOX
+    };
+
     $scope.onClickLabel = function (label) {
-      $scope.selectedLabelId = label.id;
+      $scope.selectedLabel = label;
       EventService.notify("Gmail.ViewLabel", label);
     };
 

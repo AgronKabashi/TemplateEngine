@@ -57,8 +57,8 @@
           bottom: "Bottom",
           width: "Width",
           height: "Height",
-          minWidth: "Minimum Width",
-          minHeight: "Minimum Height",
+          min: "Min",
+          max: "Max",
           center: "Center",
 
           rotateZ: "Rotate",

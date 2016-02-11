@@ -5,19 +5,32 @@
     Message
     Authorization
 */
-cs-component.labellist > ul,
-cs-component.messagelist > ul {
+cs-component.labellist .list,
+cs-component.messagelist > .list {
   list-style: none;
   margin: 0;
   padding: 0;
 
-  li {
+  .list-item {
     cursor: pointer;
   }
 }
 
-cs-component.labellist > ul {
-  li {
+// Component: Label List
+cs-component.labellist {
+  label {
+    display: inline-block;
+  }
+
+  input[type="checkbox"] {
+    z-index: -1;
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .list-item {
+    font-size: smaller;
+
     &:hover {
       background-color: silver;
     }
@@ -28,8 +41,54 @@ cs-component.labellist > ul {
   }
 }
 
+@include media($phone) {
+  cs-component.labellist.phone-burger {
+    label {
+      display: inline-block;
+      margin: 6px;
+
+      &::before {
+        @include transform(translateY(-50%));
+        content: attr(label);
+        left: 0;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+      }
+    }
+
+    svg {
+      display: inline-block;
+      fill: currentColor;
+      height: 100%;
+      max-height: 100%;
+    }
+
+    .list {
+      display: none;
+    }
+
+    .list-item {
+      border-top: rem(1) solid #bdbdbd;
+      padding-top: rem(16);
+    }
+
+    input[type="checkbox"]:checked + label > .list {
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 32px;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.1);
+    }
+  }
+}
+
+// Component: Message List
 cs-component.messagelist {
-  > ul {
+  > .list {
     height: inherit;
 
     &.loading::before {
@@ -47,36 +106,35 @@ cs-component.messagelist {
     }
   }
 
-  li {
+  .list-item {
     @include display(flex);
-
-    .avatar {
-      @include flex-grow(1);
-      min-width: rem(22);
-      max-width: rem(72);
-
-      &::before {
-        background-color: beige; // TODO
-        border-radius: 50%;
-        content: "";
-        display: block;
-        margin-top: rem(16);
-        padding-top: 75%;
-        width: 75%;
-      }
-    }
-
-    .meta-info {
-      @include flex-grow(0);
-      border-top: rem(1) solid #bdbdbd;
-      padding-top: rem(16);
-      width: 87%;
-    }
 
     &:first-child .meta-info {
       border-top: none;
     }
+  }
 
+  .avatar {
+    @include flex-grow(1);
+    min-width: rem(22);
+    max-width: rem(72);
+
+    &::before {
+      background-color: beige; // TODO
+      border-radius: 50%;
+      content: "";
+      display: block;
+      margin-top: rem(16);
+      padding-top: 75%;
+      width: 75%;
+    }
+  }
+
+  .meta-info {
+    @include flex-grow(0);
+    border-top: rem(1) solid #bdbdbd;
+    padding-top: rem(16);
+    width: 87%;
   }
 
   .from {
@@ -90,6 +148,7 @@ cs-component.messagelist {
   }
 }
 
+// Component: Message Content
 cs-component.messagecontent {
   .subject {
     margin: 0;
@@ -102,6 +161,7 @@ cs-component.messagecontent {
   }
 }
 
+// Component: Authorization
 cs-component.authorization {
   .authorizeContainer {
     background-color: rgba(0, 0, 0, 0.3);

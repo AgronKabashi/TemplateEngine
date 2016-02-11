@@ -1,21 +1,22 @@
 cs-unitfield {
   $unitFieldTypeWidth: rem(50);
   font-size: 0;
-  width: 100%;
-  //min-width: rem(80);
-  //max-width: rem(175);
+  position: relative;
   white-space: nowrap;
+  width: 100%;
 
   input[type="text"] {
-    @include calc("width", "100% - #{$unitFieldTypeWidth}");
-
-    //min-width: $unitFieldTypeWidth;
     padding: 0 rem(10);
+    width: 100%;
+    padding-right: $unitFieldTypeWidth;
   }
 
   select {
-    width: $unitFieldTypeWidth;
-    padding: 0;
+    background-color: $input-background-color;
     border-radius: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    width: $unitFieldTypeWidth;
   }
 }
