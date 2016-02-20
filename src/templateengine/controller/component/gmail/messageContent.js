@@ -18,6 +18,11 @@
     });
 
     function onViewMessage(messageId) {
+      if (messageId === undefined) {
+        $scope.message = undefined;
+        return;
+      }
+
       GmailService.getMessage(messageId).then(function (message) {
         $scope.message = message;
       });

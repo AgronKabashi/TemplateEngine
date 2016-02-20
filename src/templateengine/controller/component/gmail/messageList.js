@@ -18,7 +18,7 @@
     EventService.subscribe("Gmail.Reauthorized", refreshMessages);
 
     $scope.onClickMessage = function (message) {
-      EventService.notify("Gmail.ViewMessage", message.id);
+      EventService.notify("Gmail.ViewMessage", message && message.id);
     };
 
     $scope.$on("$destroy", function () {
@@ -32,6 +32,7 @@
         .then(function (messages) {
           $scope.isLoading = false;
           $scope.messages = messages;
+          messages && $scope.onClickMessage(messages[0]);
         })
         .catch(function () {
           $scope.isLoading = false;

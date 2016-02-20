@@ -85,7 +85,7 @@
                 }
               })
               .then(function (response) {
-                return getMessageDetails(response.result.id, response.result.payload);
+                return getMessageDetails(response.result.id, response.result);
               }, onRequestFailed);
           });
         };
@@ -132,7 +132,7 @@
           return batch.then(function (batchResponse) {
             var batchMessages = [];
             for (var i in batchResponse.result) {
-              batchMessages.push(getMessageDetails(i, batchResponse.result[i].result.payload));
+              batchMessages.push(getMessageDetails(i, batchResponse.result[i].result));
             }
 
             return batchMessages;
@@ -144,11 +144,15 @@
           EventService.notify("Gmail.RequestFailed", error);
         }
 
-        function getMessageDetails(messageId, payload) {
+        function getMessageDetails(messageId, rawMessage) {
+          var payload = rawMessage.payload;
           var message = {
             id: messageId,
             plainText: "",
-            htmlText: ""
+            htmlText: "",
+            snippet: rawMessage.snippet,
+            isRead: rawMessage.labelIds.indexOf("UNREAD") < 0,
+            isStarred: rawMessage.labelIds.indexOf("STARRED") >= 0
           };
 
           var i;
