@@ -162,28 +162,28 @@
           name: "labelList",
           category: "gmail",
           componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.LabelList",
-          imageUrl: "blank.png"
+          imageUrl: "gmail.png"
         },
         {
           id: 8,
           name: "messageList",
           category: "gmail",
           componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageList",
-          imageUrl: "blank.png"
+          imageUrl: "gmail.png"
         },
         {
           id: 9,
           name: "messageContent",
           category: "gmail",
           componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageContent",
-          imageUrl: "blank.png"
+          imageUrl: "gmail.png"
         },
         {
           id: 10,
           name: "authorization",
           category: "gmail",
           componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.Authorization",
-          imageUrl: "blank.png"
+          imageUrl: "gmail.png"
         }
       ]);
     };
