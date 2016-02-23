@@ -189,6 +189,10 @@
             disableKeyboard: "Disable keyboard shortcuts",
             hideYouTubeBrand: "Hide YouTube Brand",
             showInfo: "Show Video Info"
+          },
+          messageList: {
+            loadingMessage: "Loading Message",
+            emptyListMessage: "Empty List Message"
           }
         }
       };
