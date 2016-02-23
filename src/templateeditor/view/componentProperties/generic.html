@@ -8,12 +8,10 @@
   <input type="text" ng-model="selectedComponent.class" maxlength="30" />
 </div>
 
-<div class="columns">
+<div class="two columns">
+  <label ng-bind="::localization.componentProperties.renderAs"></label>
+  <select ng-model="visualProperties.display" ng-change="toggleComponentVisibility()" class="dropdown-list" ng-options="visibilityOption.value as visibilityOption.name for visibilityOption in ::visibilityOptions"></select>
+
   <label ng-bind="::localization.componentProperties.zIndex"></label>
   <input type="text" ng-model="visualProperties.zIndex" maxlength="3" />
-</div>
-
-<div class="columns">
-  <label ng-bind="::localization.componentProperties.render"></label>
-  <select ng-model="visualProperties.display" ng-change="toggleComponentVisibility()" class="dropdown-list" ng-options="visibilityOption.value as visibilityOption.name for visibilityOption in ::visibilityOptions"></select>
 </div>

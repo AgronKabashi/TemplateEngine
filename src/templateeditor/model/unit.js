@@ -4,7 +4,7 @@
   angular
     .module("Cerberus.ModelFactory")
     .registerModel("Cerberus.TemplateEditor.Model.Unit", function (value) {
-      this.value = parseInt(value);
+      this.value = parseFloat(value);
       this.unitType = undefined;
 
       if (isNaN(this.value)) {

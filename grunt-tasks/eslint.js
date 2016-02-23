@@ -16,7 +16,7 @@ module.exports = function (grunt) {
           "browser",
           "jquery"
         ],
-        globals: ["angular", "tryParseInt"]
+        globals: ["angular", "tryParseInt", "tryParseFloat"]
       },
       src: [
         "src/**/*.js",

@@ -29,7 +29,7 @@ describe("Cerberus.TemplateEngine.Service.Event", function () {
   describe("unSubscribe()", function () {
     it("should unsubscribe from an event registered with a specific callback method", function () {
       eventManager.subscribe("eventId", target.callback);
-      eventManager.unSubscribe("eventId", target.callback);
+      eventManager.unsubscribe("eventId", target.callback);
       expect(eventManager.hasEventsOfType("eventId")).toBeFalsy();
     });
   });
@@ -37,7 +37,7 @@ describe("Cerberus.TemplateEngine.Service.Event", function () {
   describe("unSubscribeAll()", function () {
     it("should unsubscribe from all events of a certain type", function () {
       eventManager.subscribe(["eventId", "eventId", "eventId"], target.callback);
-      eventManager.unSubscribe("eventId", target.callback);
+      eventManager.unsubscribe("eventId", target.callback);
       expect(eventManager.hasEventsOfType("eventId")).toBeFalsy();
     });
   });

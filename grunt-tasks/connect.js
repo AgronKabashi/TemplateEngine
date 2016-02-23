@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         hostname: "localhost",
         livereload: false,
         open: true,
-        port: 9001,
+        port: 9000,
         base: "<%= config.dest %>",
         keepalive: true
       }

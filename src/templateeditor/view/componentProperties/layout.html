@@ -6,18 +6,33 @@
   <cs-unitfield model="visualProperties[isTransposedVertical ? 'bottom' : 'top' ]"></cs-unitfield>
 </div>
 
-<div class="two columns">
+<div class="three columns">
   <label ng-bind="::localization.componentProperties.width"></label>
   <cs-unitfield model="visualProperties.width"></cs-unitfield>
 
-  <label ng-bind="::localization.componentProperties.height"></label>
-  <cs-unitfield model="visualProperties.height"></cs-unitfield>
-</div>
-
-<div class="two columns">
-  <label ng-bind="::localization.componentProperties.minWidth"></label>
+  <label ng-bind="::localization.componentProperties.min"></label>
   <cs-unitfield model="visualProperties.minWidth"></cs-unitfield>
 
-  <label ng-bind="::localization.componentProperties.minHeight"></label>
+  <label ng-bind="::localization.componentProperties.max"></label>
+  <cs-unitfield model="visualProperties.maxWidth"></cs-unitfield>
+</div>
+
+<div class="three columns">
+  <label ng-bind="::localization.componentProperties.height"></label>
+  <cs-unitfield model="visualProperties.height"></cs-unitfield>
+
+  <label ng-bind="::localization.componentProperties.min"></label>
   <cs-unitfield model="visualProperties.minHeight"></cs-unitfield>
+
+  <label ng-bind="::localization.componentProperties.max"></label>
+  <cs-unitfield model="visualProperties.maxHeight"></cs-unitfield>
+</div>
+
+<!--TODO: Localize-->
+<div class="columns">
+  <label>Content Overflow</label>
+  <select ng-model="visualProperties.overflow">
+    <option value="">Grow</option>
+    <option value="auto">Show scrollbars</option>
+  </select>
 </div>

@@ -44,7 +44,7 @@
         componentProperties: {
           class: "Class",
           visible: "Visible",
-          render: "Render",
+          renderAs: "Render",
           hidden: "Hidden",
           generic: "Generic",
           zIndex: "Render Order",
@@ -57,8 +57,8 @@
           bottom: "Bottom",
           width: "Width",
           height: "Height",
-          minWidth: "Minimum Width",
-          minHeight: "Minimum Height",
+          min: "Min",
+          max: "Max",
           center: "Center",
 
           rotateZ: "Rotate",
@@ -130,18 +130,18 @@
         componentPluginNames: {
           text: "Text",
           link: "Link",
-          menu: "Menu",
           sharer: "Sharer",
-          tableOfContents: "Table of Contents",
           youTube: "YouTube",
           rtf: "Rich Text Format",
           rss: "RSS",
-          articleList: "Article List",
           video: "Video",
-          carousel: "Carousel",
-          album: "Album"
+          labelList: "Gmail Labels",
+          messageList: "Gmail Messages",
+          messageContent: "Gmail Message",
+          authorization: "Gmail Authorization Handler"
         },
 
+        // Editor localizations for the components
         component: {
           link: {
             text: "Content",
@@ -155,6 +155,22 @@
             tooltipPlaceHolder: "Enter a descriptive text",
             textPlaceHolder: "Enter text",
             urlPlaceHolder: "Enter a link to navigate to"
+          },
+          messageLink: {
+            emptyMessagePlaceHolder: "Text to show when there are no messages",
+            loadingClass: "CSS class to apply when fetching messages",
+            loadingPlaceHolder: "Text to show when fetching messages"
+          },
+          rss: {
+            url: "Url",
+            showTitle: "Title",
+            showDescription: "Description",
+            showStoryDescription: "Story Description",
+            showStoryDate: "Story Date",
+            maxStories: "Max Stories"
+          },
+          tableOfContents: {
+            source: "Source"
           },
           video: {
             mp4Source: "MP4 Source",
@@ -174,16 +190,9 @@
             hideYouTubeBrand: "Hide YouTube Brand",
             showInfo: "Show Video Info"
           },
-          tableOfContents: {
-            source: "Source"
-          },
-          rss: {
-            url: "Url",
-            showTitle: "Title",
-            showDescription: "Description",
-            showStoryDescription: "Story Description",
-            showStoryDate: "Story Date",
-            maxStories: "Max Stories"
+          messageList: {
+            loadingMessage: "Loading Message",
+            emptyListMessage: "Empty List Message"
           }
         }
       };

@@ -25,15 +25,16 @@
             { name: localization.componentProperties.browserDefault, value: undefined },
             { name: "Arial", value: "Arial" },
             { name: "Courier New", value: "Courier New" },
+            { name: "Droid Sans", value: "Droid Sans" },
             { name: "Impact", value: "Impact" },
             { name: "Lucida Console", value: "Lucida Console" },
-            { name: "Tahoma", value: "Tahoma" },
-            { name: "Times New Roman", value: "Times New Roman" },
-            { name: "Verdana", value: "Verdana" },
             { name: "Roboto", value: "Roboto" },
             { name: "Ropa Sans", value: "Ropa Sans" },
-            { name: "Droid Sans", value: "Droid Sans" },
-            { name: "Rouge Script", value: "Rouge Script" }
+            { name: "Rouge Script", value: "Rouge Script" },
+            { name: "Sans-serif", value: "sans-serif" },
+            { name: "Tahoma", value: "Tahoma" },
+            { name: "Times New Roman", value: "Times New Roman" },
+            { name: "Verdana", value: "Verdana" }
           ];
         };
 

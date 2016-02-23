@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     },
     markup: {
       files: ["<%= config.src %>/**/*.html"],
-      tasks: ["concat", "ngtemplates"]
+      tasks: ["buildLibraries", "concat", "ngtemplates"]
     },
     demoMarkup: {
       files: ["<%= config.src %>/*.html"],

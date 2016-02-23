@@ -1,4 +1,4 @@
-(function (angular, $) {
+(function (angular) {
   "use strict";
 
   angular
@@ -23,7 +23,7 @@
                   helper: "clone",
                   cursorAt: cursorAt,
                   start: function () {
-                    var componentPluginElement = $(this);
+                    var componentPluginElement = angular.element(this);
                     componentPluginElement.data("component-plugin-info", {
                       componentInfo: {
                         componentType: componentPluginElement.attr("data-control-type"),
@@ -58,4 +58,4 @@
         };
       }
     ]);
-})(window.angular, window.jQuery);
+})(window.angular);

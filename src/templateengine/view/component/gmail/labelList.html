@@ -1,0 +1,17 @@
+<input type="checkbox" ng-attr-id="hamburger{{::component.id}}" />
+<label ng-attr-current-label="{{selectedLabel.name}}" ng-attr-for="hamburger{{::component.id}}">
+  <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 30 30" preserveAspectRatio="xMinYMin">
+    <rect width="30" height="6"></rect>
+    <rect y="24" width="30" height="6"></rect>
+    <rect y="12" width="30" height="6"></rect>
+  </svg>
+  <ul class="list">
+    <li
+      class="list-item"
+      ng-repeat="label in ::labels track by label.id"
+      ng-bind="::label.name"
+      ng-class="{ selected: label.id === selectedLabel.id }"
+      ng-click="onClickLabel(label)"></li>
+  </ul>
+</label>

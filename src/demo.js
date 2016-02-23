@@ -140,8 +140,13 @@
         generatedCSS += String.format("@media(min-width:{0}px) and (max-width:{1}px){", previousResolution.resolutionValue + 1, resolution.resolutionValue);
       }
 
+      var isFixedHeight = false;
       _.forIn(resolution.componentVisualProperties, function (visualProperties, componentId) {
-        generatedCSS += String.format("#TC{0}{{1}}", componentId, visualProperties);
+        // Special case - Fixed height containers must be rendered as blocks
+        // to allow for scrollbars
+        isFixedHeight = visualProperties.indexOf("overflow:") >= 0;
+
+        generatedCSS += String.format("#TC{0}{{1};{2}}", componentId, isFixedHeight ? "display:block" : "", visualProperties);
       });
 
       generatedCSS += "}";

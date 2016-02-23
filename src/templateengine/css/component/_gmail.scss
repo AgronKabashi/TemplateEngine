@@ -1,0 +1,243 @@
+/**
+  Components:
+    LabelList
+    MessageList
+    Message
+    Authorization
+*/
+cs-component.labellist .list,
+cs-component.messagelist > .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .list-item {
+    cursor: pointer;
+  }
+}
+
+// Component: Label List
+cs-component.labellist {
+  label {
+    display: inline-block;
+
+    &:after {
+      content: attr(current-label);
+      display: inline-block;
+      pointer-events: none;
+      vertical-align: middle;
+    }
+  }
+
+  .hamburger-icon {
+    cursor: pointer;
+    display: inline-block;
+    fill: currentColor;
+    height: rem(46);
+    padding: rem(14);
+    width: rem(46);
+    vertical-align: middle;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  .list {
+    background-color: #f2f2f2;
+    display: none;
+  }
+
+  .list-item {
+    border-top: rem(1) solid #bdbdbd;
+    color: #000;
+    font-size: smaller;
+    padding: rem(16);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+  }
+
+  input[type="checkbox"]:checked + label > .list {
+    display: block;
+    height: calc(100vh - 100%);
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+
+  .selected {
+    color: #dd4b39;
+  }
+}
+
+// Component: Message List
+cs-component.messagelist {
+  > .list {
+    height: inherit;
+
+    &.loading::before {
+      @include transform(translateX(-50%));
+      background-color: #f9edbe;
+      border: rem(1) solid #f0c36d;
+      border-radius: rem(2);
+      box-shadow: 0 rem(2) rem(4) rgba(0,0,0,0.2);
+      content: attr(loading);
+      left: 50%;
+      margin: 0 auto;
+      padding: rem(6) rem(10);
+      position: absolute;
+      text-align: center;
+    }
+  }
+
+  .empty-list {
+    padding: rem(16);
+  }
+
+  .list-item {
+    @include display(flex);
+    border-top: rem(1) solid #eaeaea;
+    padding: rem(8) 0;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .avatar {
+    @include flex-grow(1);
+    max-width: rem(60);
+    min-width: rem(38);
+    padding: rem(8);
+    position: relative;
+
+    &::before {
+      background-color: rgb(76, 190, 246); // TODO
+      border-radius: 50%;
+      content: "";
+      display: block;
+      padding-top: 100%; // Turns the this into a square since padding is relative to width
+    }
+
+    &::after {
+      color: rgb(190, 232, 253);
+      content: attr(initial);
+      display: inline-block;
+      font-weight: bold;
+      left: 0;
+      padding-top: 50%;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+   }
+  }
+
+  .meta-info {
+    @include flex-grow(0);
+    width: 87%;
+  }
+
+  .is-read .from {
+    font-weight: bolder;
+  }
+
+  .from {
+    display: block;
+  }
+
+  .subject,
+  .snippet {
+    color: silver;
+    display: block;
+  }
+
+  .snippet {
+    font-size: smaller;
+  }
+}
+
+// Component: Message Content
+cs-component.messagecontent {
+  .subject {
+    margin: 0;
+  }
+
+  .from,
+  .to,
+  .date {
+    display: block;
+  }
+}
+
+// Component: Authorization
+cs-component.authorization {
+  .authorizeContainer {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+
+  .authorizeDialog {
+    @include transform(translateY(-50%));
+
+    background-color: white;
+    border: rem(1) solid #bdbdbd;
+    border-radius: rem(5);
+    box-shadow: 0 rem(3) rem(3) 0 rgba(0,0,0,0.2);
+    display: inline-block;
+    margin: auto;
+    padding: rem(16);
+    position: relative;
+    top: 50%;
+  }
+
+  .info {
+    display: block;
+    margin-bottom: rem(16);
+  }
+
+  button {
+    background-color: #df4a32;
+    border: none;
+    border-radius: rem(2);
+    box-shadow: 0 rem(3) rem(3) 0 rgba(0, 0, 0, 0.1);
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    height: rem(40);
+    margin: auto;
+    padding: 0 rem(8);
+    position: relative;
+
+    &::before {
+      border-left: rem(1) solid #be3f2b;
+      content: "";
+      height: inherit;
+      left: rem(42);
+      position: absolute;
+      top: 0;
+    }
+
+    span,
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+      fill: currentColor;
+    }
+
+    span {
+      margin-left: rem(16);
+    }
+  }
+}

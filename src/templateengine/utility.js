@@ -18,6 +18,11 @@
     return isNaN(result) ? 0 : result;
   };
 
+  window.tryParseFloat = function (value) {
+    var result = parseFloat(value);
+    return isNaN(result) ? 0 : result;
+  };
+
   /******************************************
   JSON
   ******************************************/

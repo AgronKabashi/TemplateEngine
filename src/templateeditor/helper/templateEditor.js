@@ -138,7 +138,7 @@
       //Horizontal Positioning
       if (isHorizontalInPercent) {
         //Percentage based positioning
-        horizontal = tryParseInt(element.css("left"));
+        horizontal = tryParseFloat(element.css("left"));
         element.css("left", String.format("{0}%", (100.0 * horizontal / templateWidth).toFixed(1)));
 
         if (isTransposedHorizontal) {
@@ -150,7 +150,7 @@
       }
       else {
         //Pixel based positioning
-        value = tryParseInt(nativeElement.style.left);
+        value = tryParseFloat(nativeElement.style.left);
         nativeElement.style.left = value + "px";
 
         if (isTransposedHorizontal) {
@@ -164,7 +164,7 @@
       //Vertical Positioning
       if (isVerticalInPercent) {
         //Percentage based positioning
-        vertical = tryParseInt(element.css("top"));
+        vertical = tryParseFloat(element.css("top"));
         element.css("top", String.format("{0}%", (100.0 * vertical / templateHeight).toFixed(1)));
 
         if (isTransposedVertical) {
@@ -176,7 +176,7 @@
       }
       else {
         //Pixel based positioning
-        value = tryParseInt(nativeElement.style.top);
+        value = tryParseFloat(nativeElement.style.top);
         nativeElement.style.top = value + "px";
 
         if (isTransposedVertical) {
@@ -201,12 +201,12 @@
 
       //Dimensions
       if (isWidthInPercent) {
-        width = tryParseInt(element.css("width"));
+        width = tryParseFloat(element.css("width"));
         element.css("width", String.format("{0}%", (100.0 * width / templateWidth).toFixed(1)));
       }
 
       if (isHeightInPercent) {
-        height = tryParseInt(element.css("height"));
+        height = tryParseFloat(element.css("height"));
         element.css("height", String.format("{0}%", (100.0 * height / templateHeight).toFixed(1)));
       }
     }

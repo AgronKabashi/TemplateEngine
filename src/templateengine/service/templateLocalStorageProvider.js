@@ -156,6 +156,34 @@
           category: "socialMedia",
           componentType: "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer",
           imageUrl: "sharer.png"
+        },
+        {
+          id: 7,
+          name: "labelList",
+          category: "gmail",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.LabelList",
+          imageUrl: "gmail.png"
+        },
+        {
+          id: 8,
+          name: "messageList",
+          category: "gmail",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageList",
+          imageUrl: "gmail.png"
+        },
+        {
+          id: 9,
+          name: "messageContent",
+          category: "gmail",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageContent",
+          imageUrl: "gmail.png"
+        },
+        {
+          id: 10,
+          name: "authorization",
+          category: "gmail",
+          componentType: "Cerberus.TemplateEngine.Controller.Component.Gmail.Authorization",
+          imageUrl: "gmail.png"
         }
       ]);
     };

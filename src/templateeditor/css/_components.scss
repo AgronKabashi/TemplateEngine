@@ -6,6 +6,11 @@
     pointer-events: none;
   }
 
+  // TODO: Outline when hovering a component
+  // &:hover {
+  //   outline: solid 1px #bdbdbd;
+  // }
+
   &:hover::before,
   &.ui-resizable-resizing::before {
     background-color: #eaeaea;
@@ -42,5 +47,9 @@
   &[friendly-name=""]:hover::before,
   &[friendly-name=""].ui-resizable-resizing::before {
     content: attr(component-name);
+  }
+
+  &[style*="overflow"] {
+    display: block;
   }
 }

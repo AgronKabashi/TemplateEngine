@@ -142,9 +142,15 @@
         var viewPath = PathResolverService.resolve(String.format("view/componentEditor/{0}/{1}.html", component.category, component.name));
         var componentEditoryId = String.format("Cerberus.TemplateEditor.Controller.ComponentEditor.{0}.{1}", _.capitalize(component.category), _.capitalize(component.name));
 
-        $scope.editorController = $controller(componentEditoryId, { "$scope": $scope });
-        $scope.editorViewPath = viewPath;
-        $scope.hasEditor = true;
+        // TODO: Find a better way of detecting if a component has an associated editor
+        try {
+          $scope.editorController = $controller(componentEditoryId, { "$scope": $scope });
+          $scope.editorViewPath = viewPath;
+          $scope.hasEditor = true;
+        }
+        catch (e) {
+          $scope.hasEditor = false;
+        }
       }
     }
   }

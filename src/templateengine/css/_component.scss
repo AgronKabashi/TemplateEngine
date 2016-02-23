@@ -4,6 +4,7 @@
 @import "component/sharer";
 @import "component/video";
 @import "component/youTube";
+@import "component/gmail";
 
 cs-component {
   @include transform-origin(top left);
@@ -23,10 +24,5 @@ cs-component {
     height: 100%;
     width: 100%;
     text-decoration: inherit;
-  }*/
-
-  /*&[style*="overflow"] > div:first-child {
-    overflow: auto;
-    display: block;
   }*/
 }

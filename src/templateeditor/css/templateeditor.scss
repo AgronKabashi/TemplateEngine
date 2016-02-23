@@ -109,3 +109,7 @@ cs-template.animatable > cs-component {
     z-index: $layer-2;
   }
 }
+
+.edit-design cs-component.authorization .authorizeContainer {
+  display: none;
+}

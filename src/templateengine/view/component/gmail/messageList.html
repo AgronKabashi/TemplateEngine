@@ -1,0 +1,15 @@
+<div class="empty-list" ng-if="messages && !messages.length && !isLoading" ng-bind="::component.content.localization.emptyList"></div>
+<ul class="list" ng-class="{loading: isLoading}" ng-attr-loading="{{::component.content.localization.loading}}">
+  <li
+    class="list-item"
+    ng-repeat="message in messages track by message.id"
+    ng-class="::{'is-read': message.isRead, 'is-starred': message.isStarred}"
+    ng-click="onClickMessage(message)">
+    <div class="avatar" ng-attr-initial="{{::message.from.name[0]}}"></div>
+    <div class="meta-info">
+      <span class="from" ng-bind="::message.from.name"></span>
+      <span class="subject" ng-bind="::message.subject"></span>
+      <span class="snippet" ng-bind="::message.snippet"></span>
+    </div>
+  </li>
+</ul>

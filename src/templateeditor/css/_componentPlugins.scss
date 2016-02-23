@@ -1,18 +1,20 @@
 ﻿cs-componentplugins {
+  pointer-events: none;
   position: fixed;
-  bottom: 100%;
+  top: 0;
   width: 100%;
   z-index: $layer-5;
 
   > .container {
-    @include transform(translateY(100%));
+    @include transform(translateY(0%));
     @include transition(all 0.3s);
     background-color: $controlBackgroundColor;
-    border-bottom: 1px solid $borderColor;
-    padding-top: 10px;
+    border-bottom: rem(1) solid $borderColor;
+    padding-top: rem(10);
+    pointer-events: all;
 
     &.collapsed {
-      @include transform(translateY(0));
+      @include transform(translateY(-100%));
     }
   }
 
@@ -29,62 +31,65 @@
 
   .component-plugins {
     margin: 0;
+  }
 
-    > .component-plugin {
-      cursor: move;
-      display: inline-block;
-      font-size: 12px;
-      font-family: Arial;
-      margin-right: 20px;
-      position: relative;
-      text-align: center;
-      vertical-align: top;
-      width: 50px;
+  .component-plugin {
+    cursor: move;
+    display: inline-block;
+    font-size: 12px;
+    font-family: Arial;
+    margin-right: 20px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: rem(70);
 
-      > img {
-        @include transition(all 0.3s);
-        box-shadow: 0 0 5px 0 rgba(127, 127, 127, 0.5);
+    > img {
+      @include transition(all 0.3s);
+      box-shadow: 0 0 5px 0 rgba(127, 127, 127, 0.5);
+    }
+
+    span {
+      display: block;
+    }
+
+    &.ui-draggable {
+      z-index: $layer-3;
+    }
+
+    &.ui-draggable-dragging {
+      &::before {
+        content: "";
+        padding: 0;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        background-color: green;
+        border-radius: 50%;
       }
 
-      &.ui-draggable {
-        z-index: $layer-3;
+      &::after {
+        content: "+";
+        color: white;
+        font-size: 16px;
+        line-height: 14px;
+        font-family: Impact;
+        margin-left: 3px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
       }
 
-      &:hover > img,
-      &.ui-draggable-dragging {
-        &::before {
-          content: "";
-          padding: 0;
-          display: block;
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 16px;
-          height: 16px;
-          background-color: green;
-          border-radius: 50%;
-        }
+      img {
+        opacity: 1;
+      }
 
-        &::after {
-          content: "+";
-          color: white;
-          font-size: 16px;
-          line-height: 14px;
-          font-family: Impact;
-          margin-left: 3px;
-          display: block;
-          position: absolute;
-          left: 0;
-          top: 0;
-        }
-
-        img {
-          opacity: 1;
-        }
-
-        > span {
-          display: none;
-        }
+      > span {
+        display: none;
       }
     }
   }

@@ -12,6 +12,8 @@
     left: true,
     width: true,
     height: true,
+    maxHeight: true,
+    maxWidth: true,
     minHeight: true,
     minWidth: true,
     fontSize: true,
