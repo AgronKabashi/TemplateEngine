@@ -153,7 +153,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -164,7 +164,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -175,7 +175,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -186,7 +186,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -197,7 +197,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -208,7 +208,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -219,7 +219,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -230,7 +230,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -241,7 +241,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -252,7 +252,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -263,7 +263,7 @@
             "category": "basic",
             "friendlyName": "",
             "name": "text",
-            "content": { },
+            "content": {},
             "visualProperties": "left:0px;top:0px;",
             "class": "",
             "creationGUID": ""
@@ -283,7 +283,7 @@
           {
             "category": "basic",
             "class": "",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -293,7 +293,7 @@
           {
             "category": "basic",
             "class": "",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -315,7 +315,7 @@
           {
             "category": "basic",
             "class": "",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -349,7 +349,7 @@
           {
             "category": "socialMedia",
             "class": "",
-            "content": { },
+            "content": {},
             "name": "sharer",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.SocialMedia.Sharer",
             "friendlyName": "",
@@ -371,7 +371,7 @@
           {
             "category": "basic",
             "class": "",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "Menu",
@@ -405,7 +405,7 @@
           {
             "category": "basic",
             "class": "RightPosIEFix",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -415,7 +415,7 @@
           {
             "category": "basic",
             "class": "",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -425,7 +425,12 @@
           {
             "category": "navigation",
             "class": "",
-            "content": { "url": "", "tooltip": "", "text": "CERBERUS Solutions", "target": "_self" },
+            "content": {
+              "url": "",
+              "tooltip": "",
+              "text": "CERBERUS Solutions",
+              "target": "_self"
+            },
             "name": "link",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Navigation.Link",
             "friendlyName": "",
@@ -435,7 +440,7 @@
           {
             "category": "basic",
             "class": "",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -445,7 +450,9 @@
           {
             "category": "basic",
             "class": "",
-            "content": { "text": "RESPONSIVE DESIGN" },
+            "content": {
+              "text": "RESPONSIVE DESIGN"
+            },
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -455,7 +462,7 @@
           {
             "category": "basic",
             "class": "RightPosIEFix",
-            "content": { },
+            "content": {},
             "name": "text",
             "componentType": "Cerberus.TemplateEngine.Controller.Component.Basic.Text",
             "friendlyName": "",
@@ -662,6 +669,87 @@
               "20": "left:calc((100% - 955px) / 2);top:1927px;width:955px;height:20px;font-size:12px;text-align:center",
               "21": "right:calc((100% - 955px) / 2);top:1255px;width:435px;height:49px;font-size:36px;color:rgb(235, 39, 79);font-family:Roboto",
               "22": "right:calc((100% - 955px) / 2);top:1320px;width:435px;height:89px;font-size:16px;font-family:Roboto"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Gmail",
+      "data": {
+        "name": "Gmail",
+        "id": 0,
+        "visualProperties": "",
+        "createdDateAsString": "",
+        "lastModifiedDateAsString": "",
+        "components": [
+          {
+            "category": "gmail",
+            "class": "",
+            "content": {},
+            "name": "labelList",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.LabelList",
+            "friendlyName": "",
+            "id": 1,
+            "visualProperties": "width:100%;height:46px;font-size:16px;z-index:3;font-weight:bold;font-family:sans-serif;background-color:#4285f4;color:white;box-shadow:black 0px 0px 4px 0px "
+          },
+          {
+            "category": "gmail",
+            "class": "",
+            "content": {
+              "localization": {
+                "loading": "Loading...",
+                "noMessages": "There are no messages",
+                "emptyList": "There are no messages with this label."
+              },
+              "loadingClass": ""
+            },
+            "name": "messageList",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageList",
+            "friendlyName": "",
+            "id": 2,
+            "visualProperties": "top:46px;width:100%;height:200px;overflow:auto;font-size:12px;font-family:sans-serif;max-height:50%"
+          },
+          {
+            "category": "gmail",
+            "class": "",
+            "content": {},
+            "name": "messageContent",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.MessageContent",
+            "friendlyName": "",
+            "id": 3,
+            "visualProperties": "width:100%;height:calc(100% - 246px);background-color:white;top:246px;overflow:auto;font-size:12px;font-family:sans-serif;border-top-style:solid;border-top-width:1px;border-top-color:#bdbdbd;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px"
+          },
+          {
+            "category": "gmail",
+            "class": "",
+            "content": {},
+            "name": "authorization",
+            "componentType": "Cerberus.TemplateEngine.Controller.Component.Gmail.Authorization",
+            "friendlyName": "",
+            "id": 4,
+            "visualProperties": "width:100%;height:5px"
+          }
+        ],
+        "resolutions": [
+          {
+            "id": 2,
+            "resolutionValue": 768,
+            "componentVisualProperties": {
+              "1": "width:100%;height:46px;font-size:16px;z-index:3;font-weight:bold;font-family:sans-serif;background-color:#4285f4;color:white;box-shadow:black 0px 0px 4px 0px ",
+              "2": "top:46px;width:100%;height:200px;overflow:auto;font-size:12px;font-family:sans-serif;max-height:50%",
+              "3": "width:100%;height:calc(100% - 246px);background-color:white;top:246px;overflow:auto;font-size:12px;font-family:sans-serif;border-top-style:solid;border-top-width:1px;border-top-color:#bdbdbd;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px",
+              "4": "width:100%;height:5px"
+            }
+          },
+          {
+            "id": 1,
+            "resolutionValue": 10000,
+            "componentVisualProperties": {
+              "1": "width:100%;height:46px;font-size:16px;z-index:3;font-weight:bold;font-family:sans-serif;background-color:#4285f4;color:white;box-shadow:black 0px 0px 4px 0px ",
+              "2": "width:350px;height:calc(100% - 46px);overflow:auto;font-family:sans-serif;font-size:13px;top:46px",
+              "3": "left:350px;width:calc(100% - 350px);height:calc(100% - 46px);background-color:white;overflow:auto;font-family:sans-serif;font-size:13px;top:46px;border-left-style:solid;border-left-width:1px;border-left-color:#bdbdbd;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px",
+              "4": "width:100%;height:5px"
             }
           }
         ]
