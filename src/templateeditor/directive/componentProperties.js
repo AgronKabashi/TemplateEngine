@@ -149,7 +149,7 @@
           $scope.hasEditor = true;
         }
         catch (e) {
-          $scope.hasEditor = true;
+          $scope.hasEditor = false;
         }
       }
     }
