@@ -4,6 +4,19 @@ TemplateEngine is a web component templating framework that helps you build web 
 
 Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github.io/TemplateEngine/)
 
+#### Sizes
+
+|                | Size (KB) | Gzipped (KB) |
+|----------------|-----------|--------------|
+| TemplateEngine |    25.2   |      8.4     |
+| TemplateEditor |    58.1   |      14.6    |
+
+#### Dependencies
+- jQuery
+- jQuery UI (TemplateEditor)
+- Custom lodash build
+- AngularJS
+
 ## How to Get Started
 
 Download and install [NodeJS](http://nodejs.org/)
