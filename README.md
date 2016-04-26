@@ -12,7 +12,7 @@ Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github
 | TemplateEditor |    58.1   |      14.6    |
 
 #### Dependencies
-- jQuery
+- jQuery (TemplateEditor)
 - jQuery UI (TemplateEditor)
 - Custom lodash build
 - AngularJS
