@@ -6,6 +6,8 @@ Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github
 
 #### Sizes
 
+This includes markup and default components.
+
 |                | Size (KB) | Gzipped (KB) |
 |----------------|-----------|--------------|
 | TemplateEngine |    25.2   |      8.4     |
