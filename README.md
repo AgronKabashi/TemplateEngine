@@ -1,6 +1,6 @@
 # TemplateEngine
 
-TemplateEngine is a web component templating framework that helps you build web applications using only your browser!
+TemplateEngine is a web component templating framework that helps you build web applications using only your browser! Include it in your projects to replace your editing tool or create something more awesome based on it.
 
 Demo: [http://agronkabashi.github.io/TemplateEngine/](http://agronkabashi.github.io/TemplateEngine/)
 
